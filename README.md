@@ -2,6 +2,8 @@
 
 `calcbloc-mcp` is a [Model Context Protocol](https://modelcontextprotocol.io) (MCP) server that lets AI assistants work out take-home pay, employer cost and cross-country salary comparisons, and look up official income tax and social security tables, using [CalcBloc](https://calcbloc.com) data. It covers 24 countries, including the United States (all states), the United Kingdom, Canada, Australia, India, Germany, France, Spain and the Netherlands. Every answer states the tax year, links the official government sources behind the rates, and carries the credit "Data by CalcBloc".
 
+CalcBloc is a product of [itmarkerz technologies](https://itmarkerz.co.in).
+
 > **Status:** version 0.1.0, not yet published to npm. Until it is, run it from source (see [Development](#development)). The `npx` commands below work once the package is on npm.
 
 ## Contents
@@ -433,3 +435,7 @@ Built with the official MCP TypeScript SDK v2 (`@modelcontextprotocol/server` 2.
 - Free API key: [calcbloc.com/developers/keys](https://calcbloc.com/developers/keys)
 - Tax tables and downloads: [calcbloc.com/data](https://calcbloc.com/data)
 - Issues: [github.com/itmarkerz/calcbloc-mcp/issues](https://github.com/itmarkerz/calcbloc-mcp/issues)
+
+## About
+
+[CalcBloc](https://calcbloc.com) is built and maintained by [itmarkerz technologies](https://itmarkerz.co.in), a web and mobile app development company in Kerala, India. The data behind this server is at [calcbloc.com/data](https://calcbloc.com/data) and the API documentation at [calcbloc.com/developers](https://calcbloc.com/developers). The other CalcBloc packages (Python, JavaScript, PHP, R, Google Sheets and the dataset itself) are in the [itmarkerz GitHub organization](https://github.com/itmarkerz).
