@@ -1,7 +1,7 @@
 import { existsSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
-import { API_KEY_URL, DEFAULT_API_URL, SERVER_NAME, SERVER_VERSION } from "./constants.js";
+import { API_KEY_URL_APP, DEFAULT_API_URL, SERVER_NAME, SERVER_VERSION } from "./constants.js";
 
 /** One parameter of a calculation endpoint, as listed by GET /countries. */
 export interface CountryParam {
@@ -172,6 +172,8 @@ export interface ClientOptions {
   fetch?: typeof fetch;
   timeoutMs?: number;
   cacheTtlMs?: number;
+  /** Clock (ms), for tests. */
+  now?: () => number;
 }
 
 interface Manifest {
@@ -208,6 +210,12 @@ export class CalcBlocClient {
   private readonly cacheTtlMs: number;
   private readonly cache = new Map<string, { expires: number; value: Promise<unknown> }>();
   private manifest?: Promise<Manifest | null>;
+  private readonly now: () => number;
+  /**
+   * After a 429, or once a request without a key reports X-RateLimit-Remaining: 0, no request is sent before this
+   * time (ms): the tools answer with the limit message straight away instead of retrying.
+   */
+  private blockedUntil = 0;
 
   constructor(opts: ClientOptions = {}) {
     this.apiUrl = (opts.apiUrl || DEFAULT_API_URL).replace(/\/+$/, "");
@@ -217,6 +225,16 @@ export class CalcBlocClient {
     this.fetchImpl = opts.fetch ?? globalThis.fetch.bind(globalThis);
     this.timeoutMs = opts.timeoutMs ?? 20_000;
     this.cacheTtlMs = opts.cacheTtlMs ?? 6 * 60 * 60 * 1000;
+    this.now = opts.now ?? (() => Date.now());
+  }
+
+  /** The rate-limit error. Without a key it is the prompt to add a free key and where it goes (CALCBLOC_API_KEY). */
+  private limitError(retryAfter: number | undefined, docs?: string): CalcBlocApiError {
+    const when = retryAfter ? ` Try again in about ${humanDuration(retryAfter)}.` : "";
+    const advice = this.apiKey
+      ? " Your API key's limit is 5,000 requests a day and 60 a minute."
+      : ` Add your free API key: use without a key is limited to 50 requests a day and 5 a minute per IP address. Get a free key (5,000 requests a day) at ${API_KEY_URL_APP} and set it as the CALCBLOC_API_KEY environment variable in this MCP server's configuration (the "env" block for calcbloc in your MCP client's settings), then restart the server.`;
+    return new CalcBlocApiError(429, "rate_limited", `The CalcBloc API rate limit was reached.${when}${advice}`, docs, retryAfter);
   }
 
   static fromEnv(env: NodeJS.ProcessEnv = process.env): CalcBlocClient {
@@ -289,6 +307,8 @@ export class CalcBlocClient {
       "User-Agent": `${SERVER_NAME}/${SERVER_VERSION} (+https://github.com/itmarkerz/calcbloc-mcp)`,
     };
     if (this.apiKey) headers["X-API-Key"] = this.apiKey;
+    const waitMs = this.blockedUntil - this.now();
+    if (waitMs > 0) throw this.limitError(Math.ceil(waitMs / 1000));
 
     let res: Response;
     try {
@@ -304,23 +324,28 @@ export class CalcBlocClient {
     } catch {
       throw new CalcBlocApiError(res.status, "invalid_response", `The CalcBloc API returned a response that is not JSON (HTTP ${res.status}).`);
     }
-    if (res.ok) return body as T;
+    if (res.ok) {
+      // Last keyless request of the day: the next ones would get 429, so ask for a key instead of sending them.
+      const remaining = res.headers.get("x-ratelimit-remaining");
+      if (!this.apiKey && remaining !== null && remaining.trim() !== "" && Number(remaining) <= 0) {
+        const reset = Number(res.headers.get("x-ratelimit-reset"));
+        this.blockedUntil = this.now() + (Number.isFinite(reset) && reset > 0 ? reset : 3600) * 1000;
+      }
+      return body as T;
+    }
 
     const err = (body as { error?: { code?: string; message?: string; docs?: string } }).error ?? {};
     const retry = Number(res.headers.get("retry-after"));
     const retryAfter = Number.isFinite(retry) && retry > 0 ? retry : undefined;
     if (res.status === 429 || err.code === "rate_limited") {
-      const when = retryAfter ? ` Try again in about ${humanDuration(retryAfter)}.` : "";
-      const advice = this.apiKey
-        ? " Your API key's limit is 5,000 requests a day and 60 a minute."
-        : ` Anonymous use is limited to 50 requests a day and 5 a minute per IP address. A free API key raises this to 5,000 a day: get one at ${API_KEY_URL} and set it as CALCBLOC_API_KEY in the MCP server's environment.`;
-      throw new CalcBlocApiError(429, "rate_limited", `The CalcBloc API rate limit was reached.${when}${advice}`, err.docs, retryAfter);
+      this.blockedUntil = this.now() + (retryAfter ?? 60) * 1000;
+      throw this.limitError(retryAfter, err.docs);
     }
     if (err.code === "invalid_key" || err.code === "api_key_required") {
       throw new CalcBlocApiError(
         res.status,
         err.code,
-        `${err.message ?? "The API key was not accepted."} Check CALCBLOC_API_KEY, or get a free key at ${API_KEY_URL}.`,
+        `${err.message ?? "The API key was not accepted."} Check CALCBLOC_API_KEY, or get a free key at ${API_KEY_URL_APP}.`,
         err.docs,
       );
     }

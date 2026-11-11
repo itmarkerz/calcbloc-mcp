@@ -22,7 +22,7 @@
       "environmentVariables": [
         {
           "name": "CALCBLOC_API_KEY",
-          "description": "Optional free API key from https://calcbloc.com/developers/keys (5,000 requests a day instead of 50).",
+          "description": "Optional; needed after 50 requests/day. Free key from https://calcbloc.com/developers/keys (5,000 requests/day).",
           "isRequired": false,
           "isSecret": true,
           "format": "string"

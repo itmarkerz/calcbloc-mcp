@@ -15,7 +15,7 @@ MCP server (stdio) for CalcBloc take-home pay, employer cost, salary comparison 
 Usage: npx -y calcbloc-mcp
 
 Environment (all optional):
-  CALCBLOC_API_KEY     free API key from https://calcbloc.com/developers/keys (5,000 requests a day instead of 50)
+  CALCBLOC_API_KEY     optional; needed after 50 requests a day. Free key from https://calcbloc.com/developers/keys (5,000 a day)
   CALCBLOC_DATA_DIR    folder with the calcbloc-data tables; tax tables are read from it before the API
   CALCBLOC_API_URL     API base URL (default https://calcbloc.com/api/v1)
   CALCBLOC_TIMEOUT_MS  request timeout in milliseconds (default 20000)`);

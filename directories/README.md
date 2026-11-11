@@ -19,7 +19,7 @@ Ready-to-submit text and files for MCP directories. Submit only after `calcbloc-
 
 **Description:**
 
-CalcBloc's MCP server gives AI assistants accurate payroll and income tax answers. It calculates take-home pay and employer cost for 12 countries (US with every state, UK, Canada, Australia, New Zealand, Ireland, India, Germany, France, Spain, the Netherlands and Singapore), compares the same salary in two countries at the ECB reference rate, and returns official tax tables (income tax bands, allowances, social security rates and thresholds) for 24 countries. Every answer states the tax year, links the official government sources behind the rates and carries the credit "Data by CalcBloc". Free to use; no API key required, with an optional free key for higher limits.
+CalcBloc's MCP server gives AI assistants accurate payroll and income tax answers. It calculates take-home pay and employer cost for 12 countries (US with every state, UK, Canada, Australia, New Zealand, Ireland, India, Germany, France, Spain, the Netherlands and Singapore), compares the same salary in two countries at the ECB reference rate, and returns official tax tables (income tax bands, allowances, social security rates and thresholds) for 24 countries. Every answer states the tax year, links the official government sources behind the rates and carries the credit "Data by CalcBloc". Free to use; no API key required to start, with an optional free key that is needed after 50 requests a day.
 
 **Tools:** `calculate_take_home_pay`, `calculate_employer_cost`, `compare_countries`, `get_tax_tables`, `list_countries`
 
@@ -31,7 +31,7 @@ CalcBloc's MCP server gives AI assistants accurate payroll and income tax answer
 
 **Links:** repository https://github.com/itmarkerz/calcbloc-mcp, npm https://www.npmjs.com/package/calcbloc-mcp, website https://calcbloc.com/?utm_source=calcbloc-mcp&utm_medium=listing&utm_campaign=itmarkerz-oss, API docs https://calcbloc.com/developers?utm_source=calcbloc-mcp&utm_medium=listing&utm_campaign=itmarkerz-oss, data https://calcbloc.com/data?utm_source=calcbloc-mcp&utm_medium=listing&utm_campaign=itmarkerz-oss
 
-**Environment variables (all optional):** `CALCBLOC_API_KEY` (free key from https://calcbloc.com/developers/keys?utm_source=calcbloc-mcp&utm_medium=listing&utm_campaign=itmarkerz-oss), `CALCBLOC_DATA_DIR` (offline tax tables).
+**Environment variables (all optional):** `CALCBLOC_API_KEY` (needed after 50 requests a day; free key from https://calcbloc.com/developers/keys?utm_source=calcbloc-mcp&utm_medium=listing&utm_campaign=itmarkerz-oss), `CALCBLOC_DATA_DIR` (offline tax tables).
 
 **Example prompts:**
 

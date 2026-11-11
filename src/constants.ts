@@ -11,6 +11,8 @@ export const SITE_URL = "https://calcbloc.com";
 export const DATA_URL = "https://calcbloc.com/data";
 export const DEVELOPERS_URL = "https://calcbloc.com/developers";
 export const API_KEY_URL = "https://calcbloc.com/developers/keys";
+/** The keys page as linked in messages shown to people (referral tag, as on the other calcbloc.com links). */
+export const API_KEY_URL_APP = `${API_KEY_URL}?utm_source=calcbloc-mcp&utm_medium=app&utm_campaign=itmarkerz-oss`;
 
 /** The credit that must accompany every figure. */
 export const ATTRIBUTION = "Data by CalcBloc";

@@ -59,6 +59,69 @@ describe("CalcBlocClient", () => {
     await expect(limited().countries()).rejects.toThrow(/50 requests a day.*CALCBLOC_API_KEY/s);
     await expect(limited().countries()).rejects.toThrow(/14 hours/);
     await expect(limited("k").countries()).rejects.toThrow(/5,000 requests a day/);
+    const err = (await limited().countries().catch((e: unknown) => e)) as CalcBlocApiError;
+    expect(err.message).toMatch(/Add your free API key/);
+    expect(err.message).toContain("https://calcbloc.com/developers/keys?utm_source=calcbloc-mcp&utm_medium=app&utm_campaign=itmarkerz-oss");
+    expect(err.message).toMatch(/CALCBLOC_API_KEY environment variable/);
+    const keyed = (await limited("k").countries().catch((e: unknown) => e)) as CalcBlocApiError;
+    expect(keyed.message).not.toMatch(/Add your free API key/);
+  });
+
+  it("works without a key, and sends the key on every request once set", async () => {
+    const seen: (string | null)[] = [];
+    const make = (apiKey?: string) =>
+      new CalcBlocClient({
+        apiKey,
+        fetch: fakeFetch(async (_url, init) => {
+          seen.push(new Headers(init?.headers).get("x-api-key"));
+          return new Response(JSON.stringify({ countries: [] }), { status: 200, headers: { "X-RateLimit-Remaining": "40" } });
+        }),
+      });
+    await make().countries();
+    await make("cb_key").countries();
+    await make("cb_key").netSalary({ country: "uk", salary: 1 });
+    expect(seen).toEqual([null, "cb_key", "cb_key"]);
+  });
+
+  it("after a 429 makes no further requests until Retry-After has passed (no retry storm)", async () => {
+    let t = 0;
+    let calls = 0;
+    const api = new CalcBlocClient({
+      now: () => t,
+      fetch: fakeFetch(async () => {
+        calls++;
+        return calls === 1
+          ? new Response(JSON.stringify({ error: { code: "rate_limited", message: "Too many requests this minute (limit 5)." } }), { status: 429, headers: { "Retry-After": "30" } })
+          : new Response(JSON.stringify({ country: "uk" }), { status: 200 });
+      }),
+    });
+    await expect(api.netSalary({ country: "uk", salary: 1 })).rejects.toMatchObject({ code: "rate_limited", status: 429 });
+    await expect(api.netSalary({ country: "uk", salary: 2 })).rejects.toThrow(/Add your free API key/);
+    await expect(api.employerCost({ country: "uk", salary: 2 })).rejects.toThrow(/Try again in about/);
+    expect(calls).toBe(1);
+    t += 31_000;
+    await expect(api.netSalary({ country: "uk", salary: 3 })).resolves.toMatchObject({ country: "uk" });
+    expect(calls).toBe(2);
+  });
+
+  it("asks for a key once a request without one reports X-RateLimit-Remaining: 0, without sending more", async () => {
+    let calls = 0;
+    const api = new CalcBlocClient({
+      now: () => 0,
+      fetch: fakeFetch(async () => {
+        calls++;
+        return new Response(JSON.stringify({ country: "uk" }), { status: 200, headers: { "X-RateLimit-Remaining": "0", "X-RateLimit-Reset": "7200" } });
+      }),
+    });
+    await expect(api.netSalary({ country: "uk", salary: 1 })).resolves.toMatchObject({ country: "uk" });
+    await expect(api.netSalary({ country: "uk", salary: 2 })).rejects.toThrow(/rate limit was reached\. Try again in about 2 hours\. Add your free API key.*CALCBLOC_API_KEY/s);
+    expect(calls).toBe(1);
+    const keyed = new CalcBlocClient({
+      apiKey: "cb_key",
+      fetch: fakeFetch(async () => new Response(JSON.stringify({ country: "uk" }), { status: 200, headers: { "X-RateLimit-Remaining": "0", "X-RateLimit-Reset": "7200" } })),
+    });
+    await keyed.netSalary({ country: "uk", salary: 1 });
+    await expect(keyed.netSalary({ country: "uk", salary: 2 })).resolves.toMatchObject({ country: "uk" });
   });
 
   it("does not cache failures", async () => {

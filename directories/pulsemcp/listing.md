@@ -10,5 +10,5 @@ PulseMCP imports servers from the official MCP Registry, so the listing usually 
 - **Long description:** use the shared description in [../README.md](../README.md).
 - **Category:** Finance
 - **Transport:** stdio (local), run with `npx -y calcbloc-mcp`
-- **Authentication:** none required; optional free API key `CALCBLOC_API_KEY`
+- **Authentication:** none required; optional free API key `CALCBLOC_API_KEY` (needed after 50 requests a day)
 - **Contact email:** (owner to fill in)

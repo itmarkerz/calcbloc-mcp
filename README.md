@@ -383,14 +383,14 @@ All settings are optional environment variables, set in your client's `env` bloc
 
 | Variable | Default | Purpose |
 | --- | --- | --- |
-| `CALCBLOC_API_KEY` | none | Free API key from [calcbloc.com/developers/keys](https://calcbloc.com/developers/keys?utm_source=calcbloc-mcp&utm_medium=readme&utm_campaign=itmarkerz-oss), sent as the `X-API-Key` header. Raises the limit from 50 to 5,000 requests a day. |
+| `CALCBLOC_API_KEY` | none | Optional; needed after 50 requests a day. Free API key from [calcbloc.com/developers/keys](https://calcbloc.com/developers/keys?utm_source=calcbloc-mcp&utm_medium=readme&utm_campaign=itmarkerz-oss), sent as the `X-API-Key` header on every request (5,000 requests a day, 60 a minute). |
 | `CALCBLOC_DATA_DIR` | none | Folder with a copy of the [CalcBloc tax-table data](https://calcbloc.com/data?utm_source=calcbloc-mcp&utm_medium=readme&utm_campaign=itmarkerz-oss). Tax tables are read from it first (see [Offline tax tables](#offline-tax-tables)). |
 | `CALCBLOC_API_URL` | `https://calcbloc.com/api/v1` | API base URL (for testing). |
 | `CALCBLOC_TIMEOUT_MS` | `20000` | Request timeout in milliseconds. |
 
 ## Limits and caching
 
-The CalcBloc API is free. Without a key it allows 50 requests a day and 5 a minute per IP address; a free key allows 5,000 a day and 60 a minute. When a limit is reached, the tools say when to try again and how to get a key.
+The CalcBloc API is free. Without a key it allows 50 requests a day and 5 a minute per IP address; a free key allows 5,000 a day and 60 a minute. When the keyless allowance runs out (the API answers 429, or reports `X-RateLimit-Remaining: 0`), the tool error starts the advice with **"Add your free API key"**: it links to [calcbloc.com/developers/keys](https://calcbloc.com/developers/keys?utm_source=calcbloc-mcp&utm_medium=readme&utm_campaign=itmarkerz-oss) and says to set it as `CALCBLOC_API_KEY` in this server's `env` block and restart. Until the limit resets the server sends no more requests (each tool call answers with the same message at once); offline tax tables from `CALCBLOC_DATA_DIR` keep working. With a key, a limit message gives the key's limits and when to try again.
 
 To save requests, the server keeps the country list and tax tables in memory for six hours. The first calculation for a country uses up to four requests (country list, calculation, and the national and regional tax tables that supply the official source links); later calculations for the same country use one. Tax-table lookups use one request per table, or none when a local data folder is set.
 
