@@ -1,0 +1,15 @@
+{
+  "countries": [
+    {
+      "country": "uk",
+      "name": "United Kingdom",
+      "currency": "GBP",
+      "current_year": "2026-27",
+      "years": [
+        "2026-27"
+      ],
+      "regions": [],
+      "pageUrl": "https://calcbloc.com/uk/tax-tables/2026-27"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.itmarkerz/calcbloc-mcp",
+  "title": "CalcBloc tax and salary calculator",
+  "description": "Take-home pay, employer cost and official tax tables for 24 countries, with sources.",
+  "websiteUrl": "https://calcbloc.com/developers",
+  "repository": {
+    "url": "https://github.com/itmarkerz/calcbloc-mcp",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "calcbloc-mcp",
+      "version": "0.1.0",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "CALCBLOC_API_KEY",
+          "description": "Optional free API key from https://calcbloc.com/developers/keys (5,000 requests a day instead of 50).",
+          "isRequired": false,
+          "isSecret": true,
+          "format": "string"
+        },
+        {
+          "name": "CALCBLOC_DATA_DIR",
+          "description": "Optional folder with the CalcBloc tax-table data (https://calcbloc.com/data) for offline tax tables.",
+          "isRequired": false,
+          "isSecret": false,
+          "format": "filepath"
+        }
+      ]
+    }
+  ]
+}
