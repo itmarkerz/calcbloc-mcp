@@ -15,6 +15,39 @@ export function pct(rate: number | null | undefined, digits = 2): string {
   return `${Number((rate * 100).toFixed(digits))}%`;
 }
 
+/**
+ * Referral tag for calcbloc.com page links shown in tool results, so the site's analytics can tell the visit came
+ * from this server. API, download and already-tagged URLs are left as they are.
+ */
+const PAGE_UTM = "utm_source=calcbloc-mcp&utm_medium=app&utm_campaign=itmarkerz-oss";
+const CALCBLOC_URL_RE = /https:\/\/(?:www\.)?calcbloc\.com(?:[/?#][^\s"'<>()[\]]*)?/g;
+
+export function pageLink(url: string): string {
+  const m = /^(https:\/\/(?:www\.)?calcbloc\.com)([^?#]*)(\?[^#]*)?(#.*)?$/.exec(url);
+  if (!m || /[?&]utm_source=/.test(url)) return url;
+  const [, origin, path = "", query, hash] = m;
+  if (/^\/api(\/|$)/.test(path) || /\.(json|csv)$/i.test(path)) return url;
+  return `${origin}${path || "/"}${query ? `${query}&` : "?"}${PAGE_UTM}${hash ?? ""}`;
+}
+
+/** Tags every calcbloc.com page link in a text (trailing sentence punctuation is not part of the link). */
+export function tagPageLinks(text: string): string {
+  return text.replace(CALCBLOC_URL_RE, (match) => {
+    const trail = /[.,;:!?]+$/.exec(match)?.[0] ?? "";
+    return pageLink(match.slice(0, match.length - trail.length)) + trail;
+  });
+}
+
+/** tagPageLinks() applied to every string in a structured result. */
+export function tagPageLinksDeep<T>(value: T): T {
+  if (typeof value === "string") return tagPageLinks(value) as T;
+  if (Array.isArray(value)) return value.map((v) => tagPageLinksDeep(v)) as T;
+  if (value && typeof value === "object") {
+    return Object.fromEntries(Object.entries(value as Record<string, unknown>).map(([k, v]) => [k, tagPageLinksDeep(v)])) as T;
+  }
+  return value;
+}
+
 export function round2(n: number): number {
   return Math.round(n * 100) / 100;
 }

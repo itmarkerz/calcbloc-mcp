@@ -1,8 +1,8 @@
 # CalcBloc MCP server: take-home pay, employer cost and official tax tables for AI assistants
 
-`calcbloc-mcp` is a [Model Context Protocol](https://modelcontextprotocol.io) (MCP) server that lets AI assistants work out take-home pay, employer cost and cross-country salary comparisons, and look up official income tax and social security tables, using [CalcBloc](https://calcbloc.com) data. It covers 24 countries, including the United States (all states), the United Kingdom, Canada, Australia, India, Germany, France, Spain and the Netherlands. Every answer states the tax year, links the official government sources behind the rates, and carries the credit "Data by CalcBloc".
+`calcbloc-mcp` is a [Model Context Protocol](https://modelcontextprotocol.io) (MCP) server that lets AI assistants work out take-home pay, employer cost and cross-country salary comparisons, and look up official income tax and social security tables, using [CalcBloc](https://calcbloc.com/?utm_source=calcbloc-mcp&utm_medium=readme&utm_campaign=itmarkerz-oss) data. It covers 24 countries, including the United States (all states), the United Kingdom, Canada, Australia, India, Germany, France, Spain and the Netherlands. Every answer states the tax year, links the official government sources behind the rates, and carries the credit "Data by CalcBloc".
 
-CalcBloc is a product of [itmarkerz technologies](https://itmarkerz.co.in).
+CalcBloc is a product of [itmarkerz technologies](https://itmarkerz.co.in/?utm_source=calcbloc-mcp&utm_medium=readme&utm_campaign=itmarkerz-oss).
 
 > **Status:** version 0.1.0, not yet published to npm. Until it is, run it from source (see [Development](#development)). The `npx` commands below work once the package is on npm.
 
@@ -39,7 +39,7 @@ The server provides five read-only tools:
 | `get_tax_tables` | Official tax tables (bands, allowances, contribution rates and thresholds) for a country, year and region |
 | `list_countries` | Supported countries, tax years, regions and the options each calculation accepts |
 
-Calculations run on CalcBloc's public API ([calcbloc.com/developers](https://calcbloc.com/developers)), the same engines and data as the calculators on calcbloc.com. Every result includes:
+Calculations run on CalcBloc's public API ([calcbloc.com/developers](https://calcbloc.com/developers?utm_source=calcbloc-mcp&utm_medium=readme&utm_campaign=itmarkerz-oss)), the same engines and data as the calculators on calcbloc.com. Every result includes:
 
 - the **tax year** the figures apply to;
 - the **official source URLs** (government or statutory publications) for the rates used, with the date each was last checked;
@@ -60,7 +60,7 @@ The server talks MCP over stdio, so you normally do not run it yourself: you add
 
 ## Set up your AI client
 
-All clients use the same command, `npx -y calcbloc-mcp`. The `CALCBLOC_API_KEY` entry is optional: leave it out, or paste your free key from [calcbloc.com/developers/keys](https://calcbloc.com/developers/keys).
+All clients use the same command, `npx -y calcbloc-mcp`. The `CALCBLOC_API_KEY` entry is optional: leave it out, or paste your free key from [calcbloc.com/developers/keys](https://calcbloc.com/developers/keys?utm_source=calcbloc-mcp&utm_medium=readme&utm_campaign=itmarkerz-oss).
 
 ### Claude Desktop
 
@@ -383,8 +383,8 @@ All settings are optional environment variables, set in your client's `env` bloc
 
 | Variable | Default | Purpose |
 | --- | --- | --- |
-| `CALCBLOC_API_KEY` | none | Free API key from [calcbloc.com/developers/keys](https://calcbloc.com/developers/keys), sent as the `X-API-Key` header. Raises the limit from 50 to 5,000 requests a day. |
-| `CALCBLOC_DATA_DIR` | none | Folder with a copy of the [CalcBloc tax-table data](https://calcbloc.com/data). Tax tables are read from it first (see [Offline tax tables](#offline-tax-tables)). |
+| `CALCBLOC_API_KEY` | none | Free API key from [calcbloc.com/developers/keys](https://calcbloc.com/developers/keys?utm_source=calcbloc-mcp&utm_medium=readme&utm_campaign=itmarkerz-oss), sent as the `X-API-Key` header. Raises the limit from 50 to 5,000 requests a day. |
+| `CALCBLOC_DATA_DIR` | none | Folder with a copy of the [CalcBloc tax-table data](https://calcbloc.com/data?utm_source=calcbloc-mcp&utm_medium=readme&utm_campaign=itmarkerz-oss). Tax tables are read from it first (see [Offline tax tables](#offline-tax-tables)). |
 | `CALCBLOC_API_URL` | `https://calcbloc.com/api/v1` | API base URL (for testing). |
 | `CALCBLOC_TIMEOUT_MS` | `20000` | Request timeout in milliseconds. |
 
@@ -396,7 +396,7 @@ To save requests, the server keeps the country list and tax tables in memory for
 
 ## Offline tax tables
 
-The tax tables are also published as open data (JSON and CSV) at [calcbloc.com/data](https://calcbloc.com/data). If you keep a copy, point `CALCBLOC_DATA_DIR` at it (either the repository root or its `tables` folder, which contains `manifest.json`). `get_tax_tables` then reads from the folder without using the API, and keeps working when the API cannot be reached. Calculations always need the API.
+The tax tables are also published as open data (JSON and CSV) at [calcbloc.com/data](https://calcbloc.com/data?utm_source=calcbloc-mcp&utm_medium=readme&utm_campaign=itmarkerz-oss). If you keep a copy, point `CALCBLOC_DATA_DIR` at it (either the repository root or its `tables` folder, which contains `manifest.json`). `get_tax_tables` then reads from the folder without using the API, and keeps working when the API cannot be reached. Calculations always need the API.
 
 The data is not bundled in the npm package: it is about 10 MB, and tables are updated when governments publish changes, so a bundled copy would go out of date between releases.
 
@@ -424,18 +424,18 @@ Built with the official MCP TypeScript SDK v2 (`@modelcontextprotocol/server` 2.
 
 ## Data, licence and credit
 
-- Tax data: [CalcBloc](https://calcbloc.com/data), licensed [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Credit: "Data by CalcBloc (calcbloc.com/data)". Each figure is taken from the official source named next to it, with the date it was last checked.
+- Tax data: [CalcBloc](https://calcbloc.com/data?utm_source=calcbloc-mcp&utm_medium=readme&utm_campaign=itmarkerz-oss), licensed [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Credit: "Data by CalcBloc (calcbloc.com/data)". Each figure is taken from the official source named next to it, with the date it was last checked.
 - Code: MIT licence, see [LICENSE](LICENSE).
 - Results are estimates for information only and are not tax, legal or financial advice.
 
 ## Links
 
-- Website: [calcbloc.com](https://calcbloc.com)
-- API documentation: [calcbloc.com/developers](https://calcbloc.com/developers)
-- Free API key: [calcbloc.com/developers/keys](https://calcbloc.com/developers/keys)
-- Tax tables and downloads: [calcbloc.com/data](https://calcbloc.com/data)
+- Website: [calcbloc.com](https://calcbloc.com/?utm_source=calcbloc-mcp&utm_medium=readme&utm_campaign=itmarkerz-oss)
+- API documentation: [calcbloc.com/developers](https://calcbloc.com/developers?utm_source=calcbloc-mcp&utm_medium=readme&utm_campaign=itmarkerz-oss)
+- Free API key: [calcbloc.com/developers/keys](https://calcbloc.com/developers/keys?utm_source=calcbloc-mcp&utm_medium=readme&utm_campaign=itmarkerz-oss)
+- Tax tables and downloads: [calcbloc.com/data](https://calcbloc.com/data?utm_source=calcbloc-mcp&utm_medium=readme&utm_campaign=itmarkerz-oss)
 - Issues: [github.com/itmarkerz/calcbloc-mcp/issues](https://github.com/itmarkerz/calcbloc-mcp/issues)
 
 ## About
 
-[CalcBloc](https://calcbloc.com) is built and maintained by [itmarkerz technologies](https://itmarkerz.co.in), a web and mobile app development company in Kerala, India. The data behind this server is at [calcbloc.com/data](https://calcbloc.com/data) and the API documentation at [calcbloc.com/developers](https://calcbloc.com/developers). The other CalcBloc packages (Python, JavaScript, PHP, R, Google Sheets and the dataset itself) are in the [itmarkerz GitHub organization](https://github.com/itmarkerz).
+[CalcBloc](https://calcbloc.com/?utm_source=calcbloc-mcp&utm_medium=readme&utm_campaign=itmarkerz-oss) is built and maintained by [itmarkerz technologies](https://itmarkerz.co.in/?utm_source=calcbloc-mcp&utm_medium=readme&utm_campaign=itmarkerz-oss), a web and mobile app development company in Kerala, India. The data behind this server is at [calcbloc.com/data](https://calcbloc.com/data?utm_source=calcbloc-mcp&utm_medium=readme&utm_campaign=itmarkerz-oss) and the API documentation at [calcbloc.com/developers](https://calcbloc.com/developers?utm_source=calcbloc-mcp&utm_medium=readme&utm_campaign=itmarkerz-oss). The other CalcBloc packages (Python, JavaScript, PHP, R, Google Sheets and the dataset itself) are in the [itmarkerz GitHub organization](https://github.com/itmarkerz).

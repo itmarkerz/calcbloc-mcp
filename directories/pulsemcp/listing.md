@@ -5,7 +5,7 @@ PulseMCP imports servers from the official MCP Registry, so the listing usually 
 - **Server name:** CalcBloc
 - **GitHub URL:** https://github.com/itmarkerz/calcbloc-mcp
 - **npm package:** calcbloc-mcp
-- **Website:** https://calcbloc.com/developers
+- **Website:** https://calcbloc.com/developers?utm_source=calcbloc-mcp&utm_medium=listing&utm_campaign=itmarkerz-oss
 - **Short description:** Take-home pay, employer cost and official tax tables for 24 countries, with sources.
 - **Long description:** use the shared description in [../README.md](../README.md).
 - **Category:** Finance

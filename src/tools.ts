@@ -2,7 +2,7 @@ import * as z from "zod/v4";
 import type { McpServer } from "@modelcontextprotocol/server";
 import { CalcBlocApiError, type CalcBlocClient, type CalcResponse, type CompareSide, type CountryInfo, type QueryValue, type Source, type TaxTable } from "./api.js";
 import { ATTRIBUTION, DATA_LICENCE, DATA_URL, DISCLAIMER } from "./constants.js";
-import { money, pct, renderSection, round2, sectionSources, sourceLines, tableSources, uniqueSources } from "./format.js";
+import { money, pct, renderSection, round2, sectionSources, sourceLines, tableSources, tagPageLinks, tagPageLinksDeep, uniqueSources } from "./format.js";
 import {
   type CalcKind,
   checkSalary,
@@ -185,12 +185,13 @@ type ToolResult = {
 const MAX_SOURCES_PER_TABLE = 12;
 const MAX_TABLE_TEXT = 30_000;
 
+/** Every result goes through ok() or fail(), so calcbloc.com page links shown to users carry the referral tag (see pageLink). */
 function ok(text: string, structured: Record<string, unknown>): ToolResult {
-  return { content: [{ type: "text", text }], structuredContent: structured };
+  return { content: [{ type: "text", text: tagPageLinks(text) }], structuredContent: tagPageLinksDeep(structured) };
 }
 
 function fail(message: string): ToolResult {
-  return { content: [{ type: "text", text: message }], isError: true };
+  return { content: [{ type: "text", text: tagPageLinks(message) }], isError: true };
 }
 
 /** Turns any failure into a tool error the assistant can act on (input problems, API errors, rate limits). */

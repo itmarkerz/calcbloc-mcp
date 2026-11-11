@@ -69,7 +69,7 @@ Texts and files are in [`directories/`](directories/README.md).
 - [ ] mcp.so: submit at https://mcp.so/submit.
 - [ ] awesome-mcp-servers: pull request with the line in `directories/awesome-mcp-servers/entry.md` (after the Glama listing exists, for the badge).
 - [ ] Smithery: no submission path at the moment (directory only since 31 October 2026).
-- [ ] calcbloc.com: consider a short "Use CalcBloc in AI assistants" section on https://calcbloc.com/developers linking to the npm package and repository.
+- [ ] calcbloc.com: consider a short "Use CalcBloc in AI assistants" section on [https://calcbloc.com/developers](https://calcbloc.com/developers?utm_source=calcbloc-mcp&utm_medium=docs&utm_campaign=itmarkerz-oss) linking to the npm package and repository.
 
 ## 6. Every later release
 

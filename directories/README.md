@@ -29,9 +29,9 @@ CalcBloc's MCP server gives AI assistants accurate payroll and income tax answer
 
 **Transport:** stdio (local). **Language:** TypeScript. **Licence:** MIT (code), CC BY 4.0 (data).
 
-**Links:** repository https://github.com/itmarkerz/calcbloc-mcp, npm https://www.npmjs.com/package/calcbloc-mcp, website https://calcbloc.com, API docs https://calcbloc.com/developers, data https://calcbloc.com/data
+**Links:** repository https://github.com/itmarkerz/calcbloc-mcp, npm https://www.npmjs.com/package/calcbloc-mcp, website https://calcbloc.com/?utm_source=calcbloc-mcp&utm_medium=listing&utm_campaign=itmarkerz-oss, API docs https://calcbloc.com/developers?utm_source=calcbloc-mcp&utm_medium=listing&utm_campaign=itmarkerz-oss, data https://calcbloc.com/data?utm_source=calcbloc-mcp&utm_medium=listing&utm_campaign=itmarkerz-oss
 
-**Environment variables (all optional):** `CALCBLOC_API_KEY` (free key from https://calcbloc.com/developers/keys), `CALCBLOC_DATA_DIR` (offline tax tables).
+**Environment variables (all optional):** `CALCBLOC_API_KEY` (free key from https://calcbloc.com/developers/keys?utm_source=calcbloc-mcp&utm_medium=listing&utm_campaign=itmarkerz-oss), `CALCBLOC_DATA_DIR` (offline tax tables).
 
 **Example prompts:**
 

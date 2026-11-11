@@ -46,7 +46,7 @@
   ],
   "author": "CalcBloc (https://calcbloc.com)",
   "license": "MIT",
-  "homepage": "https://calcbloc.com/developers",
+  "homepage": "https://calcbloc.com/developers?utm_source=calcbloc-mcp&utm_medium=package&utm_campaign=itmarkerz-oss",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/itmarkerz/calcbloc-mcp.git"

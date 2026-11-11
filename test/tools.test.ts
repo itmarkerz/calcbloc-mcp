@@ -2,6 +2,7 @@ import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 import { CalcBlocClient } from "../src/api.js";
 import { ATTRIBUTION } from "../src/constants.js";
+import { pageLink, tagPageLinks } from "../src/format.js";
 import { compareCountries, employerCost, listCountries, takeHomePay, taxTables } from "../src/tools.js";
 import { mockFetch, route } from "./mock-api.js";
 
@@ -151,7 +152,7 @@ describe("calculate_employer_cost", () => {
     const s = r.structuredContent as Record<string, any>;
     expect(s.totalCost).toBe(73392);
     expect(s.taxYear).toBe("2026");
-    expect(s.calcblocUrl).toBe("https://calcbloc.com/germany/germany-employer-cost-calculator");
+    expect(s.calcblocUrl).toBe("https://calcbloc.com/germany/germany-employer-cost-calculator?utm_source=calcbloc-mcp&utm_medium=app&utm_campaign=itmarkerz-oss");
     expect(s.sources.length).toBeGreaterThan(0);
     expect(text(r)).toContain("EUR 73,392.00");
   });
@@ -215,7 +216,8 @@ describe("get_tax_tables", () => {
     expect(s.taxYear).toBe("2026-27");
     expect(s.truncated).toBe(false);
     expect(s.sections.length).toBe(s.sectionIndex.length);
-    expect(s.calcblocUrl).toBe("https://calcbloc.com/uk/tax-tables/2026-27");
+    expect(s.calcblocUrl).toBe("https://calcbloc.com/uk/tax-tables/2026-27?utm_source=calcbloc-mcp&utm_medium=app&utm_campaign=itmarkerz-oss");
+    expect(text(r)).toContain("Page: https://calcbloc.com/uk/tax-tables/2026-27?utm_source=calcbloc-mcp&utm_medium=app&utm_campaign=itmarkerz-oss");
     expect(s.csvUrl).toContain("format=csv");
     expect(text(r)).toContain("Basic rate: 0 to 37,700 at 20%");
     expect(text(r)).toContain("Personal Allowance: GBP 12,570.00");
@@ -311,3 +313,18 @@ function tableStub(country: string, name: string, year: string) {
     pageUrl: `https://calcbloc.com/${country}/tax-tables/${year}`,
   };
 }
+
+describe("page links", () => {
+  const tag = "utm_source=calcbloc-mcp&utm_medium=app&utm_campaign=itmarkerz-oss";
+  it("tags calcbloc.com pages and leaves API, download and other links alone", () => {
+    expect(pageLink("https://calcbloc.com")).toBe(`https://calcbloc.com/?${tag}`);
+    expect(pageLink("https://calcbloc.com/developers#limits")).toBe(`https://calcbloc.com/developers?${tag}#limits`);
+    expect(pageLink("https://calcbloc.com/x?a=1")).toBe(`https://calcbloc.com/x?a=1&${tag}`);
+    expect(pageLink(`https://calcbloc.com/data?${tag}`)).toBe(`https://calcbloc.com/data?${tag}`);
+    expect(pageLink("https://calcbloc.com/api/v1/tax-tables/uk/2026-27?format=csv")).toBe("https://calcbloc.com/api/v1/tax-tables/uk/2026-27?format=csv");
+    expect(pageLink("https://www.gov.uk/income-tax-rates")).toBe("https://www.gov.uk/income-tax-rates");
+  });
+  it("keeps sentence punctuation outside the link", () => {
+    expect(tagPageLinks("See https://calcbloc.com/austria/tax-tables/2026.")).toBe(`See https://calcbloc.com/austria/tax-tables/2026?${tag}.`);
+  });
+});
