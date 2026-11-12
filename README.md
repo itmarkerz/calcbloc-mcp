@@ -1,6 +1,6 @@
 # CalcBloc MCP server: take-home pay, employer cost and official tax tables for AI assistants
 
-`calcbloc-mcp` is a [Model Context Protocol](https://modelcontextprotocol.io) (MCP) server that lets AI assistants work out take-home pay, employer cost and cross-country salary comparisons, and look up official income tax and social security tables, using [CalcBloc](https://calcbloc.com/?utm_source=calcbloc-mcp&utm_medium=readme&utm_campaign=itmarkerz-oss) data. It covers 24 countries, including the United States (all states), the United Kingdom, Canada, Australia, India, Germany, France, Spain and the Netherlands. Every answer states the tax year, links the official government sources behind the rates, and carries the credit "Data by CalcBloc".
+`calcbloc-mcp` is a [Model Context Protocol](https://modelcontextprotocol.io) (MCP) server that lets AI assistants work out take-home pay, employer cost and cross-country salary comparisons, and look up official income tax and social security tables, using [CalcBloc](https://calcbloc.com/?utm_source=calcbloc-mcp&utm_medium=readme&utm_campaign=itmarkerz-oss) data. It covers 37 countries, including the United States (all states), the United Kingdom, Canada, Australia, India, Germany, France, Spain and the Netherlands. Every answer states the tax year, links the official government sources behind the rates, and carries the credit "Data by CalcBloc".
 
 CalcBloc is a product of [itmarkerz technologies](https://itmarkerz.co.in/?utm_source=calcbloc-mcp&utm_medium=readme&utm_campaign=itmarkerz-oss).
 
@@ -46,7 +46,7 @@ Calculations run on CalcBloc's public API ([calcbloc.com/developers](https://cal
 - the **calcbloc.com page** for the result (calculator or tax-table page);
 - the credit **"Data by CalcBloc"** and a short note that the figures are an estimate, not tax advice.
 
-Tax tables are available for all 24 countries. Take-home pay calculations currently cover 12 of them (US, UK, Canada, Australia, New Zealand, Ireland, India, Germany, France, Spain, the Netherlands and Singapore); for the others the tools say so and link the country's tax tables. `list_countries` always shows the live list.
+Tax tables are available for all 37 countries. Take-home pay calculations currently cover 12 of them (US, UK, Canada, Australia, New Zealand, Ireland, India, Germany, France, Spain, the Netherlands and Singapore); for the others the tools say so and link the country's tax tables. `list_countries` always shows the live list.
 
 ## Quick start
 
@@ -227,7 +227,7 @@ Returns both sides (gross, income tax, contributions, take-home pay, effective r
 
 | Argument | Type | Notes |
 | --- | --- | --- |
-| `country` | string, required | Any of the 24 countries. |
+| `country` | string, required | Any of the 37 countries. |
 | `year` | string | Default: latest. Some countries also have the previous year (for example UK `2025-26`). |
 | `region` | string | Regional table: US state, Canadian province, UK nation (Scotland, Wales), Swiss canton, Spanish community, Italian region, and others. |
 | `group` | string | Only `income-tax`, `employee`, `employer` or `other` sections. |

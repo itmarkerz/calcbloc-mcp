@@ -1,9 +1,10 @@
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
-import { CalcBlocClient } from "../src/api.js";
+import { CalcBlocClient, type CountryInfo } from "../src/api.js";
 import { ATTRIBUTION } from "../src/constants.js";
 import { pageLink, tagPageLinks } from "../src/format.js";
 import { compareCountries, employerCost, listCountries, takeHomePay, taxTables } from "../src/tools.js";
+import { resolveCountry, ToolInputError } from "../src/resolve.js";
 import { mockFetch, route } from "./mock-api.js";
 
 const client = (override?: Parameters<typeof mockFetch>[0], apiKey?: string) => {
@@ -326,5 +327,28 @@ describe("page links", () => {
   });
   it("keeps sentence punctuation outside the link", () => {
     expect(tagPageLinks("See https://calcbloc.com/austria/tax-tables/2026.")).toBe(`See https://calcbloc.com/austria/tax-tables/2026?${tag}.`);
+  });
+});
+
+describe("country names and codes", () => {
+  const live = [
+    ["latvia", "Latvia"],
+    ["croatia", "Croatia"],
+    ["estonia", "Estonia"],
+    ["bulgaria", "Bulgaria"],
+    ["lithuania", "Lithuania"],
+    ["malta", "Malta"],
+    ["cyprus", "Cyprus"],
+    ["iceland", "Iceland"],
+  ].map(([code, name]) => ({ code, name }) as unknown as CountryInfo);
+  it("accepts ISO codes, English and local names", () => {
+    const cases: [string, string][] = [
+      ["LV", "latvia"], ["Latvija", "latvia"], ["hr", "croatia"], ["Hrvatska", "croatia"], ["EE", "estonia"], ["Eesti", "estonia"],
+      ["bg", "bulgaria"], ["LT", "lithuania"], ["Lietuva", "lithuania"], ["mt", "malta"], ["CY", "cyprus"], ["is", "iceland"], ["Iceland", "iceland"],
+    ];
+    for (const [input, code] of cases) expect(resolveCountry(live, input).code).toBe(code);
+  });
+  it("only resolves an alias when the country is in the live list", () => {
+    expect(() => resolveCountry(live.filter((c) => c.code !== "iceland"), "is")).toThrow(ToolInputError);
   });
 });

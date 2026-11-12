@@ -67,6 +67,18 @@ const COUNTRY_ALIASES: Record<string, string> = {
   ro: "romania",
   sk: "slovakia",
   si: "slovenia",
+  lv: "latvia",
+  latvija: "latvia",
+  hr: "croatia",
+  hrvatska: "croatia",
+  ee: "estonia",
+  eesti: "estonia",
+  bg: "bulgaria",
+  lt: "lithuania",
+  lietuva: "lithuania",
+  mt: "malta",
+  cy: "cyprus",
+  is: "iceland",
 };
 
 export function countryList(countries: CountryInfo[]): string {
