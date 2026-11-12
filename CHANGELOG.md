@@ -6,7 +6,7 @@ All notable changes to this package are listed here. The package follows [semant
 
 First version.
 
-- Rate limits without a key: when the 50-a-day allowance runs out (429, or `X-RateLimit-Remaining: 0` on a keyless request), tool errors say "Add your free API key", link to the keys page and name the `CALCBLOC_API_KEY` variable; no further requests are sent until the limit resets.
+- Rate limits without a key: when the 50-a-day allowance runs out (429, or `X-RateLimit-Remaining: 0` on a keyless request), tool errors say the free allowance without a key is used up and "Add your free API key", link to the keys page and name the `CALCBLOC_API_KEY` variable; no further requests are sent until the limit resets.
 
 - MCP server over stdio, built on the MCP TypeScript SDK v2 (`@modelcontextprotocol/server` 2.4, MCP specification 2026-07-28).
 - Tools: `calculate_take_home_pay`, `calculate_employer_cost`, `compare_countries`, `get_tax_tables` and `list_countries`, all read-only, with input and output schemas and structured results.

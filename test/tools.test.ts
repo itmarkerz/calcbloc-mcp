@@ -115,7 +115,7 @@ describe("calculate_take_home_pay", () => {
     const r = await takeHomePay(api, { country: "uk", gross_salary: 50000 });
     expect(r.isError).toBe(true);
     const t = text(r);
-    expect(t).toContain("rate limit");
+    expect(t).toContain("The free allowance of 50 requests a day without a key is used up.");
     expect(t).toContain("2 minutes");
     expect(t).toContain("CALCBLOC_API_KEY");
     expect(t).toContain("https://calcbloc.com/developers/keys");
