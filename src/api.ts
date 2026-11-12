@@ -228,13 +228,20 @@ export class CalcBlocClient {
     this.now = opts.now ?? (() => Date.now());
   }
 
-  /** The rate-limit error. Without a key it is the prompt to add a free key and where it goes (CALCBLOC_API_KEY). */
+  /**
+   * The rate-limit error. Without a key it says the free allowance is used up and asks for a free key, with where it
+   * goes (CALCBLOC_API_KEY); with a key it is the key's limit and when to try again.
+   */
   private limitError(retryAfter: number | undefined, docs?: string): CalcBlocApiError {
     const when = retryAfter ? ` Try again in about ${humanDuration(retryAfter)}.` : "";
-    const advice = this.apiKey
-      ? " Your API key's limit is 5,000 requests a day and 60 a minute."
-      : ` Add your free API key: use without a key is limited to 50 requests a day and 5 a minute per IP address. Get a free key (5,000 requests a day) at ${API_KEY_URL_APP} and set it as the CALCBLOC_API_KEY environment variable in this MCP server's configuration (the "env" block for calcbloc in your MCP client's settings), then restart the server.`;
-    return new CalcBlocApiError(429, "rate_limited", `The CalcBloc API rate limit was reached.${when}${advice}`, docs, retryAfter);
+    if (this.apiKey)
+      return new CalcBlocApiError(429, "rate_limited", `The CalcBloc API rate limit was reached.${when} Your API key's limit is 5,000 requests a day and 60 a minute.`, docs, retryAfter);
+    const addKey = ` Add your free API key (5,000 requests a day): ${API_KEY_URL_APP} and set it as the CALCBLOC_API_KEY environment variable in this MCP server's configuration (the "env" block for calcbloc in your MCP client's settings), then restart the server.`;
+    const message =
+      retryAfter !== undefined && retryAfter <= 60
+        ? `The free allowance without a key (5 requests a minute, 50 a day) is used up for this minute.${when}${addKey}`
+        : `The free allowance of 50 requests a day without a key is used up.${addKey}${retryAfter ? ` Without a key, try again in about ${humanDuration(retryAfter)}.` : ""}`;
+    return new CalcBlocApiError(429, "rate_limited", message, docs, retryAfter);
   }
 
   static fromEnv(env: NodeJS.ProcessEnv = process.env): CalcBlocClient {

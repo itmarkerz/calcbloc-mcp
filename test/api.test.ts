@@ -96,7 +96,7 @@ describe("CalcBlocClient", () => {
       }),
     });
     await expect(api.netSalary({ country: "uk", salary: 1 })).rejects.toMatchObject({ code: "rate_limited", status: 429 });
-    await expect(api.netSalary({ country: "uk", salary: 2 })).rejects.toThrow(/Add your free API key/);
+    await expect(api.netSalary({ country: "uk", salary: 2 })).rejects.toThrow(/^The free allowance without a key \(5 requests a minute, 50 a day\) is used up for this minute\. Try again in about \d+ seconds\. Add your free API key/);
     await expect(api.employerCost({ country: "uk", salary: 2 })).rejects.toThrow(/Try again in about/);
     expect(calls).toBe(1);
     t += 31_000;
@@ -114,7 +114,7 @@ describe("CalcBlocClient", () => {
       }),
     });
     await expect(api.netSalary({ country: "uk", salary: 1 })).resolves.toMatchObject({ country: "uk" });
-    await expect(api.netSalary({ country: "uk", salary: 2 })).rejects.toThrow(/rate limit was reached\. Try again in about 2 hours\. Add your free API key.*CALCBLOC_API_KEY/s);
+    await expect(api.netSalary({ country: "uk", salary: 2 })).rejects.toThrow(/^The free allowance of 50 requests a day without a key is used up\. Add your free API key \(5,000 requests a day\): .*CALCBLOC_API_KEY.* Without a key, try again in about 2 hours\.$/s);
     expect(calls).toBe(1);
     const keyed = new CalcBlocClient({
       apiKey: "cb_key",
