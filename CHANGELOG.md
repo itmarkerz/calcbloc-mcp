@@ -2,7 +2,7 @@
 
 All notable changes to this package are listed here. The package follows [semantic versioning](https://semver.org/).
 
-## 0.1.0 (unreleased)
+## 0.1.0 (2026-11-13)
 
 First version.
 
