@@ -1,0 +1,28 @@
+# Weekly dependency updates. Minor and patch updates arrive as one grouped pull request per ecosystem;
+# major updates come one per pull request so they can be checked on their own. Security updates are
+# opened as soon as an advisory is published (Dependabot security updates are enabled in the repository).
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: deps
+    groups:
+      npm-minor-and-patch:
+        update-types: [minor, patch]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: ci
+    groups:
+      actions:
+        patterns: ["*"]
