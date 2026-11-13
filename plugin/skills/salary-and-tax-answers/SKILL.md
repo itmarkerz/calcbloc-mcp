@@ -33,4 +33,4 @@ Use the CalcBloc MCP tools instead of estimating from memory. Tax rates change e
 
 ## Limits
 
-Without an API key the tools allow 50 requests a day (5 a minute). If a tool reports that the free allowance is used up, pass on its message: it explains how to add a free key in the plugin settings.
+Without an API key the tools share a free daily allowance. If a tool reports that the allowance is used up, pass on its message and suggest a free key from https://calcbloc.com/developers/keys, entered in the plugin's settings.

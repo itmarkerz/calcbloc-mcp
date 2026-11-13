@@ -62,6 +62,16 @@ npx -y calcbloc-mcp
 
 The server talks MCP over stdio, so you normally do not run it yourself: you add it to your AI client with the snippets below, and the client starts it when needed. No API key is required. A free key raises the daily limit (see [Limits and caching](#limits-and-caching)).
 
+### Remote server (no install)
+
+The same five tools are also hosted at **`https://calcbloc.com/mcp`** (Streamable HTTP, no sign-in). Use it in clients that connect to MCP servers by URL, such as custom connectors on claude.ai or Claude Desktop (**Settings > Connectors > Add custom connector**), or in Claude Code:
+
+```bash
+claude mcp add --transport http calcbloc https://calcbloc.com/mcp
+```
+
+Without a key, each address gets 500 tool API calls a day (30 a minute) within a shared daily total. To use your own free key (5,000 a day), send it as the `X-API-Key` header, for example `claude mcp add --transport http calcbloc https://calcbloc.com/mcp --header "X-API-Key: your-free-key"`, or as `Authorization: Bearer your-free-key`.
+
 ## Set up your AI client
 
 All clients use the same command, `npx -y calcbloc-mcp`. The `CALCBLOC_API_KEY` entry is optional: leave it out, or paste your free key from [calcbloc.com/developers/keys](https://calcbloc.com/developers/keys?utm_source=calcbloc-mcp&utm_medium=readme&utm_campaign=itmarkerz-oss).
