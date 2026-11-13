@@ -1,0 +1,10 @@
+{
+  "name": "calcbloc-claude-plugin",
+  "version": "0.1.2",
+  "private": true,
+  "description": "Installs the calcbloc-mcp server (exact version, from the npm registry) for the CalcBloc Claude plugin.",
+  "license": "MIT",
+  "dependencies": {
+    "calcbloc-mcp": "0.1.2"
+  }
+}

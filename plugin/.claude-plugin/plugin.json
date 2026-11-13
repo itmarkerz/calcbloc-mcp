@@ -1,7 +1,7 @@
 {
   "name": "calcbloc",
   "displayName": "CalcBloc",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Take-home pay, employer cost, salary comparison and official tax tables for 37 countries, with the tax year and official government sources in every answer.",
   "author": {
     "name": "itmarkerz technologies",

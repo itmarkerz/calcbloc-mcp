@@ -1,10 +1,10 @@
 {
   "mcpServers": {
     "calcbloc": {
-      "command": "npx",
-      "args": ["-y", "calcbloc-mcp@0.1.1"],
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/node_modules/calcbloc-mcp/dist/index.js"],
       "env": {
-        "CALCBLOC_API_KEY": "${user_config.calcbloc_api_key}"
+        "CLAUDE_PLUGIN_OPTION_CALCBLOC_API_KEY": "${user_config.calcbloc_api_key}"
       }
     }
   }
