@@ -1,10 +1,14 @@
 # CalcBloc MCP server: take-home pay, employer cost and official tax tables for AI assistants
 
+[![npm version](https://img.shields.io/npm/v/calcbloc-mcp)](https://www.npmjs.com/package/calcbloc-mcp)
+[![MCP Registry](https://img.shields.io/badge/MCP_Registry-io.github.itmarkerz%2Fcalcbloc--mcp-blue)](https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.itmarkerz/calcbloc-mcp)
+[![License: MIT](https://img.shields.io/npm/l/calcbloc-mcp)](LICENSE)
+
 `calcbloc-mcp` is a [Model Context Protocol](https://modelcontextprotocol.io) (MCP) server that lets AI assistants work out take-home pay, employer cost and cross-country salary comparisons, and look up official income tax and social security tables, using [CalcBloc](https://calcbloc.com/?utm_source=calcbloc-mcp&utm_medium=readme&utm_campaign=itmarkerz-oss) data. It covers 37 countries, including the United States (all states), the United Kingdom, Canada, Australia, India, Germany, France, Spain and the Netherlands. Every answer states the tax year, links the official government sources behind the rates, and carries the credit "Data by CalcBloc".
 
 CalcBloc is a product of [itmarkerz technologies](https://itmarkerz.co.in/?utm_source=calcbloc-mcp&utm_medium=readme&utm_campaign=itmarkerz-oss).
 
-> **Status:** version 0.1.0, not yet published to npm. Until it is, run it from source (see [Development](#development)). The `npx` commands below work once the package is on npm.
+Install with `npx -y calcbloc-mcp` ([npm package](https://www.npmjs.com/package/calcbloc-mcp)). The server is listed in the official [MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.itmarkerz/calcbloc-mcp) as `io.github.itmarkerz/calcbloc-mcp`.
 
 ## Contents
 

@@ -1,6 +1,8 @@
 # Publishing checklist
 
-Steps to release `calcbloc-mcp` to npm and the official MCP Registry, then list it in directories. Nothing here has been done yet.
+Steps to release `calcbloc-mcp` to npm and the official MCP Registry, then list it in directories.
+
+**Status:** 0.1.0 was released on 2026-11-13 by hand: npm with option B (account `itmarkerz`, security-key 2FA, no provenance), then the MCP Registry with `mcp-publisher login github --token` (classic PAT, `read:org` only; the device flow cannot publish to an organization namespace). Directory listings (section 5) and trusted publishing for later releases (option A) are still to do.
 
 ## 1. Before the first release
 
