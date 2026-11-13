@@ -218,7 +218,10 @@ export class CalcBlocClient {
   private blockedUntil = 0;
 
   constructor(opts: ClientOptions = {}) {
-    this.apiUrl = (opts.apiUrl || DEFAULT_API_URL).replace(/\/+$/, "");
+    // Trailing slashes are trimmed with a loop rather than /\/+$/, which is polynomial on long runs of "/".
+    let apiUrl = opts.apiUrl || DEFAULT_API_URL;
+    while (apiUrl.endsWith("/")) apiUrl = apiUrl.slice(0, -1);
+    this.apiUrl = apiUrl;
     this.apiKey = opts.apiKey?.trim() || undefined;
     this.hasApiKey = !!this.apiKey;
     this.dataDir = opts.dataDir ? resolveDataDir(opts.dataDir) : undefined;

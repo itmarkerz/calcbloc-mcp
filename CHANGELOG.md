@@ -2,6 +2,11 @@
 
 All notable changes to this package are listed here. The package follows [semantic versioning](https://semver.org/).
 
+## Unreleased
+
+- Trailing slashes in `CALCBLOC_API_URL` are trimmed with a loop instead of a regular expression that CodeQL flagged as slow on long runs of `/` (js/polynomial-redos).
+- Repository: Dependabot (npm and GitHub Actions, weekly, grouped) and CodeQL code scanning are enabled.
+
 ## 0.1.1 (2026-11-13)
 
 Documentation and release process only; the server is unchanged.

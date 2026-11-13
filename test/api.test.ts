@@ -31,6 +31,12 @@ describe("CalcBlocClient", () => {
     expect(api.hasApiKey).toBe(true);
   });
 
+  it("trims any number of trailing slashes from the API URL", () => {
+    expect(new CalcBlocClient({ apiUrl: "https://calcbloc.test/api/v1///" }).apiUrl).toBe("https://calcbloc.test/api/v1");
+    expect(new CalcBlocClient({ apiUrl: "https://calcbloc.test/api/v1" }).apiUrl).toBe("https://calcbloc.test/api/v1");
+    expect(new CalcBlocClient({ apiUrl: "/".repeat(100_000) + "x" }).apiUrl).toBe("/".repeat(100_000) + "x");
+  });
+
   it("maps API errors, invalid keys, network failures and non-JSON replies", async () => {
     const reply = (status: number, body: unknown) =>
       new CalcBlocClient({ fetch: fakeFetch(async () => new Response(typeof body === "string" ? body : JSON.stringify(body), { status })) });
