@@ -1,6 +1,8 @@
-# Publishes to npm (with provenance) and then to the official MCP Registry when a version tag (v0.1.0, ...) is pushed.
-# Before the first run: configure npm trusted publishing for this repository and workflow on npmjs.com
-# (or add an NPM_TOKEN secret), and check that package.json and server.json carry the tagged version.
+# Stages a new npm version when a version tag (v0.1.1, ...) is pushed.
+# npm trusted publishing for this package is stage-only: this run uploads the version to npm's staging
+# area, and nothing is public until a maintainer approves it on npmjs.com (package > Staged Packages >
+# Approve, with 2FA) or with `npm stage approve <stage-id>`.
+# After approving, run the "MCP Registry" workflow (registry.yml) to publish server.json.
 name: Publish
 
 on:
@@ -8,14 +10,12 @@ on:
     tags: ["v*"]
 
 jobs:
-  publish:
+  stage:
     runs-on: ubuntu-latest
     environment: release
     permissions:
       contents: read
-      id-token: write # npm trusted publishing / provenance and MCP Registry OIDC login
-    env:
-      MCP_PUBLISHER_VERSION: v1.8.1
+      id-token: write # npm trusted publishing (OIDC); provenance is generated automatically
     steps:
       - uses: actions/checkout@v5
 
@@ -35,37 +35,27 @@ jobs:
             echo "Tag $tag, package.json $pkg, server.json $srv / $srvpkg must all match"; exit 1
           fi
 
+      - name: Use npm 11.15 or newer (needed for staged publishing)
+        run: |
+          set -euo pipefail
+          v="$(npm -v)"
+          if ! node -e 'const [a, b] = process.argv[1].split(".").map(Number); process.exit(a > 11 || (a === 11 && b >= 15) ? 0 : 1)' "$v"; then
+            npm install -g npm@11
+          fi
+          npm -v
+
       - run: npm ci
       - run: npm run typecheck
       - run: npm test
 
-      - name: Publish to npm
-        run: npm publish --provenance --access public
-        env:
-          # Not needed with npm trusted publishing; used only if an NPM_TOKEN secret exists.
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Stage on npm
+        run: npm stage publish
 
-      - name: Install cosign
-        uses: sigstore/cosign-installer@6f9f17788090df1f26f669e9d70d6ae9567deba6 # v4.1.2
-
-      - name: Download and verify mcp-publisher
+      - name: Next steps
         run: |
-          set -euo pipefail
-          os="$(uname -s | tr '[:upper:]' '[:lower:]')"
-          arch="$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/')"
-          archive="mcp-publisher_${os}_${arch}.tar.gz"
-          base_url="https://github.com/modelcontextprotocol/registry/releases/download/${MCP_PUBLISHER_VERSION}"
-          curl --fail --location --silent --show-error --output "$archive" "$base_url/$archive"
-          curl --fail --location --silent --show-error --output "$archive.sigstore.json" "$base_url/$archive.sigstore.json"
-          cosign verify-blob \
-            --bundle "$archive.sigstore.json" \
-            --certificate-identity "https://github.com/modelcontextprotocol/registry/.github/workflows/release.yml@refs/tags/${MCP_PUBLISHER_VERSION}" \
-            --certificate-oidc-issuer "https://token.actions.githubusercontent.com" \
-            "$archive"
-          tar xzf "$archive" mcp-publisher
-          rm -f "$archive" "$archive.sigstore.json"
-
-      - name: Publish to the MCP Registry
-        run: |
-          ./mcp-publisher login github-oidc
-          ./mcp-publisher publish
+          {
+            echo "### calcbloc-mcp ${GITHUB_REF_NAME} is staged on npm"
+            echo
+            echo "1. Approve it: https://www.npmjs.com/package/calcbloc-mcp (Staged Packages > Approve, with 2FA)."
+            echo "2. Then run the **MCP Registry** workflow (Actions > MCP Registry > Run workflow)."
+          } >> "$GITHUB_STEP_SUMMARY"

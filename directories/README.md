@@ -1,15 +1,15 @@
 # Directory listings
 
-Ready-to-submit text and files for MCP directories. Submit only after `calcbloc-mcp` is published to npm and the GitHub repository is public; see [PUBLISHING_CHECKLIST.md](../PUBLISHING_CHECKLIST.md) for the order.
+Ready-to-submit text and files for MCP directories. `calcbloc-mcp` has been on npm and in the official MCP Registry since 13 November 2026, so the listings below can be submitted now; see [PUBLISHING_CHECKLIST.md](../PUBLISHING_CHECKLIST.md) for the order.
 
-| Directory | What to submit | File |
-| --- | --- | --- |
-| Official MCP Registry (registry.modelcontextprotocol.io) | `server.json` at the repository root, published with `mcp-publisher` | [mcp-registry/README.md](mcp-registry/README.md) |
-| Glama (glama.ai/mcp/servers) | Add the repository, then claim it with `glama.json` | [glama/](glama/) |
-| PulseMCP (pulsemcp.com) | Submission form text | [pulsemcp/listing.md](pulsemcp/listing.md) |
-| mcp.so | Submission form text | [mcp-so/listing.md](mcp-so/listing.md) |
-| Smithery (smithery.ai) | Directory only since 31 October 2026; see note | [smithery/README.md](smithery/README.md) |
-| awesome-mcp-servers (GitHub) | One line in a pull request | [awesome-mcp-servers/entry.md](awesome-mcp-servers/entry.md) |
+| Directory | Status | What to submit | File |
+| --- | --- | --- | --- |
+| Official MCP Registry (registry.modelcontextprotocol.io) | Listed (0.1.0, 13 Nov 2026) | `server.json` at the repository root, published with `mcp-publisher` | [mcp-registry/README.md](mcp-registry/README.md) |
+| Glama (glama.ai/mcp/servers) | Listed; to claim | Claim it with `glama.json` (now at the repository root) | [glama/](glama/) |
+| PulseMCP (pulsemcp.com) | To check, then submit | Submission form text | [pulsemcp/listing.md](pulsemcp/listing.md) |
+| mcp.so | To submit | Submission form text | [mcp-so/listing.md](mcp-so/listing.md) |
+| Smithery (smithery.ai) | No submissions | Directory only since 31 October 2026; see note | [smithery/README.md](smithery/README.md) |
+| awesome-mcp-servers (GitHub) | To submit | One line in a pull request | [awesome-mcp-servers/entry.md](awesome-mcp-servers/entry.md) |
 
 ## Shared listing text
 

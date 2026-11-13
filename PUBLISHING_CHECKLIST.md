@@ -2,7 +2,7 @@
 
 Steps to release `calcbloc-mcp` to npm and the official MCP Registry, then list it in directories.
 
-**Status:** 0.1.0 was released on 2026-11-13 by hand: npm with option B (account `itmarkerz`, security-key 2FA, no provenance), then the MCP Registry with `mcp-publisher login github --token` (classic PAT, `read:org` only; the device flow cannot publish to an organization namespace). Directory listings (section 5) and trusted publishing for later releases (option A) are still to do.
+**Status:** 0.1.0 was released on 2026-11-13 by hand: npm with option B (account `itmarkerz`, security-key 2FA, no provenance), then the MCP Registry with `mcp-publisher login github --token` (classic PAT, `read:org` only; the device flow cannot publish to an organization namespace). Trusted publishing (stage-only) was configured the same day and must be used once before 15 November 2026, 07:44 UTC to validate; 0.1.1 is the first release through option A. Directory listings (section 5) are in progress.
 
 ## 1. Before the first release
 
@@ -32,12 +32,13 @@ Steps to release `calcbloc-mcp` to npm and the official MCP Registry, then list 
 
 ## 3. Publish to npm
 
-**Option A, recommended: GitHub Actions with provenance.** `.github/workflows/publish.yml` runs on a `v*` tag: it checks the versions, runs the tests, publishes to npm with `--provenance`, then publishes `server.json` to the MCP Registry.
+**Option A, used from 0.1.1: GitHub Actions with staged trusted publishing.** npm trusted publishing is configured on npmjs.com (organization `itmarkerz`, repository `calcbloc-mcp`, workflow `publish.yml`, environment `release`, permission **npm stage publish**). Stage-only means CI can upload a version but cannot make it public.
 
-- [ ] On npmjs.com, configure **trusted publishing** for the package: GitHub Actions, organization `itmarkerz`, repository `calcbloc-mcp`, workflow `publish.yml`, environment `release`. If npm requires the package to exist first, do the first release with option B, then switch.
-- [ ] Alternatively add an `NPM_TOKEN` secret (granular token, publish rights for `calcbloc-mcp` only, short expiry) to the `release` environment.
-- [ ] Create the `release` environment in the GitHub repository settings and restrict it to tags `v*`.
-- [ ] Push the tag: `git push origin v0.1.0`, and watch the workflow.
+- [ ] Push the tag: `git push origin vX.Y.Z`. `.github/workflows/publish.yml` checks the versions, runs the tests and runs `npm stage publish` (npm 11.15 or newer; provenance is automatic).
+- [ ] Approve: https://www.npmjs.com/package/calcbloc-mcp > **Staged Packages** > review > **Approve** (2FA with the security key), or `npm stage approve <stage-id>` from a logged-in terminal.
+- [ ] Check `npm view calcbloc-mcp version` shows the new version.
+- [ ] Run the **MCP Registry** workflow (`.github/workflows/registry.yml`): Actions > MCP Registry > Run workflow. It refuses to run until the npm version is public, then publishes `server.json` with GitHub OIDC (no token needed).
+- [ ] Create the GitHub release for the tag with the changelog entry.
 
 **Option B: from your computer.** Provenance cannot be generated from a local machine, so this release will have none.
 
@@ -54,13 +55,13 @@ After publishing:
 
 ## 4. Publish to the official MCP Registry
 
-Done by the workflow in option A (OIDC login, nothing to configure). By hand:
+With option A, run the MCP Registry workflow after approving on npm (OIDC login, nothing to configure). By hand:
 
 - [ ] Install `mcp-publisher` from https://github.com/modelcontextprotocol/registry/releases (or `brew install mcp-publisher`).
 - [ ] `mcp-publisher validate`
 - [ ] Log in. For the `io.github.itmarkerz` namespace you must be an Owner of the GitHub organization, and the device flow cannot see organization roles, so use a token: `mcp-publisher login github --token <PAT>` with a classic PAT that has `read:org` (or a fine-grained PAT with Organization > Members > Read-only). For a `com.calcbloc` name use `mcp-publisher login dns --domain calcbloc.com --private-key <key>` after adding the TXT record.
 - [ ] `mcp-publisher publish`
-- [ ] Check: `curl "https://registry.modelcontextprotocol.io/v0/servers?search=io.github.itmarkerz/calcbloc-mcp"`
+- [ ] Check: `curl "https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.itmarkerz/calcbloc-mcp"`
 
 ## 5. Directory listings
 
@@ -75,5 +76,5 @@ Texts and files are in [`directories/`](directories/README.md).
 
 ## 6. Every later release
 
-- [ ] Update the version in `package.json` and `server.json`, add a `CHANGELOG.md` entry, tag `vX.Y.Z` and push the tag.
+- [ ] Update the version in `package.json` (`npm version X.Y.Z --no-git-tag-version`, which also updates the lockfile) and in `server.json` (two places), add a `CHANGELOG.md` entry, commit, then tag `vX.Y.Z` and push the tag; continue with option A above.
 - [ ] The MCP Registry rejects a version that already exists, so never reuse a version number.

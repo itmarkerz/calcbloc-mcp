@@ -2,6 +2,13 @@
 
 All notable changes to this package are listed here. The package follows [semantic versioning](https://semver.org/).
 
+## 0.1.1 (2026-11-13)
+
+Documentation and release process only; the server is unchanged.
+
+- README: install with `npx -y calcbloc-mcp` (the package is on npm and in the official MCP Registry), with npm, MCP Registry and licence badges. The npm page now shows this README instead of the pre-release "not yet published" note.
+- Releases: version tags stage the package on npm through trusted publishing (approved by a maintainer on npmjs.com), and a separate, manually run workflow publishes `server.json` to the MCP Registry after approval.
+
 ## 0.1.0 (2026-11-13)
 
 First version.

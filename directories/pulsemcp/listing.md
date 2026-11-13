@@ -11,4 +11,5 @@ PulseMCP imports servers from the official MCP Registry, so the listing usually 
 - **Category:** Finance
 - **Transport:** stdio (local), run with `npx -y calcbloc-mcp`
 - **Authentication:** none required; optional free API key `CALCBLOC_API_KEY` (needed after 50 requests a day)
-- **Contact email:** (owner to fill in)
+- **Contact email:** info@itmarkerz.co.in (the address already public on the npm package)
+- **MCP Registry name:** io.github.itmarkerz/calcbloc-mcp (listed since 13 November 2026; check https://www.pulsemcp.com/servers?q=calcbloc before submitting, as PulseMCP imports from the registry)

@@ -28,7 +28,7 @@ mcp-publisher publish
 Check the result:
 
 ```bash
-curl "https://registry.modelcontextprotocol.io/v0/servers?search=io.github.itmarkerz/calcbloc-mcp"
+curl "https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.itmarkerz/calcbloc-mcp"
 ```
 
 Several directories (PulseMCP among them) read from the official registry, so publishing here first helps the other listings.

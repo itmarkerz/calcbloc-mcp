@@ -1,0 +1,68 @@
+# Publishes server.json to the official MCP Registry. Run it by hand (Actions > MCP Registry > Run workflow)
+# after the staged npm version has been approved: the registry checks that the npm package version exists
+# and carries the matching mcpName. It publishes the server.json of the branch or tag you run it from.
+name: MCP Registry
+
+on:
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # MCP Registry login with GitHub OIDC
+    env:
+      MCP_PUBLISHER_VERSION: v1.8.9
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+
+      - name: Check the npm version is public
+        run: |
+          set -euo pipefail
+          ver="$(node -p "require('./server.json').version")"
+          pkg="$(node -p "require('./package.json').version")"
+          srvpkg="$(node -p "require('./server.json').packages[0].version")"
+          name="$(node -p "require('./server.json').name")"
+          if [ "$ver" != "$pkg" ] || [ "$ver" != "$srvpkg" ]; then
+            echo "package.json $pkg and server.json $ver / $srvpkg must match"; exit 1
+          fi
+          live="$(npm view "calcbloc-mcp@$ver" version 2>/dev/null || true)"
+          if [ "$live" != "$ver" ]; then
+            echo "calcbloc-mcp@$ver is not public on npm yet. Approve the staged version on npmjs.com, then run this again."; exit 1
+          fi
+          mcp="$(npm view "calcbloc-mcp@$ver" mcpName)"
+          if [ "$mcp" != "$name" ]; then
+            echo "npm mcpName '$mcp' does not match server.json name '$name'"; exit 1
+          fi
+          echo "calcbloc-mcp@$ver is public on npm with mcpName $mcp"
+
+      - name: Install cosign
+        uses: sigstore/cosign-installer@6f9f17788090df1f26f669e9d70d6ae9567deba6 # v4.1.2
+
+      - name: Download and verify mcp-publisher
+        run: |
+          set -euo pipefail
+          os="$(uname -s | tr '[:upper:]' '[:lower:]')"
+          arch="$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/')"
+          archive="mcp-publisher_${os}_${arch}.tar.gz"
+          base_url="https://github.com/modelcontextprotocol/registry/releases/download/${MCP_PUBLISHER_VERSION}"
+          curl --fail --location --silent --show-error --output "$archive" "$base_url/$archive"
+          curl --fail --location --silent --show-error --output "$archive.sigstore.json" "$base_url/$archive.sigstore.json"
+          cosign verify-blob \
+            --bundle "$archive.sigstore.json" \
+            --certificate-identity "https://github.com/modelcontextprotocol/registry/.github/workflows/release.yml@refs/tags/${MCP_PUBLISHER_VERSION}" \
+            --certificate-oidc-issuer "https://token.actions.githubusercontent.com" \
+            "$archive"
+          tar xzf "$archive" mcp-publisher
+          rm -f "$archive" "$archive.sigstore.json"
+
+      - name: Publish to the MCP Registry
+        run: |
+          ./mcp-publisher validate
+          ./mcp-publisher login github-oidc
+          ./mcp-publisher publish
