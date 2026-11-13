@@ -2,7 +2,7 @@
 
 All notable changes to this package are listed here. The package follows [semantic versioning](https://semver.org/).
 
-## Unreleased
+## 0.1.3 (2026-11-13)
 
 - Country codes and local names for Ukraine (UA, Ukraina, Україна), Liechtenstein (LI), Serbia (RS, Srbija, Србија) and Türkiye (TR, Turkiye), now that calcbloc.com publishes their tax tables (41 countries).
 
