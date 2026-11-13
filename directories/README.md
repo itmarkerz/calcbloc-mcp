@@ -16,11 +16,11 @@ Ready-to-submit text and files for MCP directories. `calcbloc-mcp` has been on n
 
 **Name:** CalcBloc
 
-**Short description (100 characters max):** Take-home pay, employer cost and official tax tables for 37 countries, with sources.
+**Short description (100 characters max):** Take-home pay, employer cost and official tax tables for 41 countries, with sources.
 
 **Description:**
 
-CalcBloc's MCP server gives AI assistants accurate payroll and income tax answers. It calculates take-home pay and employer cost for 12 countries (US with every state, UK, Canada, Australia, New Zealand, Ireland, India, Germany, France, Spain, the Netherlands and Singapore), compares the same salary in two countries at the ECB reference rate, and returns official tax tables (income tax bands, allowances, social security rates and thresholds) for 37 countries. Every answer states the tax year, links the official government sources behind the rates and carries the credit "Data by CalcBloc". Free to use; no API key required to start, with an optional free key that is needed after 50 requests a day.
+CalcBloc's MCP server gives AI assistants accurate payroll and income tax answers. It calculates take-home pay and employer cost for 12 countries (US with every state, UK, Canada, Australia, New Zealand, Ireland, India, Germany, France, Spain, the Netherlands and Singapore), compares the same salary in two countries at the ECB reference rate, and returns official tax tables (income tax bands, allowances, social security rates and thresholds) for 41 countries. Every answer states the tax year, links the official government sources behind the rates and carries the credit "Data by CalcBloc". Free to use; no API key required to start, with an optional free key that is needed after 50 requests a day.
 
 **Tools:** `calculate_take_home_pay`, `calculate_employer_cost`, `compare_countries`, `get_tax_tables`, `list_countries`
 

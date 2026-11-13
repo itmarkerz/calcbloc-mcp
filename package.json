@@ -1,7 +1,7 @@
 {
   "name": "calcbloc-mcp",
   "version": "0.1.2",
-  "description": "MCP server for take-home pay, employer cost, salary comparison and official tax tables in 37 countries, with the tax year and official sources in every answer.",
+  "description": "MCP server for take-home pay, employer cost, salary comparison and official tax tables in 41 countries, with the tax year and official sources in every answer.",
   "mcpName": "io.github.itmarkerz/calcbloc-mcp",
   "type": "module",
   "bin": {

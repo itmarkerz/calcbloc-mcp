@@ -340,11 +340,17 @@ describe("country names and codes", () => {
     ["malta", "Malta"],
     ["cyprus", "Cyprus"],
     ["iceland", "Iceland"],
+    ["ukraine", "Ukraine"],
+    ["liechtenstein", "Liechtenstein"],
+    ["serbia", "Serbia"],
+    ["turkey", "Türkiye"],
   ].map(([code, name]) => ({ code, name }) as unknown as CountryInfo);
   it("accepts ISO codes, English and local names", () => {
     const cases: [string, string][] = [
       ["LV", "latvia"], ["Latvija", "latvia"], ["hr", "croatia"], ["Hrvatska", "croatia"], ["EE", "estonia"], ["Eesti", "estonia"],
       ["bg", "bulgaria"], ["LT", "lithuania"], ["Lietuva", "lithuania"], ["mt", "malta"], ["CY", "cyprus"], ["is", "iceland"], ["Iceland", "iceland"],
+      ["UA", "ukraine"], ["Ukraina", "ukraine"], ["Україна", "ukraine"], ["li", "liechtenstein"], ["RS", "serbia"], ["Srbija", "serbia"],
+      ["Србија", "serbia"], ["TR", "turkey"], ["Turkey", "turkey"], ["Türkiye", "turkey"], ["turkiye", "turkey"],
     ];
     for (const [input, code] of cases) expect(resolveCountry(live, input).code).toBe(code);
   });

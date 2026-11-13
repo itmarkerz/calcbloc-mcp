@@ -1,6 +1,6 @@
 # CalcBloc plugin: take-home pay, employer cost and official tax tables
 
-CalcBloc gives Claude sourced answers to payroll and income tax questions. Ask what you would take home on a salary, what an employee costs an employer, how the same salary compares between two countries, or what the income tax bands, allowances and social security rates are. It covers take-home pay and employer cost for 12 countries (the United States with every state, the United Kingdom, Canada, Australia, New Zealand, Ireland, India, Germany, France, Spain, the Netherlands and Singapore) and official tax tables for 37 countries. Every answer states the tax year and links the official government sources behind the rates.
+CalcBloc gives Claude sourced answers to payroll and income tax questions. Ask what you would take home on a salary, what an employee costs an employer, how the same salary compares between two countries, or what the income tax bands, allowances and social security rates are. It covers take-home pay and employer cost for 12 countries (the United States with every state, the United Kingdom, Canada, Australia, New Zealand, Ireland, India, Germany, France, Spain, the Netherlands and Singapore) and official tax tables for 41 countries. Every answer states the tax year and links the official government sources behind the rates.
 
 CalcBloc is a product of [itmarkerz technologies](https://itmarkerz.co.in).
 

@@ -79,7 +79,18 @@ const COUNTRY_ALIASES: Record<string, string> = {
   mt: "malta",
   cy: "cyprus",
   is: "iceland",
+  ua: "ukraine",
+  ukraina: "ukraine",
+  "україна": "ukraine",
+  li: "liechtenstein",
+  rs: "serbia",
+  srbija: "serbia",
+  "србија": "serbia",
+  tr: "turkey",
+  turkiye: "turkey",
 };
+// Keys go through the same normalisation as the input (Україна loses the diaeresis on ї, for example).
+const ALIASES: Record<string, string> = Object.fromEntries(Object.entries(COUNTRY_ALIASES).map(([k, v]) => [norm(k), v]));
 
 export function countryList(countries: CountryInfo[]): string {
   return countries.map((c) => `${c.code} (${c.name})`).join(", ");
@@ -89,7 +100,7 @@ export function resolveCountry(countries: CountryInfo[], input: string): Country
   const n = norm(input);
   const direct = countries.find((c) => c.code === n || norm(c.name) === n);
   if (direct) return direct;
-  const alias = COUNTRY_ALIASES[n];
+  const alias = ALIASES[n];
   const viaAlias = alias ? countries.find((c) => c.code === alias) : undefined;
   if (viaAlias) return viaAlias;
   throw new ToolInputError(`CalcBloc does not cover "${input}". Countries available: ${countryList(countries)}.`);
