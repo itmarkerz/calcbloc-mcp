@@ -162,6 +162,20 @@ export class CalcBlocApiError extends Error {
   }
 }
 
+/**
+ * The API key from the environment: CALCBLOC_API_KEY, or CLAUDE_PLUGIN_OPTION_CALCBLOC_API_KEY, the name the Claude
+ * plugin passes its optional `calcbloc_api_key` setting under. Empty values and placeholders that a client left
+ * unsubstituted (such as "${user_config.calcbloc_api_key}") count as no key, so the free allowance is used instead
+ * of failing every request with an invalid key.
+ */
+export function apiKeyFromEnv(env: NodeJS.ProcessEnv): string | undefined {
+  for (const name of ["CALCBLOC_API_KEY", "CLAUDE_PLUGIN_OPTION_CALCBLOC_API_KEY"]) {
+    const value = env[name]?.trim();
+    if (value && !/^\$\{[^}]*\}$/.test(value)) return value;
+  }
+  return undefined;
+}
+
 export interface ClientOptions {
   /** Base URL of the API, default https://calcbloc.com/api/v1. */
   apiUrl?: string;
@@ -250,7 +264,7 @@ export class CalcBlocClient {
   static fromEnv(env: NodeJS.ProcessEnv = process.env): CalcBlocClient {
     return new CalcBlocClient({
       apiUrl: env.CALCBLOC_API_URL,
-      apiKey: env.CALCBLOC_API_KEY,
+      apiKey: apiKeyFromEnv(env),
       dataDir: env.CALCBLOC_DATA_DIR,
       timeoutMs: env.CALCBLOC_TIMEOUT_MS ? Number(env.CALCBLOC_TIMEOUT_MS) : undefined,
     });

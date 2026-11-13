@@ -3,7 +3,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
-import { CalcBlocApiError, CalcBlocClient, humanDuration } from "../src/api.js";
+import { apiKeyFromEnv, CalcBlocApiError, CalcBlocClient, humanDuration } from "../src/api.js";
 import { mockFetch } from "./mock-api.js";
 
 const fixtures = fileURLToPath(new URL("./fixtures/", import.meta.url));
@@ -29,6 +29,18 @@ describe("CalcBlocClient", () => {
     const api = CalcBlocClient.fromEnv({ CALCBLOC_API_URL: "http://localhost:9/api/v1/", CALCBLOC_API_KEY: " k " });
     expect(api.apiUrl).toBe("http://localhost:9/api/v1");
     expect(api.hasApiKey).toBe(true);
+  });
+
+  it("reads the API key from CALCBLOC_API_KEY or the Claude plugin option, ignoring empty values and placeholders", () => {
+    expect(apiKeyFromEnv({ CALCBLOC_API_KEY: " k1 " })).toBe("k1");
+    expect(apiKeyFromEnv({ CLAUDE_PLUGIN_OPTION_CALCBLOC_API_KEY: "k2" })).toBe("k2");
+    expect(apiKeyFromEnv({ CALCBLOC_API_KEY: "k1", CLAUDE_PLUGIN_OPTION_CALCBLOC_API_KEY: "k2" })).toBe("k1");
+    expect(apiKeyFromEnv({ CALCBLOC_API_KEY: "", CLAUDE_PLUGIN_OPTION_CALCBLOC_API_KEY: "k2" })).toBe("k2");
+    expect(apiKeyFromEnv({ CLAUDE_PLUGIN_OPTION_CALCBLOC_API_KEY: "${user_config.calcbloc_api_key}" })).toBeUndefined();
+    expect(apiKeyFromEnv({ CLAUDE_PLUGIN_OPTION_CALCBLOC_API_KEY: "  " })).toBeUndefined();
+    expect(apiKeyFromEnv({})).toBeUndefined();
+    expect(CalcBlocClient.fromEnv({ CLAUDE_PLUGIN_OPTION_CALCBLOC_API_KEY: "" }).hasApiKey).toBe(false);
+    expect(CalcBlocClient.fromEnv({ CLAUDE_PLUGIN_OPTION_CALCBLOC_API_KEY: "k2" }).hasApiKey).toBe(true);
   });
 
   it("trims any number of trailing slashes from the API URL", () => {

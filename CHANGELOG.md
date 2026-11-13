@@ -2,8 +2,9 @@
 
 All notable changes to this package are listed here. The package follows [semantic versioning](https://semver.org/).
 
-## Unreleased
+## 0.1.2 (2026-11-13)
 
+- The API key can also come from `CLAUDE_PLUGIN_OPTION_CALCBLOC_API_KEY`, the name the CalcBloc Claude plugin passes its optional key setting under. `CALCBLOC_API_KEY` still comes first. Empty values and placeholders a client left unsubstituted (such as `${user_config.calcbloc_api_key}`) count as no key, so the free allowance is used instead of every request failing with an invalid key.
 - Trailing slashes in `CALCBLOC_API_URL` are trimmed with a loop instead of a regular expression that CodeQL flagged as slow on long runs of `/` (js/polynomial-redos).
 - Repository: Dependabot (npm and GitHub Actions, weekly, grouped) and CodeQL code scanning are enabled.
 

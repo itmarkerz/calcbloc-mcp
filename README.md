@@ -391,6 +391,7 @@ All settings are optional environment variables, set in your client's `env` bloc
 | `CALCBLOC_DATA_DIR` | none | Folder with a copy of the [CalcBloc tax-table data](https://calcbloc.com/data?utm_source=calcbloc-mcp&utm_medium=readme&utm_campaign=itmarkerz-oss). Tax tables are read from it first (see [Offline tax tables](#offline-tax-tables)). |
 | `CALCBLOC_API_URL` | `https://calcbloc.com/api/v1` | API base URL (for testing). |
 | `CALCBLOC_TIMEOUT_MS` | `20000` | Request timeout in milliseconds. |
+| `CLAUDE_PLUGIN_OPTION_CALCBLOC_API_KEY` | none | The same API key under the name the CalcBloc Claude plugin passes it ([`plugin/`](plugin/)). `CALCBLOC_API_KEY` wins when both are set. Empty values and unfilled placeholders such as `${user_config.calcbloc_api_key}` count as no key. |
 
 ## Limits and caching
 
