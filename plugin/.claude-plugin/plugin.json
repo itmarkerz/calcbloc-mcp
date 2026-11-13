@@ -1,0 +1,29 @@
+{
+  "name": "calcbloc",
+  "displayName": "CalcBloc",
+  "version": "0.1.1",
+  "description": "Take-home pay, employer cost, salary comparison and official tax tables for 37 countries, with the tax year and official government sources in every answer.",
+  "author": {
+    "name": "itmarkerz technologies",
+    "email": "info@itmarkerz.co.in",
+    "url": "https://itmarkerz.co.in"
+  },
+  "homepage": "https://calcbloc.com/developers",
+  "repository": "https://github.com/itmarkerz/calcbloc-mcp",
+  "license": "MIT",
+  "keywords": ["tax", "income-tax", "payroll", "salary", "take-home-pay", "employer-cost", "tax-tables", "finance"],
+  "documentationUrl": "https://github.com/itmarkerz/calcbloc-mcp#readme",
+  "supportUrl": "https://github.com/itmarkerz/calcbloc-mcp/issues",
+  "privacyPolicyUrl": "https://calcbloc.com/privacy",
+  "termsOfServiceUrl": "https://calcbloc.com/developers/terms",
+  "userConfig": {
+    "calcbloc_api_key": {
+      "type": "string",
+      "title": "CalcBloc API key (optional)",
+      "description": "Leave empty to use the free allowance of 50 requests a day. A free key from https://calcbloc.com/developers/keys raises it to 5,000 a day.",
+      "sensitive": true,
+      "required": false,
+      "default": ""
+    }
+  }
+}

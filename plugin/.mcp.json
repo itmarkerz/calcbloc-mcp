@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "calcbloc": {
+      "command": "npx",
+      "args": ["-y", "calcbloc-mcp@0.1.1"],
+      "env": {
+        "CALCBLOC_API_KEY": "${user_config.calcbloc_api_key}"
+      }
+    }
+  }
+}

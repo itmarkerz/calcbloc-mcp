@@ -78,3 +78,4 @@ Texts and files are in [`directories/`](directories/README.md).
 
 - [ ] Update the version in `package.json` (`npm version X.Y.Z --no-git-tag-version`, which also updates the lockfile) and in `server.json` (two places), add a `CHANGELOG.md` entry, commit, then tag `vX.Y.Z` and push the tag; continue with option A above.
 - [ ] The MCP Registry rejects a version that already exists, so never reuse a version number.
+- [ ] Claude plugin (`plugin/`): after the new npm version is public, change the pin in `plugin/.mcp.json` (`calcbloc-mcp@X.Y.Z`) and `version` in `plugin/.claude-plugin/plugin.json`, then push. The Claude directory follows the tracked branch, scans the commit and publishes it according to the plugin's publish setting. The directory requires an exact version; never use a range or `@latest`.

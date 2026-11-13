@@ -8,6 +8,7 @@ Ready-to-submit text and files for MCP directories. `calcbloc-mcp` has been on n
 | Glama (glama.ai/mcp/servers) | Listed; to claim | Claim it with `glama.json` (now at the repository root) | [glama/](glama/) |
 | PulseMCP (pulsemcp.com) | To check, then submit | Submission form text | [pulsemcp/listing.md](pulsemcp/listing.md) |
 | mcp.so | To submit | Submission form text | [mcp-so/listing.md](mcp-so/listing.md) |
+| Claude directory (claude.ai/directory) | To submit | Plugin bundle from the [`plugin/`](../plugin/) folder, submitted at claude.ai/directory/manage (paid Claude plan) | [../plugin/README.md](../plugin/README.md) |
 | Smithery (smithery.ai) | No submissions | Directory only since 31 October 2026; see note | [smithery/README.md](smithery/README.md) |
 | awesome-mcp-servers (GitHub) | To submit | One line in a pull request | [awesome-mcp-servers/entry.md](awesome-mcp-servers/entry.md) |
 
