@@ -10,6 +10,23 @@ export class ToolInputError extends Error {
 }
 
 export type CalcKind = "net-salary" | "employer-cost";
+/** API 1.8+ endpoints with their own tools (calculate_supplemental_withholding, calculate_equity_tax). */
+export type ExtraKind = "supplemental-withholding" | "equity-tax";
+export type ToolKind = CalcKind | ExtraKind;
+
+/** How each kind is named in messages ("… needs a region", "… is not available for …"). */
+const KIND_NAME: Record<ToolKind, string> = {
+  "net-salary": "take-home pay",
+  "employer-cost": "employer cost",
+  "supplemental-withholding": "supplemental withholding",
+  "equity-tax": "equity tax",
+};
+
+/** The parameter list of an endpoint for a country (equity tax sits outside `endpoints` in /countries). */
+export function endpointParams(country: CountryInfo, kind: ToolKind): CountryParam[] | undefined {
+  if (kind === "equity-tax") return country.equity_tax?.parameters;
+  return country.endpoints[kind]?.parameters;
+}
 
 const norm = (s: string) =>
   s
@@ -154,12 +171,39 @@ export function requireCalc(country: CountryInfo, kind: CalcKind) {
   );
 }
 
-function matchRegionValue(input: string, values: string[], names: { code: string; name: string }[]): string | undefined {
+/** API 1.8+: supplemental withholding and equity tax, by country. */
+export const supportsExtra = (country: CountryInfo, kind: ExtraKind): boolean =>
+  kind === "equity-tax" ? !!country.equity_tax : !!country.endpoints["supplemental-withholding"];
+
+const EXTRA_LABEL: Record<ExtraKind, string> = { "supplemental-withholding": "Supplemental withholding", "equity-tax": "Equity tax" };
+
+/**
+ * Throws a message naming the countries that do have supplemental withholding / equity tax (from /countries), with the
+ * tax-table link for the one asked about. Against an API older than 1.8 (no country has it) it says the API lacks it.
+ */
+export function requireExtra(countries: CountryInfo[], country: CountryInfo, kind: ExtraKind): CountryParam[] {
+  const params = endpointParams(country, kind);
+  if (params) return params;
+  const supported = countries.filter((c) => supportsExtra(c, kind));
+  const t = country.endpoints["tax-tables"];
+  if (!supported.length)
+    throw new ToolInputError(
+      `${EXTRA_LABEL[kind]} is not offered by the CalcBloc API in use (it needs API 1.8 or later). ${country.name}'s official ${country.current_year} tax tables are available: call get_tax_tables, or see ${t.pageUrl}.`,
+    );
+  const takeHome = country.endpoints["net-salary"] ? " Take-home pay (calculate_take_home_pay) is available for it." : "";
+  throw new ToolInputError(
+    `${EXTRA_LABEL[kind]} is not available for ${country.name} yet. Countries with ${KIND_NAME[kind]}: ${countryList(supported)}.${takeHome} ${country.name}'s official ${country.current_year} tax tables: call get_tax_tables with country "${shortCodeOf(country)}", or see ${t.pageUrl}.`,
+  );
+}
+
+function matchRegionValue(input: string, values: string[], names: { code: string; name: string }[], aliases: Record<string, string> = {}): string | undefined {
   const n = norm(input);
   const byValue = values.find((v) => norm(v) === n);
   if (byValue) return byValue;
   const named = names.find((r) => norm(r.name) === n || norm(r.code) === n);
   if (named && values.includes(named.code)) return named.code;
+  const alias = aliases[n.replace(/-/g, "_")];
+  if (alias && values.includes(alias)) return alias;
   return undefined;
 }
 
@@ -174,21 +218,21 @@ function describeRegions(values: string[], names: { code: string; name: string }
  * The region for a calculation: validated against the endpoint's region values. Returns `undefined` with a warning
  * when the calculation has no regional option (the region is then ignored rather than rejected).
  */
-export function resolveCalcRegion(country: CountryInfo, kind: CalcKind, input: string | undefined): { region?: string; warning?: string } {
-  const ep = country.endpoints[kind];
-  const param = ep?.parameters.find((p) => p.name === "region");
-  const names = [...country.endpoints["tax-tables"].regions, ...Object.entries(param?.labels ?? {}).map(([code, name]) => ({ code, name }))];
+export function resolveCalcRegion(country: CountryInfo, kind: ToolKind, input: string | undefined): { region?: string; warning?: string } {
+  const param = endpointParams(country, kind)?.find((p) => p.name === "region");
+  // Labels first: an endpoint can name a region differently from the tax tables (UK "England & Northern Ireland").
+  const names = [...Object.entries(param?.labels ?? {}).map(([code, name]) => ({ code, name })), ...country.endpoints["tax-tables"].regions];
   if (!input?.trim()) {
     // Checked here so the assistant gets the list of codes before any API call (the API answers the same way).
     if (param?.required) {
       const values = param.values ?? names.map((r) => r.code);
-      throw new ToolInputError(`${country.name} ${kind === "net-salary" ? "take-home pay" : "employer cost"} needs a region: pass region as one of ${describeRegions(values, names, param.labels)}.`);
+      throw new ToolInputError(`${country.name} ${KIND_NAME[kind]} needs a region: pass region as one of ${describeRegions(values, names, param.labels)}.`);
     }
     return {};
   }
   if (!param) return { warning: `Region "${input}" was ignored: this ${country.name} calculation does not vary by region.` };
   const values = param.values ?? names.map((r) => r.code);
-  const match = matchRegionValue(input, values, names);
+  const match = matchRegionValue(input, values, names, param.aliases);
   if (!match) throw new ToolInputError(`Unknown ${country.name} region "${input}". Use one of: ${describeRegions(values, names, param.labels)}.`);
   return { region: match };
 }
@@ -214,10 +258,19 @@ export function tableRegionFor(country: CountryInfo, calcRegion: string | undefi
   return country.endpoints["tax-tables"].regions.some((r) => r.code === calcRegion) ? calcRegion : undefined;
 }
 
-const RESERVED = new Set(["country", "salary", "year", "region"]);
+/** Parameters each tool takes as its own arguments; the rest of an endpoint's parameters are country options. */
+const CALC_RESERVED = ["country", "salary", "year", "region"];
+const RESERVED: Record<ToolKind, Set<string>> = {
+  "net-salary": new Set(CALC_RESERVED),
+  "employer-cost": new Set(CALC_RESERVED),
+  "supplemental-withholding": new Set([...CALC_RESERVED, "amount", "type"]),
+  "equity-tax": new Set([...CALC_RESERVED, "instrument", "units", "grant_date", "event_date", "fmv_grant", "fmv_event", "exercise_price", "sale_price", "sale_date"]),
+};
+/** Tool argument names that differ from the API parameter. */
+const ARG_NAME: Record<string, string> = { salary: "gross_salary" };
 
-export function optionParams(country: CountryInfo, kind: CalcKind): CountryParam[] {
-  return (country.endpoints[kind]?.parameters ?? []).filter((p) => !RESERVED.has(p.name));
+export function optionParams(country: CountryInfo, kind: ToolKind): CountryParam[] {
+  return (endpointParams(country, kind) ?? []).filter((p) => !RESERVED[kind].has(p.name));
 }
 
 function describeParam(p: CountryParam): string {
@@ -225,24 +278,24 @@ function describeParam(p: CountryParam): string {
   return `${p.name} (${range}${p.default !== undefined ? `, default ${String(p.default)}` : ""}): ${p.description}`;
 }
 
-export function describeOptions(country: CountryInfo, kind: CalcKind): string {
+export function describeOptions(country: CountryInfo, kind: ToolKind): string {
   const ps = optionParams(country, kind);
   return ps.length ? ps.map(describeParam).join("; ") : "none";
 }
 
 /** Validates and coerces country-specific options (filing status, pension, children...) against the live parameter list. */
-export function resolveOptions(country: CountryInfo, kind: CalcKind, options: Record<string, unknown> | undefined): Record<string, QueryValue> {
+export function resolveOptions(country: CountryInfo, kind: ToolKind, options: Record<string, unknown> | undefined): Record<string, QueryValue> {
   const out: Record<string, QueryValue> = {};
   if (!options) return out;
   const params = optionParams(country, kind);
   for (const [rawKey, raw] of Object.entries(options)) {
     if (raw === undefined || raw === null || raw === "") continue;
     const key = rawKey.trim().replace(/([a-z0-9])([A-Z])/g, "$1_$2").toLowerCase().replace(/[\s-]+/g, "_");
-    if (RESERVED.has(key)) throw new ToolInputError(`Pass "${key}" as its own argument, not inside options.`);
+    if (RESERVED[kind].has(key)) throw new ToolInputError(`Pass "${ARG_NAME[key] ?? key}" as its own argument, not inside options.`);
     const p = params.find((x) => x.name === key);
     if (!p) {
       throw new ToolInputError(
-        `"${rawKey}" is not an option for ${country.name} (${kind}). Options: ${describeOptions(country, kind)}.`,
+        `"${rawKey}" is not an option for ${country.name} (${KIND_NAME[kind]}). Options: ${describeOptions(country, kind)}.`,
       );
     }
     out[p.name] = coerce(p, raw, country.name);
@@ -268,11 +321,7 @@ function coerce(p: CountryParam, raw: unknown, countryName: string): QueryValue 
   }
   if (p.values) {
     const s = String(raw).trim();
-    const hit =
-      p.values.find((v) => v === s) ??
-      p.values.find((v) => v.toLowerCase() === s.toLowerCase()) ??
-      p.values.find((v) => norm(v) === norm(s)) ??
-      optionAlias(p, s);
+    const hit = matchEnum(p, s);
     if (hit === undefined) throw bad(`"${s}" is not allowed`);
     // Enum values can be numeric strings (e.g. payments 12 | 14).
     return hit;
@@ -280,9 +329,40 @@ function coerce(p: CountryParam, raw: unknown, countryName: string): QueryValue 
   return typeof raw === "number" || typeof raw === "boolean" ? raw : String(raw);
 }
 
+/** An enum value given as the value, in another case or spelling, by alias or by label; undefined when none matches. */
+function matchEnum(p: CountryParam, s: string): string | undefined {
+  const values = p.values ?? [];
+  return (
+    values.find((v) => v === s) ??
+    values.find((v) => v.toLowerCase() === s.toLowerCase()) ??
+    values.find((v) => norm(v) === norm(s)) ??
+    optionAlias(p, s)
+  );
+}
+
+/**
+ * A per-country enum that is a tool argument of its own (supplemental `type`, equity `instrument`), resolved against
+ * the country's parameter (values, aliases, labels): a value only other countries have gets the list this one accepts.
+ */
+export function resolveEnumArg(country: CountryInfo, kind: ToolKind, name: string, label: string, input: string | undefined): string | undefined {
+  const s = input?.trim();
+  if (!s) return undefined;
+  const p = endpointParams(country, kind)?.find((x) => x.name === name);
+  if (!p?.values) return s;
+  const hit = matchEnum(p, s);
+  if (hit !== undefined) return hit;
+  const choices = p.values.map((v) => (p.labels?.[v] && p.labels[v] !== v ? `${v} (${p.labels[v]})` : v)).join(", ");
+  throw new ToolInputError(`${label} "${s}" is not available for ${country.name} (${KIND_NAME[kind]}). Use one of: ${choices}.`);
+}
+
+/** The display name of an enum value (e.g. emi → "Enterprise Management Incentives (EMI) options"), or the value. */
+export function enumLabel(country: CountryInfo, kind: ToolKind, name: string, value: string): string {
+  return endpointParams(country, kind)?.find((x) => x.name === name)?.labels?.[value] ?? value;
+}
+
 /** Checks the salary against the endpoint's range and returns its meaning (e.g. monthly in Singapore). */
-export function checkSalary(country: CountryInfo, kind: CalcKind, salary: number): string {
-  const p = country.endpoints[kind]?.parameters.find((x) => x.name === "salary");
+export function checkSalary(country: CountryInfo, kind: ToolKind, salary: number): string {
+  const p = endpointParams(country, kind)?.find((x) => x.name === "salary");
   if (p?.min !== undefined && salary < p.min) throw new ToolInputError(`Salary must be at least ${p.min} for ${country.name}.`);
   if (p?.max !== undefined && salary > p.max) throw new ToolInputError(`Salary must be at most ${p.max} for ${country.name}.`);
   return p?.description ?? `Annual gross salary in ${country.currency}.`;

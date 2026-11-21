@@ -46,6 +46,29 @@
       "ie",
       "in"
     ],
+    "equity": 5,
+    "equity_countries": [
+      "us",
+      "uk",
+      "au",
+      "ca",
+      "in"
+    ],
+    "supplemental": 12,
+    "supplemental_countries": [
+      "sg",
+      "fr",
+      "nl",
+      "es",
+      "de",
+      "us",
+      "uk",
+      "au",
+      "nz",
+      "ca",
+      "ie",
+      "in"
+    ],
     "region_required": {
       "net-salary": [
         "us",
@@ -70,8 +93,8 @@
         "in"
       ]
     },
-    "not_supported": "Equity compensation (RSUs, stock options), bonus and supplemental withholding, and cross-border (multi-country) withholding are not supported by the API yet.",
-    "summary": "41 countries with official tax tables; 12 with take-home pay calculations; 11 with employer cost; 12 in the cross-country comparison (France: take-home pay and compare only, no employer cost yet)."
+    "not_supported": "Cross-border (multi-country) withholding is not supported by the API yet. Equity compensation tax (/equity-tax) covers United States, United Kingdom, Australia, Canada, India; supplemental withholding (/supplemental-withholding: bonus, commission, RSU vest, option exercise, lump sum) covers Singapore, France, Netherlands, Spain, Germany, United States, United Kingdom, Australia, New Zealand, Canada, Ireland, India.",
+    "summary": "41 countries with official tax tables; 12 with take-home pay calculations; 11 with employer cost; 12 in the cross-country comparison (France: take-home pay and compare only, no employer cost yet); 5 with equity compensation tax (RSUs and stock options)."
   },
   "countries": [
     {
@@ -91,6 +114,9 @@
         "tax-tables"
       ],
       "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/ukraine/2026",
@@ -128,6 +154,9 @@
         "tax-tables"
       ],
       "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/serbia/2026",
@@ -165,6 +194,9 @@
         "tax-tables"
       ],
       "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/iceland/2026",
@@ -202,6 +234,9 @@
         "tax-tables"
       ],
       "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/liechtenstein/2026",
@@ -239,6 +274,9 @@
         "tax-tables"
       ],
       "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/turkey/2026",
@@ -276,6 +314,9 @@
         "tax-tables"
       ],
       "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/malta/2026",
@@ -313,6 +354,9 @@
         "tax-tables"
       ],
       "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/lithuania/2026",
@@ -350,6 +394,9 @@
         "tax-tables"
       ],
       "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/bulgaria/2026",
@@ -387,6 +434,9 @@
         "tax-tables"
       ],
       "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/cyprus/2026",
@@ -424,6 +474,9 @@
         "tax-tables"
       ],
       "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/croatia/2026",
@@ -546,6 +599,9 @@
         "tax-tables"
       ],
       "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/latvia/2026",
@@ -583,6 +639,9 @@
         "tax-tables"
       ],
       "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/greece/2026",
@@ -620,6 +679,9 @@
         "tax-tables"
       ],
       "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/estonia/2026",
@@ -657,6 +719,9 @@
         "tax-tables"
       ],
       "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/slovakia/2026",
@@ -694,6 +759,9 @@
         "tax-tables"
       ],
       "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/romania/2026",
@@ -731,6 +799,9 @@
         "tax-tables"
       ],
       "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/norway/2026",
@@ -768,6 +839,9 @@
         "tax-tables"
       ],
       "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/czechia/2026",
@@ -805,6 +879,9 @@
         "tax-tables"
       ],
       "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/luxembourg/2026",
@@ -842,6 +919,9 @@
         "tax-tables"
       ],
       "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/poland/2026",
@@ -879,6 +959,9 @@
         "tax-tables"
       ],
       "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/hungary/2026",
@@ -916,6 +999,9 @@
         "tax-tables"
       ],
       "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/finland/2026",
@@ -1030,6 +1116,9 @@
         "tax-tables"
       ],
       "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/slovenia/2026",
@@ -1067,6 +1156,9 @@
         "tax-tables"
       ],
       "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/austria/2026",
@@ -1104,6 +1196,9 @@
         "tax-tables"
       ],
       "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/sweden/2026",
@@ -1226,6 +1321,9 @@
         "tax-tables"
       ],
       "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/switzerland/2026",
@@ -1368,6 +1466,9 @@
         "tax-tables"
       ],
       "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/denmark/2026",
@@ -1426,6 +1527,9 @@
         "tax-tables"
       ],
       "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/portugal/2026",
@@ -1472,6 +1576,9 @@
         "tax-tables"
       ],
       "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/uae/2026",
@@ -1509,6 +1616,9 @@
         "tax-tables"
       ],
       "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/italy/2026",
@@ -1634,6 +1744,9 @@
         "tax-tables"
       ],
       "tables_only": false,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": true,
       "endpoints": {
         "net-salary": {
           "path": "/api/v1/net-salary?country=singapore",
@@ -1781,6 +1894,91 @@
             "json",
             "csv"
           ]
+        },
+        "supplemental-withholding": {
+          "path": "/api/v1/supplemental-withholding?country=singapore",
+          "types": [
+            "bonus",
+            "commission",
+            "rsu_vest",
+            "option_exercise",
+            "lump_sum"
+          ],
+          "parameters": [
+            {
+              "name": "salary",
+              "type": "number",
+              "required": true,
+              "min": 0,
+              "max": 1000000000,
+              "description": "Regular gross salary for the year, before the supplemental payment, in the country's currency."
+            },
+            {
+              "name": "amount",
+              "type": "number",
+              "required": true,
+              "min": 0,
+              "max": 1000000000,
+              "description": "The supplemental payment (gross), in the country's currency."
+            },
+            {
+              "name": "type",
+              "type": "enum",
+              "required": false,
+              "values": [
+                "bonus",
+                "commission",
+                "rsu_vest",
+                "option_exercise",
+                "lump_sum"
+              ],
+              "labels": {
+                "bonus": "Bonus",
+                "commission": "Commission",
+                "rsu_vest": "RSU vest",
+                "option_exercise": "Stock option exercise",
+                "lump_sum": "Lump sum"
+              },
+              "aliases": {
+                "stock_option_exercise": "option_exercise",
+                "rsu": "rsu_vest",
+                "rsus": "rsu_vest",
+                "restricted_stock_units": "rsu_vest",
+                "vest": "rsu_vest",
+                "option": "option_exercise",
+                "options": "option_exercise",
+                "stock_option": "option_exercise",
+                "exercise": "option_exercise",
+                "commissions": "commission",
+                "bonuses": "bonus",
+                "extra_pay": "bonus",
+                "lumpsum": "lump_sum"
+              },
+              "default": "bonus",
+              "description": "Kind of payment: bonus, commission, rsu_vest, option_exercise or lump_sum (the country lists the ones it supports)."
+            },
+            {
+              "name": "status",
+              "type": "enum",
+              "required": false,
+              "values": [
+                "citizen",
+                "resident",
+                "nonResident"
+              ],
+              "default": "citizen",
+              "description": "citizen (Singapore citizen or SPR from the 3rd year: CPF applies), resident (foreigner resident for tax: no CPF) or nonResident."
+            },
+            {
+              "name": "age",
+              "type": "integer",
+              "required": false,
+              "min": 16,
+              "max": 100,
+              "default": 30,
+              "description": "Age (CPF rate band and Earned Income Relief)."
+            }
+          ]
         }
       }
     },
@@ -1803,6 +2001,9 @@
         "tax-tables"
       ],
       "tables_only": false,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": true,
       "endpoints": {
         "net-salary": {
           "path": "/api/v1/net-salary?country=france",
@@ -1861,6 +2062,139 @@
             "json",
             "csv"
           ]
+        },
+        "supplemental-withholding": {
+          "path": "/api/v1/supplemental-withholding?country=france",
+          "types": [
+            "bonus",
+            "commission",
+            "rsu_vest",
+            "option_exercise",
+            "lump_sum"
+          ],
+          "parameters": [
+            {
+              "name": "salary",
+              "type": "number",
+              "required": true,
+              "min": 0,
+              "max": 1000000000,
+              "description": "Regular gross salary for the year, before the supplemental payment, in the country's currency."
+            },
+            {
+              "name": "amount",
+              "type": "number",
+              "required": true,
+              "min": 0,
+              "max": 1000000000,
+              "description": "The supplemental payment (gross), in the country's currency."
+            },
+            {
+              "name": "type",
+              "type": "enum",
+              "required": false,
+              "values": [
+                "bonus",
+                "commission",
+                "rsu_vest",
+                "option_exercise",
+                "lump_sum"
+              ],
+              "labels": {
+                "bonus": "Bonus",
+                "commission": "Commission",
+                "rsu_vest": "RSU vest",
+                "option_exercise": "Stock option exercise",
+                "lump_sum": "Lump sum"
+              },
+              "aliases": {
+                "stock_option_exercise": "option_exercise",
+                "rsu": "rsu_vest",
+                "rsus": "rsu_vest",
+                "restricted_stock_units": "rsu_vest",
+                "vest": "rsu_vest",
+                "option": "option_exercise",
+                "options": "option_exercise",
+                "stock_option": "option_exercise",
+                "exercise": "option_exercise",
+                "commissions": "commission",
+                "bonuses": "bonus",
+                "extra_pay": "bonus",
+                "lumpsum": "lump_sum"
+              },
+              "default": "bonus",
+              "description": "Kind of payment: bonus, commission, rsu_vest, option_exercise or lump_sum (the country lists the ones it supports)."
+            },
+            {
+              "name": "pas_mode",
+              "type": "enum",
+              "required": false,
+              "values": [
+                "personalised",
+                "neutral"
+              ],
+              "labels": {
+                "personalised": "Taux personnalisé",
+                "neutral": "Taux neutre (grille par défaut)"
+              },
+              "aliases": {
+                "taux_personnalise": "personalised",
+                "taux_neutre_(grille_par_defaut)": "neutral"
+              },
+              "default": "personalised",
+              "description": "Withholding rate: personalised (the household rate sent by the tax office) or neutral (the default-rate grid, when no rate is sent or the employee opted for it)."
+            },
+            {
+              "name": "pas_rate",
+              "type": "number",
+              "required": false,
+              "min": 0,
+              "max": 60,
+              "description": "Personalised PAS rate from the payslip, percent. Default: the rate the DGFiP formula gives for the regular salary."
+            },
+            {
+              "name": "territory",
+              "type": "enum",
+              "required": false,
+              "values": [
+                "metropole",
+                "guadeloupe_reunion_martinique",
+                "guyane_mayotte"
+              ],
+              "default": "metropole",
+              "description": "Neutral-rate grid: mainland France, Guadeloupe/Réunion/Martinique, or Guyane/Mayotte."
+            },
+            {
+              "name": "cadre",
+              "type": "boolean",
+              "required": false,
+              "default": false,
+              "description": "Cadre (executive) status (Apec contribution)."
+            },
+            {
+              "name": "couple",
+              "type": "boolean",
+              "required": false,
+              "default": false,
+              "description": "Married or PACS couple taxed jointly (two household parts)."
+            },
+            {
+              "name": "children",
+              "type": "integer",
+              "required": false,
+              "min": 0,
+              "max": 20,
+              "default": 0,
+              "description": "Dependent children (household parts)."
+            },
+            {
+              "name": "single_parent",
+              "type": "boolean",
+              "required": false,
+              "default": false,
+              "description": "Single parent living alone with the children (case T)."
+            }
+          ]
         }
       }
     },
@@ -1884,6 +2218,9 @@
         "tax-tables"
       ],
       "tables_only": false,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": true,
       "endpoints": {
         "net-salary": {
           "path": "/api/v1/net-salary?country=netherlands",
@@ -2035,6 +2372,103 @@
             "json",
             "csv"
           ]
+        },
+        "supplemental-withholding": {
+          "path": "/api/v1/supplemental-withholding?country=netherlands",
+          "types": [
+            "bonus",
+            "commission",
+            "rsu_vest",
+            "option_exercise",
+            "lump_sum"
+          ],
+          "parameters": [
+            {
+              "name": "salary",
+              "type": "number",
+              "required": true,
+              "min": 0,
+              "max": 1000000000,
+              "description": "Regular gross salary for the year, before the supplemental payment, in the country's currency."
+            },
+            {
+              "name": "amount",
+              "type": "number",
+              "required": true,
+              "min": 0,
+              "max": 1000000000,
+              "description": "The supplemental payment (gross), in the country's currency."
+            },
+            {
+              "name": "type",
+              "type": "enum",
+              "required": false,
+              "values": [
+                "bonus",
+                "commission",
+                "rsu_vest",
+                "option_exercise",
+                "lump_sum"
+              ],
+              "labels": {
+                "bonus": "Bonus",
+                "commission": "Commission",
+                "rsu_vest": "RSU vest",
+                "option_exercise": "Stock option exercise",
+                "lump_sum": "Lump sum"
+              },
+              "aliases": {
+                "stock_option_exercise": "option_exercise",
+                "rsu": "rsu_vest",
+                "rsus": "rsu_vest",
+                "restricted_stock_units": "rsu_vest",
+                "vest": "rsu_vest",
+                "option": "option_exercise",
+                "options": "option_exercise",
+                "stock_option": "option_exercise",
+                "exercise": "option_exercise",
+                "commissions": "commission",
+                "bonuses": "bonus",
+                "extra_pay": "bonus",
+                "lumpsum": "lump_sum"
+              },
+              "default": "bonus",
+              "description": "Kind of payment: bonus, commission, rsu_vest, option_exercise or lump_sum (the country lists the ones it supports)."
+            },
+            {
+              "name": "loonheffingskorting",
+              "type": "boolean",
+              "required": false,
+              "default": true,
+              "description": "The employer applies the payroll tax credit (loonheffingskorting) for this employee (usually yes at the main job)."
+            },
+            {
+              "name": "jaarloon",
+              "type": "number",
+              "required": false,
+              "min": 0,
+              "description": "Jaarloon for the table: the taxable wage this employer paid in the previous calendar year (column 14 of the payroll record), or for a new employee the current year's wage annualised. Default: regularAnnual."
+            },
+            {
+              "name": "age_group",
+              "type": "enum",
+              "required": false,
+              "values": [
+                "below_aow",
+                "aow_born_before_1946",
+                "aow_born_from_1946"
+              ],
+              "default": "below_aow",
+              "description": "Below AOW (state pension) age, or AOW age and over born before 1946 / from 1946."
+            },
+            {
+              "name": "single_elderly_credit",
+              "type": "boolean",
+              "required": false,
+              "default": false,
+              "description": "AOW age only: the employer also applies the alleenstaande-ouderenkorting."
+            }
+          ]
         }
       }
     },
@@ -2058,6 +2492,9 @@
         "tax-tables"
       ],
       "tables_only": false,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": true,
       "endpoints": {
         "net-salary": {
           "path": "/api/v1/net-salary?country=spain",
@@ -2511,6 +2948,202 @@
             "json",
             "csv"
           ]
+        },
+        "supplemental-withholding": {
+          "path": "/api/v1/supplemental-withholding?country=spain",
+          "types": [
+            "bonus",
+            "commission",
+            "rsu_vest",
+            "option_exercise",
+            "lump_sum"
+          ],
+          "parameters": [
+            {
+              "name": "salary",
+              "type": "number",
+              "required": true,
+              "min": 0,
+              "max": 1000000000,
+              "description": "Regular gross salary for the year, before the supplemental payment, in the country's currency."
+            },
+            {
+              "name": "amount",
+              "type": "number",
+              "required": true,
+              "min": 0,
+              "max": 1000000000,
+              "description": "The supplemental payment (gross), in the country's currency."
+            },
+            {
+              "name": "type",
+              "type": "enum",
+              "required": false,
+              "values": [
+                "bonus",
+                "commission",
+                "rsu_vest",
+                "option_exercise",
+                "lump_sum"
+              ],
+              "labels": {
+                "bonus": "Bonus",
+                "commission": "Commission",
+                "rsu_vest": "RSU vest",
+                "option_exercise": "Stock option exercise",
+                "lump_sum": "Lump sum"
+              },
+              "aliases": {
+                "stock_option_exercise": "option_exercise",
+                "rsu": "rsu_vest",
+                "rsus": "rsu_vest",
+                "restricted_stock_units": "rsu_vest",
+                "vest": "rsu_vest",
+                "option": "option_exercise",
+                "options": "option_exercise",
+                "stock_option": "option_exercise",
+                "exercise": "option_exercise",
+                "commissions": "commission",
+                "bonuses": "bonus",
+                "extra_pay": "bonus",
+                "lumpsum": "lump_sum"
+              },
+              "default": "bonus",
+              "description": "Kind of payment: bonus, commission, rsu_vest, option_exercise or lump_sum (the country lists the ones it supports)."
+            },
+            {
+              "name": "region",
+              "type": "enum",
+              "required": false,
+              "values": [
+                "md",
+                "ct",
+                "an",
+                "vc",
+                "ga",
+                "cl",
+                "ar",
+                "cn",
+                "cm",
+                "mc",
+                "as",
+                "ib",
+                "ex",
+                "cb",
+                "ri",
+                "ce",
+                "ml"
+              ],
+              "labels": {
+                "md": "Comunidad de Madrid",
+                "ct": "Cataluña",
+                "an": "Andalucía",
+                "vc": "Comunitat Valenciana",
+                "ga": "Galicia",
+                "cl": "Castilla y León",
+                "ar": "Aragón",
+                "cn": "Canarias",
+                "cm": "Castilla-La Mancha",
+                "mc": "Región de Murcia",
+                "as": "Asturias",
+                "ib": "Illes Balears",
+                "ex": "Extremadura",
+                "cb": "Cantabria",
+                "ri": "La Rioja",
+                "ce": "Ceuta",
+                "ml": "Melilla"
+              },
+              "aliases": {
+                "comunidad_de_madrid": "md",
+                "cataluna": "ct",
+                "andalucia": "an",
+                "comunitat_valenciana": "vc",
+                "galicia": "ga",
+                "castilla_y_leon": "cl",
+                "aragon": "ar",
+                "canarias": "cn",
+                "castilla_la_mancha": "cm",
+                "region_de_murcia": "mc",
+                "asturias": "as",
+                "illes_balears": "ib",
+                "extremadura": "ex",
+                "cantabria": "cb",
+                "la_rioja": "ri",
+                "ceuta": "ce",
+                "melilla": "ml"
+              },
+              "description": "Region (optional for this country)."
+            },
+            {
+              "name": "month_paid",
+              "type": "integer",
+              "required": false,
+              "min": 1,
+              "max": 12,
+              "default": 12,
+              "description": "Month the bonus is paid (1–12). 1 = foreseen from January (in the annual forecast from the first payslip)."
+            },
+            {
+              "name": "contract",
+              "type": "enum",
+              "required": false,
+              "values": [
+                "permanent",
+                "temporary"
+              ],
+              "default": "permanent",
+              "description": "permanent (indefinido) or temporary (fixed-term): sets the unemployment contribution rate."
+            },
+            {
+              "name": "under_one_year",
+              "type": "boolean",
+              "required": false,
+              "default": false,
+              "description": "Contract shorter than one year (2% minimum withholding rate)."
+            },
+            {
+              "name": "situation",
+              "type": "enum",
+              "required": false,
+              "values": [
+                "singleParent",
+                "spouseLowIncome",
+                "other"
+              ],
+              "default": "other",
+              "description": "Family situation for withholding (1 single parent, 2 spouse with low income, 3 other)."
+            },
+            {
+              "name": "children",
+              "type": "integer",
+              "required": false,
+              "min": 0,
+              "max": 20,
+              "default": 0,
+              "description": "Children under 25 living with you."
+            },
+            {
+              "name": "children_under_3",
+              "type": "integer",
+              "required": false,
+              "min": 0,
+              "max": 20,
+              "default": 0,
+              "description": "Of whom under 3."
+            },
+            {
+              "name": "age",
+              "type": "enum",
+              "required": false,
+              "values": [
+                "under65",
+                "65to74",
+                "75plus"
+              ],
+              "default": "under65",
+              "description": "Age band."
+            }
+          ]
         }
       }
     },
@@ -2534,6 +3167,9 @@
         "tax-tables"
       ],
       "tables_only": false,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": true,
       "endpoints": {
         "net-salary": {
           "path": "/api/v1/net-salary?country=germany",
@@ -2824,6 +3460,210 @@
             "json",
             "csv"
           ]
+        },
+        "supplemental-withholding": {
+          "path": "/api/v1/supplemental-withholding?country=germany",
+          "types": [
+            "bonus",
+            "commission",
+            "rsu_vest",
+            "option_exercise",
+            "lump_sum"
+          ],
+          "parameters": [
+            {
+              "name": "salary",
+              "type": "number",
+              "required": true,
+              "min": 0,
+              "max": 1000000000,
+              "description": "Regular gross salary for the year, before the supplemental payment, in the country's currency."
+            },
+            {
+              "name": "amount",
+              "type": "number",
+              "required": true,
+              "min": 0,
+              "max": 1000000000,
+              "description": "The supplemental payment (gross), in the country's currency."
+            },
+            {
+              "name": "type",
+              "type": "enum",
+              "required": false,
+              "values": [
+                "bonus",
+                "commission",
+                "rsu_vest",
+                "option_exercise",
+                "lump_sum"
+              ],
+              "labels": {
+                "bonus": "Bonus",
+                "commission": "Commission",
+                "rsu_vest": "RSU vest",
+                "option_exercise": "Stock option exercise",
+                "lump_sum": "Lump sum"
+              },
+              "aliases": {
+                "stock_option_exercise": "option_exercise",
+                "rsu": "rsu_vest",
+                "rsus": "rsu_vest",
+                "restricted_stock_units": "rsu_vest",
+                "vest": "rsu_vest",
+                "option": "option_exercise",
+                "options": "option_exercise",
+                "stock_option": "option_exercise",
+                "exercise": "option_exercise",
+                "commissions": "commission",
+                "bonuses": "bonus",
+                "extra_pay": "bonus",
+                "lumpsum": "lump_sum"
+              },
+              "default": "bonus",
+              "description": "Kind of payment: bonus, commission, rsu_vest, option_exercise or lump_sum (the country lists the ones it supports)."
+            },
+            {
+              "name": "region",
+              "type": "enum",
+              "required": false,
+              "values": [
+                "bw",
+                "by",
+                "be",
+                "bb",
+                "hb",
+                "hh",
+                "he",
+                "mv",
+                "ni",
+                "nw",
+                "rp",
+                "sl",
+                "sn",
+                "st",
+                "sh",
+                "th"
+              ],
+              "labels": {
+                "bw": "Baden-Württemberg",
+                "by": "Bayern",
+                "be": "Berlin",
+                "bb": "Brandenburg",
+                "hb": "Bremen",
+                "hh": "Hamburg",
+                "he": "Hessen",
+                "mv": "Mecklenburg-Vorpommern",
+                "ni": "Niedersachsen",
+                "nw": "Nordrhein-Westfalen",
+                "rp": "Rheinland-Pfalz",
+                "sl": "Saarland",
+                "sn": "Sachsen",
+                "st": "Sachsen-Anhalt",
+                "sh": "Schleswig-Holstein",
+                "th": "Thüringen"
+              },
+              "aliases": {
+                "baden_wurttemberg": "bw",
+                "bayern": "by",
+                "berlin": "be",
+                "brandenburg": "bb",
+                "bremen": "hb",
+                "hamburg": "hh",
+                "hessen": "he",
+                "mecklenburg_vorpommern": "mv",
+                "niedersachsen": "ni",
+                "nordrhein_westfalen": "nw",
+                "rheinland_pfalz": "rp",
+                "saarland": "sl",
+                "sachsen": "sn",
+                "sachsen_anhalt": "st",
+                "schleswig_holstein": "sh",
+                "thuringen": "th"
+              },
+              "description": "Region (optional for this country)."
+            },
+            {
+              "name": "tax_class",
+              "type": "integer",
+              "required": false,
+              "min": 1,
+              "max": 6,
+              "default": 1,
+              "description": "Wage tax class (Steuerklasse) 1 to 6."
+            },
+            {
+              "name": "church",
+              "type": "boolean",
+              "required": false,
+              "default": false,
+              "description": "Church member paying church tax (8% in Bavaria and Baden-Württemberg, 9% elsewhere)."
+            },
+            {
+              "name": "children",
+              "type": "integer",
+              "required": false,
+              "min": 0,
+              "max": 20,
+              "default": 0,
+              "description": "Children (child allowances for the surcharge and church tax; care-insurance discounts)."
+            },
+            {
+              "name": "over_23",
+              "type": "boolean",
+              "required": false,
+              "default": true,
+              "description": "Aged 23 or over (childless care surcharge applies without children)."
+            },
+            {
+              "name": "health_add_on_pct",
+              "type": "number",
+              "required": false,
+              "min": 0,
+              "max": 10,
+              "description": "The health fund's additional contribution rate, percent (default: the 2026 average)."
+            },
+            {
+              "name": "fuenftel",
+              "type": "boolean",
+              "required": false,
+              "default": false,
+              "description": "The payment qualifies for the Fünftelregelung (§ 34 EStG: severance for loss of the job, or remuneration for work over more than 12 months spanning two years). Applied in the assessment only; the employer withholds without it."
+            },
+            {
+              "name": "month_paid",
+              "type": "integer",
+              "required": false,
+              "min": 1,
+              "max": 12,
+              "default": 12,
+              "description": "Month the payment is made (1–12), for the pro-rata contribution ceilings of § 23a SGB IV."
+            },
+            {
+              "name": "state",
+              "type": "enum",
+              "required": false,
+              "values": [
+                "bw",
+                "by",
+                "be",
+                "bb",
+                "hb",
+                "hh",
+                "he",
+                "mv",
+                "ni",
+                "nw",
+                "rp",
+                "sl",
+                "sn",
+                "st",
+                "sh",
+                "th"
+              ],
+              "description": "Federal state (same as region; region takes precedence)."
+            }
+          ]
         }
       }
     },
@@ -2847,6 +3687,330 @@
         "tax-tables"
       ],
       "tables_only": false,
+      "equity": true,
+      "equity_tax": {
+        "path": "/api/v1/equity-tax?country=us",
+        "tax_year": "2026",
+        "instruments": [
+          "rsu",
+          "nso",
+          "iso"
+        ],
+        "parameters": [
+          {
+            "name": "instrument",
+            "type": "enum",
+            "required": true,
+            "values": [
+              "rsu",
+              "nso",
+              "iso"
+            ],
+            "labels": {
+              "rsu": "Restricted stock units (RSUs)",
+              "nso": "Non-qualified stock options (NSOs)",
+              "iso": "Incentive stock options (ISOs)"
+            },
+            "aliases": {
+              "restricted_stock_units_(rsus)": "rsu",
+              "non_qualified_stock_options_(nsos)": "nso",
+              "incentive_stock_options_(isos)": "iso",
+              "restricted_stock_unit": "rsu",
+              "restricted_stock_units": "rsu",
+              "rsus": "rsu",
+              "nqso": "nso",
+              "nqsos": "nso",
+              "non_qualified": "nso",
+              "non_qualified_stock_option": "nso",
+              "nonqualified_stock_option": "nso",
+              "nonstatutory_stock_option": "nso",
+              "incentive_stock_option": "iso",
+              "incentive_stock_options": "iso"
+            },
+            "description": "Equity instrument."
+          },
+          {
+            "name": "units",
+            "type": "number",
+            "required": true,
+            "min": 0,
+            "max": 1000000000,
+            "description": "Number of shares vesting or options exercised."
+          },
+          {
+            "name": "grant_date",
+            "type": "date",
+            "required": true,
+            "description": "Grant date (YYYY-MM-DD)."
+          },
+          {
+            "name": "event_date",
+            "type": "date",
+            "required": true,
+            "description": "Vest date (RSUs), exercise date (options), or acquisition / deferred taxing point (Australia ESS) (YYYY-MM-DD)."
+          },
+          {
+            "name": "fmv_event",
+            "type": "number",
+            "required": true,
+            "min": 0,
+            "max": 1000000000,
+            "description": "Market value per share at vest / exercise (India: FMV under rule 15(6))."
+          },
+          {
+            "name": "fmv_grant",
+            "type": "number",
+            "required": false,
+            "min": 0,
+            "max": 1000000000,
+            "description": "Market value per share at grant (UK EMI discount and CSOP limit, Canada 110(1)(d) and vesting limit)."
+          },
+          {
+            "name": "exercise_price",
+            "type": "number",
+            "required": false,
+            "min": 0,
+            "max": 1000000000,
+            "description": "Exercise price per share (required for options; RSUs: amount paid, default 0)."
+          },
+          {
+            "name": "sale_price",
+            "type": "number",
+            "required": false,
+            "min": 0,
+            "max": 1000000000,
+            "description": "Sale price per share (with sale_date: the capital gains part)."
+          },
+          {
+            "name": "sale_date",
+            "type": "date",
+            "required": false,
+            "description": "Sale date (YYYY-MM-DD), with sale_price."
+          },
+          {
+            "name": "salary",
+            "type": "number",
+            "required": true,
+            "min": 0,
+            "max": 1000000000,
+            "description": "Regular annual salary in the country's currency (for the marginal rates and contribution ceilings)."
+          },
+          {
+            "name": "region",
+            "type": "enum",
+            "required": false,
+            "values": [
+              "al",
+              "ak",
+              "az",
+              "ar",
+              "ca",
+              "co",
+              "ct",
+              "de",
+              "dc",
+              "fl",
+              "ga",
+              "hi",
+              "id",
+              "il",
+              "in",
+              "ia",
+              "ks",
+              "ky",
+              "la",
+              "me",
+              "md",
+              "ma",
+              "mi",
+              "mn",
+              "ms",
+              "mo",
+              "mt",
+              "ne",
+              "nv",
+              "nh",
+              "nj",
+              "nm",
+              "ny",
+              "nc",
+              "nd",
+              "oh",
+              "ok",
+              "or",
+              "pa",
+              "ri",
+              "sc",
+              "sd",
+              "tn",
+              "tx",
+              "ut",
+              "vt",
+              "va",
+              "wa",
+              "wv",
+              "wi",
+              "wy"
+            ],
+            "labels": {
+              "al": "Alabama",
+              "ak": "Alaska",
+              "az": "Arizona",
+              "ar": "Arkansas",
+              "ca": "California",
+              "co": "Colorado",
+              "ct": "Connecticut",
+              "de": "Delaware",
+              "dc": "District of Columbia",
+              "fl": "Florida",
+              "ga": "Georgia",
+              "hi": "Hawaii",
+              "id": "Idaho",
+              "il": "Illinois",
+              "in": "Indiana",
+              "ia": "Iowa",
+              "ks": "Kansas",
+              "ky": "Kentucky",
+              "la": "Louisiana",
+              "me": "Maine",
+              "md": "Maryland",
+              "ma": "Massachusetts",
+              "mi": "Michigan",
+              "mn": "Minnesota",
+              "ms": "Mississippi",
+              "mo": "Missouri",
+              "mt": "Montana",
+              "ne": "Nebraska",
+              "nv": "Nevada",
+              "nh": "New Hampshire",
+              "nj": "New Jersey",
+              "nm": "New Mexico",
+              "ny": "New York",
+              "nc": "North Carolina",
+              "nd": "North Dakota",
+              "oh": "Ohio",
+              "ok": "Oklahoma",
+              "or": "Oregon",
+              "pa": "Pennsylvania",
+              "ri": "Rhode Island",
+              "sc": "South Carolina",
+              "sd": "South Dakota",
+              "tn": "Tennessee",
+              "tx": "Texas",
+              "ut": "Utah",
+              "vt": "Vermont",
+              "va": "Virginia",
+              "wa": "Washington",
+              "wv": "West Virginia",
+              "wi": "Wisconsin",
+              "wy": "Wyoming"
+            },
+            "aliases": {
+              "alabama": "al",
+              "alaska": "ak",
+              "arizona": "az",
+              "arkansas": "ar",
+              "california": "ca",
+              "colorado": "co",
+              "connecticut": "ct",
+              "delaware": "de",
+              "district_of_columbia": "dc",
+              "florida": "fl",
+              "georgia": "ga",
+              "hawaii": "hi",
+              "idaho": "id",
+              "illinois": "il",
+              "indiana": "in",
+              "iowa": "ia",
+              "kansas": "ks",
+              "kentucky": "ky",
+              "louisiana": "la",
+              "maine": "me",
+              "maryland": "md",
+              "massachusetts": "ma",
+              "michigan": "mi",
+              "minnesota": "mn",
+              "mississippi": "ms",
+              "missouri": "mo",
+              "montana": "mt",
+              "nebraska": "ne",
+              "nevada": "nv",
+              "new_hampshire": "nh",
+              "new_jersey": "nj",
+              "new_mexico": "nm",
+              "new_york": "ny",
+              "north_carolina": "nc",
+              "north_dakota": "nd",
+              "ohio": "oh",
+              "oklahoma": "ok",
+              "oregon": "or",
+              "pennsylvania": "pa",
+              "rhode_island": "ri",
+              "south_carolina": "sc",
+              "south_dakota": "sd",
+              "tennessee": "tn",
+              "texas": "tx",
+              "utah": "ut",
+              "vermont": "vt",
+              "virginia": "va",
+              "washington": "wa",
+              "west_virginia": "wv",
+              "wisconsin": "wi",
+              "wyoming": "wy"
+            },
+            "description": "State (two-letter code) for state withholding; omit for federal only."
+          },
+          {
+            "name": "filing_status",
+            "type": "enum",
+            "required": false,
+            "values": [
+              "single",
+              "mfj",
+              "mfs",
+              "hoh",
+              "qss"
+            ],
+            "labels": {
+              "single": "Single",
+              "mfj": "Married filing jointly",
+              "mfs": "Married filing separately",
+              "hoh": "Head of household",
+              "qss": "Qualifying surviving spouse"
+            },
+            "aliases": {
+              "married": "mfj",
+              "married_joint": "mfj",
+              "married_jointly": "mfj",
+              "married_filing_jointly": "mfj",
+              "joint": "mfj",
+              "married_separately": "mfs",
+              "married_separate": "mfs",
+              "married_filing_separately": "mfs",
+              "head_of_household": "hoh",
+              "head_of_house": "hoh",
+              "household_head": "hoh",
+              "qualifying_widow": "qss",
+              "qualifying_widower": "qss",
+              "qualifying_surviving_spouse": "qss",
+              "widow": "qss",
+              "widower": "qss"
+            },
+            "default": "single",
+            "description": "Federal filing status."
+          },
+          {
+            "name": "ytd_supplemental",
+            "type": "number",
+            "required": false,
+            "min": 0,
+            "max": 1000000000,
+            "default": 0,
+            "description": "Supplemental wages already paid this calendar year (bonuses, earlier vests), for the 37% rate above $1 million."
+          }
+        ]
+      },
+      "supplemental": true,
       "endpoints": {
         "net-salary": {
           "path": "/api/v1/net-salary?country=us",
@@ -3577,6 +4741,314 @@
             "json",
             "csv"
           ]
+        },
+        "supplemental-withholding": {
+          "path": "/api/v1/supplemental-withholding?country=us",
+          "types": [
+            "bonus",
+            "commission",
+            "rsu_vest",
+            "option_exercise",
+            "lump_sum"
+          ],
+          "parameters": [
+            {
+              "name": "salary",
+              "type": "number",
+              "required": true,
+              "min": 0,
+              "max": 1000000000,
+              "description": "Regular gross salary for the year, before the supplemental payment, in the country's currency."
+            },
+            {
+              "name": "amount",
+              "type": "number",
+              "required": true,
+              "min": 0,
+              "max": 1000000000,
+              "description": "The supplemental payment (gross), in the country's currency."
+            },
+            {
+              "name": "type",
+              "type": "enum",
+              "required": false,
+              "values": [
+                "bonus",
+                "commission",
+                "rsu_vest",
+                "option_exercise",
+                "lump_sum"
+              ],
+              "labels": {
+                "bonus": "Bonus",
+                "commission": "Commission",
+                "rsu_vest": "RSU vest",
+                "option_exercise": "Stock option exercise",
+                "lump_sum": "Lump sum"
+              },
+              "aliases": {
+                "stock_option_exercise": "option_exercise",
+                "rsu": "rsu_vest",
+                "rsus": "rsu_vest",
+                "restricted_stock_units": "rsu_vest",
+                "vest": "rsu_vest",
+                "option": "option_exercise",
+                "options": "option_exercise",
+                "stock_option": "option_exercise",
+                "exercise": "option_exercise",
+                "commissions": "commission",
+                "bonuses": "bonus",
+                "extra_pay": "bonus",
+                "lumpsum": "lump_sum"
+              },
+              "default": "bonus",
+              "description": "Kind of payment: bonus, commission, rsu_vest, option_exercise or lump_sum (the country lists the ones it supports)."
+            },
+            {
+              "name": "region",
+              "type": "enum",
+              "required": true,
+              "values": [
+                "al",
+                "ak",
+                "az",
+                "ar",
+                "ca",
+                "co",
+                "ct",
+                "de",
+                "dc",
+                "fl",
+                "ga",
+                "hi",
+                "id",
+                "il",
+                "in",
+                "ia",
+                "ks",
+                "ky",
+                "la",
+                "me",
+                "md",
+                "ma",
+                "mi",
+                "mn",
+                "ms",
+                "mo",
+                "mt",
+                "ne",
+                "nv",
+                "nh",
+                "nj",
+                "nm",
+                "ny",
+                "nc",
+                "nd",
+                "oh",
+                "ok",
+                "or",
+                "pa",
+                "ri",
+                "sc",
+                "sd",
+                "tn",
+                "tx",
+                "ut",
+                "vt",
+                "va",
+                "wa",
+                "wv",
+                "wi",
+                "wy"
+              ],
+              "labels": {
+                "al": "Alabama",
+                "ak": "Alaska",
+                "az": "Arizona",
+                "ar": "Arkansas",
+                "ca": "California",
+                "co": "Colorado",
+                "ct": "Connecticut",
+                "de": "Delaware",
+                "dc": "District of Columbia",
+                "fl": "Florida",
+                "ga": "Georgia",
+                "hi": "Hawaii",
+                "id": "Idaho",
+                "il": "Illinois",
+                "in": "Indiana",
+                "ia": "Iowa",
+                "ks": "Kansas",
+                "ky": "Kentucky",
+                "la": "Louisiana",
+                "me": "Maine",
+                "md": "Maryland",
+                "ma": "Massachusetts",
+                "mi": "Michigan",
+                "mn": "Minnesota",
+                "ms": "Mississippi",
+                "mo": "Missouri",
+                "mt": "Montana",
+                "ne": "Nebraska",
+                "nv": "Nevada",
+                "nh": "New Hampshire",
+                "nj": "New Jersey",
+                "nm": "New Mexico",
+                "ny": "New York",
+                "nc": "North Carolina",
+                "nd": "North Dakota",
+                "oh": "Ohio",
+                "ok": "Oklahoma",
+                "or": "Oregon",
+                "pa": "Pennsylvania",
+                "ri": "Rhode Island",
+                "sc": "South Carolina",
+                "sd": "South Dakota",
+                "tn": "Tennessee",
+                "tx": "Texas",
+                "ut": "Utah",
+                "vt": "Vermont",
+                "va": "Virginia",
+                "wa": "Washington",
+                "wv": "West Virginia",
+                "wi": "Wisconsin",
+                "wy": "Wyoming"
+              },
+              "aliases": {
+                "alabama": "al",
+                "alaska": "ak",
+                "arizona": "az",
+                "arkansas": "ar",
+                "california": "ca",
+                "colorado": "co",
+                "connecticut": "ct",
+                "delaware": "de",
+                "district_of_columbia": "dc",
+                "florida": "fl",
+                "georgia": "ga",
+                "hawaii": "hi",
+                "idaho": "id",
+                "illinois": "il",
+                "indiana": "in",
+                "iowa": "ia",
+                "kansas": "ks",
+                "kentucky": "ky",
+                "louisiana": "la",
+                "maine": "me",
+                "maryland": "md",
+                "massachusetts": "ma",
+                "michigan": "mi",
+                "minnesota": "mn",
+                "mississippi": "ms",
+                "missouri": "mo",
+                "montana": "mt",
+                "nebraska": "ne",
+                "nevada": "nv",
+                "new_hampshire": "nh",
+                "new_jersey": "nj",
+                "new_mexico": "nm",
+                "new_york": "ny",
+                "north_carolina": "nc",
+                "north_dakota": "nd",
+                "ohio": "oh",
+                "oklahoma": "ok",
+                "oregon": "or",
+                "pennsylvania": "pa",
+                "rhode_island": "ri",
+                "south_carolina": "sc",
+                "south_dakota": "sd",
+                "tennessee": "tn",
+                "texas": "tx",
+                "utah": "ut",
+                "vermont": "vt",
+                "virginia": "va",
+                "washington": "wa",
+                "west_virginia": "wv",
+                "wisconsin": "wi",
+                "wyoming": "wy"
+              },
+              "description": "Region (required for this country)."
+            },
+            {
+              "name": "filing_status",
+              "type": "enum",
+              "required": false,
+              "values": [
+                "single",
+                "mfj",
+                "hoh"
+              ],
+              "labels": {
+                "single": "Single or married filing separately",
+                "mfj": "Married filing jointly",
+                "hoh": "Head of household"
+              },
+              "aliases": {
+                "married": "mfj",
+                "married_joint": "mfj",
+                "married_jointly": "mfj",
+                "married_filing_jointly": "mfj",
+                "joint": "mfj",
+                "head_of_household": "hoh",
+                "head_of_house": "hoh",
+                "household_head": "hoh",
+                "single_or_married_filing_separately": "single"
+              },
+              "default": "single",
+              "description": "Form W-4 filing status (also used as the Form 1040 status for the liability)."
+            },
+            {
+              "name": "method",
+              "type": "enum",
+              "required": false,
+              "values": [
+                "flat",
+                "aggregate"
+              ],
+              "labels": {
+                "flat": "Optional flat rate (method 1a)",
+                "aggregate": "Aggregate method (method 1b)"
+              },
+              "aliases": {
+                "optional_flat_rate_(method_1a)": "flat",
+                "aggregate_method_(method_1b)": "aggregate"
+              },
+              "default": "flat",
+              "description": "Federal method for supplemental wages up to $1 million: flat (Pub 15 method 1a, 22%) or aggregate (method 1b, with one regular paycheck)."
+            },
+            {
+              "name": "frequency",
+              "type": "enum",
+              "required": false,
+              "values": [
+                "weekly",
+                "biweekly",
+                "semimonthly",
+                "monthly"
+              ],
+              "labels": {
+                "weekly": "Weekly",
+                "biweekly": "Every two weeks",
+                "semimonthly": "Twice a month",
+                "monthly": "Monthly"
+              },
+              "aliases": {
+                "every_two_weeks": "biweekly",
+                "twice_a_month": "semimonthly"
+              },
+              "default": "biweekly",
+              "description": "Regular pay frequency (the aggregate method and aggregate-method states add the payment to one regular paycheck)."
+            },
+            {
+              "name": "ytd_supplemental",
+              "type": "number",
+              "required": false,
+              "min": 0,
+              "max": 1000000000,
+              "default": 0,
+              "description": "Supplemental wages already paid to the employee this calendar year (for the $1 million mandatory 37% rule)."
+            }
+          ]
         }
       }
     },
@@ -3602,6 +5074,186 @@
         "tax-tables"
       ],
       "tables_only": false,
+      "equity": true,
+      "equity_tax": {
+        "path": "/api/v1/equity-tax?country=uk",
+        "tax_year": "2026-27",
+        "instruments": [
+          "rsu",
+          "emi",
+          "csop",
+          "unapproved_option"
+        ],
+        "parameters": [
+          {
+            "name": "instrument",
+            "type": "enum",
+            "required": true,
+            "values": [
+              "rsu",
+              "emi",
+              "csop",
+              "unapproved_option"
+            ],
+            "labels": {
+              "rsu": "Restricted stock units (RSUs)",
+              "emi": "Enterprise Management Incentives (EMI) options",
+              "csop": "Company Share Option Plan (CSOP) options",
+              "unapproved_option": "Unapproved (non-tax-advantaged) options"
+            },
+            "aliases": {
+              "restricted_stock_units_(rsus)": "rsu",
+              "enterprise_management_incentives_(emi)_options": "emi",
+              "company_share_option_plan_(csop)_options": "csop",
+              "unapproved_(non_tax_advantaged)_options": "unapproved_option",
+              "restricted_stock_unit": "rsu",
+              "restricted_stock_units": "rsu",
+              "rsus": "rsu",
+              "enterprise_management_incentives": "emi",
+              "emi_option": "emi",
+              "company_share_option_plan": "csop",
+              "unapproved": "unapproved_option",
+              "non_tax_advantaged": "unapproved_option"
+            },
+            "description": "Equity instrument."
+          },
+          {
+            "name": "units",
+            "type": "number",
+            "required": true,
+            "min": 0,
+            "max": 1000000000,
+            "description": "Number of shares vesting or options exercised."
+          },
+          {
+            "name": "grant_date",
+            "type": "date",
+            "required": true,
+            "description": "Grant date (YYYY-MM-DD)."
+          },
+          {
+            "name": "event_date",
+            "type": "date",
+            "required": true,
+            "description": "Vest date (RSUs), exercise date (options), or acquisition / deferred taxing point (Australia ESS) (YYYY-MM-DD)."
+          },
+          {
+            "name": "fmv_event",
+            "type": "number",
+            "required": true,
+            "min": 0,
+            "max": 1000000000,
+            "description": "Market value per share at vest / exercise (India: FMV under rule 15(6))."
+          },
+          {
+            "name": "fmv_grant",
+            "type": "number",
+            "required": false,
+            "min": 0,
+            "max": 1000000000,
+            "description": "Market value per share at grant (UK EMI discount and CSOP limit, Canada 110(1)(d) and vesting limit)."
+          },
+          {
+            "name": "exercise_price",
+            "type": "number",
+            "required": false,
+            "min": 0,
+            "max": 1000000000,
+            "description": "Exercise price per share (required for options; RSUs: amount paid, default 0)."
+          },
+          {
+            "name": "sale_price",
+            "type": "number",
+            "required": false,
+            "min": 0,
+            "max": 1000000000,
+            "description": "Sale price per share (with sale_date: the capital gains part)."
+          },
+          {
+            "name": "sale_date",
+            "type": "date",
+            "required": false,
+            "description": "Sale date (YYYY-MM-DD), with sale_price."
+          },
+          {
+            "name": "salary",
+            "type": "number",
+            "required": true,
+            "min": 0,
+            "max": 1000000000,
+            "description": "Regular annual salary in the country's currency (for the marginal rates and contribution ceilings)."
+          },
+          {
+            "name": "region",
+            "type": "enum",
+            "required": false,
+            "values": [
+              "england",
+              "scotland",
+              "wales"
+            ],
+            "labels": {
+              "england": "England & Northern Ireland",
+              "scotland": "Scotland",
+              "wales": "Wales"
+            },
+            "aliases": {
+              "england_&_northern_ireland": "england"
+            },
+            "description": "Region for income tax (england, scotland, wales)."
+          },
+          {
+            "name": "readily_convertible",
+            "type": "boolean",
+            "required": false,
+            "default": true,
+            "description": "The shares are readily convertible assets (e.g. listed, or with trading arrangements): PAYE and NIC apply to a taxable gain."
+          },
+          {
+            "name": "emi_exercise_period_years",
+            "type": "enum",
+            "required": false,
+            "values": [
+              "10",
+              "15"
+            ],
+            "labels": {
+              "10": "10 years",
+              "15": "15 years"
+            },
+            "aliases": {
+              "10_years": "10",
+              "15_years": "15"
+            },
+            "default": "10",
+            "description": "EMI: exercise period in the option agreement (10 or 15 years)."
+          },
+          {
+            "name": "emi_disqualifying_event_mv",
+            "type": "number",
+            "required": false,
+            "min": 0,
+            "max": 1000000,
+            "default": 0,
+            "description": "EMI: market value per share immediately before a disqualifying event, when the option was exercised more than 90 days after it (0 = none)."
+          },
+          {
+            "name": "emi_badr_conditions_met",
+            "type": "boolean",
+            "required": false,
+            "default": true,
+            "description": "EMI: the other Business Asset Disposal Relief conditions are met (officer or employee of the trading company throughout the 2 years)."
+          },
+          {
+            "name": "csop_qualifying_early_exercise",
+            "type": "boolean",
+            "required": false,
+            "default": false,
+            "description": "CSOP: exercised within 3 years for a reason the scheme allows (good leaver within 6 months, company event)."
+          }
+        ]
+      },
+      "supplemental": true,
       "endpoints": {
         "net-salary": {
           "path": "/api/v1/net-salary?country=uk",
@@ -3876,6 +5528,138 @@
             "json",
             "csv"
           ]
+        },
+        "supplemental-withholding": {
+          "path": "/api/v1/supplemental-withholding?country=uk",
+          "types": [
+            "bonus",
+            "commission",
+            "rsu_vest",
+            "option_exercise",
+            "lump_sum"
+          ],
+          "parameters": [
+            {
+              "name": "salary",
+              "type": "number",
+              "required": true,
+              "min": 0,
+              "max": 1000000000,
+              "description": "Regular gross salary for the year, before the supplemental payment, in the country's currency."
+            },
+            {
+              "name": "amount",
+              "type": "number",
+              "required": true,
+              "min": 0,
+              "max": 1000000000,
+              "description": "The supplemental payment (gross), in the country's currency."
+            },
+            {
+              "name": "type",
+              "type": "enum",
+              "required": false,
+              "values": [
+                "bonus",
+                "commission",
+                "rsu_vest",
+                "option_exercise",
+                "lump_sum"
+              ],
+              "labels": {
+                "bonus": "Bonus",
+                "commission": "Commission",
+                "rsu_vest": "RSU vest",
+                "option_exercise": "Stock option exercise",
+                "lump_sum": "Lump sum"
+              },
+              "aliases": {
+                "stock_option_exercise": "option_exercise",
+                "rsu": "rsu_vest",
+                "rsus": "rsu_vest",
+                "restricted_stock_units": "rsu_vest",
+                "vest": "rsu_vest",
+                "option": "option_exercise",
+                "options": "option_exercise",
+                "stock_option": "option_exercise",
+                "exercise": "option_exercise",
+                "commissions": "commission",
+                "bonuses": "bonus",
+                "extra_pay": "bonus",
+                "lumpsum": "lump_sum"
+              },
+              "default": "bonus",
+              "description": "Kind of payment: bonus, commission, rsu_vest, option_exercise or lump_sum (the country lists the ones it supports)."
+            },
+            {
+              "name": "region",
+              "type": "enum",
+              "required": false,
+              "values": [
+                "england",
+                "scotland",
+                "wales"
+              ],
+              "labels": {
+                "england": "England & Northern Ireland",
+                "scotland": "Scotland",
+                "wales": "Wales"
+              },
+              "aliases": {
+                "england_&_northern_ireland": "england"
+              },
+              "description": "Region (optional for this country)."
+            },
+            {
+              "name": "month_paid",
+              "type": "integer",
+              "required": false,
+              "min": 1,
+              "max": 12,
+              "default": 12,
+              "description": "Tax month the bonus is paid in (1 = 6 April to 5 May … 12 = 6 March to 5 April). PAYE is cumulative, so the month matters."
+            },
+            {
+              "name": "tax_code_number",
+              "type": "integer",
+              "required": false,
+              "min": 0,
+              "max": 9999,
+              "default": 1257,
+              "description": "Numeric part of the employee's suffix tax code (1257 for 1257L); the S or C prefix follows the region. K, BR, D and NT codes are not supported."
+            },
+            {
+              "name": "ni_category",
+              "type": "enum",
+              "required": false,
+              "values": [
+                "A",
+                "B",
+                "C",
+                "H",
+                "M",
+                "V"
+              ],
+              "labels": {
+                "A": "A: most employees",
+                "B": "B: married women's reduced rate",
+                "C": "C: over State Pension age",
+                "H": "H: apprentice under 25",
+                "M": "M: under 21",
+                "V": "V: armed forces veteran (first job)"
+              },
+              "aliases": {
+                "a:_most_employees": "A",
+                "b:_married_women's_reduced_rate": "B",
+                "c:_over_state_pension_age": "C",
+                "h:_apprentice_under_25": "H",
+                "m:_under_21": "M",
+                "v:_armed_forces_veteran_(first_job)": "V"
+              },
+              "default": "A",
+              "description": "National Insurance category letter."
+            }
+          ]
         }
       }
     },
@@ -3899,6 +5683,183 @@
         "tax-tables"
       ],
       "tables_only": false,
+      "equity": true,
+      "equity_tax": {
+        "path": "/api/v1/equity-tax?country=au",
+        "tax_year": "2026-27",
+        "instruments": [
+          "ess_upfront",
+          "ess_deferred",
+          "rsu"
+        ],
+        "parameters": [
+          {
+            "name": "instrument",
+            "type": "enum",
+            "required": true,
+            "values": [
+              "ess_upfront",
+              "ess_deferred",
+              "rsu"
+            ],
+            "labels": {
+              "ess_upfront": "Employee share scheme, taxed upfront",
+              "ess_deferred": "Employee share scheme, tax-deferred",
+              "rsu": "Restricted stock units (RSUs)"
+            },
+            "aliases": {
+              "employee_share_scheme,_taxed_upfront": "ess_upfront",
+              "employee_share_scheme,_tax_deferred": "ess_deferred",
+              "restricted_stock_units_(rsus)": "rsu",
+              "restricted_stock_unit": "rsu",
+              "restricted_stock_units": "rsu",
+              "rsus": "rsu",
+              "upfront": "ess_upfront",
+              "taxed_upfront": "ess_upfront",
+              "deferred": "ess_deferred",
+              "tax_deferred": "ess_deferred"
+            },
+            "description": "Equity instrument."
+          },
+          {
+            "name": "units",
+            "type": "number",
+            "required": true,
+            "min": 0,
+            "max": 1000000000,
+            "description": "Number of shares vesting or options exercised."
+          },
+          {
+            "name": "grant_date",
+            "type": "date",
+            "required": true,
+            "description": "Grant date (YYYY-MM-DD)."
+          },
+          {
+            "name": "event_date",
+            "type": "date",
+            "required": true,
+            "description": "Vest date (RSUs), exercise date (options), or acquisition / deferred taxing point (Australia ESS) (YYYY-MM-DD)."
+          },
+          {
+            "name": "fmv_event",
+            "type": "number",
+            "required": true,
+            "min": 0,
+            "max": 1000000000,
+            "description": "Market value per share at vest / exercise (India: FMV under rule 15(6))."
+          },
+          {
+            "name": "fmv_grant",
+            "type": "number",
+            "required": false,
+            "min": 0,
+            "max": 1000000000,
+            "description": "Market value per share at grant (UK EMI discount and CSOP limit, Canada 110(1)(d) and vesting limit)."
+          },
+          {
+            "name": "exercise_price",
+            "type": "number",
+            "required": false,
+            "min": 0,
+            "max": 1000000000,
+            "description": "Exercise price per share (required for options; RSUs: amount paid, default 0)."
+          },
+          {
+            "name": "sale_price",
+            "type": "number",
+            "required": false,
+            "min": 0,
+            "max": 1000000000,
+            "description": "Sale price per share (with sale_date: the capital gains part)."
+          },
+          {
+            "name": "sale_date",
+            "type": "date",
+            "required": false,
+            "description": "Sale date (YYYY-MM-DD), with sale_price."
+          },
+          {
+            "name": "salary",
+            "type": "number",
+            "required": true,
+            "min": 0,
+            "max": 1000000000,
+            "description": "Regular annual salary in the country's currency (for the marginal rates and contribution ceilings)."
+          },
+          {
+            "name": "scheme_concession",
+            "type": "enum",
+            "required": false,
+            "values": [
+              "none",
+              "reduction",
+              "startup"
+            ],
+            "labels": {
+              "none": "None",
+              "reduction": "$1,000 reduction",
+              "startup": "Start-up concession"
+            },
+            "aliases": {
+              "$1,000_reduction": "reduction",
+              "start_up_concession": "startup"
+            },
+            "default": "none",
+            "description": "Taxed-upfront concession: none, the $1,000 reduction (s 83A-35, income test $180,000) or the start-up concession (s 83A-33). The scheme conditions are assumed met when chosen."
+          },
+          {
+            "name": "interest_kind",
+            "type": "enum",
+            "required": false,
+            "values": [
+              "right",
+              "share"
+            ],
+            "labels": {
+              "right": "Right (option)",
+              "share": "Share"
+            },
+            "aliases": {
+              "right_(option)": "right"
+            },
+            "default": "right",
+            "description": "The ESS interest is a share or a right (option) to acquire a share."
+          },
+          {
+            "name": "income_test_extra",
+            "type": "number",
+            "required": false,
+            "min": 0,
+            "max": 100000000,
+            "default": 0,
+            "description": "For the $180,000 income test: reportable fringe benefits, reportable super contributions and total net investment loss."
+          },
+          {
+            "name": "residency",
+            "type": "enum",
+            "required": false,
+            "values": [
+              "resident",
+              "foreign",
+              "whm"
+            ],
+            "labels": {
+              "resident": "Australian resident",
+              "foreign": "Foreign resident",
+              "whm": "Working holiday maker"
+            },
+            "aliases": {
+              "australian_resident": "resident",
+              "foreign_resident": "foreign",
+              "working_holiday_maker": "whm"
+            },
+            "default": "resident",
+            "description": "Tax residency."
+          }
+        ]
+      },
+      "supplemental": true,
       "endpoints": {
         "net-salary": {
           "path": "/api/v1/net-salary?country=australia",
@@ -4137,6 +6098,105 @@
             "json",
             "csv"
           ]
+        },
+        "supplemental-withholding": {
+          "path": "/api/v1/supplemental-withholding?country=australia",
+          "types": [
+            "bonus",
+            "commission",
+            "lump_sum"
+          ],
+          "parameters": [
+            {
+              "name": "salary",
+              "type": "number",
+              "required": true,
+              "min": 0,
+              "max": 1000000000,
+              "description": "Regular gross salary for the year, before the supplemental payment, in the country's currency."
+            },
+            {
+              "name": "amount",
+              "type": "number",
+              "required": true,
+              "min": 0,
+              "max": 1000000000,
+              "description": "The supplemental payment (gross), in the country's currency."
+            },
+            {
+              "name": "type",
+              "type": "enum",
+              "required": false,
+              "values": [
+                "bonus",
+                "commission",
+                "lump_sum"
+              ],
+              "labels": {
+                "bonus": "Bonus",
+                "commission": "Commission",
+                "lump_sum": "Lump sum"
+              },
+              "aliases": {
+                "commissions": "commission",
+                "bonuses": "bonus",
+                "extra_pay": "bonus",
+                "lumpsum": "lump_sum"
+              },
+              "default": "bonus",
+              "description": "Kind of payment: bonus, commission, rsu_vest, option_exercise or lump_sum (the country lists the ones it supports)."
+            },
+            {
+              "name": "frequency",
+              "type": "enum",
+              "required": false,
+              "values": [
+                "weekly",
+                "fortnightly",
+                "monthly"
+              ],
+              "labels": {
+                "weekly": "Weekly",
+                "fortnightly": "Fortnightly",
+                "monthly": "Monthly"
+              },
+              "default": "fortnightly",
+              "description": "Regular pay frequency (Schedule 5 spreads the payment over 52, 26 or 12 pay periods)."
+            },
+            {
+              "name": "tax_free_threshold",
+              "type": "boolean",
+              "required": false,
+              "default": true,
+              "description": "The employee claims the tax-free threshold from this employer (Schedule 1 scale 2; false = scale 1). Residents only."
+            },
+            {
+              "name": "residency",
+              "type": "enum",
+              "required": false,
+              "values": [
+                "resident",
+                "foreign"
+              ],
+              "labels": {
+                "resident": "Australian resident",
+                "foreign": "Foreign resident"
+              },
+              "aliases": {
+                "australian_resident": "resident",
+                "foreign_resident": "foreign"
+              },
+              "default": "resident",
+              "description": "Tax residency: resident, or foreign (Schedule 1 scale 3, foreign resident rates, no Medicare levy)."
+            },
+            {
+              "name": "study_loan",
+              "type": "boolean",
+              "required": false,
+              "default": false,
+              "description": "The employee has a study and training support loan (HELP, VSL, SSL, AASL): adds the Schedule 8 component. Residents only."
+            }
+          ]
         }
       }
     },
@@ -4160,6 +6220,9 @@
         "tax-tables"
       ],
       "tables_only": false,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": true,
       "endpoints": {
         "net-salary": {
           "path": "/api/v1/net-salary?country=new-zealand",
@@ -4359,6 +6422,70 @@
             "json",
             "csv"
           ]
+        },
+        "supplemental-withholding": {
+          "path": "/api/v1/supplemental-withholding?country=new-zealand",
+          "types": [
+            "bonus",
+            "commission",
+            "rsu_vest",
+            "option_exercise",
+            "lump_sum"
+          ],
+          "parameters": [
+            {
+              "name": "salary",
+              "type": "number",
+              "required": true,
+              "min": 0,
+              "max": 1000000000,
+              "description": "Regular gross salary for the year, before the supplemental payment, in the country's currency."
+            },
+            {
+              "name": "amount",
+              "type": "number",
+              "required": true,
+              "min": 0,
+              "max": 1000000000,
+              "description": "The supplemental payment (gross), in the country's currency."
+            },
+            {
+              "name": "type",
+              "type": "enum",
+              "required": false,
+              "values": [
+                "bonus",
+                "commission",
+                "rsu_vest",
+                "option_exercise",
+                "lump_sum"
+              ],
+              "labels": {
+                "bonus": "Bonus",
+                "commission": "Commission",
+                "rsu_vest": "RSU vest",
+                "option_exercise": "Stock option exercise",
+                "lump_sum": "Lump sum"
+              },
+              "aliases": {
+                "stock_option_exercise": "option_exercise",
+                "rsu": "rsu_vest",
+                "rsus": "rsu_vest",
+                "restricted_stock_units": "rsu_vest",
+                "vest": "rsu_vest",
+                "option": "option_exercise",
+                "options": "option_exercise",
+                "stock_option": "option_exercise",
+                "exercise": "option_exercise",
+                "commissions": "commission",
+                "bonuses": "bonus",
+                "extra_pay": "bonus",
+                "lumpsum": "lump_sum"
+              },
+              "default": "bonus",
+              "description": "Kind of payment: bonus, commission, rsu_vest, option_exercise or lump_sum (the country lists the ones it supports)."
+            }
+          ]
         }
       }
     },
@@ -4382,6 +6509,206 @@
         "tax-tables"
       ],
       "tables_only": false,
+      "equity": true,
+      "equity_tax": {
+        "path": "/api/v1/equity-tax?country=ca",
+        "tax_year": "2026",
+        "instruments": [
+          "stock_option"
+        ],
+        "parameters": [
+          {
+            "name": "instrument",
+            "type": "enum",
+            "required": true,
+            "values": [
+              "stock_option"
+            ],
+            "labels": {
+              "stock_option": "Employee stock options"
+            },
+            "aliases": {
+              "employee_stock_options": "stock_option",
+              "option": "stock_option",
+              "options": "stock_option",
+              "security_option": "stock_option"
+            },
+            "description": "Equity instrument."
+          },
+          {
+            "name": "units",
+            "type": "number",
+            "required": true,
+            "min": 0,
+            "max": 1000000000,
+            "description": "Number of shares vesting or options exercised."
+          },
+          {
+            "name": "grant_date",
+            "type": "date",
+            "required": true,
+            "description": "Grant date (YYYY-MM-DD)."
+          },
+          {
+            "name": "event_date",
+            "type": "date",
+            "required": true,
+            "description": "Vest date (RSUs), exercise date (options), or acquisition / deferred taxing point (Australia ESS) (YYYY-MM-DD)."
+          },
+          {
+            "name": "fmv_event",
+            "type": "number",
+            "required": true,
+            "min": 0,
+            "max": 1000000000,
+            "description": "Market value per share at vest / exercise (India: FMV under rule 15(6))."
+          },
+          {
+            "name": "fmv_grant",
+            "type": "number",
+            "required": false,
+            "min": 0,
+            "max": 1000000000,
+            "description": "Market value per share at grant (UK EMI discount and CSOP limit, Canada 110(1)(d) and vesting limit)."
+          },
+          {
+            "name": "exercise_price",
+            "type": "number",
+            "required": false,
+            "min": 0,
+            "max": 1000000000,
+            "description": "Exercise price per share (required for options; RSUs: amount paid, default 0)."
+          },
+          {
+            "name": "sale_price",
+            "type": "number",
+            "required": false,
+            "min": 0,
+            "max": 1000000000,
+            "description": "Sale price per share (with sale_date: the capital gains part)."
+          },
+          {
+            "name": "sale_date",
+            "type": "date",
+            "required": false,
+            "description": "Sale date (YYYY-MM-DD), with sale_price."
+          },
+          {
+            "name": "salary",
+            "type": "number",
+            "required": true,
+            "min": 0,
+            "max": 1000000000,
+            "description": "Regular annual salary in the country's currency (for the marginal rates and contribution ceilings)."
+          },
+          {
+            "name": "region",
+            "type": "enum",
+            "required": true,
+            "values": [
+              "on",
+              "qc",
+              "bc",
+              "ab",
+              "mb",
+              "nb",
+              "nl",
+              "ns",
+              "pe",
+              "sk",
+              "nt",
+              "nu",
+              "yt"
+            ],
+            "labels": {
+              "on": "Ontario",
+              "qc": "Quebec",
+              "bc": "British Columbia",
+              "ab": "Alberta",
+              "mb": "Manitoba",
+              "nb": "New Brunswick",
+              "nl": "Newfoundland and Labrador",
+              "ns": "Nova Scotia",
+              "pe": "Prince Edward Island",
+              "sk": "Saskatchewan",
+              "nt": "Northwest Territories",
+              "nu": "Nunavut",
+              "yt": "Yukon"
+            },
+            "aliases": {
+              "ontario": "on",
+              "quebec": "qc",
+              "british_columbia": "bc",
+              "alberta": "ab",
+              "manitoba": "mb",
+              "new_brunswick": "nb",
+              "newfoundland_and_labrador": "nl",
+              "nova_scotia": "ns",
+              "prince_edward_island": "pe",
+              "saskatchewan": "sk",
+              "northwest_territories": "nt",
+              "nunavut": "nu",
+              "yukon": "yt"
+            },
+            "description": "Province or territory code."
+          },
+          {
+            "name": "employer_type",
+            "type": "enum",
+            "required": false,
+            "values": [
+              "non_ccpc_large",
+              "non_ccpc",
+              "ccpc"
+            ],
+            "labels": {
+              "non_ccpc_large": "Non-CCPC, revenue over $500 million",
+              "non_ccpc": "Non-CCPC, revenue $500 million or less",
+              "ccpc": "Canadian-controlled private corporation"
+            },
+            "aliases": {
+              "non_ccpc,_revenue_over_$500_million": "non_ccpc_large",
+              "non_ccpc,_revenue_$500_million_or_less": "non_ccpc",
+              "canadian_controlled_private_corporation": "ccpc"
+            },
+            "default": "non_ccpc_large",
+            "description": "Employer: non-CCPC with gross revenue over $500 million ($200,000 vesting limit), other non-CCPC, or Canadian-controlled private corporation (benefit deferred to sale)."
+          },
+          {
+            "name": "deduction_conditions_met",
+            "type": "boolean",
+            "required": false,
+            "default": true,
+            "description": "110(1)(d) conditions: prescribed shares and arm's length (the price-not-below-FMV-at-grant test is checked from fmv_grant)."
+          },
+          {
+            "name": "options_vesting_same_year",
+            "type": "integer",
+            "required": false,
+            "min": 0,
+            "max": 100000000,
+            "default": 0,
+            "description": "Options under this agreement that first vest in the same calendar year (default: the units exercised)."
+          },
+          {
+            "name": "other_vesting_value",
+            "type": "number",
+            "required": false,
+            "min": 0,
+            "max": 1000000000,
+            "default": 0,
+            "description": "FMV at grant of the employer's other options vesting in the same calendar year (counted first against the $200,000 limit)."
+          },
+          {
+            "name": "qc_enhanced_deduction",
+            "type": "boolean",
+            "required": false,
+            "default": false,
+            "description": "Québec: the conditions for the 50% Québec deduction are met (otherwise 25%)."
+          }
+        ]
+      },
+      "supplemental": true,
       "endpoints": {
         "net-salary": {
           "path": "/api/v1/net-salary?country=canada",
@@ -4680,6 +7007,143 @@
             "json",
             "csv"
           ]
+        },
+        "supplemental-withholding": {
+          "path": "/api/v1/supplemental-withholding?country=canada",
+          "types": [
+            "bonus",
+            "commission",
+            "rsu_vest",
+            "option_exercise",
+            "lump_sum"
+          ],
+          "parameters": [
+            {
+              "name": "salary",
+              "type": "number",
+              "required": true,
+              "min": 0,
+              "max": 1000000000,
+              "description": "Regular gross salary for the year, before the supplemental payment, in the country's currency."
+            },
+            {
+              "name": "amount",
+              "type": "number",
+              "required": true,
+              "min": 0,
+              "max": 1000000000,
+              "description": "The supplemental payment (gross), in the country's currency."
+            },
+            {
+              "name": "type",
+              "type": "enum",
+              "required": false,
+              "values": [
+                "bonus",
+                "commission",
+                "rsu_vest",
+                "option_exercise",
+                "lump_sum"
+              ],
+              "labels": {
+                "bonus": "Bonus",
+                "commission": "Commission",
+                "rsu_vest": "RSU vest",
+                "option_exercise": "Stock option exercise",
+                "lump_sum": "Lump sum"
+              },
+              "aliases": {
+                "stock_option_exercise": "option_exercise",
+                "rsu": "rsu_vest",
+                "rsus": "rsu_vest",
+                "restricted_stock_units": "rsu_vest",
+                "vest": "rsu_vest",
+                "option": "option_exercise",
+                "options": "option_exercise",
+                "stock_option": "option_exercise",
+                "exercise": "option_exercise",
+                "commissions": "commission",
+                "bonuses": "bonus",
+                "extra_pay": "bonus",
+                "lumpsum": "lump_sum"
+              },
+              "default": "bonus",
+              "description": "Kind of payment: bonus, commission, rsu_vest, option_exercise or lump_sum (the country lists the ones it supports)."
+            },
+            {
+              "name": "region",
+              "type": "enum",
+              "required": true,
+              "values": [
+                "on",
+                "bc",
+                "ab",
+                "mb",
+                "nb",
+                "nl",
+                "ns",
+                "pe",
+                "sk",
+                "nt",
+                "nu",
+                "yt"
+              ],
+              "labels": {
+                "on": "Ontario",
+                "bc": "British Columbia",
+                "ab": "Alberta",
+                "mb": "Manitoba",
+                "nb": "New Brunswick",
+                "nl": "Newfoundland and Labrador",
+                "ns": "Nova Scotia",
+                "pe": "Prince Edward Island",
+                "sk": "Saskatchewan",
+                "nt": "Northwest Territories",
+                "nu": "Nunavut",
+                "yt": "Yukon"
+              },
+              "aliases": {
+                "ontario": "on",
+                "british_columbia": "bc",
+                "alberta": "ab",
+                "manitoba": "mb",
+                "new_brunswick": "nb",
+                "newfoundland_and_labrador": "nl",
+                "nova_scotia": "ns",
+                "prince_edward_island": "pe",
+                "saskatchewan": "sk",
+                "northwest_territories": "nt",
+                "nunavut": "nu",
+                "yukon": "yt"
+              },
+              "description": "Region (required for this country)."
+            },
+            {
+              "name": "frequency",
+              "type": "enum",
+              "required": false,
+              "values": [
+                "weekly",
+                "biweekly",
+                "semimonthly",
+                "monthly"
+              ],
+              "labels": {
+                "weekly": "Weekly (52)",
+                "biweekly": "Every two weeks (26)",
+                "semimonthly": "Twice a month (24)",
+                "monthly": "Monthly (12)"
+              },
+              "aliases": {
+                "weekly_(52)": "weekly",
+                "every_two_weeks_(26)": "biweekly",
+                "twice_a_month_(24)": "semimonthly",
+                "monthly_(12)": "monthly"
+              },
+              "default": "biweekly",
+              "description": "Regular pay frequency (T4127 factor P)."
+            }
+          ]
         }
       }
     },
@@ -4703,6 +7167,9 @@
         "tax-tables"
       ],
       "tables_only": false,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": true,
       "endpoints": {
         "net-salary": {
           "path": "/api/v1/net-salary?country=ireland",
@@ -4896,6 +7363,92 @@
             "json",
             "csv"
           ]
+        },
+        "supplemental-withholding": {
+          "path": "/api/v1/supplemental-withholding?country=ireland",
+          "types": [
+            "bonus",
+            "commission",
+            "rsu_vest",
+            "lump_sum"
+          ],
+          "parameters": [
+            {
+              "name": "salary",
+              "type": "number",
+              "required": true,
+              "min": 0,
+              "max": 1000000000,
+              "description": "Regular gross salary for the year, before the supplemental payment, in the country's currency."
+            },
+            {
+              "name": "amount",
+              "type": "number",
+              "required": true,
+              "min": 0,
+              "max": 1000000000,
+              "description": "The supplemental payment (gross), in the country's currency."
+            },
+            {
+              "name": "type",
+              "type": "enum",
+              "required": false,
+              "values": [
+                "bonus",
+                "commission",
+                "rsu_vest",
+                "lump_sum"
+              ],
+              "labels": {
+                "bonus": "Bonus",
+                "commission": "Commission",
+                "rsu_vest": "RSU vest",
+                "lump_sum": "Lump sum"
+              },
+              "aliases": {
+                "rsu": "rsu_vest",
+                "rsus": "rsu_vest",
+                "restricted_stock_units": "rsu_vest",
+                "vest": "rsu_vest",
+                "commissions": "commission",
+                "bonuses": "bonus",
+                "extra_pay": "bonus",
+                "lumpsum": "lump_sum"
+              },
+              "default": "bonus",
+              "description": "Kind of payment: bonus, commission, rsu_vest, option_exercise or lump_sum (the country lists the ones it supports)."
+            },
+            {
+              "name": "status",
+              "type": "enum",
+              "required": false,
+              "values": [
+                "single",
+                "single-parent",
+                "married-one"
+              ],
+              "labels": {
+                "single": "Single",
+                "single-parent": "Single, claiming the Single Person Child Carer Credit",
+                "married-one": "Married or civil partners, one income"
+              },
+              "aliases": {
+                "single,_claiming_the_single_person_child_carer_credit": "single-parent",
+                "married_or_civil_partners,_one_income": "married-one"
+              },
+              "default": "single",
+              "description": "Tax status (sets the standard rate cut-off point and tax credits on the RPN)."
+            },
+            {
+              "name": "month_paid",
+              "type": "integer",
+              "required": false,
+              "min": 1,
+              "max": 12,
+              "default": 12,
+              "description": "Month of 2026 the bonus is paid in (1 = January … 12 = December). Tax and USC are cumulative; PRSI rises to 4.35% from October."
+            }
+          ]
         }
       }
     },
@@ -4919,6 +7472,162 @@
         "tax-tables"
       ],
       "tables_only": false,
+      "equity": true,
+      "equity_tax": {
+        "path": "/api/v1/equity-tax?country=in",
+        "tax_year": "2026-27",
+        "instruments": [
+          "esop",
+          "rsu"
+        ],
+        "parameters": [
+          {
+            "name": "instrument",
+            "type": "enum",
+            "required": true,
+            "values": [
+              "esop",
+              "rsu"
+            ],
+            "labels": {
+              "esop": "Employee stock options (ESOP)",
+              "rsu": "Restricted stock units (RSUs)"
+            },
+            "aliases": {
+              "employee_stock_options_(esop)": "esop",
+              "restricted_stock_units_(rsus)": "rsu",
+              "restricted_stock_unit": "rsu",
+              "restricted_stock_units": "rsu",
+              "rsus": "rsu",
+              "employee_stock_option": "esop",
+              "esos": "esop"
+            },
+            "description": "Equity instrument."
+          },
+          {
+            "name": "units",
+            "type": "number",
+            "required": true,
+            "min": 0,
+            "max": 1000000000,
+            "description": "Number of shares vesting or options exercised."
+          },
+          {
+            "name": "grant_date",
+            "type": "date",
+            "required": true,
+            "description": "Grant date (YYYY-MM-DD)."
+          },
+          {
+            "name": "event_date",
+            "type": "date",
+            "required": true,
+            "description": "Vest date (RSUs), exercise date (options), or acquisition / deferred taxing point (Australia ESS) (YYYY-MM-DD)."
+          },
+          {
+            "name": "fmv_event",
+            "type": "number",
+            "required": true,
+            "min": 0,
+            "max": 1000000000,
+            "description": "Market value per share at vest / exercise (India: FMV under rule 15(6))."
+          },
+          {
+            "name": "fmv_grant",
+            "type": "number",
+            "required": false,
+            "min": 0,
+            "max": 1000000000,
+            "description": "Market value per share at grant (UK EMI discount and CSOP limit, Canada 110(1)(d) and vesting limit)."
+          },
+          {
+            "name": "exercise_price",
+            "type": "number",
+            "required": false,
+            "min": 0,
+            "max": 1000000000,
+            "description": "Exercise price per share (required for options; RSUs: amount paid, default 0)."
+          },
+          {
+            "name": "sale_price",
+            "type": "number",
+            "required": false,
+            "min": 0,
+            "max": 1000000000,
+            "description": "Sale price per share (with sale_date: the capital gains part)."
+          },
+          {
+            "name": "sale_date",
+            "type": "date",
+            "required": false,
+            "description": "Sale date (YYYY-MM-DD), with sale_price."
+          },
+          {
+            "name": "salary",
+            "type": "number",
+            "required": true,
+            "min": 0,
+            "max": 1000000000,
+            "description": "Regular annual salary in the country's currency (for the marginal rates and contribution ceilings)."
+          },
+          {
+            "name": "regime",
+            "type": "enum",
+            "required": false,
+            "values": [
+              "new",
+              "old"
+            ],
+            "labels": {
+              "new": "New regime",
+              "old": "Old regime"
+            },
+            "aliases": {
+              "new_regime": "new",
+              "old_regime": "old"
+            },
+            "default": "new",
+            "description": "Income tax regime."
+          },
+          {
+            "name": "age",
+            "type": "enum",
+            "required": false,
+            "values": [
+              "below60",
+              "senior",
+              "superSenior"
+            ],
+            "labels": {
+              "below60": "Below 60",
+              "senior": "60 to 79",
+              "superSenior": "80 or over"
+            },
+            "aliases": {
+              "below_60": "below60",
+              "60_to_79": "senior",
+              "80_or_over": "superSenior"
+            },
+            "default": "below60",
+            "description": "Age band (old-regime slabs)."
+          },
+          {
+            "name": "listed",
+            "type": "boolean",
+            "required": false,
+            "default": true,
+            "description": "Shares listed on a recognised stock exchange in India with STT paid on sale (false for unlisted or foreign-listed shares)."
+          },
+          {
+            "name": "eligible_startup",
+            "type": "boolean",
+            "required": false,
+            "default": false,
+            "description": "Employer is an eligible start-up (s.140): TDS and payment of the perquisite tax are deferred."
+          }
+        ]
+      },
+      "supplemental": true,
       "endpoints": {
         "net-salary": {
           "path": "/api/v1/net-salary?country=india",
@@ -5263,6 +7972,128 @@
           "formats": [
             "json",
             "csv"
+          ]
+        },
+        "supplemental-withholding": {
+          "path": "/api/v1/supplemental-withholding?country=india",
+          "types": [
+            "bonus",
+            "commission",
+            "rsu_vest",
+            "option_exercise",
+            "lump_sum"
+          ],
+          "parameters": [
+            {
+              "name": "salary",
+              "type": "number",
+              "required": true,
+              "min": 0,
+              "max": 1000000000,
+              "description": "Regular gross salary for the year, before the supplemental payment, in the country's currency."
+            },
+            {
+              "name": "amount",
+              "type": "number",
+              "required": true,
+              "min": 0,
+              "max": 1000000000,
+              "description": "The supplemental payment (gross), in the country's currency."
+            },
+            {
+              "name": "type",
+              "type": "enum",
+              "required": false,
+              "values": [
+                "bonus",
+                "commission",
+                "rsu_vest",
+                "option_exercise",
+                "lump_sum"
+              ],
+              "labels": {
+                "bonus": "Bonus",
+                "commission": "Commission",
+                "rsu_vest": "RSU vest",
+                "option_exercise": "Stock option exercise",
+                "lump_sum": "Lump sum"
+              },
+              "aliases": {
+                "stock_option_exercise": "option_exercise",
+                "rsu": "rsu_vest",
+                "rsus": "rsu_vest",
+                "restricted_stock_units": "rsu_vest",
+                "vest": "rsu_vest",
+                "option": "option_exercise",
+                "options": "option_exercise",
+                "stock_option": "option_exercise",
+                "exercise": "option_exercise",
+                "commissions": "commission",
+                "bonuses": "bonus",
+                "extra_pay": "bonus",
+                "lumpsum": "lump_sum"
+              },
+              "default": "bonus",
+              "description": "Kind of payment: bonus, commission, rsu_vest, option_exercise or lump_sum (the country lists the ones it supports)."
+            },
+            {
+              "name": "regime",
+              "type": "enum",
+              "required": false,
+              "values": [
+                "new",
+                "old"
+              ],
+              "labels": {
+                "new": "New regime",
+                "old": "Old regime"
+              },
+              "aliases": {
+                "new_regime": "new",
+                "old_regime": "old"
+              },
+              "default": "new",
+              "description": "Tax regime: new (s.202, the default) or old (opted out, with deductions)."
+            },
+            {
+              "name": "age",
+              "type": "enum",
+              "required": false,
+              "values": [
+                "below60",
+                "senior",
+                "superSenior"
+              ],
+              "labels": {
+                "below60": "Below 60",
+                "senior": "60 to 79",
+                "superSenior": "80 and over"
+              },
+              "aliases": {
+                "below_60": "below60",
+                "60_to_79": "senior",
+                "80_and_over": "superSenior"
+              },
+              "default": "below60",
+              "description": "Age band (old regime slabs)."
+            },
+            {
+              "name": "old_regime_deductions",
+              "type": "number",
+              "required": false,
+              "min": 0,
+              "default": 0,
+              "description": "Old regime only: deductions and exemptions declared to the employer other than the standard deduction (80C, 80D, HRA, home-loan interest…), rupees a year."
+            },
+            {
+              "name": "month_paid",
+              "type": "integer",
+              "required": false,
+              "min": 1,
+              "max": 12,
+              "default": 12,
+              "description": "Month of the tax year the bonus is paid (1 = April … 12 = March), for the TDS spread."
+            }
           ]
         }
       }

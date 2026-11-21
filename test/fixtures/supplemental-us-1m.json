@@ -1,0 +1,140 @@
+{
+  "endpoint": "supplemental-withholding",
+  "country": "us",
+  "short_code": "us",
+  "countryName": "United States",
+  "year": "2026",
+  "currency": "USD",
+  "inputs": {
+    "salary": 500000,
+    "amount": 1500000,
+    "type": "bonus",
+    "region": "ca",
+    "filing_status": "single",
+    "method": "flat",
+    "frequency": "biweekly",
+    "ytd_supplemental": 0
+  },
+  "type": "bonus",
+  "region": "ca",
+  "method": "IRS Pub 15 s.7: mandatory 37% on supplemental wages over $1 million, optional flat rate (method 1a) below",
+  "lines": [
+    {
+      "label": "Federal income tax (22% flat up to $1 million, mandatory 37% above)",
+      "withheld": 405000,
+      "liability": 551866,
+      "note": "Liability: the extra Form 1040 tax at the single brackets with the standard deduction (regular salary $500,000 → plus this payment).",
+      "source": {
+        "title": "IRS Publication 15 (2026), What's New and section 7 (Supplemental Wages)",
+        "url": "https://www.irs.gov/pub/irs-pdf/p15.pdf",
+        "retrievedAt": "2026-10-20"
+      }
+    },
+    {
+      "label": "Social Security (6.2% up to the wage base)",
+      "withheld": 0,
+      "liability": 0,
+      "rate": 0.062,
+      "source": {
+        "title": "IRS Publication 15 (2026), (Circular E), section 9: Tax rates and the social security wage base limit; IRS Tax Topic 560, Additional Medicare Tax",
+        "url": "https://www.irs.gov/pub/irs-pdf/p15.pdf",
+        "retrievedAt": "2026-10-20"
+      }
+    },
+    {
+      "label": "Medicare (1.45%)",
+      "withheld": 21750,
+      "liability": 21750,
+      "rate": 0.0145,
+      "source": {
+        "title": "IRS Publication 15 (2026), (Circular E), section 9: Tax rates and the social security wage base limit; IRS Tax Topic 560, Additional Medicare Tax",
+        "url": "https://www.irs.gov/pub/irs-pdf/p15.pdf",
+        "retrievedAt": "2026-10-20"
+      }
+    },
+    {
+      "label": "Additional Medicare Tax (0.9%)",
+      "withheld": 13500,
+      "liability": 13500,
+      "rate": 0.009,
+      "note": "Withheld on wages over $200,000 in the year whatever the filing status; owed on the return over $200,000 for this status (Form 8959).",
+      "source": {
+        "title": "IRS Publication 15 (2026), (Circular E), section 9: Tax rates and the social security wage base limit; IRS Tax Topic 560, Additional Medicare Tax",
+        "url": "https://www.irs.gov/pub/irs-pdf/p15.pdf",
+        "retrievedAt": "2026-10-20"
+      }
+    },
+    {
+      "label": "California income tax (10.23% flat supplemental rate)",
+      "withheld": 153450,
+      "liability": 191699.87,
+      "rate": 0.1023,
+      "note": "Liability: the extra state income tax on the stored brackets after the standard deduction; credits are unchanged by the payment and local income taxes are not included.",
+      "source": {
+        "title": "California EDD Publication DE 44 (Rev. 52 (4-26)), 2026 California Employer's Guide — How to Withhold PIT on Supplemental Wages",
+        "url": "https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de44.pdf",
+        "retrievedAt": "2026-10-16"
+      }
+    },
+    {
+      "label": "California CA SDI",
+      "withheld": 19500,
+      "liability": 19500,
+      "rate": 0.013,
+      "source": {
+        "title": "California EDD: Contribution Rates, Withholding Schedules, and Meals and Lodging Values (2026)",
+        "url": "https://edd.ca.gov/en/payroll_taxes/rates_and_withholding/",
+        "retrievedAt": "2026-10-16"
+      }
+    }
+  ],
+  "summary": {
+    "amount": 1500000,
+    "totalWithheld": 613200,
+    "totalLiability": 798315.87,
+    "difference": 185115.87,
+    "netPayment": 886800
+  },
+  "notes": [
+    "Supplemental wages over $1,000,000 in the year are withheld at a mandatory 37%, regardless of Form W-4.",
+    "Social Security stops once wages for the year reach $184,500; the line shows what this payment adds to the year's total.",
+    "California's flat rate for bonuses and stock options; other supplemental pay (overtime, commissions, severance, vacation) uses 6.6%.",
+    "California liability excludes the phase-out of exemption credits at higher incomes (not modeled).",
+    "Local income taxes (city, county, school district) are not included.",
+    "Withholding is a prepayment: the difference between the lines' liability and withholding is settled on the federal and state returns."
+  ],
+  "sources": [
+    {
+      "title": "IRS Publication 15 (2026), What's New and section 7 (Supplemental Wages)",
+      "url": "https://www.irs.gov/pub/irs-pdf/p15.pdf",
+      "retrievedAt": "2026-10-20"
+    },
+    {
+      "title": "California EDD Publication DE 44 (Rev. 52 (4-26)), 2026 California Employer's Guide — How to Withhold PIT on Supplemental Wages",
+      "url": "https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de44.pdf",
+      "retrievedAt": "2026-10-16"
+    },
+    {
+      "title": "California EDD: Contribution Rates, Withholding Schedules, and Meals and Lodging Values (2026)",
+      "url": "https://edd.ca.gov/en/payroll_taxes/rates_and_withholding/",
+      "retrievedAt": "2026-10-16"
+    },
+    {
+      "title": "Rev. Proc. 2025-32 (2026 inflation adjustments), sections 4.01 and 4.14; Publication 1040 (2026) Tax and Earned Income Credit Tables (early-release draft): 2026 Tax Table and 2026 Tax Computation Worksheet",
+      "url": "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf",
+      "retrievedAt": "2026-10-20"
+    },
+    {
+      "title": "California Franchise Tax Board, Tax News October 2026: 2026 Indexing (2026 California tax rate schedules)",
+      "url": "https://www.ftb.ca.gov/about-ftb/newsroom/tax-news/index.html",
+      "retrievedAt": "2026-11-09"
+    }
+  ],
+  "warnings": [],
+  "attribution": {
+    "source": "CalcBloc",
+    "url": "https://calcbloc.com/us/bonus-tax-calculator",
+    "required": true,
+    "text": "Data by CalcBloc (calcbloc.com)"
+  }
+}

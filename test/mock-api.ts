@@ -29,6 +29,26 @@ export function route(url: URL): MockReply {
   }
   if (path === "/employer-cost" && q.get("country") === "germany") return { status: 200, body: fixture("employer-cost-germany.json") };
   if (path === "/compare" && q.get("a") === "uk" && q.get("b") === "germany") return { status: 200, body: fixture("compare-uk-germany.json") };
+  // API 1.8 (captured from the site's local main with handleApiRequest, before the 1.8.0 release).
+  if (path === "/supplemental-withholding") {
+    const c = q.get("country");
+    if (c === "us" && !q.get("region")) return { status: 400, body: fixture("supplemental-us-missing-region.json") };
+    if (c === "us" && q.get("region") === "ca" && q.get("amount") === "1500000") return { status: 200, body: fixture("supplemental-us-1m.json") };
+    if (c === "us" && q.get("region") === "ca") return { status: 200, body: fixture("supplemental-us-ca.json") };
+    if (c === "uk") return { status: 200, body: fixture("supplemental-uk.json") };
+    if (c === "germany") return { status: 200, body: fixture("supplemental-de.json") };
+    if (c === "australia" && q.get("type") === "rsu_vest") return { status: 400, body: fixture("supplemental-unsupported-type.json") };
+    if (c === "italy") return { status: 400, body: fixture("supplemental-unsupported-country.json") };
+  }
+  if (path === "/equity-tax") {
+    const c = q.get("country");
+    const i = q.get("instrument");
+    if (c === "us" && !q.get("fmv_event")) return { status: 400, body: fixture("equity-missing-parameter.json") };
+    if (c === "us" && i === "rsu") return { status: 200, body: fixture("equity-us-rsu.json") };
+    if (c === "us" && i === "iso") return { status: 200, body: fixture("equity-us-iso.json") };
+    if (c === "uk" && i === "emi") return { status: 200, body: fixture("equity-uk-emi.json") };
+    if (c === "germany") return { status: 400, body: fixture("equity-unsupported-country.json") };
+  }
   const t = path.match(/^\/tax-tables\/([a-z-]+)\/([0-9a-z-]+)$/);
   if (t) {
     const [, country, yearRaw] = t;

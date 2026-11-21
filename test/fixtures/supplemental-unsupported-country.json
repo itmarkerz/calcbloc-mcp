@@ -1,0 +1,13 @@
+{
+  "error": {
+    "code": "unsupported_country",
+    "message": "Supplemental withholding is not available for \"it\". Use one of: us, uk, ie (ireland), ca (canada), au (australia), nz (new-zealand), de (germany), fr (france), es (spain), nl (netherlands), in (india), sg (singapore).",
+    "docs": "https://calcbloc.com/developers"
+  },
+  "attribution": {
+    "source": "CalcBloc",
+    "url": "https://calcbloc.com/developers",
+    "required": true,
+    "text": "Data by CalcBloc (calcbloc.com)"
+  }
+}

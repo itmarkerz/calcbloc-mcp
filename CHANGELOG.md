@@ -2,6 +2,18 @@
 
 All notable changes to this package are listed here. The package follows [semantic versioning](https://semver.org/).
 
+## 0.3.0 (unreleased)
+
+Two new tools on CalcBloc API 1.8 (`/supplemental-withholding` and `/equity-tax`). Every input that worked in 0.2.0 still works. Against an API older than 1.8 the new tools answer that the API does not offer them yet.
+
+- **`calculate_supplemental_withholding`.** Tax withheld on a bonus, commission, RSU vest, stock option exercise or lump sum paid on top of a regular salary, using the country's official method (IRS Pub 15 flat 22% and the mandatory 37% over $1 million, HMRC cumulative PAYE, CRA T4127 bonus method, ATO Schedule 5, IRD extra-pay rates and others), line by line, next to the final tax the payment adds at the person's real rates. 12 countries: `sg`, `fr`, `nl`, `es`, `de`, `us`, `uk`, `au`, `nz`, `ca`, `ie`, `in`. Australia takes `bonus`, `commission` and `lump_sum` only; Ireland has no `option_exercise`.
+- **`calculate_equity_tax`.** Income tax, social security and withholding when RSUs vest or options are exercised, and capital gains tax on a sale, with flags (AMT exposure, scheme conditions assumed) and alternative scenarios (qualifying vs disqualifying ISO disposition). 5 countries: `us` (rsu, nso, iso), `uk` (rsu, emi, csop, unapproved_option), `au` (ess_upfront, ess_deferred, rsu), `ca` (stock_option), `in` (esop, rsu).
+- **Same checks as the other calculations.** Short codes, names and older keys for the country; region names and codes, required where the API requires them (supplemental: `us`, `ca`; equity: `ca`) and checked before any request; options validated against each country's parameters, with the API's aliases and labels (`filing_status` "married", `readily_convertible` "no", UK region "England & Northern Ireland"). A payment type or instrument the country does not have returns that country's list, and an unsupported country returns the countries that are supported, both from `/countries`. `type` and `instrument` are enums in the input schemas.
+- **Credit footer** on both tools: tax year, the official sources the API returns for the figures, the calcbloc.com page (the bonus or stock option calculator where the API names one, otherwise the country's tax-table page), "Data by CalcBloc" and the estimate disclaimer. Structured output schemas for both.
+- **`list_countries`** shows, per country, whether supplemental withholding and equity tax are available (`supplementalWithholding`, `equityTax`), and for one country its payment types, instruments, regions and options.
+- **Scope note and coverage.** `scripts/gen-coverage.mjs` now also generates the supplemental and equity country lists, payment types, instruments and region requirements, and the scope note quoted by the calculation tools and the README: bonus and equity questions go to the new tools; cross-border (multi-country) withholding is still not supported.
+- **Tests.** `test/phase2.test.ts`: schema tests (countries, required parameters, enums, scope note), behaviour tests (aliases, region errors, unsupported countries, types and instruments, pass-through of API errors) and golden tests on responses captured from the API 1.8 code: the US $1 million rule (22% to $1 million, 37% above), a $10,000 bonus at the 24% bracket, UK PAYE, German § 39b, HMRC ETASSUM57030 Example 1 (EMI, £2,000 charged), a US RSU vest and IRS Pub 525 Example 8 (ISO). `test:schema` and `test:golden` run them in CI.
+
 ## 0.2.0 (2026-11-21)
 
 Fixes for the issues found in the CorpusIQ review. Every input that worked in 0.1.x still works.

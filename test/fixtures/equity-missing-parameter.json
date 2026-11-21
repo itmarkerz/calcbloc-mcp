@@ -1,0 +1,13 @@
+{
+  "error": {
+    "code": "missing_parameter",
+    "message": "Parameter \"fmv_event\" is required.",
+    "docs": "https://calcbloc.com/developers#parameters"
+  },
+  "attribution": {
+    "source": "CalcBloc",
+    "url": "https://calcbloc.com/developers",
+    "required": true,
+    "text": "Data by CalcBloc (calcbloc.com)"
+  }
+}

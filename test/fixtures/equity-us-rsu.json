@@ -1,0 +1,124 @@
+{
+  "endpoint": "equity-tax",
+  "country": "us",
+  "short_code": "us",
+  "countryName": "United States",
+  "year": "2026",
+  "currency": "USD",
+  "inputs": {
+    "instrument": "rsu",
+    "units": 100,
+    "grant_date": "2025-01-01",
+    "event_date": "2026-03-01",
+    "fmv_event": 100,
+    "salary": 100000,
+    "region": "ca",
+    "filing_status": "single",
+    "ytd_supplemental": 0
+  },
+  "result": {
+    "country": "us",
+    "region": "ca",
+    "taxYear": "2026",
+    "currency": "USD",
+    "instrument": "rsu",
+    "units": 100,
+    "taxableAtEvent": 10000,
+    "lines": [
+      {
+        "label": "Federal income tax",
+        "stage": "event",
+        "base": 10000,
+        "amount": 2200,
+        "withheld": 2200,
+        "rate": 0.22,
+        "note": "Withheld at the supplemental rate (22%); the amount is the extra regular tax the vest value adds at your brackets (Single, standard deduction).",
+        "source": {
+          "title": "IRS Publication 15 (2026), What's New and section 7 (Supplemental Wages)",
+          "url": "https://www.irs.gov/pub/irs-pdf/p15.pdf",
+          "retrievedAt": "2026-10-20"
+        }
+      },
+      {
+        "label": "Social Security (6.2%)",
+        "stage": "event",
+        "base": 10000,
+        "amount": 620,
+        "withheld": 620,
+        "rate": 0.062,
+        "note": "Up to the $184,500 wage base, counting the salary first.",
+        "source": {
+          "title": "IRS Publication 15 (2026), (Circular E), section 9: Tax rates and the social security wage base limit; IRS Tax Topic 560, Additional Medicare Tax",
+          "url": "https://www.irs.gov/pub/irs-pdf/p15.pdf",
+          "retrievedAt": "2026-10-20"
+        }
+      },
+      {
+        "label": "Medicare (1.45%)",
+        "stage": "event",
+        "base": 10000,
+        "amount": 145,
+        "withheld": 145,
+        "rate": 0.0145,
+        "source": {
+          "title": "IRS Publication 15 (2026), (Circular E), section 9: Tax rates and the social security wage base limit; IRS Tax Topic 560, Additional Medicare Tax",
+          "url": "https://www.irs.gov/pub/irs-pdf/p15.pdf",
+          "retrievedAt": "2026-10-20"
+        }
+      },
+      {
+        "label": "California income tax withholding",
+        "stage": "event",
+        "base": 10000,
+        "amount": 1023,
+        "withheld": 1023,
+        "rate": 0.1023,
+        "note": "The state's supplemental withholding method (flat). The state's final liability on the vest value is not computed here; it is settled on the state return. California's flat rate for bonuses and stock options; other supplemental pay (overtime, commissions, severance, vacation) uses 6.6%.",
+        "source": {
+          "title": "California EDD Publication DE 44 (Rev. 52 (4-26)), 2026 California Employer's Guide — How to Withhold PIT on Supplemental Wages",
+          "url": "https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de44.pdf",
+          "retrievedAt": "2026-10-16"
+        }
+      }
+    ],
+    "flags": [],
+    "scenarios": [],
+    "notes": [
+      "RSUs: the market value of the shares delivered at vest is wages (Pub 525, restricted property: FMV minus any amount paid). Your cost basis is that value; the holding period starts at vest.",
+      "Tax at sale uses the 2026 brackets with your salary as the other income of the year of sale. State tax on capital gains is not computed.",
+      "Estimate only, not tax advice: the plan documents, your other income, deductions and credits change the result."
+    ],
+    "totalTaxAtEvent": 3988,
+    "totalTaxAtSale": null,
+    "sources": [
+      {
+        "title": "IRS Publication 15 (2026), What's New and section 7 (Supplemental Wages)",
+        "url": "https://www.irs.gov/pub/irs-pdf/p15.pdf",
+        "retrievedAt": "2026-10-20"
+      },
+      {
+        "title": "California EDD Publication DE 44 (Rev. 52 (4-26)), 2026 California Employer's Guide — How to Withhold PIT on Supplemental Wages",
+        "url": "https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de44.pdf",
+        "retrievedAt": "2026-10-16"
+      },
+      {
+        "title": "Rev. Proc. 2025-32 (2026 inflation adjustments), sections 4.01 and 4.14; Publication 1040 (2026) Tax and Earned Income Credit Tables (early-release draft): 2026 Tax Table and 2026 Tax Computation Worksheet",
+        "url": "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf",
+        "retrievedAt": "2026-10-20"
+      },
+      {
+        "title": "IRS Publication 525 (2025), Taxable and Nontaxable Income: Restricted Property; Qualified equity grants (RSU programs)",
+        "url": "https://www.irs.gov/pub/irs-pdf/p525.pdf",
+        "retrievedAt": "2026-11-21",
+        "effectiveFrom": "2026-01-01"
+      }
+    ]
+  },
+  "warnings": [],
+  "attribution": {
+    "source": "CalcBloc",
+    "url": "https://calcbloc.com/startup/stock-option-tax-calculator",
+    "required": true,
+    "text": "Data by CalcBloc (calcbloc.com)"
+  }
+}

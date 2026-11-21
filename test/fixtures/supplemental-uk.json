@@ -1,0 +1,83 @@
+{
+  "endpoint": "supplemental-withholding",
+  "country": "uk",
+  "short_code": "uk",
+  "countryName": "United Kingdom",
+  "year": "2026-27",
+  "currency": "GBP",
+  "inputs": {
+    "salary": 50000,
+    "amount": 10000,
+    "type": "bonus",
+    "month_paid": 12,
+    "tax_code_number": 1257,
+    "ni_category": "A"
+  },
+  "type": "bonus",
+  "region": "england",
+  "method": "HMRC PAYE cumulative basis (Specification for PAYE Tax Table Routines v24.0), Class 1 NIC per earnings period",
+  "lines": [
+    {
+      "label": "Income Tax (PAYE, code 1257L, month 12)",
+      "withheld": 3944,
+      "liability": 3946,
+      "note": "Liability: the extra income tax on the year's pay at the England & Northern Ireland rates.",
+      "source": {
+        "title": "HMRC: Specification for PAYE Tax Table Routines, version 24.0 (February 2026), sections 3-4 and Appendices A-C (2026/2027 parameters)",
+        "url": "https://assets.publishing.service.gov.uk/media/698c9824bd090be481c2879a/PAYErout-v24-0.odt",
+        "retrievedAt": "2026-11-21",
+        "effectiveFrom": "2026-04-06",
+        "effectiveTo": "2027-04-05"
+      }
+    },
+    {
+      "label": "Employee National Insurance (Class 1, category A)",
+      "withheld": 201.34,
+      "liability": 201.34,
+      "source": {
+        "title": "GOV.UK: Rates and thresholds for employers 2026 to 2027 (Class 1 National Insurance thresholds and rates)",
+        "url": "https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2026-to-2027",
+        "retrievedAt": "2026-10-16"
+      }
+    }
+  ],
+  "summary": {
+    "amount": 10000,
+    "totalWithheld": 4145.34,
+    "totalLiability": 4147.34,
+    "difference": 2,
+    "netPayment": 5854.66
+  },
+  "notes": [
+    "Tax code 1257L on the cumulative basis, monthly pay of £4,166.67, bonus paid in tax month 12.",
+    "Withholding equals the liability by design: in month 12 cumulative PAYE brings the year's deductions to the tax on the year's pay under the tax code. Any gap comes from the £9 a tax code adds to the allowance and from the Personal Allowance taper over £100,000, which the code does not apply until HMRC changes it.",
+    "Employee National Insurance is worked out on each month's pay on its own (not cumulatively) and is a final charge, so the NIC withheld is the NIC due. Directors (annual earnings period) are not covered.",
+    "Student and postgraduate loan deductions and pension contributions are not included."
+  ],
+  "sources": [
+    {
+      "title": "HMRC: Specification for PAYE Tax Table Routines, version 24.0 (February 2026), sections 3-4 and Appendices A-C (2026/2027 parameters)",
+      "url": "https://assets.publishing.service.gov.uk/media/698c9824bd090be481c2879a/PAYErout-v24-0.odt",
+      "retrievedAt": "2026-11-21",
+      "effectiveFrom": "2026-04-06",
+      "effectiveTo": "2027-04-05"
+    },
+    {
+      "title": "GOV.UK: Rates and thresholds for employers 2026 to 2027 (Class 1 National Insurance thresholds and rates)",
+      "url": "https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2026-to-2027",
+      "retrievedAt": "2026-10-16"
+    },
+    {
+      "title": "HMRC: Income Tax rates and allowances for current and previous tax years (updated 6 April 2026)",
+      "url": "https://www.gov.uk/government/publications/rates-and-allowances-income-tax/income-tax-rates-and-allowances-current-and-past",
+      "retrievedAt": "2026-10-16"
+    }
+  ],
+  "warnings": [],
+  "attribution": {
+    "source": "CalcBloc",
+    "url": "https://calcbloc.com/developers",
+    "required": true,
+    "text": "Data by CalcBloc (calcbloc.com)"
+  }
+}

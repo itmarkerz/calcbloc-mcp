@@ -49,11 +49,37 @@ export interface CountryInfo {
   years_available: string[];
   available_endpoints: string[];
   tables_only: boolean;
+  /** API 1.8+: /supplemental-withholding is available (its parameters are in endpoints["supplemental-withholding"]). */
+  supplemental?: boolean;
+  /** API 1.8+: /equity-tax is available (its parameters are in equity_tax). */
+  equity?: boolean;
+  /** API 1.8+: the equity-tax endpoint (kept outside `endpoints`), or null. */
+  equity_tax?: EquityEndpointInfo | null;
   endpoints: {
     "net-salary"?: CalcEndpointInfo;
     "employer-cost"?: CalcEndpointInfo;
     "tax-tables": TaxTablesEndpointInfo;
+    /** API 1.8+: present only where the country has supplemental withholding. */
+    "supplemental-withholding"?: SupplementalEndpointInfo;
   };
+}
+
+/** API 1.8+: GET /supplemental-withholding for one country. */
+export interface SupplementalEndpointInfo {
+  path: string;
+  /** Payment types the country supports (bonus, commission, rsu_vest, option_exercise, lump_sum). */
+  types: string[];
+  parameters: CountryParam[];
+}
+
+/** API 1.8+: GET /equity-tax for one country. */
+export interface EquityEndpointInfo {
+  path: string;
+  /** Tax year of the rates (also accepted as `year`). */
+  tax_year?: string;
+  year?: string;
+  instruments: string[];
+  parameters: CountryParam[];
 }
 
 export interface Source {
@@ -150,6 +176,93 @@ export interface CompareResponse {
   difference: { inACurrency: number; inBCurrency: number; percentOfA: number; deductionRateGapPoints: number };
   interpretation: string;
   calculatorUrl: string;
+  warnings: string[];
+  attribution?: { url?: string; text?: string };
+}
+
+/** API 1.8+: an official source as the supplemental and equity endpoints return it. */
+export interface ResultSource extends Source {
+  effectiveFrom?: string;
+  effectiveTo?: string | null;
+}
+
+/** API 1.8+: one line of GET /supplemental-withholding (withholding next to the final liability the payment adds). */
+export interface SupplementalLine {
+  label: string;
+  withheld: number;
+  liability: number | null;
+  rate?: number;
+  note?: string;
+  source: ResultSource;
+}
+
+/** API 1.8+: response of GET /supplemental-withholding. */
+export interface SupplementalResponse {
+  endpoint: string;
+  country: string;
+  short_code?: string;
+  countryName: string;
+  year: string;
+  currency: string;
+  inputs: Record<string, unknown>;
+  type: string;
+  region: string | null;
+  method: string;
+  lines: SupplementalLine[];
+  summary: { amount: number; totalWithheld: number; totalLiability: number | null; difference: number | null; netPayment: number };
+  notes: string[];
+  sources: ResultSource[];
+  warnings: string[];
+  attribution?: { url?: string; text?: string };
+}
+
+/** API 1.8+: one line of an equity-tax result (stage "event" = vest or exercise, "sale" = capital gains). */
+export interface EquityLine {
+  label: string;
+  stage: "event" | "sale";
+  base: number;
+  amount: number;
+  rate?: number;
+  withheld?: number;
+  note?: string;
+  source: ResultSource;
+}
+
+export interface EquityScenario {
+  name: string;
+  description: string;
+  totalTax: number;
+  lines: EquityLine[];
+}
+
+/** API 1.8+: the EquityResult of GET /equity-tax (src/lib/equity/types.ts in the site repo). */
+export interface EquityResult {
+  country: string;
+  region: string | null;
+  taxYear: string;
+  currency: string;
+  instrument: string;
+  units: number;
+  taxableAtEvent: number;
+  lines: EquityLine[];
+  totalTaxAtEvent: number;
+  totalTaxAtSale: number | null;
+  flags: string[];
+  scenarios: EquityScenario[];
+  notes: string[];
+  sources: ResultSource[];
+}
+
+/** API 1.8+: response of GET /equity-tax. */
+export interface EquityResponse {
+  endpoint: string;
+  country: string;
+  short_code?: string;
+  countryName: string;
+  year: string;
+  currency: string;
+  inputs: Record<string, unknown>;
+  result: EquityResult;
   warnings: string[];
   attribution?: { url?: string; text?: string };
 }
@@ -308,6 +421,16 @@ export class CalcBlocClient {
 
   compare(params: Record<string, QueryValue>): Promise<CompareResponse> {
     return this.get<CompareResponse>("/compare", params);
+  }
+
+  /** API 1.8+: tax withheld on a bonus or other supplemental payment, next to the final liability it adds. */
+  supplementalWithholding(params: Record<string, QueryValue>): Promise<SupplementalResponse> {
+    return this.get<SupplementalResponse>("/supplemental-withholding", params);
+  }
+
+  /** API 1.8+: tax on an RSU vest or option exercise, and on a later sale. */
+  equityTax(params: Record<string, QueryValue>): Promise<EquityResponse> {
+    return this.get<EquityResponse>("/equity-tax", params);
   }
 
   /** A tax table (national, or regional when `region` is a region code). Local data first when a data folder is set. */
