@@ -1,6 +1,6 @@
 {
   "name": "calcbloc-mcp",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "MCP server for take-home pay, employer cost, salary comparison and official tax tables in 41 countries, with the tax year and official sources in every answer.",
   "mcpName": "io.github.itmarkerz/calcbloc-mcp",
   "type": "module",
@@ -28,7 +28,11 @@
     "test": "npm run build && vitest run",
     "start": "node dist/index.js",
     "inspector": "npx @modelcontextprotocol/inspector node dist/index.js",
-    "prepublishOnly": "npm test"
+    "prepublishOnly": "npm test",
+    "coverage": "node scripts/gen-coverage.mjs",
+    "coverage:check": "node scripts/gen-coverage.mjs --check test/fixtures/countries.json",
+    "test:schema": "vitest run test/phase1.test.ts -t schema",
+    "test:golden": "vitest run test/phase1.test.ts -t golden"
   },
   "keywords": [
     "mcp",

@@ -1,4 +1,5 @@
 import type { CountryInfo, CountryParam, QueryValue } from "./api.js";
+import { COVERAGE } from "./coverage.generated.js";
 
 /** Bad input the assistant can correct (returned as a tool error with guidance, never sent to the API). */
 export class ToolInputError extends Error {
@@ -92,13 +93,18 @@ const COUNTRY_ALIASES: Record<string, string> = {
 // Keys go through the same normalisation as the input (Україна loses the diaeresis on ї, for example).
 const ALIASES: Record<string, string> = Object.fromEntries(Object.entries(COUNTRY_ALIASES).map(([k, v]) => [norm(k), v]));
 
+/** The short code shown to people and in examples (API 1.7 short_code; the generated map for older or offline data). */
+export function shortCodeOf(c: CountryInfo): string {
+  return c.short_code ?? (COVERAGE.shortCodes as Record<string, string>)[c.code] ?? c.code;
+}
+
 export function countryList(countries: CountryInfo[]): string {
-  return countries.map((c) => `${c.code} (${c.name})`).join(", ");
+  return countries.map((c) => `${shortCodeOf(c)} (${c.name})`).join(", ");
 }
 
 export function resolveCountry(countries: CountryInfo[], input: string): CountryInfo {
   const n = norm(input);
-  const direct = countries.find((c) => c.code === n || norm(c.name) === n);
+  const direct = countries.find((c) => c.code === n || norm(c.name) === n || norm(shortCodeOf(c)) === n || (c.iso_code && norm(c.iso_code) === n));
   if (direct) return direct;
   const alias = ALIASES[n];
   const viaAlias = alias ? countries.find((c) => c.code === alias) : undefined;
@@ -157,9 +163,9 @@ function matchRegionValue(input: string, values: string[], names: { code: string
   return undefined;
 }
 
-function describeRegions(values: string[], names: { code: string; name: string }[]): string {
+function describeRegions(values: string[], names: { code: string; name: string }[], labels: Record<string, string> = {}): string {
   return values.map((v) => {
-    const name = names.find((r) => r.code === v)?.name;
+    const name = labels[v] ?? names.find((r) => r.code === v)?.name;
     return name ? `${v} (${name})` : v;
   }).join(", ");
 }
@@ -169,14 +175,21 @@ function describeRegions(values: string[], names: { code: string; name: string }
  * when the calculation has no regional option (the region is then ignored rather than rejected).
  */
 export function resolveCalcRegion(country: CountryInfo, kind: CalcKind, input: string | undefined): { region?: string; warning?: string } {
-  if (!input?.trim()) return {};
   const ep = country.endpoints[kind];
   const param = ep?.parameters.find((p) => p.name === "region");
-  const names = country.endpoints["tax-tables"].regions;
+  const names = [...country.endpoints["tax-tables"].regions, ...Object.entries(param?.labels ?? {}).map(([code, name]) => ({ code, name }))];
+  if (!input?.trim()) {
+    // Checked here so the assistant gets the list of codes before any API call (the API answers the same way).
+    if (param?.required) {
+      const values = param.values ?? names.map((r) => r.code);
+      throw new ToolInputError(`${country.name} ${kind === "net-salary" ? "take-home pay" : "employer cost"} needs a region: pass region as one of ${describeRegions(values, names, param.labels)}.`);
+    }
+    return {};
+  }
   if (!param) return { warning: `Region "${input}" was ignored: this ${country.name} calculation does not vary by region.` };
   const values = param.values ?? names.map((r) => r.code);
   const match = matchRegionValue(input, values, names);
-  if (!match) throw new ToolInputError(`Unknown ${country.name} region "${input}". Use one of: ${describeRegions(values, names)}.`);
+  if (!match) throw new ToolInputError(`Unknown ${country.name} region "${input}". Use one of: ${describeRegions(values, names, param.labels)}.`);
   return { region: match };
 }
 
@@ -255,7 +268,11 @@ function coerce(p: CountryParam, raw: unknown, countryName: string): QueryValue 
   }
   if (p.values) {
     const s = String(raw).trim();
-    const hit = p.values.find((v) => v === s) ?? p.values.find((v) => v.toLowerCase() === s.toLowerCase()) ?? p.values.find((v) => norm(v) === norm(s));
+    const hit =
+      p.values.find((v) => v === s) ??
+      p.values.find((v) => v.toLowerCase() === s.toLowerCase()) ??
+      p.values.find((v) => norm(v) === norm(s)) ??
+      optionAlias(p, s);
     if (hit === undefined) throw bad(`"${s}" is not allowed`);
     // Enum values can be numeric strings (e.g. payments 12 | 14).
     return hit;
@@ -269,4 +286,33 @@ export function checkSalary(country: CountryInfo, kind: CalcKind, salary: number
   if (p?.min !== undefined && salary < p.min) throw new ToolInputError(`Salary must be at least ${p.min} for ${country.name}.`);
   if (p?.max !== undefined && salary > p.max) throw new ToolInputError(`Salary must be at most ${p.max} for ${country.name}.`);
   return p?.description ?? `Annual gross salary in ${country.currency}.`;
+}
+
+/** Spellings accepted for option values when the API (before 1.7) does not list its own aliases. */
+const FALLBACK_SYNONYMS: Record<string, string> = {
+  married: "mfj",
+  married_joint: "mfj",
+  married_jointly: "mfj",
+  married_filing_jointly: "mfj",
+  joint: "mfj",
+  married_separately: "mfs",
+  married_filing_separately: "mfs",
+  head_of_household: "hoh",
+  qualifying_surviving_spouse: "qss",
+  qualifying_widow: "qss",
+  qualifying_widower: "qss",
+};
+
+const aliasKey = (s: string) => norm(s).replace(/-/g, "_");
+
+/** An option value given by alias ("married") or label ("Married filing jointly"), resolved to the canonical value. */
+function optionAlias(p: CountryParam, raw: string): string | undefined {
+  const values = p.values ?? [];
+  const k = aliasKey(raw);
+  const fromApi = p.aliases?.[k];
+  if (fromApi && values.includes(fromApi)) return fromApi;
+  const fromLabel = Object.entries(p.labels ?? {}).find(([, l]) => aliasKey(l) === k)?.[0];
+  if (fromLabel && values.includes(fromLabel)) return fromLabel;
+  const fallback = FALLBACK_SYNONYMS[k];
+  return fallback && values.includes(fallback) ? fallback : undefined;
 }

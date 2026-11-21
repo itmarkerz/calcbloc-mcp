@@ -1,7 +1,7 @@
 import { existsSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
-import { API_KEY_URL_APP, DEFAULT_API_URL, SERVER_NAME, SERVER_VERSION } from "./constants.js";
+import { API_KEY_URL_APP, DEFAULT_API_URL, DEVELOPERS_URL, SERVER_NAME, SERVER_VERSION } from "./constants.js";
 
 /** One parameter of a calculation endpoint, as listed by GET /countries. */
 export interface CountryParam {
@@ -13,6 +13,10 @@ export interface CountryParam {
   max?: number;
   default?: string | number | boolean;
   unit?: string;
+  /** API 1.7+: display name of each value (e.g. ca → California). */
+  labels?: Record<string, string>;
+  /** API 1.7+: accepted spellings (normalised with underscores) → canonical value. */
+  aliases?: Record<string, string>;
   description: string;
 }
 
@@ -35,6 +39,10 @@ export interface TaxTablesEndpointInfo {
 
 export interface CountryInfo {
   code: string;
+  /** API 1.7+: the short code used in docs (ISO 3166-1 alpha-2 in lower case; the UK is "uk"). */
+  short_code?: string;
+  /** API 1.7+: ISO 3166-1 alpha-2. */
+  iso_code?: string;
   name: string;
   currency: string;
   current_year: string;
@@ -230,6 +238,8 @@ export class CalcBlocClient {
    * time (ms): the tools answer with the limit message straight away instead of retrying.
    */
   private blockedUntil = 0;
+  /** The daily request limit the API last reported (X-RateLimit-Limit). */
+  private dailyLimit: number | undefined;
 
   constructor(opts: ClientOptions = {}) {
     // Trailing slashes are trimmed with a loop rather than /\/+$/, which is polynomial on long runs of "/".
@@ -251,13 +261,16 @@ export class CalcBlocClient {
    */
   private limitError(retryAfter: number | undefined, docs?: string): CalcBlocApiError {
     const when = retryAfter ? ` Try again in about ${humanDuration(retryAfter)}.` : "";
+    // Limits are not typed in here: the daily figure comes from the API's X-RateLimit-Limit header when it has been seen.
+    const perDay = this.dailyLimit ? `${this.dailyLimit.toLocaleString("en-US")} requests a day` : "";
+    const day = perDay ? ` (${perDay})` : "";
     if (this.apiKey)
-      return new CalcBlocApiError(429, "rate_limited", `The CalcBloc API rate limit was reached.${when} Your API key's limit is 5,000 requests a day and 60 a minute.`, docs, retryAfter);
-    const addKey = ` Add your free API key (5,000 requests a day): ${API_KEY_URL_APP} and set it as the CALCBLOC_API_KEY environment variable in this MCP server's configuration (the "env" block for calcbloc in your MCP client's settings), then restart the server.`;
+      return new CalcBlocApiError(429, "rate_limited", `The CalcBloc API rate limit was reached.${when} Your API key's limits${perDay ? `: ${perDay}` : ""} are listed at ${DEVELOPERS_URL}#limits.`, docs, retryAfter);
+    const addKey = ` Get a free API key (email only, much higher limits): ${API_KEY_URL_APP} and set it as the CALCBLOC_API_KEY environment variable in this MCP server's configuration (the "env" block for calcbloc in your MCP client's settings), then restart the server.`;
     const message =
       retryAfter !== undefined && retryAfter <= 60
-        ? `The free allowance without a key (5 requests a minute, 50 a day) is used up for this minute.${when}${addKey}`
-        : `The free allowance of 50 requests a day without a key is used up.${addKey}${retryAfter ? ` Without a key, try again in about ${humanDuration(retryAfter)}.` : ""}`;
+        ? `The free per-minute allowance without a key is used up for this minute.${when}${addKey}`
+        : `The free daily allowance without a key${day} is used up.${addKey}${retryAfter ? ` Without a key, try again in about ${humanDuration(retryAfter)}.` : ""}`;
     return new CalcBlocApiError(429, "rate_limited", message, docs, retryAfter);
   }
 
@@ -348,6 +361,8 @@ export class CalcBlocClient {
     } catch {
       throw new CalcBlocApiError(res.status, "invalid_response", `The CalcBloc API returned a response that is not JSON (HTTP ${res.status}).`);
     }
+    const dayLimit = Number(res.headers.get("x-ratelimit-limit"));
+    if (Number.isInteger(dayLimit) && dayLimit > 0) this.dailyLimit = dayLimit;
     if (res.ok) {
       // Last keyless request of the day: the next ones would get 429, so ask for a key instead of sending them.
       const remaining = res.headers.get("x-ratelimit-remaining");

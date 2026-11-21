@@ -1,0 +1,102 @@
+{
+  "endpoint": "net-salary",
+  "country": "us",
+  "countryName": "United States",
+  "year": "2026",
+  "requested_year": "latest",
+  "currency": "USD",
+  "inputs": {
+    "salary": 100000,
+    "region": "ca",
+    "filing_status": "single",
+    "frequency": "biweekly",
+    "multiple_jobs": false,
+    "children": 0,
+    "other_dependents": 0,
+    "retirement_pct": 0
+  },
+  "summary": {
+    "grossAnnual": 100000,
+    "netAnnual": 72319.6,
+    "totalDeductions": 27680.4,
+    "effectiveRate": 0.276804
+  },
+  "results": {
+    "netPerPeriod": 2781.523076923077,
+    "netAnnual": 72319.6,
+    "taxesTotal": 27680.4,
+    "effectiveRate": 0.276804,
+    "marginalRate": 0.3988,
+    "grossPerPeriod": 3846.153846153846,
+    "grossAnnual": 100000
+  },
+  "breakdown": {
+    "title": "Paycheck breakdown",
+    "columns": [
+      "Every 2 weeks",
+      "Per year"
+    ],
+    "rows": [
+      {
+        "label": "Gross pay",
+        "values": [
+          3846.153846153846,
+          100000
+        ]
+      },
+      {
+        "label": "Federal income tax",
+        "values": [
+          -506.54,
+          -13170.04
+        ]
+      },
+      {
+        "label": "Social Security",
+        "values": [
+          -238.46153846153845,
+          -6200
+        ]
+      },
+      {
+        "label": "Medicare",
+        "values": [
+          -55.76923076923077,
+          -1450
+        ]
+      },
+      {
+        "label": "State income tax",
+        "values": [
+          -213.85999999999999,
+          -5560.36
+        ]
+      },
+      {
+        "label": "CA SDI",
+        "values": [
+          -50,
+          -1300
+        ]
+      },
+      {
+        "label": "Take-home pay",
+        "values": [
+          2781.523076923077,
+          72319.6
+        ]
+      }
+    ]
+  },
+  "notes": [
+    "Assumes Form DE 4 filing status \"Single or Married (with two or more incomes)\" with 1 regular withholding allowance and no estimated-deduction allowances."
+  ],
+  "calculatorUrl": "https://calcbloc.com/us/paycheck-calculator",
+  "warnings": [],
+  "attribution": {
+    "source": "CalcBloc",
+    "url": "https://calcbloc.com/us/paycheck-calculator",
+    "required": true,
+    "text": "Data by CalcBloc (calcbloc.com)"
+  }
+}

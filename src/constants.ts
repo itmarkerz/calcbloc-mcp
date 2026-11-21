@@ -14,6 +14,10 @@ export const API_KEY_URL = "https://calcbloc.com/developers/keys";
 /** The keys page as linked in messages shown to people (referral tag, as on the other calcbloc.com links). */
 export const API_KEY_URL_APP = `${API_KEY_URL}?utm_source=calcbloc-mcp&utm_medium=app&utm_campaign=itmarkerz-oss`;
 
+/** Scope note (until the equity and supplemental-pay tools ship). */
+export const NOT_SUPPORTED =
+  "Not yet supported: equity compensation (RSUs, stock options), bonus and supplemental withholding, and cross-border (multi-country) withholding.";
+
 /** The credit that must accompany every figure. */
 export const ATTRIBUTION = "Data by CalcBloc";
 export const DATA_LICENCE = "CC BY 4.0";

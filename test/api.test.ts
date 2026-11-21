@@ -72,17 +72,17 @@ describe("CalcBlocClient", () => {
     const limited = (apiKey?: string) =>
       new CalcBlocClient({
         apiKey,
-        fetch: fakeFetch(async () => new Response(JSON.stringify({ error: { code: "rate_limited", message: "Slow down" } }), { status: 429, headers: { "Retry-After": "48818" } })),
+        fetch: fakeFetch(async () => new Response(JSON.stringify({ error: { code: "rate_limited", message: "Slow down" } }), { status: 429, headers: { "Retry-After": "48818", "X-RateLimit-Limit": apiKey ? "5000" : "300" } })),
       });
-    await expect(limited().countries()).rejects.toThrow(/50 requests a day.*CALCBLOC_API_KEY/s);
+    await expect(limited().countries()).rejects.toThrow(/300 requests a day.*CALCBLOC_API_KEY/s);
     await expect(limited().countries()).rejects.toThrow(/14 hours/);
     await expect(limited("k").countries()).rejects.toThrow(/5,000 requests a day/);
     const err = (await limited().countries().catch((e: unknown) => e)) as CalcBlocApiError;
-    expect(err.message).toMatch(/Add your free API key/);
+    expect(err.message).toMatch(/Get a free API key/);
     expect(err.message).toContain("https://calcbloc.com/developers/keys?utm_source=calcbloc-mcp&utm_medium=app&utm_campaign=itmarkerz-oss");
     expect(err.message).toMatch(/CALCBLOC_API_KEY environment variable/);
     const keyed = (await limited("k").countries().catch((e: unknown) => e)) as CalcBlocApiError;
-    expect(keyed.message).not.toMatch(/Add your free API key/);
+    expect(keyed.message).not.toMatch(/Get a free API key/);
   });
 
   it("works without a key, and sends the key on every request once set", async () => {
@@ -114,7 +114,7 @@ describe("CalcBlocClient", () => {
       }),
     });
     await expect(api.netSalary({ country: "uk", salary: 1 })).rejects.toMatchObject({ code: "rate_limited", status: 429 });
-    await expect(api.netSalary({ country: "uk", salary: 2 })).rejects.toThrow(/^The free allowance without a key \(5 requests a minute, 50 a day\) is used up for this minute\. Try again in about \d+ seconds\. Add your free API key/);
+    await expect(api.netSalary({ country: "uk", salary: 2 })).rejects.toThrow(/^The free per-minute allowance without a key is used up for this minute\. Try again in about \d+ seconds\. Get a free API key \(email only/);
     await expect(api.employerCost({ country: "uk", salary: 2 })).rejects.toThrow(/Try again in about/);
     expect(calls).toBe(1);
     t += 31_000;
@@ -128,11 +128,11 @@ describe("CalcBlocClient", () => {
       now: () => 0,
       fetch: fakeFetch(async () => {
         calls++;
-        return new Response(JSON.stringify({ country: "uk" }), { status: 200, headers: { "X-RateLimit-Remaining": "0", "X-RateLimit-Reset": "7200" } });
+        return new Response(JSON.stringify({ country: "uk" }), { status: 200, headers: { "X-RateLimit-Remaining": "0", "X-RateLimit-Reset": "7200", "X-RateLimit-Limit": "300" } });
       }),
     });
     await expect(api.netSalary({ country: "uk", salary: 1 })).resolves.toMatchObject({ country: "uk" });
-    await expect(api.netSalary({ country: "uk", salary: 2 })).rejects.toThrow(/^The free allowance of 50 requests a day without a key is used up\. Add your free API key \(5,000 requests a day\): .*CALCBLOC_API_KEY.* Without a key, try again in about 2 hours\.$/s);
+    await expect(api.netSalary({ country: "uk", salary: 2 })).rejects.toThrow(/^The free daily allowance without a key \(300 requests a day\) is used up\. Get a free API key \(email only, much higher limits\): .*CALCBLOC_API_KEY.* Without a key, try again in about 2 hours\.$/s);
     expect(calls).toBe(1);
     const keyed = new CalcBlocClient({
       apiKey: "cb_key",

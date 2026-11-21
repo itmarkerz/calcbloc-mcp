@@ -92,7 +92,7 @@ describe("calculate_take_home_pay", () => {
     const { api } = client();
     const r = await takeHomePay(api, { country: "Atlantis", gross_salary: 50000 });
     expect(r.isError).toBe(true);
-    expect(text(r)).toContain("new-zealand (New Zealand)");
+    expect(text(r)).toContain("nz (New Zealand)");
     const reg = await takeHomePay(api, { country: "uk", gross_salary: 50000, region: "cornwall" });
     expect(reg.isError).toBe(true);
     expect(text(reg)).toContain("scotland");
@@ -115,7 +115,7 @@ describe("calculate_take_home_pay", () => {
     const r = await takeHomePay(api, { country: "uk", gross_salary: 50000 });
     expect(r.isError).toBe(true);
     const t = text(r);
-    expect(t).toContain("The free allowance of 50 requests a day without a key is used up.");
+    expect(t).toContain("The free daily allowance without a key is used up.");
     expect(t).toContain("2 minutes");
     expect(t).toContain("CALCBLOC_API_KEY");
     expect(t).toContain("https://calcbloc.com/developers/keys");
@@ -274,8 +274,10 @@ describe("list_countries", () => {
     const { api } = client();
     const r = await listCountries(api, {});
     const s = r.structuredContent as Record<string, any>;
-    expect(s.countries.length).toBe(24);
-    expect(s.countries.find((c: { code: string }) => c.code === "austria")).toMatchObject({ takeHomePay: false, taxTables: true });
+    expect(s.countries.length).toBe(41);
+    expect(s.countries.find((c: { code: string }) => c.code === "austria")).toMatchObject({ shortCode: "at", takeHomePay: false, taxTables: true });
+    expect(s.countries.find((c: { code: string }) => c.code === "new-zealand")).toMatchObject({ shortCode: "nz", takeHomePay: true, employerCost: true });
+    expect(text(r)).toContain("- nz: New Zealand");
     expect(text(r)).toContain("Data by CalcBloc");
   });
 
