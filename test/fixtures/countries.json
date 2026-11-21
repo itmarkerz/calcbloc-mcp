@@ -94,7 +94,7 @@
       ]
     },
     "not_supported": "Cross-border (multi-country) withholding is not supported by the API yet. Equity compensation tax (/equity-tax) covers United States, United Kingdom, Australia, Canada, India; supplemental withholding (/supplemental-withholding: bonus, commission, RSU vest, option exercise, lump sum) covers Singapore, France, Netherlands, Spain, Germany, United States, United Kingdom, Australia, New Zealand, Canada, Ireland, India.",
-    "summary": "41 countries with official tax tables; 12 with take-home pay calculations; 11 with employer cost; 12 in the cross-country comparison (France: take-home pay and compare only, no employer cost yet); 5 with equity compensation tax (RSUs and stock options)."
+    "summary": "41 countries with official tax tables; 12 with take-home pay calculations; 11 with employer cost; 12 in the cross-country comparison (France: take-home pay and compare only, no employer cost yet); 12 with supplemental (bonus) withholding; 5 with equity compensation tax (RSUs and stock options)."
   },
   "countries": [
     {

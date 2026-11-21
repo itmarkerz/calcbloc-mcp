@@ -2,7 +2,7 @@
 
 All notable changes to this package are listed here. The package follows [semantic versioning](https://semver.org/).
 
-## 0.3.0 (unreleased)
+## 0.3.0 (2026-11-22)
 
 Two new tools on CalcBloc API 1.8 (`/supplemental-withholding` and `/equity-tax`). Every input that worked in 0.2.0 still works. Against an API older than 1.8 the new tools answer that the API does not offer them yet.
 
