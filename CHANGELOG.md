@@ -2,7 +2,7 @@
 
 All notable changes to this package are listed here. The package follows [semantic versioning](https://semver.org/).
 
-## 0.2.0 (unreleased)
+## 0.2.0 (2026-11-21)
 
 Fixes for the issues found in the CorpusIQ review. Every input that worked in 0.1.x still works.
 
