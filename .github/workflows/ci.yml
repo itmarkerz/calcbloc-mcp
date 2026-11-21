@@ -24,4 +24,11 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run typecheck
+      - name: Coverage text matches the API capture (no typed-in counts)
+        run: npm run coverage:check
+      - run: npm run build
+      - name: Schema tests (tool descriptions, enums, region requirement)
+        run: npm run test:schema
+      - name: Golden tests (official-figure cases)
+        run: npm run test:golden
       - run: npm test

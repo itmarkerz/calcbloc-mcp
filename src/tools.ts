@@ -1,7 +1,8 @@
 import * as z from "zod/v4";
 import type { McpServer } from "@modelcontextprotocol/server";
 import { CalcBlocApiError, type CalcBlocClient, type CalcResponse, type CompareSide, type CountryInfo, type QueryValue, type Source, type TaxTable } from "./api.js";
-import { ATTRIBUTION, DATA_LICENCE, DATA_URL, DISCLAIMER } from "./constants.js";
+import { API_KEY_URL_APP, ATTRIBUTION, DATA_LICENCE, DATA_URL, DISCLAIMER, NOT_SUPPORTED } from "./constants.js";
+import { COVERAGE } from "./coverage.generated.js";
 import { money, pct, renderSection, round2, sectionSources, sourceLines, tableSources, tagPageLinks, tagPageLinksDeep, uniqueSources } from "./format.js";
 import {
   type CalcKind,
@@ -15,6 +16,7 @@ import {
   resolveOptions,
   resolveTableRegion,
   resolveTableYear,
+  shortCodeOf,
   tableRegionFor,
   ToolInputError,
 } from "./resolve.js";
@@ -45,7 +47,7 @@ const OptionsInput = z
   .record(z.string(), z.union([z.string(), z.number(), z.boolean()]))
   .optional()
   .describe(
-    'Country-specific options, e.g. US {"filing_status":"married","children":2}, UK {"pension_pct":5,"student_loan":"plan2"}, Germany {"tax_class":3,"church":true}. Call list_countries with the country to see every option.',
+    `Country-specific options. Examples: US {"filing_status":"mfj","children":2} (filing_status: ${COVERAGE.examples.usFilingStatus.join(" | ")}; "married" and "head_of_household" are accepted too), UK {"pension_pct":5,"student_loan":"plan2"} (student_loan: ${COVERAGE.examples.ukStudentLoan.join(" | ")}), Germany {"tax_class":3,"church":true}. Call list_countries with the country to see every option, its allowed values and its default.`,
   );
 
 const TakeHomeOutput = z.object({
@@ -149,7 +151,8 @@ const TaxTablesOutput = z.object({
 });
 
 const CountrySummarySchema = z.object({
-  code: z.string(),
+  code: z.string().describe("The API key of the country (kept for compatibility)."),
+  shortCode: z.string().describe("The short code to use (ISO 3166-1 alpha-2 in lower case; the UK is uk)."),
   name: z.string(),
   currency: z.string(),
   currentYear: z.string(),
@@ -202,7 +205,11 @@ async function guarded(run: () => Promise<ToolResult>): Promise<ToolResult> {
     if (e instanceof ToolInputError) return fail(e.message);
     if (e instanceof CalcBlocApiError) {
       const docs = e.docs && e.code !== "rate_limited" ? ` (API docs: ${e.docs})` : "";
-      return fail(`CalcBloc API error [${e.code}]: ${e.message}${docs}`);
+      const keyHint =
+        e.code === "rate_limited" && !/CALCBLOC_API_KEY/.test(e.message)
+          ? ` Get a free key (email only) at ${API_KEY_URL_APP} and set it as the CALCBLOC_API_KEY environment variable of this MCP server.`
+          : "";
+      return fail(`CalcBloc API error [${e.code}]: ${e.message}${docs}${keyHint}`);
     }
     return fail(`Unexpected error: ${e instanceof Error ? e.message : String(e)}`);
   }
@@ -596,6 +603,7 @@ export async function listCountries(client: CalcBlocClient, args: { country?: st
     const countries = await client.countries();
     const summary = countries.map((c) => ({
       code: c.code,
+      shortCode: shortCodeOf(c),
       name: c.name,
       currency: c.currency,
       currentYear: c.current_year,
@@ -611,11 +619,11 @@ export async function listCountries(client: CalcBlocClient, args: { country?: st
     if (!args.country) {
       const calc = summary.filter((c) => c.takeHomePay);
       const lines = [
-        `CalcBloc covers ${summary.length} countries. Tax tables are available for all of them; take-home pay calculations for ${calc.length}.`,
+        `CalcBloc covers ${summary.length} countries. Tax tables are available for all of them; take-home pay calculations for ${calc.length}, employer cost for ${summary.filter((c) => c.employerCost).length}, compare for ${summary.filter((c) => c.compare).length}. Use the code shown (older keys such as new-zealand also work).`,
         "",
         ...summary.map((c) => {
           const what = [c.takeHomePay && "take-home pay", c.employerCost && "employer cost", c.compare && "compare", "tax tables"].filter(Boolean).join(", ");
-          return `- ${c.code}: ${c.name} (${c.currency}), tax year ${c.currentYear}${c.yearsAvailable.length > 1 ? ` (tables also ${c.yearsAvailable.slice(1).join(", ")})` : ""}: ${what}`;
+          return `- ${c.shortCode}: ${c.name} (${c.currency}), tax year ${c.currentYear}${c.yearsAvailable.length > 1 ? ` (tables also ${c.yearsAvailable.slice(1).join(", ")})` : ""}: ${what}`;
         }),
         "",
         "Call list_countries with a country code for its regions and calculation options.",
@@ -633,7 +641,7 @@ export async function listCountries(client: CalcBlocClient, args: { country?: st
       return { calculatorUrl: ep.calculatorUrl, salary, regions, options: optionParams(c, kind) as unknown as Record<string, unknown>[] };
     };
     const details = { code: c.code, taxTableRegions: c.endpoints["tax-tables"].regions, takeHomePay: calc("net-salary"), employerCost: calc("employer-cost") };
-    const lines = [`${c.name} (${c.code}), currency ${c.currency}, current tax year ${c.current_year}; tax-table years: ${c.years_available.join(", ")}.`, `Tax tables: ${c.endpoints["tax-tables"].pageUrl}`];
+    const lines = [`${c.name} (${shortCodeOf(c)}), currency ${c.currency}, current tax year ${c.current_year}; tax-table years: ${c.years_available.join(", ")}.`, `Tax tables: ${c.endpoints["tax-tables"].pageUrl}`];
     lines.push(details.taxTableRegions.length ? `Regional tax tables: ${details.taxTableRegions.map((r) => `${r.code} (${r.name})`).join(", ")}` : "No regional tax tables.");
     for (const [label, kind, d] of [["Take-home pay", "net-salary", details.takeHomePay], ["Employer cost", "employer-cost", details.employerCost]] as const) {
       if (!d) {
@@ -641,7 +649,8 @@ export async function listCountries(client: CalcBlocClient, args: { country?: st
         continue;
       }
       lines.push("", `${label} (${d.calculatorUrl}):`, `- gross_salary: ${d.salary}`);
-      if (d.regions.length) lines.push(`- region: ${d.regions.join(", ")}`);
+      const rp = c.endpoints[kind]?.parameters.find((p) => p.name === "region");
+      if (d.regions.length) lines.push(`- region${rp?.required ? " (REQUIRED)" : ""}: ${d.regions.map((r) => (rp?.labels?.[r] ? `${r} (${rp.labels[r]})` : r)).join(", ")}`);
       lines.push(`- options: ${describeOptions(c, kind)}`);
     }
     lines.push("", `${ATTRIBUTION}: ${pageUrl}`);
@@ -653,7 +662,11 @@ export async function listCountries(client: CalcBlocClient, args: { country?: st
 
 const READ_ONLY = { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: true } as const;
 
-const countryArg = z.string().min(2).max(60).describe('Country code or name, e.g. "us", "uk", "canada", "germany", "india", "australia". See list_countries.');
+const countryArg = z
+  .string()
+  .min(2)
+  .max(60)
+  .describe('Country short code (ISO 3166-1 alpha-2 in lower case; the UK is "uk", "gb" also works), e.g. "us", "uk", "ca", "de", "in", "au", "nz", or the English name. Older keys such as "new-zealand" also work. See list_countries.');
 const salaryArg = z
   .number()
   .positive()
@@ -667,11 +680,15 @@ export function registerTools(server: McpServer, client: CalcBlocClient): void {
     {
       title: "Calculate take-home pay",
       description:
-        "Net (take-home) pay after income tax and employee social security for a gross salary, with a line-by-line breakdown, using official rates for the current tax year. Supports regions (US states, UK nations, Canadian provinces, Spanish communities, German states, Indian states) and country-specific options. Returns the tax year, official source URLs and the calcbloc.com page.",
+        `Net (take-home) pay after income tax and employee social security for a gross salary, with a line-by-line breakdown, using official rates for the current tax year. Countries: ${COVERAGE.netSalaryCountries.join(", ")} (${COVERAGE.summary}) region is REQUIRED for: ${COVERAGE.regionRequired["net-salary"].join(", ")}; optional for: ${COVERAGE.regionOptional["net-salary"].join(", ")}; a missing or unknown region returns the valid codes. Returns the tax year, official source URLs and the calcbloc.com page. ${NOT_SUPPORTED}`,
       inputSchema: z.object({
         country: countryArg,
         gross_salary: salaryArg,
-        region: z.string().max(60).optional().describe('Region code or name where the calculation varies by region, e.g. US "ca", UK "scotland", Canada "on", Spain "md", Germany "by".'),
+        region: z
+          .string()
+          .max(60)
+          .optional()
+          .describe(`Region code or name. Required for: ${COVERAGE.regionRequired["net-salary"].join(", ")}. Examples: US "ca" or "California", UK "scotland", Canada "on", Spain "md", Germany "by". list_countries with the country lists every code.`),
         year: yearArg,
         options: OptionsInput,
       }),
@@ -686,11 +703,15 @@ export function registerTools(server: McpServer, client: CalcBlocClient): void {
     {
       title: "Calculate employer cost",
       description:
-        "Total cost of employing someone on a gross salary: the salary plus employer social security, payroll taxes, pension and other on-costs, with a breakdown, for the current tax year. Returns the tax year, official source URLs and the calcbloc.com page.",
+        `Total cost of employing someone on a gross salary: the salary plus employer social security, payroll taxes, pension and other on-costs, with a breakdown, for the current tax year. Countries: ${COVERAGE.employerCostCountries.join(", ")}. region is REQUIRED for: ${COVERAGE.regionRequired["employer-cost"].join(", ")}; optional for: ${COVERAGE.regionOptional["employer-cost"].join(", ")}; a missing or unknown region returns the valid codes. Returns the tax year, official source URLs and the calcbloc.com page. ${NOT_SUPPORTED}`,
       inputSchema: z.object({
         country: countryArg,
         gross_salary: salaryArg,
-        region: z.string().max(60).optional().describe("Region code or name where employer costs vary by region (e.g. US state, Canadian province, Spanish community, Australian state)."),
+        region: z
+          .string()
+          .max(60)
+          .optional()
+          .describe(`Region code or name. Required for: ${COVERAGE.regionRequired["employer-cost"].join(", ")}. Examples: US "ca", Australia "nsw", Canada "on". list_countries with the country lists every code.`),
         year: yearArg,
         options: OptionsInput,
       }),
@@ -705,14 +726,14 @@ export function registerTools(server: McpServer, client: CalcBlocClient): void {
     {
       title: "Compare take-home pay in two countries",
       description:
-        "The same gross salary in two countries: take-home pay, income tax and contributions on each side, converted at the European Central Bank reference rate, with a plain-English summary. Returns each side's tax year and official sources.",
+        `The same gross salary in two countries: take-home pay, income tax and contributions on each side, converted at the European Central Bank reference rate, with a plain-English summary. Countries: ${COVERAGE.compareCountries.join(", ")}. Use region_a / region_b for a US state, UK nation, Canadian province or Indian state (defaults apply otherwise and are stated in the answer). Returns each side's tax year and official sources. ${NOT_SUPPORTED}`,
       inputSchema: z.object({
         country_a: countryArg,
         country_b: countryArg,
         gross_salary: z.number().positive().max(10_000_000).describe("Annual gross salary, in `currency`."),
         currency: z.string().length(3).optional().describe("Currency of gross_salary: country A's or country B's (ISO code). Default: country A's."),
-        region_a: z.string().max(60).optional().describe("Region in country A (used for the US, UK, Canada and India)."),
-        region_b: z.string().max(60).optional().describe("Region in country B (used for the US, UK, Canada and India)."),
+        region_a: z.string().max(60).optional().describe('Region in country A: a US state ("ca"), UK nation ("scotland"), Canadian province ("on") or Indian state ("mh"). Defaults: New York, England, Ontario, Maharashtra.'),
+        region_b: z.string().max(60).optional().describe('Region in country B: a US state ("ca"), UK nation ("scotland"), Canadian province ("on") or Indian state ("mh"). Defaults: New York, England, Ontario, Maharashtra.'),
       }),
       outputSchema: CompareOutput,
       annotations: { ...READ_ONLY },
@@ -725,7 +746,7 @@ export function registerTools(server: McpServer, client: CalcBlocClient): void {
     {
       title: "Get official tax tables",
       description:
-        "Official tax tables for a country and year: income tax bands, allowances, employee and employer social security rates and thresholds, each with its official source and the date it was checked. Available for every listed country, including those without calculations. Filter with group or sections for long tables.",
+        `Official tax tables for a country and year: income tax bands, allowances, employee and employer social security rates and thresholds, and for many countries corporate, property, transfer and other taxes, each with its official source and the date it was checked. Available for all ${COVERAGE.taxTables} countries, including those without calculations. Filter with group or sections for long tables.`,
       inputSchema: z.object({
         country: countryArg,
         year: z.string().max(10).optional().describe('Tax year, e.g. "2026" or "2025-26". Default: latest.'),
@@ -744,7 +765,7 @@ export function registerTools(server: McpServer, client: CalcBlocClient): void {
     {
       title: "List supported countries",
       description:
-        "Countries CalcBloc covers, their current tax year, and which tools work for each. With a country, also its regions and the country-specific options accepted by calculate_take_home_pay and calculate_employer_cost.",
+        `Countries CalcBloc covers (${COVERAGE.summary}), their current tax year, and which tools work for each. With a country, also its regions (and whether they are required) and the country-specific options accepted by calculate_take_home_pay and calculate_employer_cost.`,
       inputSchema: z.object({ country: z.string().max(60).optional().describe("Country code or name for details.") }),
       outputSchema: ListCountriesOutput,
       annotations: { ...READ_ONLY },

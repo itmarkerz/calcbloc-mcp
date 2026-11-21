@@ -32,7 +32,7 @@ CalcBloc's MCP server gives AI assistants accurate payroll and income tax answer
 
 **Links:** repository https://github.com/itmarkerz/calcbloc-mcp, npm https://www.npmjs.com/package/calcbloc-mcp, website https://calcbloc.com/?utm_source=calcbloc-mcp&utm_medium=listing&utm_campaign=itmarkerz-oss, API docs https://calcbloc.com/developers?utm_source=calcbloc-mcp&utm_medium=listing&utm_campaign=itmarkerz-oss, data https://calcbloc.com/data?utm_source=calcbloc-mcp&utm_medium=listing&utm_campaign=itmarkerz-oss
 
-**Environment variables (all optional):** `CALCBLOC_API_KEY` (needed after 50 requests a day; free key from https://calcbloc.com/developers/keys?utm_source=calcbloc-mcp&utm_medium=listing&utm_campaign=itmarkerz-oss), `CALCBLOC_DATA_DIR` (offline tax tables).
+**Environment variables (all optional):** `CALCBLOC_API_KEY` (raises the keyless request limits; free key from https://calcbloc.com/developers/keys?utm_source=calcbloc-mcp&utm_medium=listing&utm_campaign=itmarkerz-oss), `CALCBLOC_DATA_DIR` (offline tax tables).
 
 **Example prompts:**
 

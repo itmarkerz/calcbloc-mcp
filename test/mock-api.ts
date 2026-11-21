@@ -24,6 +24,8 @@ export function route(url: URL): MockReply {
   if (path === "/net-salary") {
     if (q.get("country") === "uk") return { status: 200, body: fixture("net-salary-uk.json") };
     if (q.get("country") === "austria") return { status: 400, body: fixture("net-salary-austria.json") };
+    if (q.get("country") === "us" && !q.get("region")) return { status: 400, body: fixture("net-salary-us-missing-region.json") };
+    if (q.get("country") === "us" && q.get("region") === "ca") return { status: 200, body: fixture("net-salary-us-ca.json") };
   }
   if (path === "/employer-cost" && q.get("country") === "germany") return { status: 200, body: fixture("employer-cost-germany.json") };
   if (path === "/compare" && q.get("a") === "uk" && q.get("b") === "germany") return { status: 200, body: fixture("compare-uk-germany.json") };
