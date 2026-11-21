@@ -1,0 +1,238 @@
+{
+  "endpoint": "equity-tax",
+  "country": "us",
+  "short_code": "us",
+  "countryName": "United States",
+  "year": "2026",
+  "currency": "USD",
+  "inputs": {
+    "instrument": "iso",
+    "units": 100,
+    "grant_date": "2023-03-12",
+    "event_date": "2024-01-07",
+    "fmv_event": 12,
+    "exercise_price": 10,
+    "sale_price": 15,
+    "sale_date": "2025-01-27",
+    "salary": 100000,
+    "filing_status": "single",
+    "ytd_supplemental": 0
+  },
+  "result": {
+    "country": "us",
+    "region": null,
+    "taxYear": "2026",
+    "currency": "USD",
+    "instrument": "iso",
+    "units": 100,
+    "taxableAtEvent": 200,
+    "lines": [
+      {
+        "label": "Regular income tax at exercise",
+        "stage": "event",
+        "base": 0,
+        "amount": 0,
+        "note": "ISOs: no income is included when you exercise (Pub 525). No FICA (Pub 15-B).",
+        "source": {
+          "title": "IRS Publication 525 (2025), Statutory Stock Options: Incentive stock options (ISOs), Examples 7 and 8",
+          "url": "https://www.irs.gov/pub/irs-pdf/p525.pdf",
+          "retrievedAt": "2026-11-21",
+          "effectiveFrom": "2026-01-01"
+        }
+      },
+      {
+        "label": "Alternative minimum tax (ISO spread is an AMT adjustment, Form 6251 line 2i)",
+        "stage": "event",
+        "base": 200,
+        "amount": 0,
+        "note": "AMTI $100,200, exemption $90,100, tentative minimum tax $2,626 vs regular tax $13,176.",
+        "source": {
+          "title": "Rev. Proc. 2025-32, sections 3.07 and 4.10 (2026 AMT exemption amounts, 28% threshold and phaseout); Form 6251 (2026) and Instructions for Form 6251 (2026) early-release drafts, Part II and Exemption Worksheet",
+          "url": "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf",
+          "retrievedAt": "2026-11-21",
+          "effectiveFrom": "2026-01-01"
+        }
+      },
+      {
+        "label": "Federal income tax on the ordinary income (disqualifying disposition)",
+        "stage": "sale",
+        "base": 200,
+        "amount": 44,
+        "withheld": 0,
+        "note": "Ordinary income up to the spread at exercise; reported as wages in box 1 of Form W-2, with no FICA and no required withholding (Pub 15-B).",
+        "source": {
+          "title": "IRS Publication 15-B (2026), Employer's Tax Guide to Fringe Benefits: Employee Stock Options",
+          "url": "https://www.irs.gov/pub/irs-pdf/p15b.pdf",
+          "retrievedAt": "2026-11-21",
+          "effectiveFrom": "2026-01-01"
+        }
+      },
+      {
+        "label": "Federal long-term capital gains tax (0% / 15% / 20%)",
+        "stage": "sale",
+        "base": 300,
+        "amount": 45,
+        "note": "Stacked on ordinary taxable income of $84,100: $0 at 0%, $300 at 15%, $0 at 20%.",
+        "source": {
+          "title": "Rev. Proc. 2025-32, section 4.03 (Maximum Capital Gains Rate, s.1(h), s.1(j)(5)); IRS Topic no. 409, Capital gains and losses",
+          "url": "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf",
+          "retrievedAt": "2026-11-21",
+          "effectiveFrom": "2026-01-01"
+        }
+      },
+      {
+        "label": "Net investment income tax (3.8%)",
+        "stage": "sale",
+        "base": 0,
+        "amount": 0,
+        "rate": 0.038,
+        "note": "On the gain above MAGI of $200,000.",
+        "source": {
+          "title": "IRS Topic no. 559, Net investment income tax",
+          "url": "https://www.irs.gov/taxtopics/tc559",
+          "retrievedAt": "2026-11-21",
+          "effectiveFrom": "2026-01-01"
+        }
+      }
+    ],
+    "flags": [],
+    "scenarios": [
+      {
+        "name": "qualifying",
+        "description": "Sold after 2025-03-12 at $15 a share: the whole gain over the exercise price is a long-term capital gain; the AMT at exercise (if any) is paid in the exercise year.",
+        "totalTax": 75,
+        "lines": [
+          {
+            "label": "AMT in the exercise year",
+            "stage": "event",
+            "base": 200,
+            "amount": 0,
+            "source": {
+              "title": "Rev. Proc. 2025-32, sections 3.07 and 4.10 (2026 AMT exemption amounts, 28% threshold and phaseout); Form 6251 (2026) and Instructions for Form 6251 (2026) early-release drafts, Part II and Exemption Worksheet",
+              "url": "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf",
+              "retrievedAt": "2026-11-21",
+              "effectiveFrom": "2026-01-01"
+            }
+          },
+          {
+            "label": "Federal long-term capital gains tax (0% / 15% / 20%)",
+            "stage": "sale",
+            "base": 500,
+            "amount": 75,
+            "note": "Stacked on ordinary taxable income of $83,900: $0 at 0%, $500 at 15%, $0 at 20%.",
+            "source": {
+              "title": "Rev. Proc. 2025-32, section 4.03 (Maximum Capital Gains Rate, s.1(h), s.1(j)(5)); IRS Topic no. 409, Capital gains and losses",
+              "url": "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf",
+              "retrievedAt": "2026-11-21",
+              "effectiveFrom": "2026-01-01"
+            }
+          },
+          {
+            "label": "Net investment income tax (3.8%)",
+            "stage": "sale",
+            "base": 0,
+            "amount": 0,
+            "rate": 0.038,
+            "note": "On the gain above MAGI of $200,000.",
+            "source": {
+              "title": "IRS Topic no. 559, Net investment income tax",
+              "url": "https://www.irs.gov/taxtopics/tc559",
+              "retrievedAt": "2026-11-21",
+              "effectiveFrom": "2026-01-01"
+            }
+          }
+        ]
+      },
+      {
+        "name": "disqualifying",
+        "description": "Sold before 2025-03-12 at $15 a share: $200 is ordinary income and $300 a long-term capital gain; no AMT adjustment when the sale is in the exercise year.",
+        "totalTax": 89,
+        "lines": [
+          {
+            "label": "Federal income tax on the ordinary income (disqualifying disposition)",
+            "stage": "sale",
+            "base": 200,
+            "amount": 44,
+            "withheld": 0,
+            "note": "Ordinary income up to the spread at exercise; reported as wages in box 1 of Form W-2, with no FICA and no required withholding (Pub 15-B).",
+            "source": {
+              "title": "IRS Publication 15-B (2026), Employer's Tax Guide to Fringe Benefits: Employee Stock Options",
+              "url": "https://www.irs.gov/pub/irs-pdf/p15b.pdf",
+              "retrievedAt": "2026-11-21",
+              "effectiveFrom": "2026-01-01"
+            }
+          },
+          {
+            "label": "Federal long-term capital gains tax (0% / 15% / 20%)",
+            "stage": "sale",
+            "base": 300,
+            "amount": 45,
+            "note": "Stacked on ordinary taxable income of $84,100: $0 at 0%, $300 at 15%, $0 at 20%.",
+            "source": {
+              "title": "Rev. Proc. 2025-32, section 4.03 (Maximum Capital Gains Rate, s.1(h), s.1(j)(5)); IRS Topic no. 409, Capital gains and losses",
+              "url": "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf",
+              "retrievedAt": "2026-11-21",
+              "effectiveFrom": "2026-01-01"
+            }
+          },
+          {
+            "label": "Net investment income tax (3.8%)",
+            "stage": "sale",
+            "base": 0,
+            "amount": 0,
+            "rate": 0.038,
+            "note": "On the gain above MAGI of $200,000.",
+            "source": {
+              "title": "IRS Topic no. 559, Net investment income tax",
+              "url": "https://www.irs.gov/taxtopics/tc559",
+              "retrievedAt": "2026-11-21",
+              "effectiveFrom": "2026-01-01"
+            }
+          }
+        ]
+      }
+    ],
+    "notes": [
+      "With this salary, about $40,776 of ISO spread can be exercised in 2026 before AMT applies (Single, standard deduction, no other AMT items).",
+      "Qualifying disposition: sell after 2025-03-12 (the later of 1 year after exercise and 2 years after grant, Pub 525).",
+      "Your sale date is within the holding period: a disqualifying disposition.",
+      "Tax at sale uses the 2026 brackets with your salary as the other income of the year of sale. State tax on capital gains is not computed.",
+      "Estimate only, not tax advice: the plan documents, your other income, deductions and credits change the result."
+    ],
+    "totalTaxAtEvent": 0,
+    "totalTaxAtSale": 89,
+    "sources": [
+      {
+        "title": "IRS Publication 525 (2025), Statutory Stock Options: Incentive stock options (ISOs), Examples 7 and 8",
+        "url": "https://www.irs.gov/pub/irs-pdf/p525.pdf",
+        "retrievedAt": "2026-11-21",
+        "effectiveFrom": "2026-01-01"
+      },
+      {
+        "title": "Rev. Proc. 2025-32, sections 3.07 and 4.10 (2026 AMT exemption amounts, 28% threshold and phaseout); Form 6251 (2026) and Instructions for Form 6251 (2026) early-release drafts, Part II and Exemption Worksheet",
+        "url": "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf",
+        "retrievedAt": "2026-11-21",
+        "effectiveFrom": "2026-01-01"
+      },
+      {
+        "title": "IRS Publication 15-B (2026), Employer's Tax Guide to Fringe Benefits: Employee Stock Options",
+        "url": "https://www.irs.gov/pub/irs-pdf/p15b.pdf",
+        "retrievedAt": "2026-11-21",
+        "effectiveFrom": "2026-01-01"
+      },
+      {
+        "title": "IRS Topic no. 559, Net investment income tax",
+        "url": "https://www.irs.gov/taxtopics/tc559",
+        "retrievedAt": "2026-11-21",
+        "effectiveFrom": "2026-01-01"
+      }
+    ]
+  },
+  "warnings": [],
+  "attribution": {
+    "source": "CalcBloc",
+    "url": "https://calcbloc.com/startup/stock-option-tax-calculator",
+    "required": true,
+    "text": "Data by CalcBloc (calcbloc.com)"
+  }
+}

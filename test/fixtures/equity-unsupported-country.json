@@ -1,0 +1,13 @@
+{
+  "error": {
+    "code": "unsupported_country",
+    "message": "Equity tax is not available for \"de\". Use one of: us, uk, ca (canada), au (australia), in (india).",
+    "docs": "https://calcbloc.com/developers"
+  },
+  "attribution": {
+    "source": "CalcBloc",
+    "url": "https://calcbloc.com/developers",
+    "required": true,
+    "text": "Data by CalcBloc (calcbloc.com)"
+  }
+}

@@ -1,7 +1,7 @@
 {
   "name": "calcbloc-mcp",
-  "version": "0.2.0",
-  "description": "MCP server for take-home pay, employer cost, salary comparison and official tax tables in 41 countries, with the tax year and official sources in every answer.",
+  "version": "0.3.0",
+  "description": "MCP server for take-home pay, employer cost, salary comparison, bonus withholding, RSU and stock option tax, and official tax tables in 41 countries, with the tax year and official sources in every answer.",
   "mcpName": "io.github.itmarkerz/calcbloc-mcp",
   "type": "module",
   "bin": {
@@ -31,8 +31,8 @@
     "prepublishOnly": "npm test",
     "coverage": "node scripts/gen-coverage.mjs",
     "coverage:check": "node scripts/gen-coverage.mjs --check test/fixtures/countries.json",
-    "test:schema": "vitest run test/phase1.test.ts -t schema",
-    "test:golden": "vitest run test/phase1.test.ts -t golden"
+    "test:schema": "vitest run test/phase1.test.ts test/phase2.test.ts -t schema",
+    "test:golden": "vitest run test/phase1.test.ts test/phase2.test.ts -t golden"
   },
   "keywords": [
     "mcp",
@@ -44,6 +44,11 @@
     "salary-calculator",
     "net-salary",
     "employer-cost",
+    "bonus-tax",
+    "supplemental-withholding",
+    "rsu",
+    "stock-options",
+    "equity-compensation",
     "payroll",
     "tax-tables",
     "calcbloc"

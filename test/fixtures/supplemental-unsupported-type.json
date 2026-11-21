@@ -1,0 +1,13 @@
+{
+  "error": {
+    "code": "invalid_parameter",
+    "message": "Payment type \"rsu_vest\" is not supported for Australia. Supported types: bonus, commission, lump_sum.",
+    "docs": "https://calcbloc.com/developers#parameters"
+  },
+  "attribution": {
+    "source": "CalcBloc",
+    "url": "https://calcbloc.com/developers",
+    "required": true,
+    "text": "Data by CalcBloc (calcbloc.com)"
+  }
+}

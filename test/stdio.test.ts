@@ -54,12 +54,20 @@ afterAll(async () => {
 });
 
 describe("stdio server", () => {
-  it("identifies itself and lists five read-only tools with input and output schemas", async () => {
+  it("identifies itself and lists seven read-only tools with input and output schemas", async () => {
     expect(client.getServerVersion()?.name).toBe("calcbloc-mcp");
     expect(client.getInstructions()).toContain("Data by CalcBloc");
     const { tools } = await client.listTools();
     save("tools-list.json", { request: { method: "tools/list" }, response: { tools } });
-    expect(tools.map((t) => t.name)).toEqual(["calculate_take_home_pay", "calculate_employer_cost", "compare_countries", "get_tax_tables", "list_countries"]);
+    expect(tools.map((t) => t.name)).toEqual([
+      "calculate_take_home_pay",
+      "calculate_employer_cost",
+      "compare_countries",
+      "calculate_supplemental_withholding",
+      "calculate_equity_tax",
+      "get_tax_tables",
+      "list_countries",
+    ]);
     for (const t of tools) {
       expect(t.inputSchema.type).toBe("object");
       expect(t.outputSchema?.type).toBe("object");
@@ -88,6 +96,35 @@ describe("stdio server", () => {
     const r = await call("compare_countries", { country_a: "uk", country_b: "germany", gross_salary: 50000 });
     expect(r.isError).toBeFalsy();
     expect((r.structuredContent as Record<string, any>).taxYear).toContain("2026-27");
+  });
+
+  it("calculate_supplemental_withholding (output validated against the schema by the SDK)", async () => {
+    const r = await call("calculate_supplemental_withholding", { country: "us", region: "California", gross_salary: 150000, amount: 10000, type: "bonus" });
+    expect(r.isError, textOf(r)).toBeFalsy();
+    expect(r.structuredContent).toMatchObject({ taxYear: "2026", totalWithheld: 4118, attribution: "Data by CalcBloc" });
+  });
+
+  it("calculate_equity_tax (output validated against the schema by the SDK)", async () => {
+    const r = await call("calculate_equity_tax", {
+      country: "uk",
+      instrument: "emi",
+      units: 1000,
+      grant_date: "2022-05-01",
+      event_date: "2026-06-01",
+      fmv_grant: 5,
+      fmv_event: 12,
+      exercise_price: 3,
+      gross_salary: 30000,
+      options: { readily_convertible: false },
+    });
+    expect(r.isError, textOf(r)).toBeFalsy();
+    expect(r.structuredContent).toMatchObject({ taxYear: "2026-27", taxableAtEvent: 2000, attribution: "Data by CalcBloc" });
+  });
+
+  it("rejects an instrument outside the enum through schema validation", async () => {
+    const r = await client.callTool({ name: "calculate_equity_tax", arguments: { country: "us", instrument: "warrant", units: 1, grant_date: "2025-01-01", event_date: "2026-01-01", fmv_event: 1, gross_salary: 1 } });
+    expect(r.isError).toBe(true);
+    expect(textOf(r)).toMatch(/instrument/);
   });
 
   it("get_tax_tables", async () => {

@@ -1,0 +1,97 @@
+{
+  "endpoint": "equity-tax",
+  "country": "uk",
+  "short_code": "uk",
+  "countryName": "United Kingdom",
+  "year": "2026-27",
+  "currency": "GBP",
+  "inputs": {
+    "instrument": "emi",
+    "units": 1000,
+    "grant_date": "2022-05-01",
+    "event_date": "2026-06-01",
+    "fmv_event": 12,
+    "fmv_grant": 5,
+    "exercise_price": 3,
+    "salary": 30000,
+    "readily_convertible": false,
+    "emi_exercise_period_years": "10",
+    "emi_disqualifying_event_mv": 0,
+    "emi_badr_conditions_met": true,
+    "csop_qualifying_early_exercise": false
+  },
+  "result": {
+    "country": "uk",
+    "region": "england",
+    "taxYear": "2026-27",
+    "currency": "GBP",
+    "instrument": "emi",
+    "units": 1000,
+    "taxableAtEvent": 2000,
+    "lines": [
+      {
+        "label": "Income tax (England & Northern Ireland rates)",
+        "stage": "event",
+        "base": 2000,
+        "amount": 400,
+        "withheld": 0,
+        "note": "EMI: discount (lower of MV at grant and at exercise, minus the price) plus any post-disqualifying-event gain (ETASSUM57030, 57070). Not readily convertible assets: no PAYE; you pay through Self Assessment.",
+        "source": {
+          "title": "HMRC Employee Tax Advantaged Share Scheme User Manual ETASSUM57030 (charge on the exercise of discounted EMI options), ETASSUM57070 (discounted option after a disqualifying event), ETASSUM57180 (NIC), ETASSUM57190/57200 (CGT); GOV.UK Tax and Employee Share Schemes: EMI",
+          "url": "https://www.gov.uk/hmrc-internal-manuals/employee-tax-advantaged-share-scheme-user-manual/etassum57030",
+          "retrievedAt": "2026-11-21",
+          "effectiveFrom": "2026-04-06"
+        }
+      },
+      {
+        "label": "Employee Class 1 National Insurance",
+        "stage": "event",
+        "base": 0,
+        "amount": 0,
+        "withheld": 0,
+        "note": "No NIC: the shares are not readily convertible assets (ERSM170010).",
+        "source": {
+          "title": "GOV.UK: Rates and thresholds for employers 2026 to 2027 (Class 1 National Insurance thresholds and rates)",
+          "url": "https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2026-to-2027",
+          "retrievedAt": "2026-10-16"
+        }
+      }
+    ],
+    "flags": [
+      "Scheme conditions assumed met"
+    ],
+    "scenarios": [],
+    "notes": [
+      "EMI: assumes the option is a qualifying EMI option (company and employee requirements, £250,000 limit). Granted at a discount: the lower of the discount at grant and the gain at exercise (£2,000) is charged (ETASSUM57030).",
+      "Tax at sale uses the 2026-27 rates with your salary as the other income of the year of sale and no other gains.",
+      "Estimate only, not tax advice: scheme rules, residence and other income change the result."
+    ],
+    "totalTaxAtEvent": 400,
+    "totalTaxAtSale": null,
+    "sources": [
+      {
+        "title": "HMRC Employee Tax Advantaged Share Scheme User Manual ETASSUM57030 (charge on the exercise of discounted EMI options), ETASSUM57070 (discounted option after a disqualifying event), ETASSUM57180 (NIC), ETASSUM57190/57200 (CGT); GOV.UK Tax and Employee Share Schemes: EMI",
+        "url": "https://www.gov.uk/hmrc-internal-manuals/employee-tax-advantaged-share-scheme-user-manual/etassum57030",
+        "retrievedAt": "2026-11-21",
+        "effectiveFrom": "2026-04-06"
+      },
+      {
+        "title": "GOV.UK: Rates and thresholds for employers 2026 to 2027 (Class 1 National Insurance thresholds and rates)",
+        "url": "https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2026-to-2027",
+        "retrievedAt": "2026-10-16"
+      },
+      {
+        "title": "HMRC: Income Tax rates and allowances for current and previous tax years (updated 6 April 2026)",
+        "url": "https://www.gov.uk/government/publications/rates-and-allowances-income-tax/income-tax-rates-and-allowances-current-and-past",
+        "retrievedAt": "2026-10-16"
+      }
+    ]
+  },
+  "warnings": [],
+  "attribution": {
+    "source": "CalcBloc",
+    "url": "https://calcbloc.com/startup/stock-option-tax-calculator",
+    "required": true,
+    "text": "Data by CalcBloc (calcbloc.com)"
+  }
+}

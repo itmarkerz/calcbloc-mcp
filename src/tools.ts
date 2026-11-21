@@ -1,15 +1,33 @@
 import * as z from "zod/v4";
 import type { McpServer } from "@modelcontextprotocol/server";
-import { CalcBlocApiError, type CalcBlocClient, type CalcResponse, type CompareSide, type CountryInfo, type QueryValue, type Source, type TaxTable } from "./api.js";
-import { API_KEY_URL_APP, ATTRIBUTION, DATA_LICENCE, DATA_URL, DISCLAIMER, NOT_SUPPORTED } from "./constants.js";
+import {
+  CalcBlocApiError,
+  type CalcBlocClient,
+  type CalcResponse,
+  type CompareSide,
+  type CountryInfo,
+  type EquityLine,
+  type QueryValue,
+  type ResultSource,
+  type Source,
+  type SupplementalLine,
+  type TaxTable,
+} from "./api.js";
+import { API_KEY_URL_APP, ATTRIBUTION, DATA_LICENCE, DATA_URL, DISCLAIMER, NOT_SUPPORTED, NOT_YET_SUPPORTED } from "./constants.js";
 import { COVERAGE } from "./coverage.generated.js";
 import { money, pct, renderSection, round2, sectionSources, sourceLines, tableSources, tagPageLinks, tagPageLinksDeep, uniqueSources } from "./format.js";
 import {
   type CalcKind,
   checkSalary,
   describeOptions,
+  endpointParams,
+  enumLabel,
+  type ExtraKind,
   optionParams,
   requireCalc,
+  requireExtra,
+  resolveEnumArg,
+  supportsExtra,
   resolveCalcRegion,
   resolveCalcYear,
   resolveCountry,
@@ -118,6 +136,74 @@ const CompareOutput = z.object({
   ...CREDIT,
 });
 
+/** A line's official source as the supplemental and equity endpoints return it (with the period the rule applies). */
+const LineSourceSchema = SourceSchema.extend({
+  effectiveFrom: z.string().optional(),
+  effectiveTo: z.string().nullable().optional(),
+});
+
+const SupplementalOutput = z.object({
+  country: z.string(),
+  countryName: z.string(),
+  region: z.string().nullable(),
+  taxYear: z.string(),
+  currency: z.string(),
+  type: z.string().describe("Payment type: bonus, commission, rsu_vest, option_exercise or lump_sum."),
+  grossSalary: z.number().describe("Regular gross salary for the year, before the payment."),
+  amount: z.number().describe("The supplemental payment, gross."),
+  method: z.string().describe("The official withholding method used."),
+  lines: z.array(
+    z.object({
+      label: z.string(),
+      withheld: z.number().describe("Withheld from the payment by the employer."),
+      liability: z.number().nullable().describe("Extra final tax the payment adds at the person's real rates (null where it cannot be computed from official data)."),
+      rate: z.number().optional(),
+      note: z.string().optional(),
+      source: LineSourceSchema,
+    }),
+  ),
+  totalWithheld: z.number(),
+  totalLiability: z.number().nullable(),
+  difference: z.number().nullable().describe("totalLiability − totalWithheld: positive = more due at filing, negative = refund; null when unknown."),
+  netPayment: z.number().describe("The payment after withholding."),
+  notes: z.array(z.string()),
+  inputs: z.record(z.string(), z.unknown()),
+  taxTablesUrl: z.string(),
+  ...CREDIT,
+});
+
+const EquityLineSchema = z.object({
+  label: z.string(),
+  stage: z.enum(["event", "sale"]).describe("event = vest or exercise; sale = the later sale (capital gains)."),
+  base: z.number(),
+  amount: z.number(),
+  rate: z.number().optional(),
+  withheld: z.number().optional().describe("Withheld by the employer at the event, where the country requires it."),
+  note: z.string().optional(),
+  source: LineSourceSchema,
+});
+
+const EquityOutput = z.object({
+  country: z.string(),
+  countryName: z.string(),
+  region: z.string().nullable(),
+  taxYear: z.string(),
+  currency: z.string(),
+  instrument: z.string(),
+  instrumentName: z.string(),
+  units: z.number(),
+  taxableAtEvent: z.number().describe("Taxable amount at vest / exercise, as the country defines it."),
+  lines: z.array(EquityLineSchema),
+  totalTaxAtEvent: z.number(),
+  totalTaxAtSale: z.number().nullable().describe("Null when no sale was given or it cannot be computed."),
+  flags: z.array(z.string()).describe('E.g. "AMT exposure", "Scheme conditions assumed met".'),
+  scenarios: z.array(z.object({ name: z.string(), description: z.string(), totalTax: z.number(), lines: z.array(EquityLineSchema) })),
+  notes: z.array(z.string()),
+  inputs: z.record(z.string(), z.unknown()),
+  taxTablesUrl: z.string(),
+  ...CREDIT,
+});
+
 const TableSectionSchema = z.object({
   id: z.string(),
   title: z.string(),
@@ -160,9 +246,15 @@ const CountrySummarySchema = z.object({
   takeHomePay: z.boolean(),
   employerCost: z.boolean(),
   compare: z.boolean(),
+  supplementalWithholding: z.boolean().describe("calculate_supplemental_withholding works for this country."),
+  equityTax: z.boolean().describe("calculate_equity_tax works for this country."),
   taxTables: z.boolean(),
   taxTablesUrl: z.string(),
 });
+
+const ExtraDetailsSchema = z
+  .object({ values: z.array(z.string()).describe("Payment types or instruments."), regions: z.array(z.string()), regionRequired: z.boolean(), options: z.array(z.record(z.string(), z.unknown())) })
+  .nullable();
 
 const ListCountriesOutput = z.object({
   countries: z.array(CountrySummarySchema),
@@ -172,6 +264,8 @@ const ListCountriesOutput = z.object({
       taxTableRegions: z.array(z.object({ code: z.string(), name: z.string() })),
       takeHomePay: z.object({ calculatorUrl: z.string(), salary: z.string(), regions: z.array(z.string()), options: z.array(z.record(z.string(), z.unknown())) }).nullable(),
       employerCost: z.object({ calculatorUrl: z.string(), salary: z.string(), regions: z.array(z.string()), options: z.array(z.record(z.string(), z.unknown())) }).nullable(),
+      supplementalWithholding: ExtraDetailsSchema,
+      equityTax: ExtraDetailsSchema,
     })
     .nullable(),
   ...CREDIT,
@@ -517,6 +611,245 @@ export async function compareCountries(client: CalcBlocClient, args: CompareArgs
   });
 }
 
+/** Official sources returned by the supplemental and equity endpoints, deduplicated and capped like the other tools. */
+function resultSources(list: ResultSource[] | undefined, pageUrl: string, warnings: string[]): Source[] {
+  return capSources(uniqueSources(list ?? []), pageUrl, warnings);
+}
+
+/**
+ * The calcbloc.com page credited for a supplemental or equity result: the calculator page the API names (US bonus tax
+ * calculator, stock option tax calculator), else the country's tax-table page rather than the generic developers page.
+ */
+function resultPage(attributionUrl: string | undefined, country: CountryInfo): string {
+  if (attributionUrl && !/\/developers\/?(?:[?#].*)?$/.test(attributionUrl)) return attributionUrl;
+  return country.endpoints["tax-tables"].pageUrl;
+}
+
+/**
+ * Lines reduced to the fields the output schemas declare: MCP clients check structured content against the schema
+ * with additionalProperties false, so a field the API adds later must not break the tool.
+ */
+function lineSource(s: ResultSource) {
+  return {
+    url: s.url,
+    ...(s.title !== undefined ? { title: s.title } : {}),
+    ...(s.retrievedAt !== undefined ? { retrievedAt: s.retrievedAt } : {}),
+    ...(s.effectiveFrom !== undefined ? { effectiveFrom: s.effectiveFrom } : {}),
+    ...(s.effectiveTo !== undefined ? { effectiveTo: s.effectiveTo } : {}),
+  };
+}
+
+function supplementalLine(l: SupplementalLine) {
+  return {
+    label: l.label,
+    withheld: l.withheld,
+    liability: l.liability ?? null,
+    ...(l.rate !== undefined ? { rate: l.rate } : {}),
+    ...(l.note !== undefined ? { note: l.note } : {}),
+    source: lineSource(l.source),
+  };
+}
+
+function equityLine(l: EquityLine) {
+  return {
+    label: l.label,
+    stage: l.stage,
+    base: l.base,
+    amount: l.amount,
+    ...(l.rate !== undefined ? { rate: l.rate } : {}),
+    ...(l.withheld !== undefined ? { withheld: l.withheld } : {}),
+    ...(l.note !== undefined ? { note: l.note } : {}),
+    source: lineSource(l.source),
+  };
+}
+
+function placeOf(country: CountryInfo, kind: ExtraKind, region: string | null | undefined): string {
+  if (!region) return country.name;
+  const label = enumLabel(country, kind, "region", region);
+  return `${country.name} (${label !== region ? label : regionName(country, region)})`;
+}
+
+export interface SupplementalArgs {
+  country: string;
+  gross_salary: number;
+  amount: number;
+  type?: string;
+  region?: string;
+  options?: Record<string, string | number | boolean>;
+}
+
+export async function supplementalWithholding(client: CalcBlocClient, args: SupplementalArgs): Promise<ToolResult> {
+  return guarded(async () => {
+    const kind = "supplemental-withholding" as const;
+    const countries = await onlineCountries(client);
+    const country = resolveCountry(countries, args.country);
+    requireExtra(countries, country, kind);
+    checkSalary(country, kind, args.gross_salary);
+    const type = resolveEnumArg(country, kind, "type", "Payment type", args.type);
+    const warnings: string[] = [];
+    const { region, warning } = resolveCalcRegion(country, kind, args.region);
+    if (warning) warnings.push(warning);
+    const options = resolveOptions(country, kind, args.options);
+    const query: Record<string, QueryValue> = {
+      country: country.code,
+      salary: args.gross_salary,
+      amount: args.amount,
+      ...(type ? { type } : {}),
+      ...(region ? { region } : {}),
+      ...options,
+    };
+    const r = await client.supplementalWithholding(query);
+    warnings.push(...(r.warnings ?? []));
+    const taxTablesUrl = country.endpoints["tax-tables"].pageUrl;
+    const pageUrl = resultPage(r.attribution?.url, country);
+    const sources = resultSources(r.sources, pageUrl, warnings);
+    const s = r.summary;
+    const cur = r.currency;
+    const gap =
+      s.difference === null || s.difference === undefined
+        ? "the final tax could not be computed for every line (see the lines and notes)"
+        : s.difference > 0
+          ? `${money(s.difference, cur)} more than is withheld, settled after the year`
+          : s.difference < 0
+            ? `${money(-s.difference, cur)} less than is withheld, refunded after the year`
+            : "the same as the withholding";
+    const lines = [
+      `Supplemental withholding in ${placeOf(country, kind, r.region)}, tax year ${r.year}`,
+      `Payment: ${money(s.amount, cur)} (${enumLabel(country, kind, "type", r.type)}) on a regular gross salary of ${money(args.gross_salary, cur)} a year`,
+      `Method: ${r.method}`,
+      `Withheld from the payment: ${money(s.totalWithheld, cur)}; net payment: ${money(s.netPayment, cur)}`,
+      `Final tax the payment adds: ${money(s.totalLiability, cur)} (${gap})`,
+      "",
+      `Lines (withheld | final tax added, ${cur}):`,
+      ...r.lines.map((l) => `- ${l.label}: ${money(l.withheld, cur)} | ${l.liability === null ? "n/a" : money(l.liability, cur)}${l.note ? ` (${l.note})` : ""}`),
+    ];
+    if (r.notes.length) lines.push("", "Notes:", ...r.notes.map((n) => `- ${n}`));
+    lines.push("", `Inputs used: ${inputsLine(r.inputs)}`, `Page: ${pageUrl}`, `Tax tables: ${taxTablesUrl}`);
+    lines.push(...creditFooter(sources, pageUrl, warnings));
+    return ok(lines.join("\n"), {
+      country: r.country,
+      countryName: r.countryName,
+      region: r.region ?? null,
+      taxYear: r.year,
+      currency: cur,
+      type: r.type,
+      grossSalary: args.gross_salary,
+      amount: s.amount,
+      method: r.method,
+      lines: r.lines.map(supplementalLine),
+      totalWithheld: s.totalWithheld,
+      totalLiability: s.totalLiability ?? null,
+      difference: s.difference ?? null,
+      netPayment: s.netPayment,
+      notes: r.notes,
+      inputs: r.inputs,
+      taxTablesUrl,
+      ...creditFields(sources, pageUrl, warnings),
+    });
+  });
+}
+
+export interface EquityArgs {
+  country: string;
+  instrument: string;
+  units: number;
+  grant_date: string;
+  event_date: string;
+  fmv_event: number;
+  gross_salary: number;
+  fmv_grant?: number;
+  exercise_price?: number;
+  sale_price?: number;
+  sale_date?: string;
+  region?: string;
+  options?: Record<string, string | number | boolean>;
+}
+
+/** What the taxing event is called for an instrument. */
+function eventWord(instrument: string): string {
+  if (instrument === "rsu") return "vest";
+  if (instrument.startsWith("ess_")) return "taxing point";
+  return "exercise";
+}
+
+export async function equityTax(client: CalcBlocClient, args: EquityArgs): Promise<ToolResult> {
+  return guarded(async () => {
+    const kind = "equity-tax" as const;
+    const countries = await onlineCountries(client);
+    const country = resolveCountry(countries, args.country);
+    requireExtra(countries, country, kind);
+    const instrument = resolveEnumArg(country, kind, "instrument", "Instrument", args.instrument);
+    if (!instrument) throw new ToolInputError(`instrument is required for ${country.name}: one of ${country.equity_tax?.instruments.join(", ")}.`);
+    checkSalary(country, kind, args.gross_salary);
+    if ((args.sale_price === undefined) !== (args.sale_date === undefined)) throw new ToolInputError("sale_price and sale_date go together: give both for the tax on a sale, or neither.");
+    if (args.event_date < args.grant_date) throw new ToolInputError(`event_date (${args.event_date}) cannot be before grant_date (${args.grant_date}).`);
+    if (args.sale_date && args.sale_date < args.event_date) throw new ToolInputError(`sale_date (${args.sale_date}) cannot be before event_date (${args.event_date}).`);
+    const warnings: string[] = [];
+    const { region, warning } = resolveCalcRegion(country, kind, args.region);
+    if (warning) warnings.push(warning);
+    const options = resolveOptions(country, kind, args.options);
+    const optional: Record<string, QueryValue | undefined> = { fmv_grant: args.fmv_grant, exercise_price: args.exercise_price, sale_price: args.sale_price, sale_date: args.sale_date };
+    const query: Record<string, QueryValue> = {
+      country: country.code,
+      instrument,
+      units: args.units,
+      grant_date: args.grant_date,
+      event_date: args.event_date,
+      fmv_event: args.fmv_event,
+      salary: args.gross_salary,
+      ...Object.fromEntries(Object.entries(optional).filter((e): e is [string, QueryValue] => e[1] !== undefined)),
+      ...(region ? { region } : {}),
+      ...options,
+    };
+    const r = await client.equityTax(query);
+    const x = r.result;
+    warnings.push(...(r.warnings ?? []));
+    const taxTablesUrl = country.endpoints["tax-tables"].pageUrl;
+    const pageUrl = resultPage(r.attribution?.url, country);
+    const sources = resultSources(x.sources, pageUrl, warnings);
+    const cur = x.currency;
+    const instrumentName = enumLabel(country, kind, "instrument", x.instrument);
+    const when = eventWord(x.instrument);
+    const lineText = (l: EquityLine) =>
+      `- ${l.label}: ${money(l.amount, cur)} on ${money(l.base, cur)}${l.rate !== undefined ? ` at ${pct(l.rate)}` : ""}${l.withheld !== undefined ? ` (withheld ${money(l.withheld, cur)})` : ""}${l.note ? `. ${l.note}` : ""}`;
+    const atEvent = x.lines.filter((l) => l.stage === "event");
+    const atSale = x.lines.filter((l) => l.stage === "sale");
+    const lines = [
+      `Equity tax in ${placeOf(country, kind, x.region)}, tax year ${x.taxYear}`,
+      `Instrument: ${instrumentName}, ${x.units.toLocaleString("en-US")} units; taxable at ${when}: ${money(x.taxableAtEvent, cur)}`,
+    ];
+    if (atEvent.length) lines.push("", `At ${when} (${args.event_date}):`, ...atEvent.map(lineText));
+    if (atSale.length) lines.push("", `At sale (${args.sale_date ?? "sale"}):`, ...atSale.map(lineText));
+    lines.push("", `Total tax at ${when}: ${money(x.totalTaxAtEvent, cur)}`);
+    lines.push(`Total tax at sale: ${x.totalTaxAtSale === null ? (args.sale_date ? "not computed (see notes)" : "n/a (no sale given)") : money(x.totalTaxAtSale, cur)}`);
+    if (x.flags.length) lines.push(`Flags: ${x.flags.join("; ")}`);
+    if (x.scenarios.length) lines.push("", "Scenarios:", ...x.scenarios.map((sc) => `- ${sc.name}: ${sc.description} Total tax: ${money(sc.totalTax, cur)}.`));
+    if (x.notes.length) lines.push("", "Notes:", ...x.notes.map((n) => `- ${n}`));
+    lines.push("", `Inputs used: ${inputsLine(r.inputs)}`, `Page: ${pageUrl}`, `Tax tables: ${taxTablesUrl}`);
+    lines.push(...creditFooter(sources, pageUrl, warnings));
+    return ok(lines.join("\n"), {
+      country: r.country,
+      countryName: r.countryName,
+      region: x.region ?? null,
+      taxYear: x.taxYear,
+      currency: cur,
+      instrument: x.instrument,
+      instrumentName,
+      units: x.units,
+      taxableAtEvent: x.taxableAtEvent,
+      lines: x.lines.map(equityLine),
+      totalTaxAtEvent: x.totalTaxAtEvent,
+      totalTaxAtSale: x.totalTaxAtSale ?? null,
+      flags: x.flags,
+      scenarios: x.scenarios.map((sc) => ({ name: sc.name, description: sc.description, totalTax: sc.totalTax, lines: sc.lines.map(equityLine) })),
+      notes: x.notes,
+      inputs: r.inputs,
+      taxTablesUrl,
+      ...creditFields(sources, pageUrl, warnings),
+    });
+  });
+}
+
 export interface TaxTablesArgs {
   country: string;
   year?: string;
@@ -611,6 +944,8 @@ export async function listCountries(client: CalcBlocClient, args: { country?: st
       takeHomePay: !!c.endpoints["net-salary"],
       employerCost: !!c.endpoints["employer-cost"],
       compare: c.available_endpoints.includes("compare"),
+      supplementalWithholding: supportsExtra(c, "supplemental-withholding"),
+      equityTax: supportsExtra(c, "equity-tax"),
       taxTables: true,
       taxTablesUrl: c.endpoints["tax-tables"].pageUrl,
     }));
@@ -619,10 +954,19 @@ export async function listCountries(client: CalcBlocClient, args: { country?: st
     if (!args.country) {
       const calc = summary.filter((c) => c.takeHomePay);
       const lines = [
-        `CalcBloc covers ${summary.length} countries. Tax tables are available for all of them; take-home pay calculations for ${calc.length}, employer cost for ${summary.filter((c) => c.employerCost).length}, compare for ${summary.filter((c) => c.compare).length}. Use the code shown (older keys such as new-zealand also work).`,
+        `CalcBloc covers ${summary.length} countries. Tax tables are available for all of them; take-home pay calculations for ${calc.length}, employer cost for ${summary.filter((c) => c.employerCost).length}, compare for ${summary.filter((c) => c.compare).length}, supplemental (bonus) withholding for ${summary.filter((c) => c.supplementalWithholding).length}, equity tax (RSUs, stock options) for ${summary.filter((c) => c.equityTax).length}. Use the code shown (older keys such as new-zealand also work).`,
         "",
         ...summary.map((c) => {
-          const what = [c.takeHomePay && "take-home pay", c.employerCost && "employer cost", c.compare && "compare", "tax tables"].filter(Boolean).join(", ");
+          const what = [
+            c.takeHomePay && "take-home pay",
+            c.employerCost && "employer cost",
+            c.compare && "compare",
+            c.supplementalWithholding && "supplemental withholding",
+            c.equityTax && "equity tax",
+            "tax tables",
+          ]
+            .filter(Boolean)
+            .join(", ");
           return `- ${c.shortCode}: ${c.name} (${c.currency}), tax year ${c.currentYear}${c.yearsAvailable.length > 1 ? ` (tables also ${c.yearsAvailable.slice(1).join(", ")})` : ""}: ${what}`;
         }),
         "",
@@ -640,7 +984,21 @@ export async function listCountries(client: CalcBlocClient, args: { country?: st
       const regions = ep.parameters.find((p) => p.name === "region")?.values ?? [];
       return { calculatorUrl: ep.calculatorUrl, salary, regions, options: optionParams(c, kind) as unknown as Record<string, unknown>[] };
     };
-    const details = { code: c.code, taxTableRegions: c.endpoints["tax-tables"].regions, takeHomePay: calc("net-salary"), employerCost: calc("employer-cost") };
+    const extra = (kind: ExtraKind) => {
+      const params = endpointParams(c, kind);
+      if (!params) return null;
+      const rp = params.find((p) => p.name === "region");
+      const values = kind === "equity-tax" ? (c.equity_tax?.instruments ?? []) : (c.endpoints["supplemental-withholding"]?.types ?? []);
+      return { values, regions: rp?.values ?? [], regionRequired: !!rp?.required, options: optionParams(c, kind) as unknown as Record<string, unknown>[] };
+    };
+    const details = {
+      code: c.code,
+      taxTableRegions: c.endpoints["tax-tables"].regions,
+      takeHomePay: calc("net-salary"),
+      employerCost: calc("employer-cost"),
+      supplementalWithholding: extra("supplemental-withholding"),
+      equityTax: extra("equity-tax"),
+    };
     const lines = [`${c.name} (${shortCodeOf(c)}), currency ${c.currency}, current tax year ${c.current_year}; tax-table years: ${c.years_available.join(", ")}.`, `Tax tables: ${c.endpoints["tax-tables"].pageUrl}`];
     lines.push(details.taxTableRegions.length ? `Regional tax tables: ${details.taxTableRegions.map((r) => `${r.code} (${r.name})`).join(", ")}` : "No regional tax tables.");
     for (const [label, kind, d] of [["Take-home pay", "net-salary", details.takeHomePay], ["Employer cost", "employer-cost", details.employerCost]] as const) {
@@ -651,6 +1009,19 @@ export async function listCountries(client: CalcBlocClient, args: { country?: st
       lines.push("", `${label} (${d.calculatorUrl}):`, `- gross_salary: ${d.salary}`);
       const rp = c.endpoints[kind]?.parameters.find((p) => p.name === "region");
       if (d.regions.length) lines.push(`- region${rp?.required ? " (REQUIRED)" : ""}: ${d.regions.map((r) => (rp?.labels?.[r] ? `${r} (${rp.labels[r]})` : r)).join(", ")}`);
+      lines.push(`- options: ${describeOptions(c, kind)}`);
+    }
+    for (const [label, kind, d, what] of [
+      ["Supplemental withholding (calculate_supplemental_withholding)", "supplemental-withholding", details.supplementalWithholding, "type"],
+      ["Equity tax (calculate_equity_tax)", "equity-tax", details.equityTax, "instrument"],
+    ] as const) {
+      if (!d) {
+        lines.push("", `${label}: not available for ${c.name} yet.`);
+        continue;
+      }
+      lines.push("", `${label}:`, `- ${what}: ${d.values.map((v) => { const l = enumLabel(c, kind, what, v); return l !== v ? `${v} (${l})` : v; }).join(", ")}`);
+      const rp = endpointParams(c, kind)?.find((p) => p.name === "region");
+      if (d.regions.length) lines.push(`- region${d.regionRequired ? " (REQUIRED)" : ""}: ${d.regions.map((r) => (rp?.labels?.[r] ? `${r} (${rp.labels[r]})` : r)).join(", ")}`);
       lines.push(`- options: ${describeOptions(c, kind)}`);
     }
     lines.push("", `${ATTRIBUTION}: ${pageUrl}`);
@@ -672,6 +1043,22 @@ const salaryArg = z
   .positive()
   .max(10_000_000)
   .describe("Gross salary before tax in the country's currency. Annual for every country except Singapore (monthly); India: annual CTC/gross as described by list_countries.");
+const dateArg = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "Use YYYY-MM-DD.");
+
+/** Countries whose supplemental payment types are a subset of all types, e.g. "au: bonus, commission, lump_sum". */
+function typeLimits(): string {
+  const all = COVERAGE.supplementalTypeValues as readonly string[];
+  const limited = Object.entries(COVERAGE.supplementalTypes as Record<string, readonly string[]>).filter(([, t]) => t.length < all.length);
+  return limited.length ? `Types are limited for ${limited.map(([c, t]) => `${c} (${t.join(", ")})`).join(", ")}; other countries take every type. ` : "";
+}
+
+/** "us (rsu, nso, iso), uk (rsu, emi, csop, unapproved_option), …" from the generated coverage. */
+function instrumentList(): string {
+  return Object.entries(COVERAGE.equityInstruments as Record<string, readonly string[]>)
+    .map(([c, list]) => `${c} (${list.join(", ")})`)
+    .join(", ");
+}
+
 const yearArg = z.string().max(10).optional().describe('Tax year, e.g. "2026" or "2026-27". Default: the current year. Calculations use the current year only.');
 
 export function registerTools(server: McpServer, client: CalcBlocClient): void {
@@ -739,6 +1126,78 @@ export function registerTools(server: McpServer, client: CalcBlocClient): void {
       annotations: { ...READ_ONLY },
     },
     async (args) => compareCountries(client, args),
+  );
+
+  server.registerTool(
+    "calculate_supplemental_withholding",
+    {
+      title: "Calculate withholding on a bonus or other supplemental pay",
+      description:
+        `Tax withheld on a supplemental payment (bonus, commission, RSU vest, stock option exercise or lump sum) paid on top of a regular salary, using the country's official withholding method (for example the IRS supplemental flat rate, HMRC cumulative PAYE, the CRA bonus method), line by line, next to the final tax the payment adds at the person's real rates, so over- or under-withholding shows. Countries: ${COVERAGE.supplementalCountries.join(", ")}. ${typeLimits()}region is REQUIRED for: ${COVERAGE.regionRequiredExtra["supplemental-withholding"].join(", ")}; optional for: ${COVERAGE.regionOptionalExtra["supplemental-withholding"].join(", ")}; a missing or unknown region returns the valid codes. Other countries return the list of supported ones. Returns the tax year, the method, official source URLs and the calcbloc.com page. ${NOT_YET_SUPPORTED}`,
+      inputSchema: z.object({
+        country: countryArg,
+        gross_salary: z
+          .number()
+          .positive()
+          .max(1_000_000_000)
+          .describe("Regular gross salary for the year, before the supplemental payment, in the country's currency (annual in every country)."),
+        amount: z.number().positive().max(1_000_000_000).describe("The supplemental payment (gross), in the country's currency."),
+        type: z
+          .enum(COVERAGE.supplementalTypeValues)
+          .optional()
+          .describe(`Kind of payment. Default: bonus. ${typeLimits()}`.trim()),
+        region: z
+          .string()
+          .max(60)
+          .optional()
+          .describe(`Region code or name. Required for: ${COVERAGE.regionRequiredExtra["supplemental-withholding"].join(", ")}; optional for: ${COVERAGE.regionOptionalExtra["supplemental-withholding"].join(", ")}. Examples: US "ca" or "California", Canada "on", UK "scotland". list_countries with the country lists every code.`),
+        options: z
+          .record(z.string(), z.union([z.string(), z.number(), z.boolean()]))
+          .optional()
+          .describe(
+            `Country-specific options. Examples: US {"filing_status":"mfj","method":"aggregate","ytd_supplemental":900000} (filing_status: ${COVERAGE.examples.usSupplementalFilingStatus.join(" | ")}; method: ${COVERAGE.examples.usSupplementalMethod.join(" | ")}), UK {"tax_code_number":1257,"month_paid":12}, Germany {"tax_class":3,"church":true}. Call list_countries with the country to see every option, its allowed values and its default.`,
+          ),
+      }),
+      outputSchema: SupplementalOutput,
+      annotations: { ...READ_ONLY },
+    },
+    async (args) => supplementalWithholding(client, args),
+  );
+
+  server.registerTool(
+    "calculate_equity_tax",
+    {
+      title: "Calculate tax on RSUs and stock options",
+      description:
+        `Tax on equity compensation: income tax, social security and employer withholding when RSUs vest or stock options are exercised, and capital gains tax on a later sale (give sale_price and sale_date), with flags (such as AMT exposure) and the alternative outcomes the law allows (such as qualifying vs disqualifying disposition). Countries and instruments: ${instrumentList()}. Required: country, instrument, units, grant_date, event_date, fmv_event, gross_salary; options also need exercise_price. region is REQUIRED for: ${COVERAGE.regionRequiredExtra["equity-tax"].join(", ")}; optional for: ${COVERAGE.regionOptionalExtra["equity-tax"].join(", ")}. Other countries return the list of supported ones. Returns the tax year, official source URLs and the calcbloc.com page. ${NOT_YET_SUPPORTED}`,
+      inputSchema: z.object({
+        country: countryArg,
+        instrument: z.enum(COVERAGE.equityInstrumentValues).describe(`Equity instrument; each country has its own: ${instrumentList()}.`),
+        units: z.number().positive().max(1_000_000_000).describe("Number of shares vesting or options exercised."),
+        grant_date: dateArg.describe("Grant date (YYYY-MM-DD)."),
+        event_date: dateArg.describe("Vest date (RSUs), exercise date (options), or the acquisition or deferred taxing point (Australia ESS) (YYYY-MM-DD)."),
+        fmv_event: z.number().min(0).max(1_000_000_000).describe("Market value per share at vest or exercise, in the country's currency (India: FMV under rule 15(6))."),
+        gross_salary: z.number().min(0).max(1_000_000_000).describe("Regular annual gross salary in the country's currency (for the marginal rates and contribution ceilings)."),
+        exercise_price: z.number().min(0).max(1_000_000_000).optional().describe("Exercise price per share (required for options; RSUs: any amount paid, default 0)."),
+        fmv_grant: z.number().min(0).max(1_000_000_000).optional().describe("Market value per share at grant (UK EMI discount and CSOP limit, Canada 110(1)(d) and the vesting limit)."),
+        sale_price: z.number().min(0).max(1_000_000_000).optional().describe("Sale price per share; with sale_date it adds the tax on the sale."),
+        sale_date: dateArg.optional().describe("Sale date (YYYY-MM-DD), with sale_price."),
+        region: z
+          .string()
+          .max(60)
+          .optional()
+          .describe(`Region code or name. Required for: ${COVERAGE.regionRequiredExtra["equity-tax"].join(", ")}; optional for: ${COVERAGE.regionOptionalExtra["equity-tax"].join(", ")}. Examples: Canada "on" or "Ontario", US "ca" (state withholding; omit for federal only), UK "scotland".`),
+        options: z
+          .record(z.string(), z.union([z.string(), z.number(), z.boolean()]))
+          .optional()
+          .describe(
+            `Country-specific options. Examples: US {"filing_status":"mfj"}, UK {"readily_convertible":false,"emi_exercise_period_years":"10"}, Canada {"employer_type":"ccpc"}, India {"regime":"old","listed":true}. Call list_countries with the country to see every option, its allowed values and its default.`,
+          ),
+      }),
+      outputSchema: EquityOutput,
+      annotations: { ...READ_ONLY },
+    },
+    async (args) => equityTax(client, args),
   );
 
   server.registerTool(

@@ -1,0 +1,185 @@
+{
+  "endpoint": "supplemental-withholding",
+  "country": "germany",
+  "short_code": "de",
+  "countryName": "Germany",
+  "year": "2026",
+  "currency": "EUR",
+  "inputs": {
+    "salary": 60000,
+    "amount": 10000,
+    "type": "bonus",
+    "tax_class": 1,
+    "church": false,
+    "children": 0,
+    "over_23": true,
+    "fuenftel": false,
+    "month_paid": 12
+  },
+  "type": "bonus",
+  "region": "be",
+  "method": "§ 39b (3) EStG sonstige Bezüge: annual wage-tax difference with and without the payment (BMF PAP 2026)",
+  "lines": [
+    {
+      "label": "Wage tax (Lohnsteuer) on the one-off payment",
+      "withheld": 2831,
+      "liability": 2831,
+      "note": "Annual wage tax with the payment minus annual wage tax without it (§ 39b (3) EStG, PAP 2026 method MSONST).",
+      "source": {
+        "title": "§ 39b (3) EStG Einbehaltung der Lohnsteuer (gesetze-im-internet.de)",
+        "url": "https://www.gesetze-im-internet.de/estg/__39b.html",
+        "retrievedAt": "2026-11-21",
+        "effectiveFrom": "2026-01-01",
+        "effectiveTo": null
+      }
+    },
+    {
+      "label": "Solidarity surcharge",
+      "withheld": 0,
+      "liability": 0,
+      "note": "5.5%, nil below the annual exemption, mitigated just above it (SolzG §§ 3, 4).",
+      "source": {
+        "title": "Solidaritätszuschlaggesetz 1995 (SolzG 1995) §§ 3 and 4 (gesetze-im-internet.de)",
+        "url": "https://www.gesetze-im-internet.de/solzg_1995/__3.html",
+        "retrievedAt": "2026-10-17"
+      }
+    },
+    {
+      "label": "Church tax (9%)",
+      "withheld": 0,
+      "liability": 0,
+      "source": {
+        "title": "BMF Lohn- und Einkommensteuerrechner: Berechnung der Lohnsteuer 2026 (Kirchensteuer nach Bundesland)",
+        "url": "https://www.bmf-steuerrechner.de/bl/bl2026/eingabeformbl2026.xhtml",
+        "retrievedAt": "2026-10-17"
+      }
+    },
+    {
+      "label": "Pension insurance (employee)",
+      "withheld": 930,
+      "liability": 930,
+      "rate": 0.093,
+      "note": "On €10000.00 of the payment (pro-rata ceiling).",
+      "source": {
+        "title": "Bekanntmachung der Beitragssätze in der allgemeinen Rentenversicherung und der knappschaftlichen Rentenversicherung für das Jahr 2026 vom 24. November 2025 (BGBl. 2025 I Nr. 291)",
+        "url": "https://www.gesetze-im-internet.de/rvbeitrsbek_2026/BJNR1230A0025.html",
+        "retrievedAt": "2026-10-17"
+      }
+    },
+    {
+      "label": "Unemployment insurance (employee)",
+      "withheld": 130,
+      "liability": 130,
+      "rate": 0.013,
+      "source": {
+        "title": "§ 341 SGB III Beitragssatz und Beitragsbemessung (gesetze-im-internet.de)",
+        "url": "https://www.gesetze-im-internet.de/sgb_3/__341.html",
+        "retrievedAt": "2026-10-17"
+      }
+    },
+    {
+      "label": "Health insurance (employee)",
+      "withheld": 853.13,
+      "liability": 853.13,
+      "rate": 0.0875,
+      "note": "On €9750.00 of the payment (pro-rata ceiling).",
+      "source": {
+        "title": "Bundesministerium für Gesundheit: Bekanntmachung des durchschnittlichen Zusatzbeitragssatzes nach § 242a Absatz 2 SGB V für das Jahr 2026 vom 7. November 2025 (BAnz AT 10.11.2025 B7); § 241 SGB V",
+        "url": "https://www.bundesanzeiger.de/pub/publication/oUJYVk8GYRXybnb9Y4h/content/oUJYVk8GYRXybnb9Y4h/BAnz%20AT%2010.11.2025%20B7.pdf",
+        "retrievedAt": "2026-10-17"
+      }
+    },
+    {
+      "label": "Long-term care insurance (employee)",
+      "withheld": 234,
+      "liability": 234,
+      "rate": 0.024,
+      "source": {
+        "title": "Pflege-Beitragssatz-Anpassungsverordnung 2025 (BGBl. 2024 I Nr. 446); §§ 55, 58 SGB XI",
+        "url": "https://www.gesetze-im-internet.de/pbav_2025/BJNR1BE0A0024.html",
+        "retrievedAt": "2026-10-17"
+      }
+    }
+  ],
+  "summary": {
+    "amount": 10000,
+    "totalWithheld": 4978.13,
+    "totalLiability": 4978.13,
+    "difference": 0,
+    "netPayment": 5021.87
+  },
+  "notes": [
+    "Wage tax on a sonstiger Bezug: the employer works out the annual wage tax on the expected annual pay without the payment and with it; the difference is withheld (§ 39b (3) EStG). Computed with the BMF Programmablaufplan 2026 (monthly payroll, regularAnnual as the expected annual pay).",
+    "Set fuenftel=true for severance for the loss of the job or remuneration for work over more than 12 months spanning two calendar years (§ 34 (2) Nr. 2 and 4 EStG): the five-fold method then applies in the assessment.",
+    "Liability assumes the assessment has no other income or deductions: taxable income = pay − Vorsorgepauschale − fixed allowances as in the annual wage-tax table.",
+    "Social contributions: a one-time payment is contributory only up to the pro-rata annual ceiling for January to month 12, less the regular pay already contributory (§ 23a (3) SGB IV): pension/unemployment ceiling €8,450 a month, health/care €5,812.5 a month. Assumes employment with this employer for the whole year to date at the same monthly pay."
+  ],
+  "sources": [
+    {
+      "title": "§ 39b (3) EStG Einbehaltung der Lohnsteuer (gesetze-im-internet.de)",
+      "url": "https://www.gesetze-im-internet.de/estg/__39b.html",
+      "retrievedAt": "2026-11-21",
+      "effectiveFrom": "2026-01-01",
+      "effectiveTo": null
+    },
+    {
+      "title": "Solidaritätszuschlaggesetz 1995 (SolzG 1995) §§ 3 and 4 (gesetze-im-internet.de)",
+      "url": "https://www.gesetze-im-internet.de/solzg_1995/__3.html",
+      "retrievedAt": "2026-10-17"
+    },
+    {
+      "title": "BMF Lohn- und Einkommensteuerrechner: Berechnung der Lohnsteuer 2026 (Kirchensteuer nach Bundesland)",
+      "url": "https://www.bmf-steuerrechner.de/bl/bl2026/eingabeformbl2026.xhtml",
+      "retrievedAt": "2026-10-17"
+    },
+    {
+      "title": "Bekanntmachung der Beitragssätze in der allgemeinen Rentenversicherung und der knappschaftlichen Rentenversicherung für das Jahr 2026 vom 24. November 2025 (BGBl. 2025 I Nr. 291)",
+      "url": "https://www.gesetze-im-internet.de/rvbeitrsbek_2026/BJNR1230A0025.html",
+      "retrievedAt": "2026-10-17"
+    },
+    {
+      "title": "§ 341 SGB III Beitragssatz und Beitragsbemessung (gesetze-im-internet.de)",
+      "url": "https://www.gesetze-im-internet.de/sgb_3/__341.html",
+      "retrievedAt": "2026-10-17"
+    },
+    {
+      "title": "Bundesministerium für Gesundheit: Bekanntmachung des durchschnittlichen Zusatzbeitragssatzes nach § 242a Absatz 2 SGB V für das Jahr 2026 vom 7. November 2025 (BAnz AT 10.11.2025 B7); § 241 SGB V",
+      "url": "https://www.bundesanzeiger.de/pub/publication/oUJYVk8GYRXybnb9Y4h/content/oUJYVk8GYRXybnb9Y4h/BAnz%20AT%2010.11.2025%20B7.pdf",
+      "retrievedAt": "2026-10-17"
+    },
+    {
+      "title": "Pflege-Beitragssatz-Anpassungsverordnung 2025 (BGBl. 2024 I Nr. 446); §§ 55, 58 SGB XI",
+      "url": "https://www.gesetze-im-internet.de/pbav_2025/BJNR1BE0A0024.html",
+      "retrievedAt": "2026-10-17"
+    },
+    {
+      "title": "BMF: XML-Pseudocode des Programmablaufplans 2026 (Lohnsteuer2026.xml) — Programmablaufplan für die maschinelle Berechnung der vom Arbeitslohn einzubehaltenden Lohnsteuer, des Solidaritätszuschlags und der Maßstabsteuer für die Kirchenlohnsteuer für 2026",
+      "url": "https://www.bmf-steuerrechner.de/javax.faces.resource/daten/xmls/Lohnsteuer2026.xml.xhtml",
+      "retrievedAt": "2026-10-17"
+    },
+    {
+      "title": "§ 32a EStG Einkommensteuertarif (gesetze-im-internet.de), Veranlagungszeitraum 2026",
+      "url": "https://www.gesetze-im-internet.de/estg/__32a.html",
+      "retrievedAt": "2026-10-17"
+    },
+    {
+      "title": "§ 23a SGB IV Einmalig gezahltes Arbeitsentgelt als beitragspflichtige Einnahmen (gesetze-im-internet.de)",
+      "url": "https://www.gesetze-im-internet.de/sgb_4/__23a.html",
+      "retrievedAt": "2026-11-21",
+      "effectiveFrom": "2026-01-01",
+      "effectiveTo": null
+    },
+    {
+      "title": "Sozialversicherungsrechengrößen-Verordnung 2026 vom 24. November 2025 (BGBl. 2025 I Nr. 278)",
+      "url": "https://www.gesetze-im-internet.de/svbezgrv_2026/BJNR1160A0025.html",
+      "retrievedAt": "2026-10-17"
+    }
+  ],
+  "warnings": [],
+  "attribution": {
+    "source": "CalcBloc",
+    "url": "https://calcbloc.com/developers",
+    "required": true,
+    "text": "Data by CalcBloc (calcbloc.com)"
+  }
+}
