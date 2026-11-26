@@ -185,8 +185,10 @@ if (check) {
   }
   const cur = readFileSync(OUT, "utf8");
   // The source line differs between a live and a file run; compare the data only.
-  const body = (s) => s.slice(s.indexOf("export"));
-  if (body(cur) !== body(text) || readme !== newReadme) {
+  // Line endings are ignored: a Windows checkout (core.autocrlf) has CRLF where the generator writes LF.
+  const lf = (s) => s.replace(/\r\n/g, "\n");
+  const body = (s) => lf(s.slice(s.indexOf("export")));
+  if (body(cur) !== body(text) || lf(readme) !== lf(newReadme)) {
     console.error("src/coverage.generated.ts or the README coverage block is out of date: run node scripts/gen-coverage.mjs");
     process.exit(1);
   }
