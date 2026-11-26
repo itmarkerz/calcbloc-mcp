@@ -1,0 +1,1288 @@
+{
+  "tariff": {
+    "destination": "us",
+    "nomenclature": "htsus",
+    "version": "2026-11-10",
+    "as_of": "2026-11-10",
+    "retrieved_at": "2026-11-26",
+    "publisher": "U.S. International Trade Commission (USITC)",
+    "source": "https://hts.usitc.gov/",
+    "api": "https://hts.usitc.gov/reststop/exportList",
+    "licence": "Works of the U.S. Government are not subject to copyright in the United States (17 U.S.C. 105); the HTSUS is published by the USITC for public use. U.S. Customs and Border Protection makes the final determination of classification and duty."
+  },
+  "partner": null,
+  "count": 25,
+  "agreements": [
+    {
+      "id": "us-gsp",
+      "title": "Generalized System of Preferences",
+      "type": "gsp",
+      "parties": [
+        "us",
+        "gsp"
+      ],
+      "signed": null,
+      "in_force": null,
+      "direction": {
+        "destination": "us",
+        "origins": []
+      },
+      "geographical_areas": [
+        "SPI-A"
+      ],
+      "scheme_code": "A",
+      "rules_of_origin": {
+        "summary": "General Note 4 to the HTSUS sets the eligibility and origin rules (symbols A, A*, A+). A/A*/A+: General Note 4, footnote 1: \"As of the date of preparation of this edition, Congress has not renewed the effectiveness of the GSP program.\"",
+        "source": {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      },
+      "links": [
+        {
+          "text": "General Note 4 (HTSUS General Notes)",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      ]
+    },
+    {
+      "id": "us-au-fta",
+      "title": "United States-Australia Free Trade Agreement",
+      "type": "fta",
+      "parties": [
+        "us",
+        "au"
+      ],
+      "signed": null,
+      "in_force": null,
+      "direction": {
+        "destination": "us",
+        "origins": [
+          "au"
+        ]
+      },
+      "geographical_areas": [
+        "SPI-AU"
+      ],
+      "scheme_code": "AU",
+      "rules_of_origin": {
+        "summary": "General Note 28 to the HTSUS sets the eligibility and origin rules (symbols AU).",
+        "source": {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      },
+      "links": [
+        {
+          "text": "General Note 28 (HTSUS General Notes)",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      ]
+    },
+    {
+      "id": "us-apta",
+      "title": "Automotive Products Trade Act",
+      "type": "partial_scope",
+      "parties": [
+        "us",
+        "ca"
+      ],
+      "signed": null,
+      "in_force": null,
+      "direction": {
+        "destination": "us",
+        "origins": []
+      },
+      "geographical_areas": [
+        "SPI-B"
+      ],
+      "scheme_code": "B",
+      "rules_of_origin": {
+        "summary": "General Note 5 to the HTSUS sets the eligibility and origin rules (symbols B). B: Applies to qualifying automotive products entered by a bona fide motor-vehicle manufacturer (General Note 5).",
+        "source": {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      },
+      "links": [
+        {
+          "text": "General Note 5 (HTSUS General Notes)",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      ]
+    },
+    {
+      "id": "us-bh-fta",
+      "title": "United States-Bahrain Free Trade Agreement Implementation Act",
+      "type": "fta",
+      "parties": [
+        "us",
+        "bh"
+      ],
+      "signed": null,
+      "in_force": null,
+      "direction": {
+        "destination": "us",
+        "origins": [
+          "bh"
+        ]
+      },
+      "geographical_areas": [
+        "SPI-BH"
+      ],
+      "scheme_code": "BH",
+      "rules_of_origin": {
+        "summary": "General Note 30 to the HTSUS sets the eligibility and origin rules (symbols BH).",
+        "source": {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      },
+      "links": [
+        {
+          "text": "General Note 30 (HTSUS General Notes)",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      ]
+    },
+    {
+      "id": "us-civil-aircraft",
+      "title": "Agreement on Trade in Civil Aircraft",
+      "type": "partial_scope",
+      "parties": [
+        "us",
+        "wto"
+      ],
+      "signed": null,
+      "in_force": null,
+      "direction": {
+        "destination": "us",
+        "origins": []
+      },
+      "geographical_areas": [
+        "SPI-C"
+      ],
+      "scheme_code": "C",
+      "rules_of_origin": {
+        "summary": "General Note 6 to the HTSUS sets the eligibility and origin rules (symbols C). C: Applies to civil aircraft and their parts certified for use in civil aircraft (General Note 6).",
+        "source": {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      },
+      "links": [
+        {
+          "text": "General Note 6 (HTSUS General Notes)",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      ]
+    },
+    {
+      "id": "us-cl-fta",
+      "title": "United States-Chile Free Trade Agreement",
+      "type": "fta",
+      "parties": [
+        "us",
+        "cl"
+      ],
+      "signed": null,
+      "in_force": null,
+      "direction": {
+        "destination": "us",
+        "origins": [
+          "cl"
+        ]
+      },
+      "geographical_areas": [
+        "SPI-CL"
+      ],
+      "scheme_code": "CL",
+      "rules_of_origin": {
+        "summary": "General Note 26 to the HTSUS sets the eligibility and origin rules (symbols CL).",
+        "source": {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      },
+      "links": [
+        {
+          "text": "General Note 26 (HTSUS General Notes)",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      ]
+    },
+    {
+      "id": "us-agoa",
+      "title": "African Growth and Opportunity Act",
+      "type": "gsp",
+      "parties": [
+        "us",
+        "ao",
+        "bj",
+        "bw",
+        "cv",
+        "td",
+        "km",
+        "cg",
+        "cd",
+        "dj",
+        "sz",
+        "ga",
+        "gm",
+        "gh",
+        "gw",
+        "ke",
+        "ls",
+        "lr",
+        "mg",
+        "mw",
+        "mr",
+        "mu",
+        "mz",
+        "na",
+        "ng",
+        "rw",
+        "st",
+        "sn",
+        "sl",
+        "za",
+        "tz",
+        "tg",
+        "zm",
+        "ci"
+      ],
+      "signed": null,
+      "in_force": null,
+      "direction": {
+        "destination": "us",
+        "origins": [
+          "ao",
+          "bj",
+          "bw",
+          "cv",
+          "td",
+          "km",
+          "cg",
+          "cd",
+          "dj",
+          "sz",
+          "ga",
+          "gm",
+          "gh",
+          "gw",
+          "ke",
+          "ls",
+          "lr",
+          "mg",
+          "mw",
+          "mr",
+          "mu",
+          "mz",
+          "na",
+          "ng",
+          "rw",
+          "st",
+          "sn",
+          "sl",
+          "za",
+          "tz",
+          "tg",
+          "zm",
+          "ci"
+        ]
+      },
+      "geographical_areas": [
+        "SPI-D"
+      ],
+      "scheme_code": "D",
+      "rules_of_origin": {
+        "summary": "General Note 16 to the HTSUS sets the eligibility and origin rules (symbols D). D: USTR (91 FR 23142, 29 April 2026): legislation \"reauthorizes the AGOA trade preference program through December 31, 2026, with retroactive effect to September 30, 2025\" (Consolidated Appropriations Act, 2026, Pub. L. 119-75).",
+        "source": {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      },
+      "links": [
+        {
+          "text": "General Note 16 (HTSUS General Notes)",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        },
+        {
+          "id": "src-c82d2304b2c2",
+          "url": "https://www.federalregister.gov/documents/2026/04/29/2026-08347/request-for-comments-on-the-modernization-of-the-african-growth-and-opportunity-act-agoa",
+          "title": "USTR: Request for Comments on the Modernization of the African Growth and Opportunity Act (AGOA), 91 FR 23142 (29 April 2026)",
+          "publisher": "Office of the United States Trade Representative (Federal Register)",
+          "retrieved_at": "2026-11-26"
+        }
+      ]
+    },
+    {
+      "id": "us-cbera",
+      "title": "Caribbean Basin Economic Recovery Act",
+      "type": "gsp",
+      "parties": [
+        "us",
+        "ag",
+        "aw",
+        "bs",
+        "bb",
+        "bz",
+        "cw",
+        "dm",
+        "gd",
+        "gy",
+        "ht",
+        "jm",
+        "ms",
+        "kn",
+        "lc",
+        "vc",
+        "tt",
+        "vg"
+      ],
+      "signed": null,
+      "in_force": null,
+      "direction": {
+        "destination": "us",
+        "origins": [
+          "ag",
+          "aw",
+          "bs",
+          "bb",
+          "bz",
+          "cw",
+          "dm",
+          "gd",
+          "gy",
+          "ht",
+          "jm",
+          "ms",
+          "kn",
+          "lc",
+          "vc",
+          "tt",
+          "vg"
+        ]
+      },
+      "geographical_areas": [
+        "SPI-E"
+      ],
+      "scheme_code": "E",
+      "rules_of_origin": {
+        "summary": "General Note 7 to the HTSUS sets the eligibility and origin rules (symbols E, E*). E*: E*: some beneficiary countries are excluded for the product (General Note 7(d)); not applied without the exclusion list.",
+        "source": {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      },
+      "links": [
+        {
+          "text": "General Note 7 (HTSUS General Notes)",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      ]
+    },
+    {
+      "id": "us-il-fta",
+      "title": "United States-Israel Free Trade Area",
+      "type": "fta",
+      "parties": [
+        "us",
+        "il"
+      ],
+      "signed": null,
+      "in_force": null,
+      "direction": {
+        "destination": "us",
+        "origins": [
+          "il"
+        ]
+      },
+      "geographical_areas": [
+        "SPI-IL"
+      ],
+      "scheme_code": "IL",
+      "rules_of_origin": {
+        "summary": "General Note 8 to the HTSUS sets the eligibility and origin rules (symbols IL). IL: Also products of the West Bank, the Gaza Strip or a qualifying industrial zone under General Note 3(a)(v); only Israel is applied here.",
+        "source": {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      },
+      "links": [
+        {
+          "text": "General Note 8 (HTSUS General Notes)",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      ]
+    },
+    {
+      "id": "us-jo-fta",
+      "title": "United States-Jordan Free Trade Area Implementation Act",
+      "type": "fta",
+      "parties": [
+        "us",
+        "jo"
+      ],
+      "signed": null,
+      "in_force": null,
+      "direction": {
+        "destination": "us",
+        "origins": [
+          "jo"
+        ]
+      },
+      "geographical_areas": [
+        "SPI-JO"
+      ],
+      "scheme_code": "JO",
+      "rules_of_origin": {
+        "summary": "General Note 18 to the HTSUS sets the eligibility and origin rules (symbols JO).",
+        "source": {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      },
+      "links": [
+        {
+          "text": "General Note 18 (HTSUS General Notes)",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      ]
+    },
+    {
+      "id": "us-jp-ta",
+      "title": "Trade Agreement Between the United States and Japan",
+      "type": "partial_scope",
+      "parties": [
+        "us",
+        "jp"
+      ],
+      "signed": null,
+      "in_force": null,
+      "direction": {
+        "destination": "us",
+        "origins": [
+          "jp"
+        ]
+      },
+      "geographical_areas": [
+        "SPI-JP"
+      ],
+      "scheme_code": "JP",
+      "rules_of_origin": {
+        "summary": "General Note 36 to the HTSUS sets the eligibility and origin rules (symbols JP).",
+        "source": {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      },
+      "links": [
+        {
+          "text": "General Note 36 (HTSUS General Notes)",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      ]
+    },
+    {
+      "id": "us-pharma",
+      "title": "Agreement on Trade in Pharmaceutical Products",
+      "type": "partial_scope",
+      "parties": [
+        "us",
+        "wto"
+      ],
+      "signed": null,
+      "in_force": null,
+      "direction": {
+        "destination": "us",
+        "origins": []
+      },
+      "geographical_areas": [
+        "SPI-K"
+      ],
+      "scheme_code": "K",
+      "rules_of_origin": {
+        "summary": "General Note 13 to the HTSUS sets the eligibility and origin rules (symbols K). K: Pharmaceutical products listed in the General Note's annexes.",
+        "source": {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      },
+      "links": [
+        {
+          "text": "General Note 13 (HTSUS General Notes)",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      ]
+    },
+    {
+      "id": "us-cafta-dr",
+      "title": "Dominican Republic-Central America-United States Free Trade Agreement Implementation Act",
+      "type": "fta",
+      "parties": [
+        "us",
+        "cr",
+        "do",
+        "sv",
+        "gt",
+        "hn",
+        "ni"
+      ],
+      "signed": null,
+      "in_force": null,
+      "direction": {
+        "destination": "us",
+        "origins": [
+          "cr",
+          "do",
+          "sv",
+          "gt",
+          "hn",
+          "ni"
+        ]
+      },
+      "geographical_areas": [
+        "SPI-P"
+      ],
+      "scheme_code": "P",
+      "rules_of_origin": {
+        "summary": "General Note 29 to the HTSUS sets the eligibility and origin rules (symbols P, P+). P+: P+: the rate applies only to originating goods of the parties the General Note names for the product.",
+        "source": {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      },
+      "links": [
+        {
+          "text": "General Note 29 (HTSUS General Notes)",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      ]
+    },
+    {
+      "id": "us-dyes",
+      "title": "Uruguay Round Concessions on Intermediate Chemicals for Dyes",
+      "type": "partial_scope",
+      "parties": [
+        "us",
+        "wto"
+      ],
+      "signed": null,
+      "in_force": null,
+      "direction": {
+        "destination": "us",
+        "origins": []
+      },
+      "geographical_areas": [
+        "SPI-L"
+      ],
+      "scheme_code": "L",
+      "rules_of_origin": {
+        "summary": "General Note 14 to the HTSUS sets the eligibility and origin rules (symbols L). L: Concessions on listed intermediate chemicals for dyes.",
+        "source": {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      },
+      "links": [
+        {
+          "text": "General Note 14 (HTSUS General Notes)",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      ]
+    },
+    {
+      "id": "us-cbtpa",
+      "title": "United States-Caribbean Basin Trade Partnership Act",
+      "type": "gsp",
+      "parties": [
+        "us",
+        "bb",
+        "bz",
+        "cw",
+        "gy",
+        "ht",
+        "jm",
+        "lc",
+        "tt"
+      ],
+      "signed": null,
+      "in_force": null,
+      "direction": {
+        "destination": "us",
+        "origins": [
+          "bb",
+          "bz",
+          "cw",
+          "gy",
+          "ht",
+          "jm",
+          "lc",
+          "tt"
+        ]
+      },
+      "geographical_areas": [
+        "SPI-R"
+      ],
+      "scheme_code": "R",
+      "rules_of_origin": {
+        "summary": "General Note 17 to the HTSUS sets the eligibility and origin rules (symbols R).",
+        "source": {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      },
+      "links": [
+        {
+          "text": "General Note 17 (HTSUS General Notes)",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      ]
+    },
+    {
+      "id": "us-ma-fta",
+      "title": "United States-Morocco Free Trade Agreement Implementation Act",
+      "type": "fta",
+      "parties": [
+        "us",
+        "ma"
+      ],
+      "signed": null,
+      "in_force": null,
+      "direction": {
+        "destination": "us",
+        "origins": [
+          "ma"
+        ]
+      },
+      "geographical_areas": [
+        "SPI-MA"
+      ],
+      "scheme_code": "MA",
+      "rules_of_origin": {
+        "summary": "General Note 27 to the HTSUS sets the eligibility and origin rules (symbols MA).",
+        "source": {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      },
+      "links": [
+        {
+          "text": "General Note 27 (HTSUS General Notes)",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      ]
+    },
+    {
+      "id": "us-sg-fta",
+      "title": "United States-Singapore Free Trade Agreement",
+      "type": "fta",
+      "parties": [
+        "us",
+        "sg"
+      ],
+      "signed": null,
+      "in_force": null,
+      "direction": {
+        "destination": "us",
+        "origins": [
+          "sg"
+        ]
+      },
+      "geographical_areas": [
+        "SPI-SG"
+      ],
+      "scheme_code": "SG",
+      "rules_of_origin": {
+        "summary": "General Note 25 to the HTSUS sets the eligibility and origin rules (symbols SG).",
+        "source": {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      },
+      "links": [
+        {
+          "text": "General Note 25 (HTSUS General Notes)",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      ]
+    },
+    {
+      "id": "us-om-fta",
+      "title": "United States-Oman Free Trade Agreement Implementation Act",
+      "type": "fta",
+      "parties": [
+        "us",
+        "om"
+      ],
+      "signed": null,
+      "in_force": null,
+      "direction": {
+        "destination": "us",
+        "origins": [
+          "om"
+        ]
+      },
+      "geographical_areas": [
+        "SPI-OM"
+      ],
+      "scheme_code": "OM",
+      "rules_of_origin": {
+        "summary": "General Note 31 to the HTSUS sets the eligibility and origin rules (symbols OM).",
+        "source": {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      },
+      "links": [
+        {
+          "text": "General Note 31 (HTSUS General Notes)",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      ]
+    },
+    {
+      "id": "us-pe-tpa",
+      "title": "United States-Peru Trade Promotion Agreement Implementation Act",
+      "type": "fta",
+      "parties": [
+        "us",
+        "pe"
+      ],
+      "signed": null,
+      "in_force": null,
+      "direction": {
+        "destination": "us",
+        "origins": [
+          "pe"
+        ]
+      },
+      "geographical_areas": [
+        "SPI-PE"
+      ],
+      "scheme_code": "PE",
+      "rules_of_origin": {
+        "summary": "General Note 32 to the HTSUS sets the eligibility and origin rules (symbols PE).",
+        "source": {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      },
+      "links": [
+        {
+          "text": "General Note 32 (HTSUS General Notes)",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      ]
+    },
+    {
+      "id": "us-kr-fta",
+      "title": "United States-Korea Free Trade Agreement Implementation Act",
+      "type": "fta",
+      "parties": [
+        "us",
+        "kr"
+      ],
+      "signed": null,
+      "in_force": null,
+      "direction": {
+        "destination": "us",
+        "origins": [
+          "kr"
+        ]
+      },
+      "geographical_areas": [
+        "SPI-KR"
+      ],
+      "scheme_code": "KR",
+      "rules_of_origin": {
+        "summary": "General Note 33 to the HTSUS sets the eligibility and origin rules (symbols KR).",
+        "source": {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      },
+      "links": [
+        {
+          "text": "General Note 33 (HTSUS General Notes)",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      ]
+    },
+    {
+      "id": "us-co-tpa",
+      "title": "United States-Colombia Trade Promotion Agreement Implementation Act",
+      "type": "fta",
+      "parties": [
+        "us",
+        "co"
+      ],
+      "signed": null,
+      "in_force": null,
+      "direction": {
+        "destination": "us",
+        "origins": [
+          "co"
+        ]
+      },
+      "geographical_areas": [
+        "SPI-CO"
+      ],
+      "scheme_code": "CO",
+      "rules_of_origin": {
+        "summary": "General Note 34 to the HTSUS sets the eligibility and origin rules (symbols CO).",
+        "source": {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      },
+      "links": [
+        {
+          "text": "General Note 34 (HTSUS General Notes)",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      ]
+    },
+    {
+      "id": "us-pa-tpa",
+      "title": "United States-Panama Trade Promotion Agreement Implementation Act",
+      "type": "fta",
+      "parties": [
+        "us",
+        "pa"
+      ],
+      "signed": null,
+      "in_force": null,
+      "direction": {
+        "destination": "us",
+        "origins": [
+          "pa"
+        ]
+      },
+      "geographical_areas": [
+        "SPI-PA"
+      ],
+      "scheme_code": "PA",
+      "rules_of_origin": {
+        "summary": "General Note 35 to the HTSUS sets the eligibility and origin rules (symbols PA).",
+        "source": {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      },
+      "links": [
+        {
+          "text": "General Note 35 (HTSUS General Notes)",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      ]
+    },
+    {
+      "id": "us-nepal-pp",
+      "title": "Nepal Preference Program",
+      "type": "gsp",
+      "parties": [
+        "us",
+        "np"
+      ],
+      "signed": null,
+      "in_force": null,
+      "direction": {
+        "destination": "us",
+        "origins": []
+      },
+      "geographical_areas": [
+        "SPI-NP"
+      ],
+      "scheme_code": "NP",
+      "rules_of_origin": {
+        "summary": "General Note 3(e) to the HTSUS sets the eligibility and origin rules (symbols NP). NP: General Note 3(e), compiler's note: \"Preferential treatment provided for in this subdivision terminated effective January 1, 2026.\"",
+        "source": {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      },
+      "links": [
+        {
+          "text": "General Note 3(e) (HTSUS General Notes)",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      ]
+    },
+    {
+      "id": "us-usmca",
+      "title": "United States-Mexico-Canada Agreement",
+      "type": "fta",
+      "parties": [
+        "us",
+        "ca",
+        "mx"
+      ],
+      "signed": null,
+      "in_force": null,
+      "direction": {
+        "destination": "us",
+        "origins": [
+          "ca",
+          "mx"
+        ]
+      },
+      "geographical_areas": [
+        "SPI-S"
+      ],
+      "scheme_code": "S",
+      "rules_of_origin": {
+        "summary": "General Note 11 to the HTSUS sets the eligibility and origin rules (symbols S, S+, CA, MX). S+: S+: the rate applies only to the originating goods the General Note specifies for the product. CA/MX: A residual NAFTA-era symbol printed on a few lines; not applied.",
+        "source": {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      },
+      "links": [
+        {
+          "text": "General Note 11 (HTSUS General Notes)",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      ]
+    },
+    {
+      "id": "us-atpa",
+      "title": "Andean Trade Preference Act",
+      "type": "gsp",
+      "parties": [
+        "us",
+        "andean"
+      ],
+      "signed": null,
+      "in_force": null,
+      "direction": {
+        "destination": "us",
+        "origins": []
+      },
+      "geographical_areas": [
+        "SPI-J"
+      ],
+      "scheme_code": "J",
+      "rules_of_origin": {
+        "summary": "General Note 11 (former Andean program) to the HTSUS sets the eligibility and origin rules (symbols J, J*, J+). J/J*/J+: The Andean Trade Preference Act program is not listed among the programs of General Note 3(c)(i) of this release; residual symbols are not applied.",
+        "source": {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      },
+      "links": [
+        {
+          "text": "General Note 11 (former Andean program) (HTSUS General Notes)",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-b955dbf76767",
+          "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=General%20Notes",
+          "title": "HTSUS Revision 23 (2026): General Notes",
+          "publisher": "U.S. International Trade Commission",
+          "retrieved_at": "2026-11-26"
+        }
+      ]
+    }
+  ],
+  "attribution": {
+    "source": "CalcBloc",
+    "url": "https://calcbloc.com/developers",
+    "required": true,
+    "text": "Data by CalcBloc (calcbloc.com)"
+  }
+}

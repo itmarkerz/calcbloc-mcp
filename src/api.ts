@@ -55,6 +55,8 @@ export interface CountryInfo {
   equity?: boolean;
   /** API 1.8+: the equity-tax endpoint (kept outside `endpoints`), or null. */
   equity_tax?: EquityEndpointInfo | null;
+  /** API 1.9+: tax year, days remaining, upcoming changes and the next budget (GET /tax-calendar has the details). */
+  tax_calendar?: CountryCalendarSummary;
   endpoints: {
     "net-salary"?: CalcEndpointInfo;
     "employer-cost"?: CalcEndpointInfo;
@@ -267,6 +269,314 @@ export interface EquityResponse {
   attribution?: { url?: string; text?: string };
 }
 
+/* -------------------------------------------------- API 1.9: trade, tax calendar, cross-border equity -------------------------------------------------- */
+
+/** A duty as the trade endpoints return it: a parsed expression, the tariff's own wording and a plain-English form. */
+export interface TradeMeasure {
+  measure_type: string;
+  measure_type_description: string;
+  geographical_area: string;
+  geographical_area_description: string;
+  excluded?: string[];
+  agreement: string | null;
+  additional_code: { code: string; description: string } | null;
+  quota: { order_number: string; volume: number | null; unit: string | null; period_start: string | null; period_end: string | null } | null;
+  duty: Record<string, unknown>;
+  duty_text: string;
+  duty_described: string;
+  conditions: unknown[] | null;
+  documents?: string[];
+  extra_type: string | null;
+  legal_acts: { code: string; title: string; url: string | null }[];
+  valid_from: string;
+  valid_to: string | null;
+}
+
+/** The tariff a trade response was read from (UK Trade Tariff, TARIC, HTSUS, India's First Schedule). */
+export interface TariffMeta {
+  destination: string;
+  nomenclature: string;
+  version: string;
+  as_of: string;
+  retrieved_at: string;
+  publisher: string;
+  source: string;
+  api?: string;
+  licence: string;
+}
+
+export interface TradeOrigin {
+  iso: string;
+  geo: string;
+  name: string;
+}
+
+/** One line of GET /tariffs. */
+export interface TariffLine {
+  code: string;
+  description: string;
+  path: string[];
+  supplementary_unit: string | null;
+  mfn: { duty: Record<string, unknown>; duty_text: string; duty_described: string };
+  third_country: TradeMeasure[];
+  preferential: TradeMeasure[];
+  best_preferential: TradeMeasure | null;
+  suspensions: TradeMeasure[];
+  quotas: TradeMeasure[];
+  extra_duties: TradeMeasure[];
+  surcharges?: TradeMeasure[];
+  import_vat: TradeMeasure[];
+  excise: TradeMeasure[];
+  other_charges?: TradeMeasure[];
+  valid_from?: string;
+  valid_to?: string | null;
+  source: string;
+  page: string;
+  footnotes?: { columns?: string[]; text: string }[];
+  notes?: ({ text: string } | string)[];
+}
+
+/** API 1.9+: response of GET /tariffs. */
+export interface TariffsResponse {
+  tariff: TariffMeta;
+  origin: TradeOrigin | null;
+  filters: Record<string, string>;
+  total: number;
+  count: number;
+  limit?: number;
+  next_cursor: string | null;
+  lines: TariffLine[];
+  attribution?: { url?: string; text?: string };
+}
+
+/** API 1.9+: one record of GET /trade-agreements. */
+export interface TradeAgreement {
+  id: string;
+  title: string;
+  type: string;
+  parties: string[];
+  signed: string | null;
+  in_force: string | null;
+  direction: { destination: string; origins: string[] };
+  geographical_areas: string[];
+  scheme_code?: string;
+  rules_of_origin: { summary: string; source: { id: string; url?: string; title?: string; publisher?: string; retrieved_at?: string } };
+  links?: { text: string; url: string }[];
+  sources: { id: string; url?: string; title?: string; publisher?: string; retrieved_at?: string }[];
+}
+
+export interface TradeAgreementsResponse {
+  tariff: TariffMeta;
+  partner: TradeOrigin | null;
+  count: number;
+  agreements: TradeAgreement[];
+  attribution?: { url?: string; text?: string };
+}
+
+/** API 1.9+: one line of the GET /import-duty breakdown. */
+export interface ImportDutyLine {
+  kind: string;
+  label: string;
+  measure: TradeMeasure | null;
+  base: number | null;
+  base_description: string;
+  amount: number | null;
+  not_computed: string | null;
+  source: string;
+}
+
+/** API 1.9+: response of GET /import-duty. */
+export interface ImportDutyResponse {
+  tariff: TariffMeta;
+  member_state?: { code: string; name: string } | null;
+  origin: TradeOrigin;
+  line: { code: string; description: string; path: string[]; supplementary_unit: string | null; mfn?: string; source: string; page: string };
+  inputs: Record<string, unknown>;
+  mfn: { duty: Record<string, unknown>; duty_text: string; duty_described: string; amount: number | null; applied?: TradeMeasure | null };
+  preferential: TradeMeasure | null;
+  preferential_all: TradeMeasure[];
+  preferential_quotas: TradeMeasure[];
+  extra_duties_possible: TradeMeasure[];
+  other_charges: TradeMeasure[];
+  lines: ImportDutyLine[];
+  totals: {
+    customs_duty: number | null;
+    extra_duties: number | null;
+    excise: number | null;
+    import_vat: number | null;
+    fees?: number | null;
+    duties_and_taxes: number | null;
+    landed_cost: number | null;
+    currency: string;
+    complete: boolean;
+    incomplete_reasons: string[];
+  };
+  notes: string[];
+  basis: Record<string, { rule: string; source: string }>;
+  disclaimer: string;
+  warnings?: string[];
+  attribution?: { url?: string; text?: string };
+}
+
+/** An official source as the tax calendar returns it. */
+export interface CalendarSource {
+  title: string;
+  url: string;
+  retrieved_at: string;
+}
+
+export interface CalendarChange {
+  id: string;
+  effective_from: string;
+  date_precision: string;
+  effective_to: string | null;
+  title: string;
+  detail: string | null;
+  tax: string;
+  section_id: string | null;
+  region: { code: string; name: string } | null;
+  status: string;
+  origin: string;
+  source: CalendarSource;
+  quote: string | null;
+}
+
+/** API 1.9+: the calendar of GET /tax-calendar?country=. */
+export interface TaxCalendar {
+  country: string;
+  country_name: string;
+  region: { code: string; name: string } | null;
+  as_of: string;
+  tax_year: { label: string; display_label: string; start: string; end: string; type: string; days_remaining: number; data_year?: string };
+  next_tax_year: { label: string; display_label: string; start: string; end: string } | null;
+  other_periods?: { tax: string; label: string; start: string; end: string; source: CalendarSource; quote?: string }[];
+  upcoming_changes: CalendarChange[];
+  window: { from: string; to: string };
+  next_budget: { status: string; event?: string; date?: string; source?: CalendarSource };
+  last_budget: { event: string; date: string; source: CalendarSource; quote?: string } | null;
+  next_year_note: { text: string; checked_at: string } | null;
+  page_url: string;
+}
+
+export interface TaxCalendarResponse {
+  as_of: string;
+  calendar: TaxCalendar;
+  attribution?: { url?: string; text?: string };
+}
+
+/** API 1.9+: the per-country tax calendar summary in GET /countries. */
+export interface CountryCalendarSummary {
+  tax_year: { label: string; start: string; end: string; type: string };
+  days_remaining: number;
+  next_tax_year: { label: string; start: string } | null;
+  upcoming_changes: number;
+  next_change: { effective_from: string; date_precision: string; title: string; status: string; region: string | { code: string; name: string } | null } | null;
+  next_budget: { status: string; event?: string; date?: string };
+  path: string;
+}
+
+/** API 1.8+: one fact of GET /facts. */
+export interface TaxFact {
+  id: string;
+  country: string;
+  country_code?: string;
+  jurisdiction: string;
+  level: string;
+  tax_type: string;
+  tax_group?: string;
+  measure: string;
+  value?: number | string | null;
+  bands?: { label?: string; from: number; to: number | null; rate: number }[] | null;
+  unit?: string;
+  currency?: string;
+  label?: string;
+  basis?: string;
+  note?: string;
+  section_id?: string;
+  section?: string;
+  tax_year: string;
+  valid_from: string;
+  valid_to: string | null;
+  status: string;
+  applies_when?: string;
+  source: { id?: string; url: string; title?: string; retrieved_at?: string; checked_at?: string };
+  derived_from?: string;
+}
+
+export interface FactsResponse {
+  filters: Record<string, string>;
+  total: number;
+  count: number;
+  limit?: number;
+  next_cursor: string | null;
+  facts: TaxFact[];
+  attribution?: { url?: string; text?: string };
+}
+
+/** API 1.9+: one country's share of GET /cross-border-equity. */
+export interface CrossBorderCountry {
+  country: string;
+  covered: boolean;
+  currency: string;
+  workdays: number;
+  workdayShare: number;
+  method: string;
+  methodLabel: string;
+  oecdDefault: boolean;
+  ruleIds?: string[];
+  ruleStatus: string;
+  sourceShare: number;
+  basis: string;
+  taxableShare: number;
+  taxableAmount: number;
+  taxableAmountLocal: number;
+  isResidence: boolean;
+  estimate: {
+    engine: string;
+    instrument: string;
+    method: string;
+    taxYear: string;
+    taxableAmount: number;
+    estimatedTax: number;
+    withheld: number | null;
+    lines: { label: string; amount: number; withheld?: number; rate?: number; note?: string }[];
+    notes: string[];
+    sources: ResultSource[];
+  } | null;
+  notes: string[];
+  sources: ResultSource[];
+}
+
+/** API 1.9+: response of GET /cross-border-equity. */
+export interface CrossBorderResponse {
+  endpoint: string;
+  estimate: boolean;
+  inputs: Record<string, unknown>;
+  result: {
+    estimate: boolean;
+    label: string;
+    instrument: string;
+    units: number;
+    currency: string;
+    totalIncome: number;
+    sourcingPeriod: { start: string; end: string; weekdays: number };
+    eventDate: string;
+    residence: { country: string; how: string };
+    grantCountry: { country: string; how: string };
+    totalWorkdays: number;
+    periods: { country: string; start: string; end: string; workdaysGiven: number | null; workdaysUsed: number; computed: boolean; clipped: boolean }[];
+    countries: CrossBorderCountry[];
+    relief: { source: string; other: string; overlap: number; kind: string; treaty: string; text: string; treatySource?: ResultSource }[];
+    flags: string[];
+    notes: string[];
+    underReview: string[];
+    fx: { referenceDate: string; source: ResultSource; rates: Record<string, number> };
+    sources: ResultSource[];
+  };
+  warnings: string[];
+  attribution?: { url?: string; text?: string };
+}
+
 export type QueryValue = string | number | boolean;
 
 /** An error from the CalcBloc API (or from reaching it), with a message written for the person using the assistant. */
@@ -339,6 +649,8 @@ export class CalcBlocClient {
   readonly dataDir?: string;
   /** Set when the last country-list request failed and the local manifest was used instead. */
   offlineReason?: string;
+  /** API 1.9+: the day the cached country list (and its tax-calendar summaries) was computed for. */
+  countriesAsOf?: string;
   private readonly apiKey?: string;
   private readonly fetchImpl: typeof fetch;
   private readonly timeoutMs: number;
@@ -399,8 +711,9 @@ export class CalcBlocClient {
   /** Every live country with its tax years, regions and per-endpoint parameters (cached). */
   async countries(): Promise<CountryInfo[]> {
     try {
-      const body = await this.cached("countries", () => this.get<{ countries: CountryInfo[] }>("/countries"));
+      const body = await this.cached("countries", () => this.get<{ countries: CountryInfo[]; as_of?: string }>("/countries"));
       this.offlineReason = undefined;
+      this.countriesAsOf = body.as_of;
       return body.countries;
     } catch (e) {
       // API unreachable but a local data folder is set: tax tables still work, from the folder's manifest.
@@ -431,6 +744,36 @@ export class CalcBlocClient {
   /** API 1.8+: tax on an RSU vest or option exercise, and on a later sale. */
   equityTax(params: Record<string, QueryValue>): Promise<EquityResponse> {
     return this.get<EquityResponse>("/equity-tax", params);
+  }
+
+  /** API 1.9+: an RSU vest or option exercise split between the countries worked in, with each share's estimated tax. */
+  crossBorderEquity(params: Record<string, QueryValue>): Promise<CrossBorderResponse> {
+    return this.get<CrossBorderResponse>("/cross-border-equity", params);
+  }
+
+  /** API 1.9+: duties and taxes on one import (landed cost). */
+  importDuty(params: Record<string, QueryValue>): Promise<ImportDutyResponse> {
+    return this.get<ImportDutyResponse>("/import-duty", params);
+  }
+
+  /** API 1.9+: tariff lines by commodity code (cached: the tariffs change with each tariff version only). */
+  tariffs(params: Record<string, QueryValue>): Promise<TariffsResponse> {
+    return this.cached(`tariffs:${queryKey(params)}`, () => this.get<TariffsResponse>("/tariffs", params));
+  }
+
+  /** API 1.9+: agreements and preference schemes in a country's tariff (cached). */
+  tradeAgreements(params: Record<string, QueryValue>): Promise<TradeAgreementsResponse> {
+    return this.cached(`agreements:${queryKey(params)}`, () => this.get<TradeAgreementsResponse>("/trade-agreements", params));
+  }
+
+  /** API 1.9+: tax year, next tax year and upcoming changes for a country. */
+  taxCalendar(params: Record<string, QueryValue>): Promise<TaxCalendarResponse> {
+    return this.get<TaxCalendarResponse>("/tax-calendar", params);
+  }
+
+  /** API 1.8+: tax-table figures as facts, filtered and paginated (cached). */
+  facts(params: Record<string, QueryValue>): Promise<FactsResponse> {
+    return this.cached(`facts:${queryKey(params)}`, () => this.get<FactsResponse>("/facts", params));
   }
 
   /** A tax table (national, or regional when `region` is a region code). Local data first when a data folder is set. */
@@ -541,6 +884,14 @@ export class CalcBlocClient {
       return null;
     }
   }
+}
+
+/** A stable cache key for a query (parameters sorted). */
+function queryKey(params: Record<string, QueryValue>): string {
+  return Object.keys(params)
+    .sort()
+    .map((k) => `${k}=${String(params[k])}`)
+    .join("&");
 }
 
 /** A tables-only country entry built from the local manifest (used when the API cannot be reached). */

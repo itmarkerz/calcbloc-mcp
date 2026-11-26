@@ -1,0 +1,13 @@
+{
+  "error": {
+    "code": "invalid_parameter",
+    "message": "Unknown tax_type \"nonsense\". Use a code or a dotted prefix of one; top-level prefixes: income, payroll, withholding, relief, consumption, property, wealth, capital, business, transport, environment, travel, other, regime, labour, trade, treaty.",
+    "docs": "https://calcbloc.com/developers#parameters"
+  },
+  "attribution": {
+    "source": "CalcBloc",
+    "url": "https://calcbloc.com/developers",
+    "required": true,
+    "text": "Data by CalcBloc (calcbloc.com)"
+  }
+}

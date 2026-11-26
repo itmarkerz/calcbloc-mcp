@@ -2,6 +2,19 @@
 
 All notable changes to this package are listed here. The package follows [semantic versioning](https://semver.org/).
 
+## 0.4.0 (2026-11-27)
+
+Six new tools on CalcBloc API 1.9 (thirteen in all, every one read-only). Every input that worked in 0.3.0 still works. The new tools need API 1.9, which calcbloc.com has served since 2026-11-26.
+
+- **`calculate_import_duty`.** Duties, import VAT, excise and landed cost of one import into the UK, an EU member state, the United States or India, from the official tariffs the API serves (UK Trade Tariff, EU TARIC, US HTS, India's Customs Tariff), with the preference that applies for the origin and proof of origin, extra duties (Section 301 and 232, anti-dumping) and entry fees. Totals say when they are incomplete (excise code missing, exporter-specific duties). The credit footer says the result is not a customs ruling.
+- **`get_tariff`.** The tariff lines for a commodity code, with duty rates and preferences grouped by duty, or for one origin only its best preference.
+- **`list_trade_agreements`.** The trade agreements and preference schemes in a tariff, or one agreement with its rules of origin and official sources.
+- **`get_tax_calendar`.** A country's tax year (start, end, days left), the next tax year, enacted and announced changes with their official sources, and the next budget date when one is published; without a country, one line per country.
+- **`search_tax_facts`.** Tax facts (API v2 facts) by country, region, jurisdiction and tax type, for example UK income tax bands or California sales and use tax.
+- **`calculate_cross_border_equity`.** An RSU vest or option exercise split between the countries a mobile employee worked in from grant to vest (workday sourcing, each country's own rule such as Treas. Reg. § 1.861-4 or HMRC's relevant period), with each share's estimated tax for 10 countries and the double-tax relief flagged.
+- **Coverage.** Generated from `/api/v1/countries` of API 1.9: 133 countries with tax tables, tax facts and tax calendars; the calculation counts are unchanged. The scope note now says that cross-border salary withholding and treaty rates are not supported yet.
+- **Tests.** `test/phase3.test.ts`: schema, behaviour and golden tests on responses captured from API 1.9 (UK coffee from India under the India-UK CETA, German screws from China, US furniture from China with the Section 301 duty, the UK 2026-27 tax calendar, US→UK RSUs and Canada→US options). 115 tests in all.
+
 ## 0.3.0 (2026-11-22)
 
 Two new tools on CalcBloc API 1.8 (`/supplemental-withholding` and `/equity-tax`). Every input that worked in 0.2.0 still works. Against an API older than 1.8 the new tools answer that the API does not offer them yet.

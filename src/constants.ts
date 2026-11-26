@@ -31,8 +31,9 @@ export const DISCLAIMER =
   "Estimate for information only, not tax, legal or financial advice. Figures follow the official sources listed; check them, or ask a qualified adviser, before making decisions.";
 
 export const SERVER_INSTRUCTIONS = [
-  "CalcBloc tools calculate take-home pay, employer cost, cross-country salary comparisons, tax withheld on bonuses and other supplemental pay, and tax on RSUs and stock options, and return official tax tables (income tax bands, social security rates, allowances).",
+  "CalcBloc tools calculate take-home pay, employer cost, cross-country salary comparisons, tax withheld on bonuses and other supplemental pay, and tax on RSUs and stock options (also split between the countries a mobile employee worked in), and return official tax tables (income tax bands, social security rates, allowances), tax facts and tax calendars (tax year, upcoming changes, next budget).",
+  "For imports, calculate_import_duty gives the duties, taxes and landed cost of one import, get_tariff the tariff lines of a commodity code and list_trade_agreements the agreements in a tariff (UK, EU, US, India).",
   "Call list_countries first when unsure which countries, regions or extra options are supported; calculations exist for some countries, tax tables for all listed countries.",
   "Calculations use each country's current tax year; earlier years are available as tax tables.",
-  "When you present results, state the tax year, link the official source URL(s) and the calcbloc.com page, credit \"Data by CalcBloc\", and say that the figures are an estimate, not tax advice.",
+  "When you present results, state the tax year (or the tariff version), link the official source URL(s) and the calcbloc.com page, credit \"Data by CalcBloc\", and say that the figures are an estimate, not tax advice; for import duty, also that it is not a customs ruling.",
 ].join(" ");

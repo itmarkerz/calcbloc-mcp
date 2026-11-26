@@ -1,0 +1,315 @@
+{
+  "as_of": "2026-11-26",
+  "calendar": {
+    "country": "uk",
+    "country_name": "United Kingdom",
+    "region": null,
+    "as_of": "2026-11-26",
+    "tax_year": {
+      "label": "2026-27",
+      "display_label": "2026/27",
+      "start": "2026-04-06",
+      "end": "2027-04-05",
+      "type": "fiscal",
+      "days_remaining": 130,
+      "data_year": "2026-27"
+    },
+    "next_tax_year": {
+      "label": "2027-28",
+      "display_label": "2027/28",
+      "start": "2027-04-06",
+      "end": "2028-04-05"
+    },
+    "other_periods": [
+      {
+        "tax": "Corporation Tax",
+        "label": "Financial year 2026",
+        "start": "2026-04-01",
+        "end": "2027-03-31",
+        "source": {
+          "title": "HMRC: Corporation Tax rates and allowances (updated 1 April 2026)",
+          "url": "https://www.gov.uk/government/publications/rates-and-allowances-corporation-tax/rates-and-allowances-corporation-tax",
+          "retrieved_at": "2026-11-22"
+        },
+        "quote": "'Rates for Corporation Tax years starting 1 April'. Income Tax and National Insurance use the tax year from 6 April instead."
+      }
+    ],
+    "upcoming_changes": [
+      {
+        "id": "uk-bank-surcharge-2027",
+        "effective_from": "2027-01-01",
+        "date_precision": "day",
+        "effective_to": "2028-03-31",
+        "title": "Bank Corporation Tax Surcharge rises from 3% to 6% for 15 months (1 January 2027 to 31 March 2028)",
+        "detail": null,
+        "tax": "Corporation Tax",
+        "section_id": null,
+        "region": null,
+        "status": "announced",
+        "origin": "curated",
+        "source": {
+          "title": "HM Treasury: Budget 2026 (published 28 October 2026)",
+          "url": "https://www.gov.uk/government/publications/budget-2026-document/budget-2026-html",
+          "retrieved_at": "2026-11-22"
+        },
+        "quote": "'To help fund this, the rate of the Bank Corporation Tax Surcharge will temporarily increase from 3% to 6%, from 1 January 2027 until 31 March 2028. This time-limited period will be legislated for in Finance Bill 2026-27 and will not be extended.'"
+      },
+      {
+        "id": "uk-first-year-allowance-2027",
+        "effective_from": "2027-01-01",
+        "date_precision": "day",
+        "effective_to": null,
+        "title": "Main rate first-year allowance rises from 40% to 50%",
+        "detail": null,
+        "tax": "Corporation Tax and Income Tax (capital allowances)",
+        "section_id": null,
+        "region": null,
+        "status": "announced",
+        "origin": "curated",
+        "source": {
+          "title": "HM Treasury: Budget 2026 (published 28 October 2026)",
+          "url": "https://www.gov.uk/government/publications/budget-2026-document/budget-2026-html",
+          "retrieved_at": "2026-11-22"
+        },
+        "quote": "'Writing-down Allowances: Reduce the main rate writing-down allowance to 12% from April 2027 and increase the main rate first-year allowance to 50% from 1 January 2027'. 'At the same time, the government is increasing incentives for new investment by raising the main rate First Year Allowance (FYA) from 40% to 50%'."
+      },
+      {
+        "id": "uk-apd-2027",
+        "effective_from": "2027-04-01",
+        "date_precision": "day",
+        "effective_to": null,
+        "title": "Air Passenger Duty rates from 1 April 2027: standard rate £16.52 domestic, £33.04 band A, £251.95 band B, £261.25 band C",
+        "detail": null,
+        "tax": "Air Passenger Duty",
+        "section_id": null,
+        "region": null,
+        "status": "enacted",
+        "origin": "curated",
+        "source": {
+          "title": "HMRC: Rates for Air Passenger Duty (last updated 1 April 2026)",
+          "url": "https://www.gov.uk/guidance/rates-and-allowances-for-air-passenger-duty",
+          "retrieved_at": "2026-11-22"
+        },
+        "quote": "Table 'Rates from 1 April 2027' (destination band | reduced rate | standard rate | higher rate): 'Domestic | £8.26 | £16.52 | £146.63' 'Band A | £15.49 | £33.04 | £146.63' 'Band B | £105.33 | £251.95 | £1132.76' 'Band C | £109.46 | £261.25 | £1178.20'. The 2026-27 rates on the same page: 'Domestic | £8 | £16 | £142' 'Band A | £15 | £32 | £142' 'Band B | £102 | £244 | £1097' 'Band C | £106 | £253 | £1141'."
+      },
+      {
+        "id": "uk-ccl-2027",
+        "effective_from": "2027-04-01",
+        "date_precision": "day",
+        "effective_to": null,
+        "title": "Climate Change Levy main rates from 1 April 2027: electricity and gas £0.00827 per kWh, LPG £0.02175 per kg, other taxable commodities £0.06468 per kg",
+        "detail": null,
+        "tax": "Climate Change Levy",
+        "section_id": null,
+        "region": null,
+        "status": "enacted",
+        "origin": "curated",
+        "source": {
+          "title": "HMRC: Climate Change Levy rates (last updated 17 November 2026)",
+          "url": "https://www.gov.uk/guidance/climate-change-levy-rates",
+          "retrieved_at": "2026-11-22"
+        },
+        "quote": "Main rates table, columns 'Rate from 1 April 2024 | Rate from 1 April 2025 | Rate from 1 April 2026 | Rate from 1 April 2027 | Rate from 1 April 2028': 'Electricity (£ per kilowatt hour (kWh)) 0.00775 0.00775 0.00801 0.00827 0.00827' 'Gas (£ per kWh) 0.00775 0.00775 0.00801 0.00827 0.00853' 'LPG (£ per kilogram (kg)) 0.02175 0.02175 0.02175 0.02175 0.02175' 'Any other taxable commodity (£ per kg) 0.06064 0.06064 0.06264 0.06468 0.06669'. From 1 April 2028 gas rises again to £0.00853 per kWh and other commodities to £0.06669 per kg."
+      },
+      {
+        "id": "uk-machine-games-duty-2027",
+        "effective_from": "2027-04-01",
+        "date_precision": "day",
+        "effective_to": null,
+        "title": "Machine Games Duty on higher-stake machines rises from 20% to 25%",
+        "detail": null,
+        "tax": "Machine Games Duty",
+        "section_id": null,
+        "region": null,
+        "status": "announced",
+        "origin": "curated",
+        "source": {
+          "title": "HM Treasury: Budget 2026 (published 28 October 2026)",
+          "url": "https://www.gov.uk/government/publications/budget-2026-document/budget-2026-html",
+          "retrieved_at": "2026-11-22"
+        },
+        "quote": "'Machine Games Duty: Increase the rate from 20% to 25% for higher stake machines from 1 April 2027 and move duty liability to the machine supplier from 1 April 2028'."
+      },
+      {
+        "id": "uk-writing-down-allowance-2027",
+        "effective_from": "2027-04-01",
+        "date_precision": "month",
+        "effective_to": null,
+        "title": "Main rate writing-down allowance falls by two percentage points to 12%",
+        "detail": null,
+        "tax": "Corporation Tax and Income Tax (capital allowances)",
+        "section_id": null,
+        "region": null,
+        "status": "announced",
+        "origin": "curated",
+        "source": {
+          "title": "HM Treasury: Budget 2026 (published 28 October 2026)",
+          "url": "https://www.gov.uk/government/publications/budget-2026-document/budget-2026-html",
+          "retrieved_at": "2026-11-22"
+        },
+        "quote": "'At this Budget, the government has decided to raise revenue by reducing the main rate of writing down allowances by two percentage points, taking the rate to 12% from April 2027.' The page gives the month only."
+      },
+      {
+        "id": "uk-vat-reverse-charge-2027",
+        "effective_from": "2027-04-01",
+        "date_precision": "day",
+        "effective_to": null,
+        "title": "VAT reverse charge on services from overseas to VAT-registered businesses restricted",
+        "detail": null,
+        "tax": "VAT",
+        "section_id": null,
+        "region": null,
+        "status": "announced",
+        "origin": "curated",
+        "source": {
+          "title": "HM Treasury: Budget 2026 (published 28 October 2026)",
+          "url": "https://www.gov.uk/government/publications/budget-2026-document/budget-2026-html",
+          "retrieved_at": "2026-11-22"
+        },
+        "quote": "'Cross-Border Services: Restrict the reverse charge on supplies of services from overseas to VAT-registered businesses from 1 April 2027'."
+      },
+      {
+        "id": "uk-badr-limit-2027",
+        "effective_from": "2027-04-06",
+        "date_precision": "day",
+        "effective_to": null,
+        "title": "Business Asset Disposal Relief lifetime limit falls from £1 million to £500,000",
+        "detail": null,
+        "tax": "Capital Gains Tax",
+        "section_id": null,
+        "region": null,
+        "status": "announced",
+        "origin": "curated",
+        "source": {
+          "title": "HM Treasury: Budget 2026 (published 28 October 2026)",
+          "url": "https://www.gov.uk/government/publications/budget-2026-document/budget-2026-html",
+          "retrieved_at": "2026-11-22"
+        },
+        "quote": "'Business Asset Disposal Relief (BADR): Reduce the lifetime limit to £500,000 from 6 April 2027'. 'The government is reducing the lifetime limit for capital gains eligible for Business Asset Disposal Relief (BADR) from £1 million to £500,000 from April 2027.'"
+      },
+      {
+        "id": "uk-property-income-rates-2027",
+        "effective_from": "2027-04-06",
+        "date_precision": "day",
+        "effective_to": null,
+        "title": "Income tax rates on property income rise by 2 percentage points at the basic, higher and additional rate",
+        "detail": null,
+        "tax": "Income Tax",
+        "section_id": null,
+        "region": null,
+        "status": "announced",
+        "origin": "curated",
+        "source": {
+          "title": "HM Treasury: Budget 2026 (published 28 October 2026)",
+          "url": "https://www.gov.uk/government/publications/budget-2026-document/budget-2026-html",
+          "retrieved_at": "2026-11-22"
+        },
+        "quote": "'Property Income: Increase tax rates on property income by 2ppts at the basic, higher and additional rate from 6 April 2027'. 'Budget 2025 increased the rates of tax on savings and property income by two percentage points across all tax bands from April 2027. The government will increase these rates by a further two percentage points from that date.'"
+      },
+      {
+        "id": "uk-savings-income-rates-2027",
+        "effective_from": "2027-04-06",
+        "date_precision": "day",
+        "effective_to": null,
+        "title": "Income tax rates on savings income rise by 2 percentage points at the basic, higher and additional rate",
+        "detail": null,
+        "tax": "Income Tax",
+        "section_id": null,
+        "region": null,
+        "status": "announced",
+        "origin": "curated",
+        "source": {
+          "title": "HM Treasury: Budget 2026 (published 28 October 2026)",
+          "url": "https://www.gov.uk/government/publications/budget-2026-document/budget-2026-html",
+          "retrieved_at": "2026-11-22"
+        },
+        "quote": "'Savings Income: Increase tax rates on savings income by 2ppts at the basic, higher and additional rate from 6 April 2027'. 'Budget 2025 increased the rates of tax on savings and property income by two percentage points across all tax bands from April 2027. The government will increase these rates by a further two percentage points from that date.'"
+      },
+      {
+        "id": "uk-pension-tax-allowance-2027",
+        "effective_from": "2027-04-06",
+        "date_precision": "day",
+        "effective_to": "2030-04-05",
+        "title": "No income tax for pensioners whose total income is up to the value of the new State Pension (6 April 2027 to 5 April 2030)",
+        "detail": null,
+        "tax": "Income Tax",
+        "section_id": null,
+        "region": null,
+        "status": "announced",
+        "origin": "curated",
+        "source": {
+          "title": "HM Treasury: Budget 2026 (published 28 October 2026)",
+          "url": "https://www.gov.uk/government/publications/budget-2026-document/budget-2026-html",
+          "retrieved_at": "2026-11-22"
+        },
+        "quote": "'Pension Tax Allowance: Remove the income tax liability for pensioners with total income up to the value of the new State Pension from 6 April 2027 until 5 April 2030'."
+      },
+      {
+        "id": "uk-trading-allowance-2027",
+        "effective_from": "2027-04-06",
+        "date_precision": "day",
+        "effective_to": null,
+        "title": "Trading Allowance rises from £1,000 to £3,000",
+        "detail": null,
+        "tax": "Income Tax",
+        "section_id": null,
+        "region": null,
+        "status": "announced",
+        "origin": "curated",
+        "source": {
+          "title": "HM Treasury: Budget 2026 (published 28 October 2026)",
+          "url": "https://www.gov.uk/government/publications/budget-2026-document/budget-2026-html",
+          "retrieved_at": "2026-11-22"
+        },
+        "quote": "'Trading Allowance: Increase the Income Tax Trading Allowance to £3,000 from £1,000 from 6 April 2027'."
+      },
+      {
+        "id": "uk-online-marketplace-vat-2027",
+        "effective_from": "2027-10-01",
+        "date_precision": "day",
+        "effective_to": null,
+        "title": "Online marketplaces become liable for VAT on sales by UK businesses selling more than £90,000 a year on the platform",
+        "detail": null,
+        "tax": "VAT",
+        "section_id": null,
+        "region": null,
+        "status": "announced",
+        "origin": "curated",
+        "source": {
+          "title": "HM Treasury: Budget 2026 (published 28 October 2026)",
+          "url": "https://www.gov.uk/government/publications/budget-2026-document/budget-2026-html",
+          "retrieved_at": "2026-11-22"
+        },
+        "quote": "'Online Marketplace Liability: Extend to UK businesses with a minimum annual sales threshold per platform of £90,000 from 1 October 2027'. 'The government will do this by making the marketplaces responsible for collecting VAT on sales by UK businesses, where those businesses are making more than £90,000 of sales through the marketplace.'"
+      }
+    ],
+    "window": {
+      "from": "2026-11-26",
+      "to": "2028-11-26"
+    },
+    "next_budget": {
+      "status": "not_announced"
+    },
+    "last_budget": {
+      "event": "Budget 2026",
+      "date": "2026-10-28",
+      "source": {
+        "title": "HM Treasury: Budget 2026 (published 28 October 2026)",
+        "url": "https://www.gov.uk/government/publications/budget-2026-document/budget-2026-html",
+        "retrieved_at": "2026-11-22"
+      },
+      "quote": "'Published 28 October 2026'. The document names no date for the next fiscal event: 'The government will announce further measures to simplify and modernise the tax and customs system at a Tax Update in 2027.'"
+    },
+    "next_year_note": {
+      "text": "Budget 2026 (28 October 2026) announced the 2027-28 changes listed here, to be legislated in Finance Bill 2026-27. HMRC's 'Rates and thresholds for employers 2027 to 2028' page is not published yet (404 on 22 November 2026). No date for the next fiscal event has been announced.",
+      "checked_at": "2026-11-22"
+    },
+    "page_url": "https://calcbloc.com/uk/tax-tables/2026-27"
+  },
+  "attribution": {
+    "source": "CalcBloc",
+    "url": "https://calcbloc.com/uk/tax-tables/2026-27",
+    "required": true,
+    "text": "Data by CalcBloc (calcbloc.com)"
+  }
+}

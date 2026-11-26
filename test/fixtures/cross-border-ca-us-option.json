@@ -1,0 +1,369 @@
+{
+  "endpoint": "cross-border-equity",
+  "estimate": true,
+  "inputs": {
+    "instrument": "stock_option",
+    "units": 500,
+    "grant_date": "2023-01-01",
+    "event_date": "2026-03-02",
+    "fmv_event": 40,
+    "exercise_price": 10,
+    "currency": "CAD",
+    "us_citizen": false,
+    "periods": "canada:2023-01-01:2024-12-31,us:2025-01-01:2026-03-02",
+    "salaries": {
+      "canada": 120000,
+      "us": 160000
+    },
+    "options": {
+      "canada": {
+        "region": "on"
+      }
+    }
+  },
+  "result": {
+    "estimate": true,
+    "label": "Estimate only, not tax advice: the split follows the OECD workday method or the country's official rule, each country's tax uses its 2026 rules from CalcBloc's equity or supplemental modules, and treaty rates and the double-tax relief itself are not computed.",
+    "instrument": "stock_option",
+    "units": 500,
+    "currency": "CAD",
+    "totalIncome": 15000,
+    "sourcingPeriod": {
+      "start": "2023-01-01",
+      "end": "2026-03-02",
+      "weekdays": 826
+    },
+    "eventDate": "2026-03-02",
+    "residence": {
+      "country": "us",
+      "how": "period_at_event"
+    },
+    "grantCountry": {
+      "country": "canada",
+      "how": "period_at_grant"
+    },
+    "totalWorkdays": 826,
+    "periods": [
+      {
+        "country": "canada",
+        "start": "2023-01-01",
+        "end": "2024-12-31",
+        "workdaysGiven": null,
+        "workdaysUsed": 522,
+        "computed": true,
+        "clipped": false
+      },
+      {
+        "country": "us",
+        "start": "2025-01-01",
+        "end": "2026-03-02",
+        "workdaysGiven": null,
+        "workdaysUsed": 304,
+        "computed": true,
+        "clipped": false
+      }
+    ],
+    "countries": [
+      {
+        "country": "canada",
+        "covered": true,
+        "currency": "CAD",
+        "workdays": 522,
+        "workdayShare": 0.631961,
+        "method": "workdays",
+        "methodLabel": "CRA Income Tax Folio S5-F2-C1 ¶1.57: working days in Canada ÷ all working days, over the OECD period (grant to vest)",
+        "oecdDefault": false,
+        "ruleIds": [
+          "ca-workdays"
+        ],
+        "ruleStatus": "verified",
+        "sourceShare": 0.631961,
+        "basis": "source",
+        "taxableShare": 0.631961,
+        "taxableAmount": 9479.42,
+        "taxableAmountLocal": 9479.42,
+        "isResidence": false,
+        "estimate": {
+          "engine": "equity",
+          "instrument": "stock_option",
+          "method": "Canada equity module (/equity-tax): Employee stock options",
+          "taxYear": "2026",
+          "taxableAmount": 4739.71,
+          "estimatedTax": 2057.48,
+          "withheld": 2057.48,
+          "lines": [
+            {
+              "label": "Federal income tax on the security option benefit",
+              "amount": 1232.32,
+              "withheld": 1232.32,
+              "note": "Benefit $9,479 less the 110(1)(d) deduction of $4,740."
+            },
+            {
+              "label": "Ontario income tax on the benefit",
+              "amount": 825.16,
+              "withheld": 825.16,
+              "note": "Provincial tax on federal taxable income, so the 50% deduction applies."
+            }
+          ],
+          "notes": [
+            "Flag: 110(1)(d) conditions assumed met.",
+            "FMV at grant not given: taken as the exercise price (options granted at market value).",
+            "Withholding: the employer withholds on the benefit as if it were a bonus, and the CRA lets it reduce the benefit by the 50% deduction (T4130); the withholding is taken as equal to the tax shown.",
+            "Tax uses the 2026 rates and the T4127/TP-1015 annual formulas with your salary as the other income; credits other than the basic personal amount, CPP/EI and the Canada employment amount are not included.",
+            "Estimate only, not tax advice."
+          ],
+          "sources": [
+            {
+              "title": "CRA T4130 Employers' Guide: Taxable Benefits and Allowances, Security options (Taxable benefit; Payroll deductions; deductions under paragraphs 110(1)(d) and 110(1)(d.1); annual vesting limit examples)",
+              "url": "https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/t4130/employers-guide-taxable-benefits-allowances.html",
+              "retrievedAt": "2026-11-21",
+              "effectiveFrom": "2026-01-01"
+            },
+            {
+              "title": "T4127 Payroll Deductions Formulas, 122nd Edition, effective January 1, 2026 (CRA), Table 8.1 (ON rates V, thresholds A, constants KP), Table 8.2 (basic amount) and Chapter 4 Step 4",
+              "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4127-jan/t4127-01-26e.pdf",
+              "retrievedAt": "2026-11-21"
+            }
+          ]
+        },
+        "notes": [],
+        "sources": [
+          {
+            "title": "CRA Income Tax Folio S5-F2-C1, Foreign Tax Credit, paragraph 1.57 (chapter effective March 31, 2026)",
+            "url": "https://www.canada.ca/en/revenue-agency/services/tax/technical-information/income-tax/income-tax-folios-index/series-5-international-residency/folio-2-foreign-tax-credits-deductions/income-tax-folio-s5-f2-c1-foreign-tax-credit.html",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-03-31",
+            "effectiveTo": null
+          },
+          {
+            "title": "CRA T4130 Employers' Guide: Taxable Benefits and Allowances, Security options (Taxable benefit; Payroll deductions; deductions under paragraphs 110(1)(d) and 110(1)(d.1); annual vesting limit examples)",
+            "url": "https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/t4130/employers-guide-taxable-benefits-allowances.html",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01"
+          },
+          {
+            "title": "T4127 Payroll Deductions Formulas, 122nd Edition, effective January 1, 2026 (CRA), Table 8.1 (ON rates V, thresholds A, constants KP), Table 8.2 (basic amount) and Chapter 4 Step 4",
+            "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4127-jan/t4127-01-26e.pdf",
+            "retrievedAt": "2026-11-21"
+          }
+        ]
+      },
+      {
+        "country": "us",
+        "covered": true,
+        "currency": "USD",
+        "workdays": 304,
+        "workdayShare": 0.368039,
+        "method": "workdays",
+        "methodLabel": "Treas. Reg. § 1.861-4(b)(2)(ii)(F): US workdays from grant to vest ÷ all workdays in that period",
+        "oecdDefault": false,
+        "ruleIds": [
+          "us-sourcing",
+          "us-residence"
+        ],
+        "ruleStatus": "verified",
+        "sourceShare": 0.368039,
+        "basis": "residence_worldwide",
+        "taxableShare": 1,
+        "taxableAmount": 15000,
+        "taxableAmountLocal": 10663.8,
+        "isResidence": true,
+        "estimate": {
+          "engine": "equity",
+          "instrument": "nso",
+          "method": "United States equity module (/equity-tax): Non-qualified stock options (NSOs)",
+          "taxYear": "2026",
+          "taxableAmount": 10663.8,
+          "estimatedTax": 3375.1,
+          "withheld": 3161.83,
+          "lines": [
+            {
+              "label": "Federal income tax",
+              "amount": 2559.31,
+              "withheld": 2346.04,
+              "rate": 0.22,
+              "note": "Withheld at the supplemental rate (22%); the amount is the extra regular tax the spread adds at your brackets (Single, standard deduction)."
+            },
+            {
+              "label": "Social Security (6.2%)",
+              "amount": 661.16,
+              "withheld": 661.16,
+              "rate": 0.062,
+              "note": "Up to the $184,500 wage base, counting the salary first."
+            },
+            {
+              "label": "Medicare (1.45%)",
+              "amount": 154.63,
+              "withheld": 154.63,
+              "rate": 0.0145
+            }
+          ],
+          "notes": [
+            "No state given: state income tax withholding is not included.",
+            "NSOs: the spread at exercise (FMV minus exercise price) is wages, reported on Form W-2 with code V. Your basis is the exercise price plus the spread.",
+            "Tax at sale uses the 2026 brackets with your salary as the other income of the year of sale. State tax on capital gains is not computed.",
+            "Estimate only, not tax advice: the plan documents, your other income, deductions and credits change the result."
+          ],
+          "sources": [
+            {
+              "title": "IRS Publication 15 (2026), What's New and section 7 (Supplemental Wages)",
+              "url": "https://www.irs.gov/pub/irs-pdf/p15.pdf",
+              "retrievedAt": "2026-11-22"
+            },
+            {
+              "title": "Rev. Proc. 2025-32 (2026 inflation adjustments), sections 4.01 and 4.14; Publication 1040 (2026) Tax and Earned Income Credit Tables (early-release draft): 2026 Tax Table and 2026 Tax Computation Worksheet",
+              "url": "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf",
+              "retrievedAt": "2026-11-22"
+            },
+            {
+              "title": "IRS Publication 525 (2025), Nonstatutory Stock Options",
+              "url": "https://www.irs.gov/pub/irs-pdf/p525.pdf",
+              "retrievedAt": "2026-11-21",
+              "effectiveFrom": "2026-01-01"
+            }
+          ]
+        },
+        "notes": [
+          "The US taxes its residents on worldwide income (IRS: U.S. citizens and resident aliens abroad), so the whole amount is taxable in the US; the foreign-source share (63.2%) is relieved by the foreign tax credit or the treaty, which is not computed."
+        ],
+        "sources": [
+          {
+            "title": "26 CFR § 1.861-4(b)(2)(ii)(E), (F) and (G) Example 6: compensation for labor or personal services, time basis and multi-year compensation (eCFR)",
+            "url": "https://www.ecfr.gov/current/title-26/section-1.861-4",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          },
+          {
+            "title": "IRS: U.S. citizens and resident aliens abroad (page reviewed 20 October 2026)",
+            "url": "https://www.irs.gov/individuals/international-taxpayers/us-citizens-and-resident-aliens-abroad",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          },
+          {
+            "title": "IRS Publication 15 (2026), What's New and section 7 (Supplemental Wages)",
+            "url": "https://www.irs.gov/pub/irs-pdf/p15.pdf",
+            "retrievedAt": "2026-11-22"
+          },
+          {
+            "title": "Rev. Proc. 2025-32 (2026 inflation adjustments), sections 4.01 and 4.14; Publication 1040 (2026) Tax and Earned Income Credit Tables (early-release draft): 2026 Tax Table and 2026 Tax Computation Worksheet",
+            "url": "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf",
+            "retrievedAt": "2026-11-22"
+          },
+          {
+            "title": "IRS Publication 525 (2025), Nonstatutory Stock Options",
+            "url": "https://www.irs.gov/pub/irs-pdf/p525.pdf",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01"
+          }
+        ]
+      }
+    ],
+    "relief": [
+      {
+        "source": "canada",
+        "other": "us",
+        "overlap": 9479.42,
+        "kind": "residence_relief",
+        "treaty": "listed",
+        "treatySource": {
+          "title": "IRS: United States income tax treaties - A to Z (page reviewed 3 January 2026)",
+          "url": "https://www.irs.gov/businesses/international-businesses/united-states-income-tax-treaties-a-to-z",
+          "retrievedAt": "2026-11-21",
+          "effectiveTo": null
+        },
+        "text": "United States taxes the whole amount and Canada taxes its share as source country: United States gives relief by credit or exemption under the elimination-of-double-taxation article of their tax treaty (OECD Model Articles 23A/23B: exemption or credit). Treaty rates and the relief amount are not computed."
+      }
+    ],
+    "flags": [
+      "estimate",
+      "double_tax_relief",
+      "overlapping_claims",
+      "workdays_computed"
+    ],
+    "notes": [
+      "Workdays were not given for some periods: Monday to Friday days inside the sourcing period were counted, without public holidays or leave. Give workdays for an exact split.",
+      "Residence at the event taken as United States (the country of the period that contains the event date). Give residence= to set it.",
+      "Each country's estimate converts its share at the ECB reference rate of 6 November 2026; the tax rules themselves use the exchange rate of the event date where they require one.",
+      "Estimate only, not tax advice: the split follows the OECD workday method or the country's official rule, each country's tax uses its 2026 rules from CalcBloc's equity or supplemental modules, and treaty rates and the double-tax relief itself are not computed."
+    ],
+    "underReview": [],
+    "fx": {
+      "referenceDate": "2026-11-06",
+      "source": {
+        "title": "Euro foreign exchange reference rates (daily), European Central Bank",
+        "url": "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml",
+        "retrievedAt": "2026-11-09"
+      },
+      "rates": {
+        "CAD_USD": 0.71092
+      }
+    },
+    "sources": [
+      {
+        "title": "OECD Tax Policy Studies No. 11, The Taxation of Employee Stock Options (OECD, 2005), chapter 3, reproducing the changes to the Commentary on Article 15 of the OECD Model Tax Convention, paragraphs 12.7 and 12.14",
+        "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2006/01/the-taxation-of-employee-stock-options_g1gh5dd1/9789264012493-en.pdf",
+        "retrievedAt": "2026-11-21",
+        "effectiveTo": null
+      },
+      {
+        "title": "CRA Income Tax Folio S5-F2-C1, Foreign Tax Credit, paragraph 1.57 (chapter effective March 31, 2026)",
+        "url": "https://www.canada.ca/en/revenue-agency/services/tax/technical-information/income-tax/income-tax-folios-index/series-5-international-residency/folio-2-foreign-tax-credits-deductions/income-tax-folio-s5-f2-c1-foreign-tax-credit.html",
+        "retrievedAt": "2026-11-21",
+        "effectiveFrom": "2026-03-31",
+        "effectiveTo": null
+      },
+      {
+        "title": "CRA T4130 Employers' Guide: Taxable Benefits and Allowances, Security options (Taxable benefit; Payroll deductions; deductions under paragraphs 110(1)(d) and 110(1)(d.1); annual vesting limit examples)",
+        "url": "https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/t4130/employers-guide-taxable-benefits-allowances.html",
+        "retrievedAt": "2026-11-21",
+        "effectiveFrom": "2026-01-01"
+      },
+      {
+        "title": "T4127 Payroll Deductions Formulas, 122nd Edition, effective January 1, 2026 (CRA), Table 8.1 (ON rates V, thresholds A, constants KP), Table 8.2 (basic amount) and Chapter 4 Step 4",
+        "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4127-jan/t4127-01-26e.pdf",
+        "retrievedAt": "2026-11-21"
+      },
+      {
+        "title": "26 CFR § 1.861-4(b)(2)(ii)(E), (F) and (G) Example 6: compensation for labor or personal services, time basis and multi-year compensation (eCFR)",
+        "url": "https://www.ecfr.gov/current/title-26/section-1.861-4",
+        "retrievedAt": "2026-11-21",
+        "effectiveTo": null
+      },
+      {
+        "title": "IRS: U.S. citizens and resident aliens abroad (page reviewed 20 October 2026)",
+        "url": "https://www.irs.gov/individuals/international-taxpayers/us-citizens-and-resident-aliens-abroad",
+        "retrievedAt": "2026-11-21",
+        "effectiveTo": null
+      },
+      {
+        "title": "IRS Publication 15 (2026), What's New and section 7 (Supplemental Wages)",
+        "url": "https://www.irs.gov/pub/irs-pdf/p15.pdf",
+        "retrievedAt": "2026-11-22"
+      },
+      {
+        "title": "Rev. Proc. 2025-32 (2026 inflation adjustments), sections 4.01 and 4.14; Publication 1040 (2026) Tax and Earned Income Credit Tables (early-release draft): 2026 Tax Table and 2026 Tax Computation Worksheet",
+        "url": "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf",
+        "retrievedAt": "2026-11-22"
+      },
+      {
+        "title": "IRS Publication 525 (2025), Nonstatutory Stock Options",
+        "url": "https://www.irs.gov/pub/irs-pdf/p525.pdf",
+        "retrievedAt": "2026-11-21",
+        "effectiveFrom": "2026-01-01"
+      },
+      {
+        "title": "IRS: United States income tax treaties - A to Z (page reviewed 3 January 2026)",
+        "url": "https://www.irs.gov/businesses/international-businesses/united-states-income-tax-treaties-a-to-z",
+        "retrievedAt": "2026-11-21",
+        "effectiveTo": null
+      }
+    ]
+  },
+  "warnings": [],
+  "attribution": {
+    "source": "CalcBloc",
+    "url": "https://calcbloc.com/developers",
+    "required": true,
+    "text": "Data by CalcBloc (calcbloc.com)"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "error": {
+    "code": "api_key_required",
+    "message": "This endpoint needs a free API key: send it in the X-API-Key header.",
+    "docs": "https://calcbloc.com/developers/keys"
+  },
+  "attribution": {
+    "source": "CalcBloc",
+    "url": "https://calcbloc.com/developers",
+    "required": true,
+    "text": "Data by CalcBloc (calcbloc.com)"
+  }
+}

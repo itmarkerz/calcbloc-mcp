@@ -1,0 +1,167 @@
+{
+  "tariff": {
+    "destination": "gb",
+    "nomenclature": "uk-tariff",
+    "version": "2026-11-22",
+    "as_of": "2026-11-22",
+    "retrieved_at": "2026-11-21",
+    "publisher": "HM Revenue & Customs and Department for Business and Trade",
+    "source": "https://www.trade-tariff.service.gov.uk/",
+    "api": "https://www.trade-tariff.service.gov.uk/uk/api/",
+    "licence": "Open Government Licence v3.0 (https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/)"
+  },
+  "partner": {
+    "iso": "IN",
+    "geo": "IN",
+    "name": "India"
+  },
+  "count": 2,
+  "agreements": [
+    {
+      "id": "gb-dcts-standard",
+      "title": "Developing Countries Trading Scheme (DCTS) - Standard Preferences",
+      "type": "gsp",
+      "parties": [
+        "gb",
+        "id",
+        "in"
+      ],
+      "signed": null,
+      "in_force": null,
+      "direction": {
+        "destination": "gb",
+        "origins": [
+          "id",
+          "in"
+        ]
+      },
+      "geographical_areas": [
+        "1060"
+      ],
+      "scheme_code": "dcts-standard",
+      "rules_of_origin": {
+        "summary": "Origin is set by The Customs (Origin of Chargeable Goods: Developing Countries Trading Scheme) Regulations 2023 (version 2023 No. 557, 19 June 2023). A preference is claimed with a proof of origin listed by the scheme; without one the third-country duty applies.",
+        "source": {
+          "id": "src-e3de2cc0cc95",
+          "url": "https://www.trade-tariff.service.gov.uk/uk/api/rules_of_origin_schemes",
+          "title": "UK Trade Tariff: rules of origin schemes",
+          "publisher": "HM Revenue & Customs and Department for Business and Trade (UK Trade Tariff)",
+          "retrieved_at": "2026-11-21"
+        }
+      },
+      "links": [
+        {
+          "text": "Developing Countries Trading Scheme (DCTS) - policy report",
+          "url": "https://www.gov.uk/government/publications/developing-countries-trading-scheme-dcts-new-policy-report"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-1963353bc919",
+          "url": "https://www.gov.uk/government/publications/developing-countries-trading-scheme-dcts-new-policy-report",
+          "title": "Developing Countries Trading Scheme (DCTS) - policy report",
+          "publisher": "UK Government (GOV.UK)",
+          "retrieved_at": "2026-11-21"
+        },
+        {
+          "id": "src-6eebcca0a5dc",
+          "url": "https://www.legislation.gov.uk/uksi/2023/561/contents/made",
+          "title": "2023 No. 561: The Trade Preference Scheme (Developing Countries Trading Scheme) Regulations 2023",
+          "publisher": "legislation.gov.uk (The National Archives)",
+          "retrieved_at": "2026-11-21"
+        },
+        {
+          "id": "src-e3de2cc0cc95",
+          "url": "https://www.trade-tariff.service.gov.uk/uk/api/rules_of_origin_schemes",
+          "title": "UK Trade Tariff: rules of origin schemes",
+          "publisher": "HM Revenue & Customs and Department for Business and Trade (UK Trade Tariff)",
+          "retrieved_at": "2026-11-21"
+        }
+      ]
+    },
+    {
+      "id": "gb-in-ceta",
+      "title": "COMPREHENSIVE ECONOMIC AND TRADE AGREEMENT BETWEEN THE GOVERNMENT OF THE UNITED KINGDOM OF GREAT BRITAIN AND NORTHERN IRELAND AND THE GOVERNMENT OF THE REPUBLIC OF INDIA",
+      "type": "fta",
+      "parties": [
+        "gb",
+        "in"
+      ],
+      "signed": "2025-07-24",
+      "in_force": null,
+      "direction": {
+        "destination": "gb",
+        "origins": [
+          "in"
+        ]
+      },
+      "geographical_areas": [
+        "IN"
+      ],
+      "scheme_code": "india",
+      "rules_of_origin": {
+        "summary": "Origin is set by Origin Reference Document implementing the Comprehensive Economic and Trade Agreement between the Government of the United Kingdom of Great Britain and Northern Ireland and the Government of the Republic of India signed on 24 July 2025 (“the India Origin Reference Document”) (version 1.0, 13 January 2026). A preference is claimed with a proof of origin listed by the scheme; without one the third-country duty applies.",
+        "source": {
+          "id": "src-e3de2cc0cc95",
+          "url": "https://www.trade-tariff.service.gov.uk/uk/api/rules_of_origin_schemes",
+          "title": "UK Trade Tariff: rules of origin schemes",
+          "publisher": "HM Revenue & Customs and Department for Business and Trade (UK Trade Tariff)",
+          "retrieved_at": "2026-11-21"
+        }
+      },
+      "links": [
+        {
+          "text": "Comprehensive Economic and Trade Agreement between the United Kingdom of Great Britain and Northern Ireland and India",
+          "url": "https://www.gov.uk/government/collections/comprehensive-economic-and-trade-agreement-between-the-united-kingdom-of-great-britain-and-northern-ireland-and-india"
+        },
+        {
+          "text": "UK-India CETA origin declaration - GOV.UK",
+          "url": "https://www.gov.uk/government/publications/uk-india-ceta-origin-declaration"
+        }
+      ],
+      "sources": [
+        {
+          "id": "src-18f585d8e6c1",
+          "url": "https://www.gov.uk/government/collections/comprehensive-economic-and-trade-agreement-between-the-united-kingdom-of-great-britain-and-northern-ireland-and-india",
+          "title": "Comprehensive Economic and Trade Agreement between the United Kingdom of Great Britain and Northern Ireland and India",
+          "publisher": "UK Government (GOV.UK)",
+          "retrieved_at": "2026-11-21"
+        },
+        {
+          "id": "src-5bfc2212fc65",
+          "url": "https://www.gov.uk/government/publications/uk-india-ceta-origin-declaration",
+          "title": "UK-India CETA origin declaration - GOV.UK",
+          "publisher": "UK Government (GOV.UK)",
+          "retrieved_at": "2026-11-21"
+        },
+        {
+          "id": "src-06ab4ed746cc",
+          "url": "https://www.legislation.gov.uk/uksi/2026/36/contents/made",
+          "title": "2026 No.36: The Customs (Tariff and Miscellaneous Amendments) Regulations 2026",
+          "publisher": "legislation.gov.uk (The National Archives)",
+          "retrieved_at": "2026-11-21"
+        },
+        {
+          "id": "src-f7427e263523",
+          "url": "https://www.legislation.gov.uk/uksi/2020/1457",
+          "title": "S.I. 2020/1457: The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+          "publisher": "legislation.gov.uk (The National Archives)",
+          "retrieved_at": "2026-11-21"
+        },
+        {
+          "id": "src-e3de2cc0cc95",
+          "url": "https://www.trade-tariff.service.gov.uk/uk/api/rules_of_origin_schemes",
+          "title": "UK Trade Tariff: rules of origin schemes",
+          "publisher": "HM Revenue & Customs and Department for Business and Trade (UK Trade Tariff)",
+          "retrieved_at": "2026-11-21"
+        }
+      ]
+    }
+  ],
+  "attribution": {
+    "source": "CalcBloc",
+    "url": "https://calcbloc.com/trade/uk-import-duty-calculator",
+    "required": true,
+    "text": "Data by CalcBloc (calcbloc.com)"
+  }
+}

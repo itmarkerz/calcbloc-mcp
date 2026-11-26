@@ -131,10 +131,10 @@ describe("schema: coverage generated from /countries (API 1.8)", () => {
     for (const n of ["regime", "listed"]) expect(params("india", "equity")).toContain(n);
   });
 
-  it("the scope note says supplemental and equity are supported and cross-border is not", () => {
+  it("the scope note says supplemental, equity and cross-border equity are supported and cross-border payroll is not", () => {
     expect(NOT_SUPPORTED).toContain(`calculate_supplemental_withholding (${COVERAGE.supplementalCountries.join(", ")})`);
     expect(NOT_SUPPORTED).toContain(`calculate_equity_tax (${COVERAGE.equityCountries.join(", ")})`);
-    expect(NOT_SUPPORTED).toContain("Not yet supported: cross-border (multi-country) withholding.");
+    expect(NOT_SUPPORTED).toContain("Not yet supported: cross-border salary withholding (multi-country payroll)");
     expect(NOT_SUPPORTED).not.toMatch(/Not yet supported: equity|bonus and supplemental withholding, and/);
     for (const n of ["calculate_take_home_pay", "calculate_employer_cost", "compare_countries"]) expect(tool(n).description).toContain(NOT_SUPPORTED);
     const readme = readFileSync(new URL("../README.md", import.meta.url), "utf8");

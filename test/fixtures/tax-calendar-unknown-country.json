@@ -1,0 +1,13 @@
+{
+  "error": {
+    "code": "unsupported_country",
+    "message": "Unknown country \"narnia\". Countries: us (us), uk (uk), au (australia), nz (new-zealand), ca (canada), ie (ireland), in (india), de (germany), es (spain), nl (netherlands), fr (france), sg (singapore), ae (uae), it (italy), pt (portugal), ch (switzerland), dk (denmark), se (sweden), at (austria), pl (poland), lu (luxembourg), cz (czechia), no (norway), fi (finland), si (slovenia), ro (romania), hu (hungary), sk (slovakia), gr (greece), lv (latvia), hr (croatia), ee (estonia), bg (bulgaria), lt (lithuania), mt (malta), cy (cyprus), is (iceland), ua (ukraine), li (liechtenstein), rs (serbia), tr (turkey), jp (japan), kr (south-korea), mx (mexico), br (brazil), cl (chile), co (colombia), ar (argentina), cr (costa-rica), sa (saudi-arabia), qa (qatar), kw (kuwait), bh (bahrain), om (oman), il (israel), za (south-africa), id (indonesia), cn (china), my (malaysia), th (thailand), vn (vietnam), ph (philippines), pk (pakistan), bd (bangladesh), lk (sri-lanka), np (nepal), jo (jordan), tn (tunisia), dz (algeria), py (paraguay), bo (bolivia), sv (el-salvador), hn (honduras), jm (jamaica), tt (trinidad-and-tobago), eg (egypt), ng (nigeria), ke (kenya), ma (morocco), gh (ghana), pe (peru), uy (uruguay), ec (ecuador), pa (panama), do (dominican-republic), gt (guatemala), kz (kazakhstan), ge (georgia), am (armenia), az (azerbaijan), uz (uzbekistan), ru (russia), tz (tanzania), ug (uganda), rw (rwanda), et (ethiopia), mu (mauritius), bw (botswana), me (montenegro), mk (north-macedonia), al (albania), ba (bosnia-and-herzegovina), md (moldova), xk (kosovo), ad (andorra), mc (monaco), sm (san-marino), hk (hong-kong), tw (taiwan), mo (macao), kh (cambodia), bn (brunei), ci (cote-divoire), sn (senegal), cm (cameroon), zm (zambia), zw (zimbabwe), na (namibia), bs (bahamas), bb (barbados), bz (belize), gy (guyana), sr (suriname), ht (haiti), kg (kyrgyzstan), tj (tajikistan), mv (maldives), bt (bhutan), mm (myanmar), mg (madagascar), cd (dr-congo), cg (congo), mw (malawi).",
+    "docs": "https://calcbloc.com/developers#parameters"
+  },
+  "attribution": {
+    "source": "CalcBloc",
+    "url": "https://calcbloc.com/developers",
+    "required": true,
+    "text": "Data by CalcBloc (calcbloc.com)"
+  }
+}

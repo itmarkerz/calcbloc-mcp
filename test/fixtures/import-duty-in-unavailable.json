@@ -1,0 +1,13 @@
+{
+  "error": {
+    "code": "service_unavailable",
+    "message": "Tariff data is not available on this server right now (the in tariff manifest does not match the pinned SHA-256). Try again later.",
+    "docs": "https://calcbloc.com/developers"
+  },
+  "attribution": {
+    "source": "CalcBloc",
+    "url": "https://calcbloc.com/developers",
+    "required": true,
+    "text": "Data by CalcBloc (calcbloc.com)"
+  }
+}

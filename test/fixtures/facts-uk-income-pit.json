@@ -1,0 +1,384 @@
+{
+  "filters": {
+    "country": "uk",
+    "tax_type": "income.pit"
+  },
+  "total": 6,
+  "count": 6,
+  "limit": 25,
+  "next_cursor": null,
+  "facts": [
+    {
+      "id": "v1.uk.national.2026-27.income-tax-england",
+      "country": "uk",
+      "country_code": "uk",
+      "jurisdiction": "gb",
+      "level": "national",
+      "tax_type": "income.pit",
+      "tax_group": "A",
+      "currency": "GBP",
+      "basis": "Taxable income above the Personal Allowance, per year",
+      "section_id": "income-tax-england",
+      "section": "Income Tax bands: England and Northern Ireland",
+      "tax_year": "2026-27",
+      "valid_from": "2026-04-06",
+      "valid_to": "2027-04-05",
+      "table": {
+        "country": "uk",
+        "year": "2026-27",
+        "region": null
+      },
+      "source": {
+        "id": "src-73dc5e1d5228",
+        "url": "https://www.gov.uk/government/publications/rates-and-allowances-income-tax/income-tax-rates-and-allowances-current-and-past",
+        "title": "HMRC: Income Tax rates and allowances for current and previous tax years (updated 6 April 2026)",
+        "retrieved_at": "2026-11-21",
+        "checked_at": "2026-11-21"
+      },
+      "derived_from": "v1",
+      "measure": "bands",
+      "value": null,
+      "bands": [
+        {
+          "label": "Basic rate",
+          "from": 0,
+          "to": 37700,
+          "rate": 0.2
+        },
+        {
+          "label": "Higher rate",
+          "from": 37700,
+          "to": 125140,
+          "rate": 0.4
+        },
+        {
+          "label": "Additional rate",
+          "from": 125140,
+          "to": null,
+          "rate": 0.45
+        }
+      ],
+      "unit": "rate",
+      "label": "Income Tax bands: England and Northern Ireland",
+      "note": "",
+      "status": "verified"
+    },
+    {
+      "id": "v1.uk.scotland.2026-27.income-tax-scotland",
+      "country": "uk",
+      "country_code": "uk",
+      "jurisdiction": "gb-sct",
+      "level": "state",
+      "tax_type": "income.pit",
+      "tax_group": "A",
+      "currency": "GBP",
+      "basis": "Taxable income above the Personal Allowance, per year",
+      "section_id": "income-tax-scotland",
+      "section": "Income Tax bands: Scotland",
+      "tax_year": "2026-27",
+      "valid_from": "2026-04-06",
+      "valid_to": "2027-04-05",
+      "table": {
+        "country": "uk",
+        "year": "2026-27",
+        "region": "scotland"
+      },
+      "source": {
+        "id": "src-73dc5e1d5228",
+        "url": "https://www.gov.uk/government/publications/rates-and-allowances-income-tax/income-tax-rates-and-allowances-current-and-past",
+        "title": "HMRC: Income Tax rates and allowances for current and previous tax years (updated 6 April 2026)",
+        "retrieved_at": "2026-11-21",
+        "checked_at": "2026-11-21"
+      },
+      "derived_from": "v1",
+      "measure": "bands",
+      "value": null,
+      "bands": [
+        {
+          "label": "Starter rate",
+          "from": 0,
+          "to": 3967,
+          "rate": 0.19
+        },
+        {
+          "label": "Basic rate",
+          "from": 3967,
+          "to": 16956,
+          "rate": 0.2
+        },
+        {
+          "label": "Intermediate rate",
+          "from": 16956,
+          "to": 31092,
+          "rate": 0.21
+        },
+        {
+          "label": "Higher rate",
+          "from": 31092,
+          "to": 62430,
+          "rate": 0.42
+        },
+        {
+          "label": "Advanced rate",
+          "from": 62430,
+          "to": 125140,
+          "rate": 0.45
+        },
+        {
+          "label": "Top rate",
+          "from": 125140,
+          "to": null,
+          "rate": 0.48
+        }
+      ],
+      "unit": "rate",
+      "label": "Income Tax bands: Scotland",
+      "note": "",
+      "status": "verified"
+    },
+    {
+      "id": "v1.uk.wales.2026-27.income-tax-wales",
+      "country": "uk",
+      "country_code": "uk",
+      "jurisdiction": "gb-wls",
+      "level": "state",
+      "tax_type": "income.pit",
+      "tax_group": "A",
+      "currency": "GBP",
+      "basis": "Taxable income above the Personal Allowance, per year",
+      "section_id": "income-tax-wales",
+      "section": "Income Tax bands: Wales",
+      "tax_year": "2026-27",
+      "valid_from": "2026-04-06",
+      "valid_to": "2027-04-05",
+      "table": {
+        "country": "uk",
+        "year": "2026-27",
+        "region": "wales"
+      },
+      "source": {
+        "id": "src-73dc5e1d5228",
+        "url": "https://www.gov.uk/government/publications/rates-and-allowances-income-tax/income-tax-rates-and-allowances-current-and-past",
+        "title": "HMRC: Income Tax rates and allowances for current and previous tax years (updated 6 April 2026)",
+        "retrieved_at": "2026-11-21",
+        "checked_at": "2026-11-21"
+      },
+      "derived_from": "v1",
+      "measure": "bands",
+      "value": null,
+      "bands": [
+        {
+          "label": "Basic rate",
+          "from": 0,
+          "to": 37700,
+          "rate": 0.2
+        },
+        {
+          "label": "Higher rate",
+          "from": 37700,
+          "to": 125140,
+          "rate": 0.4
+        },
+        {
+          "label": "Additional rate",
+          "from": 125140,
+          "to": null,
+          "rate": 0.45
+        }
+      ],
+      "unit": "rate",
+      "label": "Income Tax bands: Wales",
+      "note": "",
+      "status": "verified"
+    },
+    {
+      "id": "v1.uk.national.2025-26.income-tax-england",
+      "country": "uk",
+      "country_code": "uk",
+      "jurisdiction": "gb",
+      "level": "national",
+      "tax_type": "income.pit",
+      "tax_group": "A",
+      "currency": "GBP",
+      "basis": "Taxable income above the Personal Allowance, per year",
+      "section_id": "income-tax-england",
+      "section": "Income Tax bands: England and Northern Ireland",
+      "tax_year": "2025-26",
+      "valid_from": "2025-04-06",
+      "valid_to": "2026-04-05",
+      "table": {
+        "country": "uk",
+        "year": "2025-26",
+        "region": null
+      },
+      "source": {
+        "id": "src-73dc5e1d5228",
+        "url": "https://www.gov.uk/government/publications/rates-and-allowances-income-tax/income-tax-rates-and-allowances-current-and-past",
+        "title": "HMRC: Income Tax rates and allowances for current and past years (2025 to 2026 column)",
+        "retrieved_at": "2026-11-09",
+        "checked_at": "2026-11-09"
+      },
+      "derived_from": "v1",
+      "measure": "bands",
+      "value": null,
+      "bands": [
+        {
+          "label": "Basic rate",
+          "from": 0,
+          "to": 37700,
+          "rate": 0.2
+        },
+        {
+          "label": "Higher rate",
+          "from": 37700,
+          "to": 125140,
+          "rate": 0.4
+        },
+        {
+          "label": "Additional rate",
+          "from": 125140,
+          "to": null,
+          "rate": 0.45
+        }
+      ],
+      "unit": "rate",
+      "label": "Income Tax bands: England and Northern Ireland",
+      "note": "",
+      "status": "verified"
+    },
+    {
+      "id": "v1.uk.scotland.2025-26.income-tax-scotland",
+      "country": "uk",
+      "country_code": "uk",
+      "jurisdiction": "gb-sct",
+      "level": "state",
+      "tax_type": "income.pit",
+      "tax_group": "A",
+      "currency": "GBP",
+      "basis": "Taxable income above the Personal Allowance, per year",
+      "section_id": "income-tax-scotland",
+      "section": "Income Tax bands: Scotland",
+      "tax_year": "2025-26",
+      "valid_from": "2025-04-06",
+      "valid_to": "2026-04-05",
+      "table": {
+        "country": "uk",
+        "year": "2025-26",
+        "region": "scotland"
+      },
+      "source": {
+        "id": "src-73dc5e1d5228",
+        "url": "https://www.gov.uk/government/publications/rates-and-allowances-income-tax/income-tax-rates-and-allowances-current-and-past",
+        "title": "HMRC: Income Tax rates and allowances for current and past years (2025 to 2026 column)",
+        "retrieved_at": "2026-11-09",
+        "checked_at": "2026-11-09"
+      },
+      "derived_from": "v1",
+      "measure": "bands",
+      "value": null,
+      "bands": [
+        {
+          "label": "Starter rate",
+          "from": 0,
+          "to": 2827,
+          "rate": 0.19
+        },
+        {
+          "label": "Basic rate",
+          "from": 2827,
+          "to": 14921,
+          "rate": 0.2
+        },
+        {
+          "label": "Intermediate rate",
+          "from": 14921,
+          "to": 31092,
+          "rate": 0.21
+        },
+        {
+          "label": "Higher rate",
+          "from": 31092,
+          "to": 62430,
+          "rate": 0.42
+        },
+        {
+          "label": "Advanced rate",
+          "from": 62430,
+          "to": 125140,
+          "rate": 0.45
+        },
+        {
+          "label": "Top rate",
+          "from": 125140,
+          "to": null,
+          "rate": 0.48
+        }
+      ],
+      "unit": "rate",
+      "label": "Income Tax bands: Scotland",
+      "note": "",
+      "status": "verified"
+    },
+    {
+      "id": "v1.uk.wales.2025-26.income-tax-wales",
+      "country": "uk",
+      "country_code": "uk",
+      "jurisdiction": "gb-wls",
+      "level": "state",
+      "tax_type": "income.pit",
+      "tax_group": "A",
+      "currency": "GBP",
+      "basis": "Taxable income above the Personal Allowance, per year",
+      "section_id": "income-tax-wales",
+      "section": "Income Tax bands: Wales",
+      "tax_year": "2025-26",
+      "valid_from": "2025-04-06",
+      "valid_to": "2026-04-05",
+      "table": {
+        "country": "uk",
+        "year": "2025-26",
+        "region": "wales"
+      },
+      "source": {
+        "id": "src-73dc5e1d5228",
+        "url": "https://www.gov.uk/government/publications/rates-and-allowances-income-tax/income-tax-rates-and-allowances-current-and-past",
+        "title": "HMRC: Income Tax rates and allowances for current and past years (2025 to 2026 column)",
+        "retrieved_at": "2026-11-09",
+        "checked_at": "2026-11-09"
+      },
+      "derived_from": "v1",
+      "measure": "bands",
+      "value": null,
+      "bands": [
+        {
+          "label": "Basic rate",
+          "from": 0,
+          "to": 37700,
+          "rate": 0.2
+        },
+        {
+          "label": "Higher rate",
+          "from": 37700,
+          "to": 125140,
+          "rate": 0.4
+        },
+        {
+          "label": "Additional rate",
+          "from": 125140,
+          "to": null,
+          "rate": 0.45
+        }
+      ],
+      "unit": "rate",
+      "label": "Income Tax bands: Wales",
+      "note": "",
+      "status": "verified"
+    }
+  ],
+  "attribution": {
+    "source": "CalcBloc",
+    "url": "https://calcbloc.com/uk/tax-tables/2026-27",
+    "required": true,
+    "text": "Data by CalcBloc (calcbloc.com)"
+  }
+}

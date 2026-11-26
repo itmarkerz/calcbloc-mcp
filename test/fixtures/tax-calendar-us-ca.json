@@ -1,0 +1,121 @@
+{
+  "as_of": "2026-11-26",
+  "calendar": {
+    "country": "us",
+    "country_name": "United States",
+    "region": {
+      "code": "ca",
+      "name": "California"
+    },
+    "as_of": "2026-11-26",
+    "tax_year": {
+      "label": "2026",
+      "display_label": "2026",
+      "start": "2026-01-01",
+      "end": "2026-12-31",
+      "type": "calendar",
+      "days_remaining": 35,
+      "data_year": "2026"
+    },
+    "next_tax_year": {
+      "label": "2027",
+      "display_label": "2027",
+      "start": "2027-01-01",
+      "end": "2027-12-31"
+    },
+    "other_periods": [],
+    "upcoming_changes": [
+      {
+        "id": "us-irs-2027-inflation-adjustments",
+        "effective_from": "2027-01-01",
+        "date_precision": "day",
+        "effective_to": null,
+        "title": "Federal income tax brackets, standard deduction and other inflation-adjusted amounts for tax year 2027 (Rev. Proc. 2026-35)",
+        "detail": null,
+        "tax": "Federal income tax",
+        "section_id": null,
+        "region": null,
+        "status": "enacted",
+        "origin": "curated",
+        "source": {
+          "title": "IRS: IR-2026-133, Nov. 5, 2026, tax inflation adjustments for tax year 2027 (Revenue Procedure 2026-35)",
+          "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2027-taxpayers-continue-to-benefit-from-the-working-families-tax-cuts",
+          "retrieved_at": "2026-11-22"
+        },
+        "quote": "'The Internal Revenue Service today announced the tax year 2027 annual inflation adjustments for almost 70 tax provisions, including the tax rate schedules, standard deduction amounts and other tax changes. Revenue Procedure 2026-35 PDF provides details about these annual adjustments.' 'For tax year 2027, the standard deduction increases to $33,200 for married couples filing jointly, up $1,000 from 2026. For single taxpayers and married individuals filing separately, the standard deduction rises to $16,600 for tax year 2027, and for heads of households, the standard deduction will be $24,925.' 'For tax year 2027, the top tax rate remains 37% for individual single taxpayers with incomes greater than $661,375 ($793,650 for married couples filing jointly).' '12% for incomes over $12,800 ($25,600 for married couples filing jointly).'"
+      },
+      {
+        "id": "us-ca-ui-ett-2027",
+        "effective_from": "2027-01-01",
+        "date_precision": "year",
+        "effective_to": null,
+        "title": "California employer UI rate schedule F+ (1.5% to 6.2% on the first $7,000) and ETT 0.1% for 2027",
+        "detail": null,
+        "tax": "State unemployment insurance (employer)",
+        "section_id": null,
+        "region": {
+          "code": "ca",
+          "name": "California"
+        },
+        "status": "enacted",
+        "origin": "curated",
+        "source": {
+          "title": "California EDD: Rates and Withholding (dateModified 2026-10-30)",
+          "url": "https://edd.ca.gov/en/payroll_taxes/rates_and_withholding/",
+          "retrieved_at": "2026-11-09"
+        },
+        "quote": "'The UI rate schedule for 2027 is Schedule F+ ... contribution rates from 1.5 percent to 6.2 percent. The taxable wage limit is $7,000'; 'The ETT rate for 2027 is 0.1 percent.' Recorded in data/meta/tax-years.json (us.next.items, verified)."
+      },
+      {
+        "id": "us-ca-sdi-2027",
+        "effective_from": "2027-01-01",
+        "date_precision": "year",
+        "effective_to": null,
+        "title": "California SDI withholding rate for 2027: 1.4% (no wage limit)",
+        "detail": null,
+        "tax": "State disability insurance",
+        "section_id": null,
+        "region": {
+          "code": "ca",
+          "name": "California"
+        },
+        "status": "enacted",
+        "origin": "curated",
+        "source": {
+          "title": "California EDD: Rates and Withholding (dateModified 2026-10-30)",
+          "url": "https://edd.ca.gov/en/payroll_taxes/rates_and_withholding/",
+          "retrieved_at": "2026-11-09"
+        },
+        "quote": "'The SDI withholding rate for 2027 is 1.4 percent.' The page states no taxable wage limit for SDI. Recorded in data/meta/tax-years.json (us.next.items, verified)."
+      }
+    ],
+    "window": {
+      "from": "2026-11-26",
+      "to": "2028-11-26"
+    },
+    "next_budget": {
+      "status": "not_announced"
+    },
+    "last_budget": {
+      "event": "IRS inflation adjustments for tax year 2027",
+      "date": "2026-11-05",
+      "source": {
+        "title": "IRS: IR-2026-133, Nov. 5, 2026",
+        "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2027-taxpayers-continue-to-benefit-from-the-working-families-tax-cuts",
+        "retrieved_at": "2026-11-22"
+      },
+      "quote": "'IR-2026-133, Nov. 5, 2026' 'The Internal Revenue Service today announced the tax year 2027 annual inflation adjustments for almost 70 tax provisions'."
+    },
+    "next_year_note": {
+      "text": "The IRS published the tax year 2027 inflation adjustments on 5 November 2026 (IR-2026-133, Rev. Proc. 2026-35). The federal government has no budget day that sets tax rates.",
+      "checked_at": "2026-11-22"
+    },
+    "page_url": "https://calcbloc.com/us/tax-tables/2026"
+  },
+  "attribution": {
+    "source": "CalcBloc",
+    "url": "https://calcbloc.com/us/tax-tables/2026",
+    "required": true,
+    "text": "Data by CalcBloc (calcbloc.com)"
+  }
+}

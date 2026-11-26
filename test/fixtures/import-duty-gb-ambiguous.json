@@ -1,0 +1,13 @@
+{
+  "error": {
+    "code": "invalid_parameter",
+    "message": "Code 0901 matches 6 tariff lines; give the full 10-digit code (e.g. 0901110000, 0901120000, 0901210000). /tariffs?code=0901 lists them.",
+    "docs": "https://calcbloc.com/developers#parameters"
+  },
+  "attribution": {
+    "source": "CalcBloc",
+    "url": "https://calcbloc.com/developers",
+    "required": true,
+    "text": "Data by CalcBloc (calcbloc.com)"
+  }
+}

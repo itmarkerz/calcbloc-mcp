@@ -1,0 +1,398 @@
+{
+  "endpoint": "cross-border-equity",
+  "estimate": true,
+  "inputs": {
+    "instrument": "rsu",
+    "units": 1000,
+    "grant_date": "2024-01-01",
+    "event_date": "2025-06-30",
+    "fmv_event": 50,
+    "currency": "USD",
+    "us_citizen": false,
+    "periods": "us:2024-01-01:2024-12-31:220,uk:2025-01-01:2025-06-30:120",
+    "salaries": {
+      "us": 150000,
+      "uk": 80000
+    },
+    "options": {
+      "us": {
+        "filing_status": "single"
+      }
+    }
+  },
+  "result": {
+    "estimate": true,
+    "label": "Estimate only, not tax advice: the split follows the OECD workday method or the country's official rule, each country's tax uses its 2026 rules from CalcBloc's equity or supplemental modules, and treaty rates and the double-tax relief itself are not computed.",
+    "instrument": "rsu",
+    "units": 1000,
+    "currency": "USD",
+    "totalIncome": 50000,
+    "sourcingPeriod": {
+      "start": "2024-01-01",
+      "end": "2025-06-30",
+      "weekdays": 391
+    },
+    "eventDate": "2025-06-30",
+    "residence": {
+      "country": "uk",
+      "how": "period_at_event"
+    },
+    "grantCountry": {
+      "country": "us",
+      "how": "period_at_grant"
+    },
+    "totalWorkdays": 340,
+    "periods": [
+      {
+        "country": "us",
+        "start": "2024-01-01",
+        "end": "2024-12-31",
+        "workdaysGiven": 220,
+        "workdaysUsed": 220,
+        "computed": false,
+        "clipped": false
+      },
+      {
+        "country": "uk",
+        "start": "2025-01-01",
+        "end": "2025-06-30",
+        "workdaysGiven": 120,
+        "workdaysUsed": 120,
+        "computed": false,
+        "clipped": false
+      }
+    ],
+    "countries": [
+      {
+        "country": "us",
+        "covered": true,
+        "currency": "USD",
+        "workdays": 220,
+        "workdayShare": 0.647059,
+        "method": "workdays",
+        "methodLabel": "Treas. Reg. § 1.861-4(b)(2)(ii)(F): US workdays from grant to vest ÷ all workdays in that period",
+        "oecdDefault": false,
+        "ruleIds": [
+          "us-sourcing"
+        ],
+        "ruleStatus": "verified",
+        "sourceShare": 0.647059,
+        "basis": "source",
+        "taxableShare": 0.647059,
+        "taxableAmount": 32352.94,
+        "taxableAmountLocal": 32352.94,
+        "isResidence": false,
+        "estimate": {
+          "engine": "equity",
+          "instrument": "rsu",
+          "method": "United States equity module (/equity-tax): Restricted stock units (RSUs)",
+          "taxYear": "2026",
+          "taxableAmount": 32352.94,
+          "estimatedTax": 10239.71,
+          "withheld": 9592.65,
+          "lines": [
+            {
+              "label": "Federal income tax",
+              "amount": 7764.71,
+              "withheld": 7117.65,
+              "rate": 0.22,
+              "note": "Withheld at the supplemental rate (22%); the amount is the extra regular tax the vest value adds at your brackets (Single, standard deduction)."
+            },
+            {
+              "label": "Social Security (6.2%)",
+              "amount": 2005.88,
+              "withheld": 2005.88,
+              "rate": 0.062,
+              "note": "Up to the $184,500 wage base, counting the salary first."
+            },
+            {
+              "label": "Medicare (1.45%)",
+              "amount": 469.12,
+              "withheld": 469.12,
+              "rate": 0.0145
+            }
+          ],
+          "notes": [
+            "No state given: state income tax withholding is not included.",
+            "RSUs: the market value of the shares delivered at vest is wages (Pub 525, restricted property: FMV minus any amount paid). Your cost basis is that value; the holding period starts at vest.",
+            "Tax at sale uses the 2026 brackets with your salary as the other income of the year of sale. State tax on capital gains is not computed.",
+            "Estimate only, not tax advice: the plan documents, your other income, deductions and credits change the result."
+          ],
+          "sources": [
+            {
+              "title": "IRS Publication 15 (2026), What's New and section 7 (Supplemental Wages)",
+              "url": "https://www.irs.gov/pub/irs-pdf/p15.pdf",
+              "retrievedAt": "2026-11-22"
+            },
+            {
+              "title": "Rev. Proc. 2025-32 (2026 inflation adjustments), sections 4.01 and 4.14; Publication 1040 (2026) Tax and Earned Income Credit Tables (early-release draft): 2026 Tax Table and 2026 Tax Computation Worksheet",
+              "url": "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf",
+              "retrievedAt": "2026-11-22"
+            },
+            {
+              "title": "IRS Publication 525 (2025), Taxable and Nontaxable Income: Restricted Property; Qualified equity grants (RSU programs)",
+              "url": "https://www.irs.gov/pub/irs-pdf/p525.pdf",
+              "retrievedAt": "2026-11-21",
+              "effectiveFrom": "2026-01-01"
+            }
+          ]
+        },
+        "notes": [],
+        "sources": [
+          {
+            "title": "26 CFR § 1.861-4(b)(2)(ii)(E), (F) and (G) Example 6: compensation for labor or personal services, time basis and multi-year compensation (eCFR)",
+            "url": "https://www.ecfr.gov/current/title-26/section-1.861-4",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          },
+          {
+            "title": "IRS Publication 15 (2026), What's New and section 7 (Supplemental Wages)",
+            "url": "https://www.irs.gov/pub/irs-pdf/p15.pdf",
+            "retrievedAt": "2026-11-22"
+          },
+          {
+            "title": "Rev. Proc. 2025-32 (2026 inflation adjustments), sections 4.01 and 4.14; Publication 1040 (2026) Tax and Earned Income Credit Tables (early-release draft): 2026 Tax Table and 2026 Tax Computation Worksheet",
+            "url": "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf",
+            "retrievedAt": "2026-11-22"
+          },
+          {
+            "title": "IRS Publication 525 (2025), Taxable and Nontaxable Income: Restricted Property; Qualified equity grants (RSU programs)",
+            "url": "https://www.irs.gov/pub/irs-pdf/p525.pdf",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01"
+          }
+        ]
+      },
+      {
+        "country": "uk",
+        "covered": true,
+        "currency": "GBP",
+        "workdays": 120,
+        "workdayShare": 0.352941,
+        "method": "workdays",
+        "methodLabel": "HMRC ERSM162565 and ERSM162615: the relevant period (grant to the earlier of vesting and the taxable event), split by UK and overseas workdays",
+        "oecdDefault": false,
+        "ruleIds": [
+          "uk-relevant-period",
+          "uk-daily-accrual"
+        ],
+        "ruleStatus": "verified",
+        "sourceShare": 0.352941,
+        "basis": "source",
+        "taxableShare": 0.352941,
+        "taxableAmount": 17647.06,
+        "taxableAmountLocal": 13184.32,
+        "isResidence": true,
+        "estimate": {
+          "engine": "equity",
+          "instrument": "rsu",
+          "method": "United Kingdom equity module (/equity-tax): Restricted stock units (RSUs)",
+          "taxYear": "2026-27",
+          "taxableAmount": 13184.32,
+          "estimatedTax": 5537.42,
+          "withheld": 5537.42,
+          "lines": [
+            {
+              "label": "Income tax (England & Northern Ireland rates)",
+              "amount": 5273.73,
+              "withheld": 5273.73,
+              "note": "Market value of the shares received at vest, less anything paid (ERSM20194, ERSM110510). Collected through PAYE (readily convertible assets); PAYE is assumed to collect the full liability by the year end."
+            },
+            {
+              "label": "Employee Class 1 National Insurance",
+              "amount": 263.69,
+              "withheld": 263.69,
+              "note": "Charged on the month the gain arises, on top of one month's salary."
+            }
+          ],
+          "notes": [
+            "Your employer also pays about £1,978 of employer Class 1 NIC on the gain (not your tax; it can be passed to you only by a joint election or agreement, which would reduce the amount charged to income tax: not modelled).",
+            "Tax at sale uses the 2026-27 rates with your salary as the other income of the year of sale and no other gains.",
+            "Estimate only, not tax advice: scheme rules, residence and other income change the result."
+          ],
+          "sources": [
+            {
+              "title": "HMRC Employment Related Securities Manual ERSM20194: RSUs and dividend equivalents: examples (manual updated 5 May 2026)",
+              "url": "https://www.gov.uk/hmrc-internal-manuals/employment-related-securities/ersm20194",
+              "retrievedAt": "2026-11-21",
+              "effectiveFrom": "2016-04-06"
+            },
+            {
+              "title": "HMRC ERSM170010: PAYE & NICs: introduction; ERSM170030: readily convertible assets (manual updated 5 May 2026)",
+              "url": "https://www.gov.uk/hmrc-internal-manuals/employment-related-securities/ersm170010",
+              "retrievedAt": "2026-11-21",
+              "effectiveFrom": "2003-09-01"
+            },
+            {
+              "title": "HMRC: Income Tax rates and allowances for current and previous tax years (updated 6 April 2026)",
+              "url": "https://www.gov.uk/government/publications/rates-and-allowances-income-tax/income-tax-rates-and-allowances-current-and-past",
+              "retrievedAt": "2026-11-21"
+            },
+            {
+              "title": "GOV.UK: Rates and thresholds for employers 2026 to 2027 (Class 1 National Insurance thresholds and rates)",
+              "url": "https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2026-to-2027",
+              "retrievedAt": "2026-11-21"
+            }
+          ]
+        },
+        "notes": [],
+        "sources": [
+          {
+            "title": "HMRC Employment Related Securities Manual ERSM162565: the relevant period - securities options (from 6 April 2015)",
+            "url": "https://www.gov.uk/hmrc-internal-manuals/employment-related-securities/ersm162565",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2015-04-06",
+            "effectiveTo": null
+          },
+          {
+            "title": "HMRC Employment Related Securities Manual ERSM162615: daily accrual (from 6 April 2015)",
+            "url": "https://www.gov.uk/hmrc-internal-manuals/employment-related-securities/ersm162615",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2015-04-06",
+            "effectiveTo": null
+          },
+          {
+            "title": "HMRC Employment Related Securities Manual ERSM20194: RSUs and dividend equivalents: examples (manual updated 5 May 2026)",
+            "url": "https://www.gov.uk/hmrc-internal-manuals/employment-related-securities/ersm20194",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2016-04-06"
+          },
+          {
+            "title": "HMRC ERSM170010: PAYE & NICs: introduction; ERSM170030: readily convertible assets (manual updated 5 May 2026)",
+            "url": "https://www.gov.uk/hmrc-internal-manuals/employment-related-securities/ersm170010",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2003-09-01"
+          },
+          {
+            "title": "HMRC: Income Tax rates and allowances for current and previous tax years (updated 6 April 2026)",
+            "url": "https://www.gov.uk/government/publications/rates-and-allowances-income-tax/income-tax-rates-and-allowances-current-and-past",
+            "retrievedAt": "2026-11-21"
+          },
+          {
+            "title": "GOV.UK: Rates and thresholds for employers 2026 to 2027 (Class 1 National Insurance thresholds and rates)",
+            "url": "https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2026-to-2027",
+            "retrievedAt": "2026-11-21"
+          }
+        ]
+      }
+    ],
+    "relief": [
+      {
+        "source": "us",
+        "other": "uk",
+        "overlap": 32352.94,
+        "kind": "residence_relief",
+        "treaty": "listed",
+        "treatySource": {
+          "title": "IRS: United States income tax treaties - A to Z (page reviewed 3 January 2026)",
+          "url": "https://www.irs.gov/businesses/international-businesses/united-states-income-tax-treaties-a-to-z",
+          "retrievedAt": "2026-11-21",
+          "effectiveTo": null
+        },
+        "text": "United States taxes its share as source country. If United Kingdom, the residence country, also taxes that share under its domestic rules for residents (not modelled here), it gives relief by credit or exemption under the elimination-of-double-taxation article of their tax treaty (OECD Model Articles 23A/23B: exemption or credit). Not computed."
+      }
+    ],
+    "flags": [
+      "estimate",
+      "double_tax_relief"
+    ],
+    "notes": [
+      "Residence at the event taken as United Kingdom (the country of the period that contains the event date). Give residence= to set it.",
+      "Each country's estimate converts its share at the ECB reference rate of 6 November 2026; the tax rules themselves use the exchange rate of the event date where they require one.",
+      "The event is dated 2025-06-30; the estimates use the 2026 (or 2026-27) rules of each module, not the rules of that year.",
+      "UK residence: income for tax years of non-residence inside the relevant period is not chargeable (ITEPA s41H(8)-(9), ERSM162660); residence by year is not an input, so the UK row shows the UK-workday share.",
+      "Estimate only, not tax advice: the split follows the OECD workday method or the country's official rule, each country's tax uses its 2026 rules from CalcBloc's equity or supplemental modules, and treaty rates and the double-tax relief itself are not computed."
+    ],
+    "underReview": [],
+    "fx": {
+      "referenceDate": "2026-11-06",
+      "source": {
+        "title": "Euro foreign exchange reference rates (daily), European Central Bank",
+        "url": "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml",
+        "retrievedAt": "2026-11-09"
+      },
+      "rates": {
+        "USD_GBP": 0.747112
+      }
+    },
+    "sources": [
+      {
+        "title": "OECD Tax Policy Studies No. 11, The Taxation of Employee Stock Options (OECD, 2005), chapter 3, reproducing the changes to the Commentary on Article 15 of the OECD Model Tax Convention, paragraphs 12.7 and 12.14",
+        "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2006/01/the-taxation-of-employee-stock-options_g1gh5dd1/9789264012493-en.pdf",
+        "retrievedAt": "2026-11-21",
+        "effectiveTo": null
+      },
+      {
+        "title": "26 CFR § 1.861-4(b)(2)(ii)(E), (F) and (G) Example 6: compensation for labor or personal services, time basis and multi-year compensation (eCFR)",
+        "url": "https://www.ecfr.gov/current/title-26/section-1.861-4",
+        "retrievedAt": "2026-11-21",
+        "effectiveTo": null
+      },
+      {
+        "title": "IRS Publication 15 (2026), What's New and section 7 (Supplemental Wages)",
+        "url": "https://www.irs.gov/pub/irs-pdf/p15.pdf",
+        "retrievedAt": "2026-11-22"
+      },
+      {
+        "title": "Rev. Proc. 2025-32 (2026 inflation adjustments), sections 4.01 and 4.14; Publication 1040 (2026) Tax and Earned Income Credit Tables (early-release draft): 2026 Tax Table and 2026 Tax Computation Worksheet",
+        "url": "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf",
+        "retrievedAt": "2026-11-22"
+      },
+      {
+        "title": "IRS Publication 525 (2025), Taxable and Nontaxable Income: Restricted Property; Qualified equity grants (RSU programs)",
+        "url": "https://www.irs.gov/pub/irs-pdf/p525.pdf",
+        "retrievedAt": "2026-11-21",
+        "effectiveFrom": "2026-01-01"
+      },
+      {
+        "title": "HMRC Employment Related Securities Manual ERSM162565: the relevant period - securities options (from 6 April 2015)",
+        "url": "https://www.gov.uk/hmrc-internal-manuals/employment-related-securities/ersm162565",
+        "retrievedAt": "2026-11-21",
+        "effectiveFrom": "2015-04-06",
+        "effectiveTo": null
+      },
+      {
+        "title": "HMRC Employment Related Securities Manual ERSM162615: daily accrual (from 6 April 2015)",
+        "url": "https://www.gov.uk/hmrc-internal-manuals/employment-related-securities/ersm162615",
+        "retrievedAt": "2026-11-21",
+        "effectiveFrom": "2015-04-06",
+        "effectiveTo": null
+      },
+      {
+        "title": "HMRC Employment Related Securities Manual ERSM20194: RSUs and dividend equivalents: examples (manual updated 5 May 2026)",
+        "url": "https://www.gov.uk/hmrc-internal-manuals/employment-related-securities/ersm20194",
+        "retrievedAt": "2026-11-21",
+        "effectiveFrom": "2016-04-06"
+      },
+      {
+        "title": "HMRC ERSM170010: PAYE & NICs: introduction; ERSM170030: readily convertible assets (manual updated 5 May 2026)",
+        "url": "https://www.gov.uk/hmrc-internal-manuals/employment-related-securities/ersm170010",
+        "retrievedAt": "2026-11-21",
+        "effectiveFrom": "2003-09-01"
+      },
+      {
+        "title": "HMRC: Income Tax rates and allowances for current and previous tax years (updated 6 April 2026)",
+        "url": "https://www.gov.uk/government/publications/rates-and-allowances-income-tax/income-tax-rates-and-allowances-current-and-past",
+        "retrievedAt": "2026-11-21"
+      },
+      {
+        "title": "GOV.UK: Rates and thresholds for employers 2026 to 2027 (Class 1 National Insurance thresholds and rates)",
+        "url": "https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2026-to-2027",
+        "retrievedAt": "2026-11-21"
+      },
+      {
+        "title": "IRS: United States income tax treaties - A to Z (page reviewed 3 January 2026)",
+        "url": "https://www.irs.gov/businesses/international-businesses/united-states-income-tax-treaties-a-to-z",
+        "retrievedAt": "2026-11-21",
+        "effectiveTo": null
+      }
+    ]
+  },
+  "warnings": [],
+  "attribution": {
+    "source": "CalcBloc",
+    "url": "https://calcbloc.com/developers",
+    "required": true,
+    "text": "Data by CalcBloc (calcbloc.com)"
+  }
+}
