@@ -5,20 +5,62 @@
  *
  *   node scripts/gen-coverage.mjs                       # live API (https://calcbloc.com/api/v1/countries)
  *   node scripts/gen-coverage.mjs test/fixtures/countries.json
+ *   node scripts/gen-coverage.mjs --site=../calcbloc --save=test/fixtures/countries.json
+ *                                                       # the site repo's own API code, before it is deployed
  *   node scripts/gen-coverage.mjs --check [source]      # exit 1 if the file is out of date
  *
- * Run before every release, after the site carrying the matching API version is live.
+ * --site runs GET /api/v1/countries in-process from a checkout of the calcbloc.com repository (its handleApiRequest,
+ * through the repository's own tsx, with an in-memory key store), so the coverage of an API version that is not live
+ * yet can be generated from its definitions; nothing in that repository is written. --save also writes the payload
+ * (the test fixture the generated file is checked against).
+ *
+ * Run before every release: from --site while the matching API version is not live, from the live API after it is.
  */
-import { readFileSync, writeFileSync } from "node:fs";
+import { execFileSync } from "node:child_process";
+import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join, resolve } from "node:path";
+import { pathToFileURL } from "node:url";
 
 const args = process.argv.slice(2);
 const check = args.includes("--check");
-const src = args.find((a) => !a.startsWith("--")) ?? "https://calcbloc.com/api/v1/countries";
+const flag = (name) => args.find((a) => a.startsWith(`--${name}=`))?.slice(name.length + 3);
+const site = flag("site");
+const save = flag("save");
+const src = site ? `the calcbloc.com repository's local GET /api/v1/countries` : (args.find((a) => !a.startsWith("--")) ?? "https://calcbloc.com/api/v1/countries");
 const OUT = new URL("../src/coverage.generated.ts", import.meta.url);
 
-const payload = src.startsWith("http")
-  ? await (await fetch(src, { headers: { "User-Agent": "calcbloc-mcp gen-coverage" } })).json()
-  : JSON.parse(readFileSync(src, "utf8"));
+/** GET /api/v1/countries answered by the site repository's own router, run in a child process from that checkout. */
+function fromSite(dir) {
+  const root = resolve(dir);
+  const router = pathToFileURL(join(root, "src", "lib", "api", "router.ts")).href;
+  const tmp = mkdtempSync(join(tmpdir(), "calcbloc-coverage-"));
+  const out = join(tmp, "countries.json");
+  const code = [
+    'import { writeFileSync } from "node:fs";',
+    `const { handleApiRequest } = await import(${JSON.stringify(router)});`,
+    'const res = await handleApiRequest(new Request("https://calcbloc.com/api/v1/countries"), ["countries"]);',
+    'if (!res.ok) throw new Error(`GET /countries answered ${res.status}`);',
+    `writeFileSync(${JSON.stringify(out)}, await res.text());`,
+  ].join("\n");
+  // No Redis: the router falls back to an in-memory key and rate-limit store.
+  const env = { ...process.env };
+  delete env.REDIS_URL;
+  try {
+    // react-server: the site's modules import "server-only"; tsx resolves its @/ and @data/ paths from its tsconfig.
+    execFileSync(process.execPath, ["--conditions=react-server", "--import", "tsx", "--input-type=module", "-e", code], { cwd: root, stdio: ["ignore", "ignore", "inherit"], env });
+    return JSON.parse(readFileSync(out, "utf8"));
+  } finally {
+    rmSync(tmp, { recursive: true, force: true });
+  }
+}
+
+const payload = site
+  ? fromSite(site)
+  : src.startsWith("http")
+    ? await (await fetch(src, { headers: { "User-Agent": "calcbloc-mcp gen-coverage" } })).json()
+    : JSON.parse(readFileSync(src, "utf8"));
+if (save) writeFileSync(save, `${JSON.stringify(payload, null, 2)}\n`);
 const countries = payload.countries;
 if (!Array.isArray(countries) || !countries.length) throw new Error("no countries in the payload");
 
@@ -42,11 +84,18 @@ const union = (lists) => [...new Set(lists.flat())];
 const supplementalTypes = Object.fromEntries(supplemental.map((c) => [short(c), c.endpoints[SUPP].types ?? paramsOf(c, SUPP).find((p) => p.name === "type")?.values ?? []]));
 const equityInstruments = Object.fromEntries(equity.map((c) => [short(c), c.equity_tax.instruments ?? []]));
 const listOr = (codes) => (codes.length ? codes.join(", ") : "none yet");
+// API 1.9: cross-border equity (/cross-border-equity; the countries with a tax estimate are listed in coverage only) and
+// the tax calendar (tax_calendar on each country of /countries).
+const crossBorderCountries = cov?.cross_border_countries ?? [];
+const taxCalendar = countries.filter((c) => !!c.tax_calendar);
 // The scope note the calculation tools quote (src/constants.ts NOT_SUPPORTED), generated so the country lists stay current.
-const notYetSupported = "Not yet supported: cross-border (multi-country) withholding.";
+const notYetSupported = crossBorderCountries.length
+  ? "Not yet supported: cross-border salary withholding (multi-country payroll), and treaty rates or the double-tax relief amount."
+  : "Not yet supported: cross-border (multi-country) withholding.";
 const notSupported =
   `Bonus and other supplemental pay (withholding vs final tax): calculate_supplemental_withholding (${listOr(supplemental.map(short))}). ` +
   `Equity compensation (RSUs, stock options): calculate_equity_tax (${listOr(equity.map(short))}). ` +
+  (crossBorderCountries.length ? `Equity earned while working in several countries: calculate_cross_border_equity (tax estimates for ${listOr(crossBorderCountries)}). ` : "") +
   notYetSupported;
 
 const option = (code, endpoint, name) => countries.find((c) => c.code === code)?.endpoints[endpoint]?.parameters.find((p) => p.name === name)?.values ?? [];
@@ -74,6 +123,9 @@ const data = {
   equityInstrumentValues: union(Object.values(equityInstruments)),
   regionRequiredExtra: { "supplemental-withholding": regionNeedOf(supplemental, SUPP, true), "equity-tax": regionNeedOf(equity, "equity-tax", true) },
   regionOptionalExtra: { "supplemental-withholding": regionNeedOf(supplemental, SUPP, false), "equity-tax": regionNeedOf(equity, "equity-tax", false) },
+  crossBorder: crossBorderCountries.length,
+  crossBorderCountries,
+  taxCalendar: taxCalendar.length,
   notSupported,
   notYetSupported,
   shortCodes: Object.fromEntries(countries.map((c) => [c.code, short(c)])),
@@ -102,7 +154,10 @@ const readmeBlock = [
   `- **Compare** (\`compare_countries\`): ${data.compareCountries.map((c) => `\`${c}\``).join(", ")}.`,
   `- **Supplemental withholding** (\`calculate_supplemental_withholding\`: tax withheld on a bonus, commission, RSU vest, option exercise or lump sum, next to the final tax it adds): ${data.supplementalCountries.length ? codes(data.supplementalCountries) : "none yet"}.`,
   `- **Equity tax** (\`calculate_equity_tax\`: RSUs and stock options at vest or exercise, and on sale): ${data.equityCountries.length ? data.equityCountries.map((c) => `\`${c}\` (${data.equityInstruments[c].join(", ")})`).join(", ") : "none yet"}.`,
-  `- **Tax tables** (\`get_tax_tables\`): all ${data.taxTables} countries; the others say so and link their tax tables when a calculation is asked for.`,
+  `- **Cross-border equity** (\`calculate_cross_border_equity\`: an RSU vest or option exercise split between the countries worked in from grant to vest, with each share's estimated tax): ${data.crossBorderCountries.length ? `tax estimates for ${codes(data.crossBorderCountries)}; the split itself works for every country` : "none yet"}.`,
+  `- **Tax tables** (\`get_tax_tables\`) and **tax facts** (\`search_tax_facts\`): all ${data.taxTables} countries; the others say so and link their tax tables when a calculation is asked for.`,
+  `- **Tax calendar** (\`get_tax_calendar\`: tax year, next tax year, enacted and announced changes, next budget): ${data.taxCalendar ? `${data.taxCalendar === data.taxTables ? "all " : ""}${data.taxCalendar} countries` : "none yet"}.`,
+  "- **Import duty, tariffs and trade agreements** (`calculate_import_duty`, `get_tariff`, `list_trade_agreements`): imports into the UK, the EU (any member state), the United States and India, as the API's tariff data allows.",
   `- **\`region\` is required** for take-home pay in ${codes(data.regionRequired["net-salary"])}; for employer cost in ${codes(data.regionRequired["employer-cost"])}${regionExtra("supplemental-withholding", "supplemental withholding")}${regionExtra("equity-tax", "equity tax")}. A missing or unknown region returns the valid codes and names.`,
   `- ${notYetSupported}`,
   "",

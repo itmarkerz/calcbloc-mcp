@@ -1,0 +1,13 @@
+{
+  "error": {
+    "code": "not_found",
+    "message": "No commodity code starting 0000 in the gb tariff of 2026-11-22.",
+    "docs": "https://calcbloc.com/developers"
+  },
+  "attribution": {
+    "source": "CalcBloc",
+    "url": "https://calcbloc.com/developers",
+    "required": true,
+    "text": "Data by CalcBloc (calcbloc.com)"
+  }
+}

@@ -54,7 +54,7 @@ afterAll(async () => {
 });
 
 describe("stdio server", () => {
-  it("identifies itself and lists seven read-only tools with input and output schemas", async () => {
+  it("identifies itself and lists thirteen read-only tools with input and output schemas", async () => {
     expect(client.getServerVersion()?.name).toBe("calcbloc-mcp");
     expect(client.getInstructions()).toContain("Data by CalcBloc");
     const { tools } = await client.listTools();
@@ -65,7 +65,13 @@ describe("stdio server", () => {
       "compare_countries",
       "calculate_supplemental_withholding",
       "calculate_equity_tax",
+      "calculate_cross_border_equity",
+      "calculate_import_duty",
+      "get_tariff",
+      "list_trade_agreements",
       "get_tax_tables",
+      "search_tax_facts",
+      "get_tax_calendar",
       "list_countries",
     ]);
     for (const t of tools) {
@@ -125,6 +131,36 @@ describe("stdio server", () => {
     const r = await client.callTool({ name: "calculate_equity_tax", arguments: { country: "us", instrument: "warrant", units: 1, grant_date: "2025-01-01", event_date: "2026-01-01", fmv_event: 1, gross_salary: 1 } });
     expect(r.isError).toBe(true);
     expect(textOf(r)).toMatch(/instrument/);
+  });
+
+  it("API 1.9 tools: import duty, tariff, agreements, calendar, facts and cross-border equity (outputs validated by the SDK)", async () => {
+    const duty = await call("calculate_import_duty", { destination: "de", origin: "cn", hs_code: "7318 15 42 10", customs_value: 5000 });
+    expect(duty.isError, textOf(duty)).toBeFalsy();
+    expect(duty.structuredContent).toMatchObject({ currency: "EUR", totals: { customsDuty: 185, complete: false }, attribution: "Data by CalcBloc" });
+    const tariff = await call("get_tariff", { destination: "gb", hs_code: "0901", origin: "in" });
+    expect(tariff.isError, textOf(tariff)).toBeFalsy();
+    const agreements = await call("list_trade_agreements", { destination: "us" });
+    expect(agreements.isError, textOf(agreements)).toBeFalsy();
+    const calendar = await call("get_tax_calendar", { country: "uk" });
+    expect(calendar.isError, textOf(calendar)).toBeFalsy();
+    const all = await call("get_tax_calendar", {});
+    expect(all.isError, textOf(all)).toBeFalsy();
+    const facts = await call("search_tax_facts", { country: "uk", tax_type: "income.pit" });
+    expect(facts.isError, textOf(facts)).toBeFalsy();
+    const xb = await call("calculate_cross_border_equity", {
+      instrument: "rsu",
+      units: 1000,
+      grant_date: "2024-01-01",
+      event_date: "2025-06-30",
+      fmv_event: 50,
+      periods: [
+        { country: "us", start: "2024-01-01", end: "2024-12-31", workdays: 220 },
+        { country: "uk", start: "2025-01-01", end: "2025-06-30", workdays: 120 },
+      ],
+      salaries: { us: 150000, uk: 80000 },
+    });
+    expect(xb.isError, textOf(xb)).toBeFalsy();
+    expect(xb.structuredContent).toMatchObject({ estimate: true, totalIncome: 50000 });
   });
 
   it("get_tax_tables", async () => {

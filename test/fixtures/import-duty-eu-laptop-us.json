@@ -1,0 +1,317 @@
+{
+  "tariff": {
+    "destination": "eu",
+    "nomenclature": "eu-taric",
+    "version": "2026-11-01",
+    "as_of": "2026-11-01",
+    "retrieved_at": "2026-11-22",
+    "publisher": "European Commission, Directorate-General for Taxation and Customs Union",
+    "source": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp?Lang=en",
+    "api": "https://circabc.europa.eu/ui/group/0e5f18c2-4b2f-42e9-aed4-dfe50ae1263b/library/90dd4b94-39dd-45f4-8f33-ec9ef9820016",
+    "licence": "Reuse authorised provided the source is acknowledged (Commission Decision 2011/833/EU on the reuse of Commission documents; Commission content is licensed under CC BY 4.0, https://commission.europa.eu/legal-notice_en). TARIC data are not legally binding: the Official Journal of the European Union is authoritative."
+  },
+  "member_state": null,
+  "origin": {
+    "iso": "US",
+    "geo": "US",
+    "name": "United States"
+  },
+  "line": {
+    "code": "8471300000",
+    "description": "Portable automatic data-processing machines, weighing not more than 10 kg, consisting of at least a central processing unit, a keyboard and a display",
+    "path": [
+      "Automatic data-processing machines and units thereof; magnetic or optical readers, machines for transcribing data onto data media in coded form and machines for processing such data, not elsewhere specified or included"
+    ],
+    "supplementary_unit": "p/st",
+    "mfn": "Free",
+    "source": "https://circabc.europa.eu/rest/download/d0b85541-ed40-4f11-81c3-d245b15adc1d",
+    "page": "https://ec.europa.eu/taxation_customs/dds2/taric/measures.jsp?Lang=en&Taric=8471300000&SimDate=20261101"
+  },
+  "inputs": {
+    "customs_value": 1000,
+    "currency": "EUR",
+    "quantity": null,
+    "unit": null,
+    "proof_of_origin": false,
+    "additional_code": null,
+    "excise_code": null,
+    "vat_code": null,
+    "documents": null,
+    "date": "2026-11-01"
+  },
+  "mfn": {
+    "duty": {
+      "kind": "free"
+    },
+    "duty_text": "0.000 %",
+    "duty_described": "Free",
+    "amount": 0,
+    "applied": {
+      "measure_type": "103",
+      "measure_type_description": "Third country duty",
+      "geographical_area": "1011",
+      "geographical_area_description": "ERGA OMNES",
+      "excluded": [],
+      "agreement": null,
+      "additional_code": null,
+      "quota": null,
+      "duty": {
+        "kind": "free"
+      },
+      "duty_text": "0.000 %",
+      "duty_described": "Free",
+      "conditions": null,
+      "documents": [],
+      "extra_type": null,
+      "legal_acts": [
+        {
+          "code": "Regulation 2204/99",
+          "title": "Commission Regulation (EC) No 2204/1999 of 12 October 1999, amending Annex I to Council Regulation (EEC) No 2658/87 on the tariff and statistical nomenclature and on the Common Customs Tariff",
+          "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31999R2204"
+        }
+      ],
+      "valid_from": "2000-01-01",
+      "valid_to": null
+    }
+  },
+  "preferential": {
+    "measure_type": "142",
+    "measure_type_description": "Tariff preference",
+    "geographical_area": "US",
+    "geographical_area_description": "United States",
+    "excluded": [],
+    "agreement": "eu-us-tariff-adjustment",
+    "additional_code": null,
+    "quota": null,
+    "duty": {
+      "kind": "free"
+    },
+    "duty_text": "0.000 %",
+    "duty_described": "Free",
+    "conditions": null,
+    "documents": [
+      "U190"
+    ],
+    "extra_type": null,
+    "legal_acts": [
+      {
+        "code": "Regulation 1455/26",
+        "title": "Regulation (EU) 2026/1455 of the European Parliament and of the Council of 25 June 2026 on the adjustment of customs duties on imports of certain goods originating in the United States of America and opening of tariff quotas for imports of certain goods originating in the United States of America",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32026R1455"
+      }
+    ],
+    "valid_from": "2026-07-01",
+    "valid_to": null,
+    "amount": 0,
+    "not_computed": null,
+    "applied": false
+  },
+  "preferential_all": [
+    {
+      "measure_type": "142",
+      "measure_type_description": "Tariff preference",
+      "geographical_area": "US",
+      "geographical_area_description": "United States",
+      "excluded": [],
+      "agreement": "eu-us-tariff-adjustment",
+      "additional_code": null,
+      "quota": null,
+      "duty": {
+        "kind": "free"
+      },
+      "duty_text": "0.000 %",
+      "duty_described": "Free",
+      "conditions": null,
+      "documents": [
+        "U190"
+      ],
+      "extra_type": null,
+      "legal_acts": [
+        {
+          "code": "Regulation 1455/26",
+          "title": "Regulation (EU) 2026/1455 of the European Parliament and of the Council of 25 June 2026 on the adjustment of customs duties on imports of certain goods originating in the United States of America and opening of tariff quotas for imports of certain goods originating in the United States of America",
+          "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32026R1455"
+        }
+      ],
+      "valid_from": "2026-07-01",
+      "valid_to": null,
+      "amount": 0
+    }
+  ],
+  "preferential_quotas": [],
+  "extra_duties_possible": [],
+  "other_charges": [
+    {
+      "measure_type": "107",
+      "measure_type_description": "Low-value consignment customs duty",
+      "geographical_area": "1011",
+      "geographical_area_description": "ERGA OMNES",
+      "excluded": [],
+      "agreement": null,
+      "additional_code": null,
+      "quota": null,
+      "duty": {
+        "kind": "text",
+        "text": "3.000 EUR"
+      },
+      "duty_text": "3.000 EUR",
+      "duty_described": "3.000 EUR",
+      "conditions": [
+        {
+          "code": "B",
+          "document": "C127",
+          "action": "Apply the mentioned duty (27)"
+        },
+        {
+          "code": "B",
+          "action": "Import is not allowed (06)"
+        },
+        {
+          "code": "C",
+          "document": "C128",
+          "action": "Apply the mentioned duty (27)"
+        },
+        {
+          "code": "C",
+          "action": "Import is not allowed (06)"
+        },
+        {
+          "code": "H",
+          "document": "C129",
+          "action": "Apply the mentioned duty (27)"
+        },
+        {
+          "code": "H",
+          "document": "Y081",
+          "action": "Apply the mentioned duty (27)"
+        },
+        {
+          "code": "H",
+          "action": "Import is not allowed (06)"
+        }
+      ],
+      "documents": [],
+      "extra_type": null,
+      "legal_acts": [
+        {
+          "code": "Regulation 0382/26",
+          "title": "Council Regulation (EU) 2026/382 of 11 February 2026 amending Regulation (EC) No 1186/2009 as regards the elimination of the threshold-based customs duty relief",
+          "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32026R0382"
+        }
+      ],
+      "valid_from": "2026-11-01",
+      "valid_to": null
+    },
+    {
+      "measure_type": "800",
+      "measure_type_description": "Union handling fee",
+      "geographical_area": "1011",
+      "geographical_area_description": "ERGA OMNES",
+      "excluded": [],
+      "agreement": null,
+      "additional_code": null,
+      "quota": null,
+      "duty": {
+        "kind": "text",
+        "text": "2.000 EUR"
+      },
+      "duty_text": "2.000 EUR",
+      "duty_described": "2.000 EUR",
+      "conditions": [
+        {
+          "code": "B",
+          "document": "Y126",
+          "action": "Apply the mentioned duty (27)"
+        },
+        {
+          "code": "B",
+          "action": "Measure not applicable (07)"
+        }
+      ],
+      "documents": [],
+      "extra_type": null,
+      "legal_acts": [
+        {
+          "code": "Regulation 2108/26",
+          "title": "Regulation (EU) 2026/2108 of the European Parliament and of the Council of 16 September 2026 establishing the Union Customs Code and the European Union Customs Authority, and repealing Regulation (EU) No 952/2013 (Text with EEA relevance)",
+          "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32026R2108"
+        }
+      ],
+      "valid_from": "2026-11-01",
+      "valid_to": null
+    }
+  ],
+  "lines": [
+    {
+      "kind": "customs_duty",
+      "label": "Third-country duty (MFN)",
+      "measure": {
+        "measure_type": "103",
+        "measure_type_description": "Third country duty",
+        "geographical_area": "1011",
+        "geographical_area_description": "ERGA OMNES",
+        "excluded": [],
+        "agreement": null,
+        "additional_code": null,
+        "quota": null,
+        "duty": {
+          "kind": "free"
+        },
+        "duty_text": "0.000 %",
+        "duty_described": "Free",
+        "conditions": null,
+        "documents": [],
+        "extra_type": null,
+        "legal_acts": [
+          {
+            "code": "Regulation 2204/99",
+            "title": "Commission Regulation (EC) No 2204/1999 of 12 October 1999, amending Annex I to Council Regulation (EEC) No 2658/87 on the tariff and statistical nomenclature and on the Common Customs Tariff",
+            "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31999R2204"
+          }
+        ],
+        "valid_from": "2000-01-01",
+        "valid_to": null
+      },
+      "base": 1000,
+      "base_description": "Customs value (CIF: cost, insurance and freight to the EU border)",
+      "amount": 0,
+      "not_computed": null,
+      "source": "https://circabc.europa.eu/rest/download/d0b85541-ed40-4f11-81c3-d245b15adc1d"
+    }
+  ],
+  "totals": {
+    "customs_duty": 0,
+    "extra_duties": 0,
+    "excise": 0,
+    "import_vat": 0,
+    "duties_and_taxes": 0,
+    "landed_cost": 1000,
+    "currency": "EUR",
+    "complete": false,
+    "incomplete_reasons": [
+      "import VAT: import VAT is set by each member state: pass the member state of import as destination (e.g. destination=de)"
+    ]
+  },
+  "notes": [
+    "A preference is available for United States (eu-us-tariff-adjustment: 0.000 %) with proof of origin: set proof_of_origin=true.",
+    "Low-value consignment customs duty: 3.000 EUR (measure type 107, Regulation 0382/26) applies to particular consignments and is not included in the totals; see other_charges.",
+    "Union handling fee: 2.000 EUR (measure type 800, Regulation 2108/26) applies to particular consignments and is not included in the totals; see other_charges."
+  ],
+  "basis": {
+    "customs_value": {
+      "rule": "CIF: the cost of transport and insurance of the goods, and loading and handling charges associated with their transport, up to the place where they are brought into the customs territory of the Union are part of the customs value (Union Customs Code, Regulation (EU) No 952/2013, Article 71(1)(e)).",
+      "source": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32013R0952"
+    },
+    "vat_value": {
+      "rule": "On importation the taxable amount is the value for customs purposes, plus taxes, duties, levies and other charges due by reason of importation (excluding the VAT itself) and incidental expenses such as commission, packing, transport and insurance up to the first place of destination in the member state of importation (VAT Directive 2006/112/EC, Articles 85 and 86).",
+      "source": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32006L0112"
+    }
+  },
+  "disclaimer": "An estimate from TARIC as of the version date, not a customs ruling; TARIC is not legally binding (the Official Journal is). Check the commodity code, origin rules, any licence, quota or anti-dumping exporter code, and national VAT and excise with the customs authority of the member state of import.",
+  "attribution": {
+    "source": "CalcBloc",
+    "url": "https://calcbloc.com/trade/landed-cost-calculator",
+    "required": true,
+    "text": "Data by CalcBloc (calcbloc.com)"
+  }
+}

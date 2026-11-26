@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 import { CalcBlocClient, type CountryInfo } from "../src/api.js";
@@ -274,7 +275,8 @@ describe("list_countries", () => {
     const { api } = client();
     const r = await listCountries(api, {});
     const s = r.structuredContent as Record<string, any>;
-    expect(s.countries.length).toBe(41);
+    expect(s.countries.length).toBe((JSON.parse(readFileSync(new URL("./fixtures/countries.json", import.meta.url), "utf8")) as { countries: unknown[] }).countries.length);
+    expect(s.countries.length).toBeGreaterThan(41);
     expect(s.countries.find((c: { code: string }) => c.code === "austria")).toMatchObject({ shortCode: "at", takeHomePay: false, taxTables: true });
     expect(s.countries.find((c: { code: string }) => c.code === "new-zealand")).toMatchObject({ shortCode: "nz", takeHomePay: true, employerCost: true });
     expect(text(r)).toContain("- nz: New Zealand");

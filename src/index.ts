@@ -10,7 +10,7 @@ if (arg === "--version" || arg === "-v") {
 }
 if (arg === "--help" || arg === "-h") {
   console.log(`${SERVER_NAME} ${SERVER_VERSION}
-MCP server (stdio) for CalcBloc take-home pay, employer cost, salary comparison and official tax tables.
+MCP server (stdio) for CalcBloc take-home pay, employer cost, salary comparison, bonus and equity tax, import duty and tariffs, tax calendars and official tax tables.
 
 Usage: npx -y calcbloc-mcp
 

@@ -1,0 +1,1031 @@
+{
+  "tariff": {
+    "destination": "gb",
+    "nomenclature": "uk-tariff",
+    "version": "2026-11-22",
+    "as_of": "2026-11-22",
+    "retrieved_at": "2026-11-21",
+    "publisher": "HM Revenue & Customs and Department for Business and Trade",
+    "source": "https://www.trade-tariff.service.gov.uk/",
+    "api": "https://www.trade-tariff.service.gov.uk/uk/api/",
+    "licence": "Open Government Licence v3.0 (https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/)"
+  },
+  "origin": {
+    "iso": "IN",
+    "geo": "IN",
+    "name": "India"
+  },
+  "filters": {
+    "destination": "gb",
+    "code": "0901",
+    "origin": "in"
+  },
+  "total": 6,
+  "count": 6,
+  "limit": 10,
+  "next_cursor": null,
+  "lines": [
+    {
+      "code": "0901110000",
+      "description": "Not decaffeinated",
+      "path": [
+        "Coffee, whether or not roasted or decaffeinated; coffee husks and skins; coffee substitutes containing coffee in any proportion",
+        "Coffee, not roasted"
+      ],
+      "supplementary_unit": null,
+      "mfn": {
+        "duty": {
+          "kind": "free"
+        },
+        "duty_text": "0.00 %",
+        "duty_described": "Free"
+      },
+      "third_country": [
+        {
+          "measure_type": "103",
+          "measure_type_description": "Third country duty",
+          "geographical_area": "1011",
+          "geographical_area_description": "ERGA OMNES",
+          "excluded": [],
+          "agreement": null,
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1430",
+              "title": "The Customs Tariff (Establishment) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1430"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        }
+      ],
+      "preferential": [
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "1060",
+          "geographical_area_description": "Developing Countries Trading Scheme (DCTS) - Standard Preferences",
+          "excluded": [],
+          "agreement": "gb-dcts-standard",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2023 No. 561",
+              "title": "The Trade Preference Scheme (Developing Countries Trading Scheme) Regulations 2023",
+              "url": "https://www.legislation.gov.uk/uksi/2023/561/contents/made"
+            }
+          ],
+          "valid_from": "2023-06-19",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "IN",
+          "geographical_area_description": "India",
+          "excluded": [],
+          "agreement": "gb-in-ceta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2026 No.36",
+              "title": "The Customs (Tariff and Miscellaneous Amendments) Regulations 2026",
+              "url": "https://www.legislation.gov.uk/uksi/2026/36/contents/made"
+            }
+          ],
+          "valid_from": "2026-07-15",
+          "valid_to": null
+        }
+      ],
+      "best_preferential": {
+        "measure_type": "142",
+        "measure_type_description": "Tariff preference",
+        "geographical_area": "1060",
+        "geographical_area_description": "Developing Countries Trading Scheme (DCTS) - Standard Preferences",
+        "excluded": [],
+        "agreement": "gb-dcts-standard",
+        "additional_code": null,
+        "quota": null,
+        "duty": {
+          "kind": "free"
+        },
+        "duty_text": "0.00 %",
+        "duty_described": "Free",
+        "conditions": null,
+        "documents": [],
+        "extra_type": null,
+        "legal_acts": [
+          {
+            "code": "2023 No. 561",
+            "title": "The Trade Preference Scheme (Developing Countries Trading Scheme) Regulations 2023",
+            "url": "https://www.legislation.gov.uk/uksi/2023/561/contents/made"
+          }
+        ],
+        "valid_from": "2023-06-19",
+        "valid_to": null
+      },
+      "suspensions": [],
+      "quotas": [],
+      "extra_duties": [],
+      "surcharges": [],
+      "import_vat": [
+        {
+          "measure_type": "305",
+          "measure_type_description": "Value added tax",
+          "geographical_area": "1400",
+          "geographical_area_description": "Areas subject to VAT or Excise",
+          "excluded": [],
+          "agreement": null,
+          "additional_code": {
+            "code": "VATZ",
+            "description": "VAT zero rate"
+          },
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [],
+          "valid_from": "2024-09-25",
+          "valid_to": null
+        }
+      ],
+      "excise": [],
+      "other_charges": [],
+      "valid_from": "1972-01-01",
+      "valid_to": null,
+      "source": "https://www.trade-tariff.service.gov.uk/uk/api/commodities/0901110000?as_of=2026-11-22",
+      "page": "https://www.trade-tariff.service.gov.uk/commodities/0901110000"
+    },
+    {
+      "code": "0901120000",
+      "description": "Decaffeinated",
+      "path": [
+        "Coffee, whether or not roasted or decaffeinated; coffee husks and skins; coffee substitutes containing coffee in any proportion",
+        "Coffee, not roasted"
+      ],
+      "supplementary_unit": null,
+      "mfn": {
+        "duty": {
+          "kind": "ad_valorem",
+          "rate": 0.08
+        },
+        "duty_text": "8.00 %",
+        "duty_described": "8%"
+      },
+      "third_country": [
+        {
+          "measure_type": "103",
+          "measure_type_description": "Third country duty",
+          "geographical_area": "1011",
+          "geographical_area_description": "ERGA OMNES",
+          "excluded": [],
+          "agreement": null,
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "ad_valorem",
+            "rate": 0.08
+          },
+          "duty_text": "8.00 %",
+          "duty_described": "8%",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1430",
+              "title": "The Customs Tariff (Establishment) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1430"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        }
+      ],
+      "preferential": [
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "1060",
+          "geographical_area_description": "Developing Countries Trading Scheme (DCTS) - Standard Preferences",
+          "excluded": [],
+          "agreement": "gb-dcts-standard",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "ad_valorem",
+            "rate": 0.045
+          },
+          "duty_text": "4.50 %",
+          "duty_described": "4.5%",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2023 No. 561",
+              "title": "The Trade Preference Scheme (Developing Countries Trading Scheme) Regulations 2023",
+              "url": "https://www.legislation.gov.uk/uksi/2023/561/contents/made"
+            }
+          ],
+          "valid_from": "2023-06-19",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "IN",
+          "geographical_area_description": "India",
+          "excluded": [],
+          "agreement": "gb-in-ceta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2026 No.36",
+              "title": "The Customs (Tariff and Miscellaneous Amendments) Regulations 2026",
+              "url": "https://www.legislation.gov.uk/uksi/2026/36/contents/made"
+            }
+          ],
+          "valid_from": "2026-07-15",
+          "valid_to": null
+        }
+      ],
+      "best_preferential": {
+        "measure_type": "142",
+        "measure_type_description": "Tariff preference",
+        "geographical_area": "IN",
+        "geographical_area_description": "India",
+        "excluded": [],
+        "agreement": "gb-in-ceta",
+        "additional_code": null,
+        "quota": null,
+        "duty": {
+          "kind": "free"
+        },
+        "duty_text": "0.00 %",
+        "duty_described": "Free",
+        "conditions": null,
+        "documents": [],
+        "extra_type": null,
+        "legal_acts": [
+          {
+            "code": "2026 No.36",
+            "title": "The Customs (Tariff and Miscellaneous Amendments) Regulations 2026",
+            "url": "https://www.legislation.gov.uk/uksi/2026/36/contents/made"
+          }
+        ],
+        "valid_from": "2026-07-15",
+        "valid_to": null
+      },
+      "suspensions": [],
+      "quotas": [],
+      "extra_duties": [],
+      "surcharges": [],
+      "import_vat": [
+        {
+          "measure_type": "305",
+          "measure_type_description": "Value added tax",
+          "geographical_area": "1400",
+          "geographical_area_description": "Areas subject to VAT or Excise",
+          "excluded": [],
+          "agreement": null,
+          "additional_code": {
+            "code": "VATZ",
+            "description": "VAT zero rate"
+          },
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [],
+          "valid_from": "2024-09-25",
+          "valid_to": null
+        }
+      ],
+      "excise": [],
+      "other_charges": [],
+      "valid_from": "1972-01-01",
+      "valid_to": null,
+      "source": "https://www.trade-tariff.service.gov.uk/uk/api/commodities/0901120000?as_of=2026-11-22",
+      "page": "https://www.trade-tariff.service.gov.uk/commodities/0901120000"
+    },
+    {
+      "code": "0901210000",
+      "description": "Not decaffeinated",
+      "path": [
+        "Coffee, whether or not roasted or decaffeinated; coffee husks and skins; coffee substitutes containing coffee in any proportion",
+        "Coffee, roasted"
+      ],
+      "supplementary_unit": null,
+      "mfn": {
+        "duty": {
+          "kind": "ad_valorem",
+          "rate": 0.06
+        },
+        "duty_text": "6.00 %",
+        "duty_described": "6%"
+      },
+      "third_country": [
+        {
+          "measure_type": "103",
+          "measure_type_description": "Third country duty",
+          "geographical_area": "1011",
+          "geographical_area_description": "ERGA OMNES",
+          "excluded": [],
+          "agreement": null,
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "ad_valorem",
+            "rate": 0.06
+          },
+          "duty_text": "6.00 %",
+          "duty_described": "6%",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1430",
+              "title": "The Customs Tariff (Establishment) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1430"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        }
+      ],
+      "preferential": [
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "1060",
+          "geographical_area_description": "Developing Countries Trading Scheme (DCTS) - Standard Preferences",
+          "excluded": [],
+          "agreement": "gb-dcts-standard",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "ad_valorem",
+            "rate": 0.025
+          },
+          "duty_text": "2.50 %",
+          "duty_described": "2.5%",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2023 No. 561",
+              "title": "The Trade Preference Scheme (Developing Countries Trading Scheme) Regulations 2023",
+              "url": "https://www.legislation.gov.uk/uksi/2023/561/contents/made"
+            }
+          ],
+          "valid_from": "2023-06-19",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "IN",
+          "geographical_area_description": "India",
+          "excluded": [],
+          "agreement": "gb-in-ceta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2026 No.36",
+              "title": "The Customs (Tariff and Miscellaneous Amendments) Regulations 2026",
+              "url": "https://www.legislation.gov.uk/uksi/2026/36/contents/made"
+            }
+          ],
+          "valid_from": "2026-07-15",
+          "valid_to": null
+        }
+      ],
+      "best_preferential": {
+        "measure_type": "142",
+        "measure_type_description": "Tariff preference",
+        "geographical_area": "IN",
+        "geographical_area_description": "India",
+        "excluded": [],
+        "agreement": "gb-in-ceta",
+        "additional_code": null,
+        "quota": null,
+        "duty": {
+          "kind": "free"
+        },
+        "duty_text": "0.00 %",
+        "duty_described": "Free",
+        "conditions": null,
+        "documents": [],
+        "extra_type": null,
+        "legal_acts": [
+          {
+            "code": "2026 No.36",
+            "title": "The Customs (Tariff and Miscellaneous Amendments) Regulations 2026",
+            "url": "https://www.legislation.gov.uk/uksi/2026/36/contents/made"
+          }
+        ],
+        "valid_from": "2026-07-15",
+        "valid_to": null
+      },
+      "suspensions": [],
+      "quotas": [],
+      "extra_duties": [],
+      "surcharges": [],
+      "import_vat": [
+        {
+          "measure_type": "305",
+          "measure_type_description": "Value added tax",
+          "geographical_area": "1400",
+          "geographical_area_description": "Areas subject to VAT or Excise",
+          "excluded": [],
+          "agreement": null,
+          "additional_code": {
+            "code": "VATZ",
+            "description": "VAT zero rate"
+          },
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [],
+          "valid_from": "2024-09-25",
+          "valid_to": null
+        }
+      ],
+      "excise": [],
+      "other_charges": [],
+      "valid_from": "1972-01-01",
+      "valid_to": null,
+      "source": "https://www.trade-tariff.service.gov.uk/uk/api/commodities/0901210000?as_of=2026-11-22",
+      "page": "https://www.trade-tariff.service.gov.uk/commodities/0901210000"
+    },
+    {
+      "code": "0901220000",
+      "description": "Decaffeinated",
+      "path": [
+        "Coffee, whether or not roasted or decaffeinated; coffee husks and skins; coffee substitutes containing coffee in any proportion",
+        "Coffee, roasted"
+      ],
+      "supplementary_unit": null,
+      "mfn": {
+        "duty": {
+          "kind": "ad_valorem",
+          "rate": 0.08
+        },
+        "duty_text": "8.00 %",
+        "duty_described": "8%"
+      },
+      "third_country": [
+        {
+          "measure_type": "103",
+          "measure_type_description": "Third country duty",
+          "geographical_area": "1011",
+          "geographical_area_description": "ERGA OMNES",
+          "excluded": [],
+          "agreement": null,
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "ad_valorem",
+            "rate": 0.08
+          },
+          "duty_text": "8.00 %",
+          "duty_described": "8%",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1430",
+              "title": "The Customs Tariff (Establishment) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1430"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        }
+      ],
+      "preferential": [
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "1060",
+          "geographical_area_description": "Developing Countries Trading Scheme (DCTS) - Standard Preferences",
+          "excluded": [],
+          "agreement": "gb-dcts-standard",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "ad_valorem",
+            "rate": 0.031
+          },
+          "duty_text": "3.10 %",
+          "duty_described": "3.1%",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2023 No. 561",
+              "title": "The Trade Preference Scheme (Developing Countries Trading Scheme) Regulations 2023",
+              "url": "https://www.legislation.gov.uk/uksi/2023/561/contents/made"
+            }
+          ],
+          "valid_from": "2023-06-19",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "IN",
+          "geographical_area_description": "India",
+          "excluded": [],
+          "agreement": "gb-in-ceta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2026 No.36",
+              "title": "The Customs (Tariff and Miscellaneous Amendments) Regulations 2026",
+              "url": "https://www.legislation.gov.uk/uksi/2026/36/contents/made"
+            }
+          ],
+          "valid_from": "2026-07-15",
+          "valid_to": null
+        }
+      ],
+      "best_preferential": {
+        "measure_type": "142",
+        "measure_type_description": "Tariff preference",
+        "geographical_area": "IN",
+        "geographical_area_description": "India",
+        "excluded": [],
+        "agreement": "gb-in-ceta",
+        "additional_code": null,
+        "quota": null,
+        "duty": {
+          "kind": "free"
+        },
+        "duty_text": "0.00 %",
+        "duty_described": "Free",
+        "conditions": null,
+        "documents": [],
+        "extra_type": null,
+        "legal_acts": [
+          {
+            "code": "2026 No.36",
+            "title": "The Customs (Tariff and Miscellaneous Amendments) Regulations 2026",
+            "url": "https://www.legislation.gov.uk/uksi/2026/36/contents/made"
+          }
+        ],
+        "valid_from": "2026-07-15",
+        "valid_to": null
+      },
+      "suspensions": [],
+      "quotas": [],
+      "extra_duties": [],
+      "surcharges": [],
+      "import_vat": [
+        {
+          "measure_type": "305",
+          "measure_type_description": "Value added tax",
+          "geographical_area": "1400",
+          "geographical_area_description": "Areas subject to VAT or Excise",
+          "excluded": [],
+          "agreement": null,
+          "additional_code": {
+            "code": "VATZ",
+            "description": "VAT zero rate"
+          },
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [],
+          "valid_from": "2024-09-25",
+          "valid_to": null
+        }
+      ],
+      "excise": [],
+      "other_charges": [],
+      "valid_from": "1972-01-01",
+      "valid_to": null,
+      "source": "https://www.trade-tariff.service.gov.uk/uk/api/commodities/0901220000?as_of=2026-11-22",
+      "page": "https://www.trade-tariff.service.gov.uk/commodities/0901220000"
+    },
+    {
+      "code": "0901901000",
+      "description": "Coffee husks and skins",
+      "path": [
+        "Coffee, whether or not roasted or decaffeinated; coffee husks and skins; coffee substitutes containing coffee in any proportion",
+        "Other"
+      ],
+      "supplementary_unit": null,
+      "mfn": {
+        "duty": {
+          "kind": "free"
+        },
+        "duty_text": "0.00 %",
+        "duty_described": "Free"
+      },
+      "third_country": [
+        {
+          "measure_type": "103",
+          "measure_type_description": "Third country duty",
+          "geographical_area": "1011",
+          "geographical_area_description": "ERGA OMNES",
+          "excluded": [],
+          "agreement": null,
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1430",
+              "title": "The Customs Tariff (Establishment) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1430"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        }
+      ],
+      "preferential": [
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "1060",
+          "geographical_area_description": "Developing Countries Trading Scheme (DCTS) - Standard Preferences",
+          "excluded": [],
+          "agreement": "gb-dcts-standard",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2023 No. 561",
+              "title": "The Trade Preference Scheme (Developing Countries Trading Scheme) Regulations 2023",
+              "url": "https://www.legislation.gov.uk/uksi/2023/561/contents/made"
+            }
+          ],
+          "valid_from": "2023-06-19",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "IN",
+          "geographical_area_description": "India",
+          "excluded": [],
+          "agreement": "gb-in-ceta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2026 No.36",
+              "title": "The Customs (Tariff and Miscellaneous Amendments) Regulations 2026",
+              "url": "https://www.legislation.gov.uk/uksi/2026/36/contents/made"
+            }
+          ],
+          "valid_from": "2026-07-15",
+          "valid_to": null
+        }
+      ],
+      "best_preferential": {
+        "measure_type": "142",
+        "measure_type_description": "Tariff preference",
+        "geographical_area": "1060",
+        "geographical_area_description": "Developing Countries Trading Scheme (DCTS) - Standard Preferences",
+        "excluded": [],
+        "agreement": "gb-dcts-standard",
+        "additional_code": null,
+        "quota": null,
+        "duty": {
+          "kind": "free"
+        },
+        "duty_text": "0.00 %",
+        "duty_described": "Free",
+        "conditions": null,
+        "documents": [],
+        "extra_type": null,
+        "legal_acts": [
+          {
+            "code": "2023 No. 561",
+            "title": "The Trade Preference Scheme (Developing Countries Trading Scheme) Regulations 2023",
+            "url": "https://www.legislation.gov.uk/uksi/2023/561/contents/made"
+          }
+        ],
+        "valid_from": "2023-06-19",
+        "valid_to": null
+      },
+      "suspensions": [],
+      "quotas": [],
+      "extra_duties": [],
+      "surcharges": [],
+      "import_vat": [
+        {
+          "measure_type": "305",
+          "measure_type_description": "Value added tax",
+          "geographical_area": "1400",
+          "geographical_area_description": "Areas subject to VAT or Excise",
+          "excluded": [],
+          "agreement": null,
+          "additional_code": {
+            "code": "VATZ",
+            "description": "VAT zero rate"
+          },
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [],
+          "valid_from": "2024-09-25",
+          "valid_to": null
+        }
+      ],
+      "excise": [],
+      "other_charges": [],
+      "valid_from": "1996-01-01",
+      "valid_to": null,
+      "source": "https://www.trade-tariff.service.gov.uk/uk/api/commodities/0901901000?as_of=2026-11-22",
+      "page": "https://www.trade-tariff.service.gov.uk/commodities/0901901000"
+    },
+    {
+      "code": "0901909000",
+      "description": "Coffee substitutes containing coffee",
+      "path": [
+        "Coffee, whether or not roasted or decaffeinated; coffee husks and skins; coffee substitutes containing coffee in any proportion",
+        "Other"
+      ],
+      "supplementary_unit": null,
+      "mfn": {
+        "duty": {
+          "kind": "ad_valorem",
+          "rate": 0.1
+        },
+        "duty_text": "10.00 %",
+        "duty_described": "10%"
+      },
+      "third_country": [
+        {
+          "measure_type": "103",
+          "measure_type_description": "Third country duty",
+          "geographical_area": "1011",
+          "geographical_area_description": "ERGA OMNES",
+          "excluded": [],
+          "agreement": null,
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "ad_valorem",
+            "rate": 0.1
+          },
+          "duty_text": "10.00 %",
+          "duty_described": "10%",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1430",
+              "title": "The Customs Tariff (Establishment) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1430"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        }
+      ],
+      "preferential": [
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "1060",
+          "geographical_area_description": "Developing Countries Trading Scheme (DCTS) - Standard Preferences",
+          "excluded": [],
+          "agreement": "gb-dcts-standard",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "ad_valorem",
+            "rate": 0.065
+          },
+          "duty_text": "6.50 %",
+          "duty_described": "6.5%",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2023 No. 561",
+              "title": "The Trade Preference Scheme (Developing Countries Trading Scheme) Regulations 2023",
+              "url": "https://www.legislation.gov.uk/uksi/2023/561/contents/made"
+            }
+          ],
+          "valid_from": "2023-06-19",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "IN",
+          "geographical_area_description": "India",
+          "excluded": [],
+          "agreement": "gb-in-ceta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2026 No.36",
+              "title": "The Customs (Tariff and Miscellaneous Amendments) Regulations 2026",
+              "url": "https://www.legislation.gov.uk/uksi/2026/36/contents/made"
+            }
+          ],
+          "valid_from": "2026-07-15",
+          "valid_to": null
+        }
+      ],
+      "best_preferential": {
+        "measure_type": "142",
+        "measure_type_description": "Tariff preference",
+        "geographical_area": "IN",
+        "geographical_area_description": "India",
+        "excluded": [],
+        "agreement": "gb-in-ceta",
+        "additional_code": null,
+        "quota": null,
+        "duty": {
+          "kind": "free"
+        },
+        "duty_text": "0.00 %",
+        "duty_described": "Free",
+        "conditions": null,
+        "documents": [],
+        "extra_type": null,
+        "legal_acts": [
+          {
+            "code": "2026 No.36",
+            "title": "The Customs (Tariff and Miscellaneous Amendments) Regulations 2026",
+            "url": "https://www.legislation.gov.uk/uksi/2026/36/contents/made"
+          }
+        ],
+        "valid_from": "2026-07-15",
+        "valid_to": null
+      },
+      "suspensions": [],
+      "quotas": [],
+      "extra_duties": [],
+      "surcharges": [],
+      "import_vat": [
+        {
+          "measure_type": "305",
+          "measure_type_description": "Value added tax",
+          "geographical_area": "1400",
+          "geographical_area_description": "Areas subject to VAT or Excise",
+          "excluded": [],
+          "agreement": null,
+          "additional_code": {
+            "code": "VATZ",
+            "description": "VAT zero rate"
+          },
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [],
+          "valid_from": "2024-09-25",
+          "valid_to": null
+        }
+      ],
+      "excise": [],
+      "other_charges": [],
+      "valid_from": "1996-01-01",
+      "valid_to": null,
+      "source": "https://www.trade-tariff.service.gov.uk/uk/api/commodities/0901909000?as_of=2026-11-22",
+      "page": "https://www.trade-tariff.service.gov.uk/commodities/0901909000"
+    }
+  ],
+  "attribution": {
+    "source": "CalcBloc",
+    "url": "https://calcbloc.com/trade/uk-import-duty-calculator",
+    "required": true,
+    "text": "Data by CalcBloc (calcbloc.com)"
+  }
+}

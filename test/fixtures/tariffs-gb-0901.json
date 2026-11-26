@@ -1,0 +1,4944 @@
+{
+  "tariff": {
+    "destination": "gb",
+    "nomenclature": "uk-tariff",
+    "version": "2026-11-22",
+    "as_of": "2026-11-22",
+    "retrieved_at": "2026-11-21",
+    "publisher": "HM Revenue & Customs and Department for Business and Trade",
+    "source": "https://www.trade-tariff.service.gov.uk/",
+    "api": "https://www.trade-tariff.service.gov.uk/uk/api/",
+    "licence": "Open Government Licence v3.0 (https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/)"
+  },
+  "origin": null,
+  "filters": {
+    "destination": "gb",
+    "code": "0901"
+  },
+  "total": 6,
+  "count": 3,
+  "limit": 3,
+  "next_cursor": "bzoz",
+  "lines": [
+    {
+      "code": "0901110000",
+      "description": "Not decaffeinated",
+      "path": [
+        "Coffee, whether or not roasted or decaffeinated; coffee husks and skins; coffee substitutes containing coffee in any proportion",
+        "Coffee, not roasted"
+      ],
+      "supplementary_unit": null,
+      "mfn": {
+        "duty": {
+          "kind": "free"
+        },
+        "duty_text": "0.00 %",
+        "duty_described": "Free"
+      },
+      "third_country": [
+        {
+          "measure_type": "103",
+          "measure_type_description": "Third country duty",
+          "geographical_area": "1011",
+          "geographical_area_description": "ERGA OMNES",
+          "excluded": [],
+          "agreement": null,
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1430",
+              "title": "The Customs Tariff (Establishment) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1430"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "103",
+          "measure_type_description": "Third country duty",
+          "geographical_area": "1080",
+          "geographical_area_description": "Channel Islands",
+          "excluded": [],
+          "agreement": null,
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1430",
+              "title": "The Customs Tariff (Establishment) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1430"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        }
+      ],
+      "preferential": [
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "1013",
+          "geographical_area_description": "European Union",
+          "excluded": [],
+          "agreement": "eu-gb-tca",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "1033",
+          "geographical_area_description": "CARIFORUM",
+          "excluded": [],
+          "agreement": "cariforum-gb-epa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "1034",
+          "geographical_area_description": "Eastern and Southern Africa States",
+          "excluded": [
+            "KM"
+          ],
+          "agreement": "esa-gb-epa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2024-08-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "1035",
+          "geographical_area_description": "SADC EPA",
+          "excluded": [],
+          "agreement": "gb-sacum-epa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "1060",
+          "geographical_area_description": "Developing Countries Trading Scheme (DCTS) - Standard Preferences",
+          "excluded": [],
+          "agreement": "gb-dcts-standard",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2023 No. 561",
+              "title": "The Trade Preference Scheme (Developing Countries Trading Scheme) Regulations 2023",
+              "url": "https://www.legislation.gov.uk/uksi/2023/561/contents/made"
+            }
+          ],
+          "valid_from": "2023-06-19",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "1061",
+          "geographical_area_description": "Developing Countries Trading Scheme (DCTS) - Enhanced Preferences",
+          "excluded": [],
+          "agreement": "gb-dcts-enhanced",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2023 No. 561",
+              "title": "The Trade Preference Scheme (Developing Countries Trading Scheme) Regulations 2023",
+              "url": "https://www.legislation.gov.uk/uksi/2023/561/contents/made"
+            }
+          ],
+          "valid_from": "2023-06-19",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "1062",
+          "geographical_area_description": "Developing Countries Trading Scheme (DCTS) - Comprehensive Preferences",
+          "excluded": [],
+          "agreement": "gb-dcts-comprehensive",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2023 No. 561",
+              "title": "The Trade Preference Scheme (Developing Countries Trading Scheme) Regulations 2023",
+              "url": "https://www.legislation.gov.uk/uksi/2023/561/contents/made"
+            }
+          ],
+          "valid_from": "2023-06-19",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "2051",
+          "geographical_area_description": "CPTPP All Members",
+          "excluded": [],
+          "agreement": "cptpp",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [
+            "9081"
+          ],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2024 c. 6",
+              "title": "Trade (Comprehensive and Progressive Agreement for Trans-Pacific Partnership) Act 2024",
+              "url": "https://www.legislation.gov.uk/ukpga/2024/6/contents"
+            }
+          ],
+          "valid_from": "2026-06-22",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "2080",
+          "geographical_area_description": "OCTs (Overseas Countries and Territories)",
+          "excluded": [],
+          "agreement": "gb-oct",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "2200",
+          "geographical_area_description": "Central America",
+          "excluded": [],
+          "agreement": "central-america-gb-aa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "AL",
+          "geographical_area_description": "Albania",
+          "excluded": [],
+          "agreement": "al-gb-ptca",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-05-03",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "AU",
+          "geographical_area_description": "Australia",
+          "excluded": [],
+          "agreement": "au-gb-fta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2023 No. 195",
+              "title": "The Customs Tariff (Preferential Trade Arrangements and Tariff Quotas) (Australia) (Amendment) Regulations 2023",
+              "url": "https://www.legislation.gov.uk/uksi/2023/195/contents/made"
+            }
+          ],
+          "valid_from": "2023-05-31",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "CA",
+          "geographical_area_description": "Canada",
+          "excluded": [],
+          "agreement": "ca-gb-tca",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "CH",
+          "geographical_area_description": "Switzerland",
+          "excluded": [],
+          "agreement": "ch-gb-li-ta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "CI",
+          "geographical_area_description": "Ivory Coast",
+          "excluded": [],
+          "agreement": "ci-gb-epa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "CL",
+          "geographical_area_description": "Chile",
+          "excluded": [],
+          "agreement": "cl-gb-aa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "CM",
+          "geographical_area_description": "Cameroon",
+          "excluded": [],
+          "agreement": "cm-gb-epa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "CO",
+          "geographical_area_description": "Colombia",
+          "excluded": [],
+          "agreement": "andean-gb-ta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "EC",
+          "geographical_area_description": "Ecuador",
+          "excluded": [],
+          "agreement": "andean-gb-ta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "EG",
+          "geographical_area_description": "Egypt",
+          "excluded": [],
+          "agreement": "eg-gb-aa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "FJ",
+          "geographical_area_description": "Fiji",
+          "excluded": [],
+          "agreement": "gb-pacific-epa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "FO",
+          "geographical_area_description": "Faroe Islands",
+          "excluded": [],
+          "agreement": "fo-gb-fta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2023-03-17",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "GE",
+          "geographical_area_description": "Georgia",
+          "excluded": [],
+          "agreement": "gb-ge-spca",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "GH",
+          "geographical_area_description": "Ghana",
+          "excluded": [],
+          "agreement": "gb-gh-itpa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2021/241",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) (Amendment) Regulations 2021",
+              "url": "https://www.legislation.gov.uk/uksi/2021/241"
+            }
+          ],
+          "valid_from": "2021-03-05",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "IL",
+          "geographical_area_description": "Israel",
+          "excluded": [],
+          "agreement": "gb-il-tpa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [
+            "Y864"
+          ],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2025-09-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "IN",
+          "geographical_area_description": "India",
+          "excluded": [],
+          "agreement": "gb-in-ceta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2026 No.36",
+              "title": "The Customs (Tariff and Miscellaneous Amendments) Regulations 2026",
+              "url": "https://www.legislation.gov.uk/uksi/2026/36/contents/made"
+            }
+          ],
+          "valid_from": "2026-07-15",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "IS",
+          "geographical_area_description": "Iceland",
+          "excluded": [],
+          "agreement": "gb-is-no-tig",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2022-05-31",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "JO",
+          "geographical_area_description": "Jordan",
+          "excluded": [],
+          "agreement": "gb-jo-aa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2021/241",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) (Amendment) Regulations 2021",
+              "url": "https://www.legislation.gov.uk/uksi/2021/241"
+            }
+          ],
+          "valid_from": "2021-05-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "JP",
+          "geographical_area_description": "Japan",
+          "excluded": [],
+          "agreement": "gb-jp-cepa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "KE",
+          "geographical_area_description": "Kenya",
+          "excluded": [],
+          "agreement": "gb-ke-epa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "KR",
+          "geographical_area_description": "South Korea",
+          "excluded": [],
+          "agreement": "gb-kr-ta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "LB",
+          "geographical_area_description": "Lebanon",
+          "excluded": [],
+          "agreement": "gb-lb-aa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "LI",
+          "geographical_area_description": "Liechtenstein",
+          "excluded": [],
+          "agreement": "ch-gb-li-ta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "MA",
+          "geographical_area_description": "Morocco",
+          "excluded": [],
+          "agreement": "gb-ma-aa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "MD",
+          "geographical_area_description": "Moldova",
+          "excluded": [],
+          "agreement": "gb-md-sptca",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2023 No. 774",
+              "title": "The Customs (Tariff and Miscellaneous Amendments) Regulations 2023",
+              "url": "https://www.legislation.gov.uk/uksi/2023/774/made"
+            }
+          ],
+          "valid_from": "2023-07-31",
+          "valid_to": "2029-07-31"
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "MK",
+          "geographical_area_description": "North Macedonia",
+          "excluded": [],
+          "agreement": "gb-mk-ptca",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "MX",
+          "geographical_area_description": "Mexico",
+          "excluded": [],
+          "agreement": "gb-mx-tca",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "NO",
+          "geographical_area_description": "Norway",
+          "excluded": [],
+          "agreement": "gb-is-no-tig",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2021 No. 1192",
+              "title": "The Customs Tariff (Preferential Trade Arrangements and Tariff Quotas) (EU Exit) (Amendment) (No. 4) Regulations 2021",
+              "url": "https://www.legislation.gov.uk/uksi/2021/1192/contents/made"
+            }
+          ],
+          "valid_from": "2021-12-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "NZ",
+          "geographical_area_description": "New Zealand",
+          "excluded": [],
+          "agreement": "gb-nz-fta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2023 No. 194",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (New Zealand) (Amendment) Regulations 2023",
+              "url": "https://www.legislation.gov.uk/uksi/2023/194/contents/made"
+            }
+          ],
+          "valid_from": "2023-05-31",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "PE",
+          "geographical_area_description": "Peru",
+          "excluded": [],
+          "agreement": "andean-gb-ta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "PG",
+          "geographical_area_description": "Papua New Guinea",
+          "excluded": [],
+          "agreement": "gb-pacific-epa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "PS",
+          "geographical_area_description": "Palestine",
+          "excluded": [],
+          "agreement": "gb-ps-ptpa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "SB",
+          "geographical_area_description": "Solomon Islands",
+          "excluded": [],
+          "agreement": "gb-pacific-epa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "SG",
+          "geographical_area_description": "Singapore",
+          "excluded": [],
+          "agreement": "gb-sg-fta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "CS Singapore No.1/2020",
+              "title": "UK/Singapore: Free Trade Agreement",
+              "url": "https://www.gov.uk/government/publications/uksingapore-free-trade-agreement-cs-singapore-no12020"
+            }
+          ],
+          "valid_from": "2024-11-21",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "SM",
+          "geographical_area_description": "San Marino",
+          "excluded": [],
+          "agreement": "eu-gb-tca",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "TR",
+          "geographical_area_description": "Turkey",
+          "excluded": [],
+          "agreement": "gb-tr-ta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-20",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "UA",
+          "geographical_area_description": "Ukraine",
+          "excluded": [],
+          "agreement": "gb-ua-pftspa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "Ukraine FTA amendment 2022",
+              "title": "The Customs Tariff (Preferential Trade Arrangements and Tariff Quotas) (Ukraine) (Amendment) Regulations 2022",
+              "url": "https://www.legislation.gov.uk/uksi/2022/525/made"
+            }
+          ],
+          "valid_from": "2022-05-10",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "VN",
+          "geographical_area_description": "Vietnam",
+          "excluded": [],
+          "agreement": "gb-vn-fta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2022-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "WS",
+          "geographical_area_description": "Samoa",
+          "excluded": [],
+          "agreement": "gb-pacific-epa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "XC",
+          "geographical_area_description": "Ceuta",
+          "excluded": [],
+          "agreement": "eu-gb-tca",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "XK",
+          "geographical_area_description": "Kosovo",
+          "excluded": [],
+          "agreement": "gb-xk-ptca",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "XL",
+          "geographical_area_description": "Melilla",
+          "excluded": [],
+          "agreement": "eu-gb-tca",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "XS",
+          "geographical_area_description": "Serbia",
+          "excluded": [],
+          "agreement": "gb-rs-ptca",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2021/241",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) (Amendment) Regulations 2021",
+              "url": "https://www.legislation.gov.uk/uksi/2021/241"
+            }
+          ],
+          "valid_from": "2021-05-20",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "ZA",
+          "geographical_area_description": "South Africa",
+          "excluded": [],
+          "agreement": "gb-sacum-epa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        }
+      ],
+      "best_preferential": null,
+      "suspensions": [],
+      "quotas": [],
+      "extra_duties": [
+        {
+          "measure_type": "695",
+          "measure_type_description": "Additional duties",
+          "geographical_area": "BY",
+          "geographical_area_description": "Belarus",
+          "excluded": [],
+          "agreement": null,
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "ad_valorem",
+            "rate": 0.35
+          },
+          "duty_text": "35.00 %",
+          "duty_described": "35%",
+          "conditions": [
+            {
+              "code": "B",
+              "requirement": "National Document: Goods of Belarusian or Russian origin exported from any country before 1st June 2022.",
+              "document": "9014",
+              "action": "Measure not applicable"
+            },
+            {
+              "code": "B",
+              "action": "Apply the mentioned duty"
+            }
+          ],
+          "documents": [],
+          "extra_type": "other",
+          "legal_acts": [
+            {
+              "code": "2022 No. 598",
+              "title": "The Customs (Additional Duty) (Russia and Belarus) Amendment Regulations 2022",
+              "url": "https://www.legislation.gov.uk/uksi/2022/598/made"
+            }
+          ],
+          "valid_from": "2022-06-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "695",
+          "measure_type_description": "Additional duties",
+          "geographical_area": "RU",
+          "geographical_area_description": "Russia",
+          "excluded": [],
+          "agreement": null,
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "ad_valorem",
+            "rate": 0.35
+          },
+          "duty_text": "35.00 %",
+          "duty_described": "35%",
+          "conditions": [
+            {
+              "code": "B",
+              "requirement": "National Document: Goods of Belarusian or Russian origin exported from any country before 1st June 2022.",
+              "document": "9014",
+              "action": "Measure not applicable"
+            },
+            {
+              "code": "B",
+              "action": "Apply the mentioned duty"
+            }
+          ],
+          "documents": [],
+          "extra_type": "other",
+          "legal_acts": [
+            {
+              "code": "2022 No. 598",
+              "title": "The Customs (Additional Duty) (Russia and Belarus) Amendment Regulations 2022",
+              "url": "https://www.legislation.gov.uk/uksi/2022/598/made"
+            }
+          ],
+          "valid_from": "2022-06-01",
+          "valid_to": null
+        }
+      ],
+      "surcharges": [],
+      "import_vat": [
+        {
+          "measure_type": "305",
+          "measure_type_description": "Value added tax",
+          "geographical_area": "1400",
+          "geographical_area_description": "Areas subject to VAT or Excise",
+          "excluded": [],
+          "agreement": null,
+          "additional_code": {
+            "code": "VATZ",
+            "description": "VAT zero rate"
+          },
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [],
+          "valid_from": "2024-09-25",
+          "valid_to": null
+        }
+      ],
+      "excise": [],
+      "other_charges": [],
+      "valid_from": "1972-01-01",
+      "valid_to": null,
+      "source": "https://www.trade-tariff.service.gov.uk/uk/api/commodities/0901110000?as_of=2026-11-22",
+      "page": "https://www.trade-tariff.service.gov.uk/commodities/0901110000"
+    },
+    {
+      "code": "0901120000",
+      "description": "Decaffeinated",
+      "path": [
+        "Coffee, whether or not roasted or decaffeinated; coffee husks and skins; coffee substitutes containing coffee in any proportion",
+        "Coffee, not roasted"
+      ],
+      "supplementary_unit": null,
+      "mfn": {
+        "duty": {
+          "kind": "ad_valorem",
+          "rate": 0.08
+        },
+        "duty_text": "8.00 %",
+        "duty_described": "8%"
+      },
+      "third_country": [
+        {
+          "measure_type": "103",
+          "measure_type_description": "Third country duty",
+          "geographical_area": "1011",
+          "geographical_area_description": "ERGA OMNES",
+          "excluded": [],
+          "agreement": null,
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "ad_valorem",
+            "rate": 0.08
+          },
+          "duty_text": "8.00 %",
+          "duty_described": "8%",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1430",
+              "title": "The Customs Tariff (Establishment) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1430"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "103",
+          "measure_type_description": "Third country duty",
+          "geographical_area": "1080",
+          "geographical_area_description": "Channel Islands",
+          "excluded": [],
+          "agreement": null,
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1430",
+              "title": "The Customs Tariff (Establishment) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1430"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        }
+      ],
+      "preferential": [
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "1013",
+          "geographical_area_description": "European Union",
+          "excluded": [],
+          "agreement": "eu-gb-tca",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "1033",
+          "geographical_area_description": "CARIFORUM",
+          "excluded": [],
+          "agreement": "cariforum-gb-epa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "1034",
+          "geographical_area_description": "Eastern and Southern Africa States",
+          "excluded": [
+            "KM"
+          ],
+          "agreement": "esa-gb-epa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2024-08-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "1035",
+          "geographical_area_description": "SADC EPA",
+          "excluded": [],
+          "agreement": "gb-sacum-epa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "1060",
+          "geographical_area_description": "Developing Countries Trading Scheme (DCTS) - Standard Preferences",
+          "excluded": [],
+          "agreement": "gb-dcts-standard",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "ad_valorem",
+            "rate": 0.045
+          },
+          "duty_text": "4.50 %",
+          "duty_described": "4.5%",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2023 No. 561",
+              "title": "The Trade Preference Scheme (Developing Countries Trading Scheme) Regulations 2023",
+              "url": "https://www.legislation.gov.uk/uksi/2023/561/contents/made"
+            }
+          ],
+          "valid_from": "2023-06-19",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "1061",
+          "geographical_area_description": "Developing Countries Trading Scheme (DCTS) - Enhanced Preferences",
+          "excluded": [],
+          "agreement": "gb-dcts-enhanced",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2023 No. 561",
+              "title": "The Trade Preference Scheme (Developing Countries Trading Scheme) Regulations 2023",
+              "url": "https://www.legislation.gov.uk/uksi/2023/561/contents/made"
+            }
+          ],
+          "valid_from": "2023-06-19",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "1062",
+          "geographical_area_description": "Developing Countries Trading Scheme (DCTS) - Comprehensive Preferences",
+          "excluded": [],
+          "agreement": "gb-dcts-comprehensive",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2023 No. 561",
+              "title": "The Trade Preference Scheme (Developing Countries Trading Scheme) Regulations 2023",
+              "url": "https://www.legislation.gov.uk/uksi/2023/561/contents/made"
+            }
+          ],
+          "valid_from": "2023-06-19",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "2051",
+          "geographical_area_description": "CPTPP All Members",
+          "excluded": [],
+          "agreement": "cptpp",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [
+            "9081"
+          ],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2024 c. 6",
+              "title": "Trade (Comprehensive and Progressive Agreement for Trans-Pacific Partnership) Act 2024",
+              "url": "https://www.legislation.gov.uk/ukpga/2024/6/contents"
+            }
+          ],
+          "valid_from": "2026-06-22",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "2080",
+          "geographical_area_description": "OCTs (Overseas Countries and Territories)",
+          "excluded": [],
+          "agreement": "gb-oct",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "2200",
+          "geographical_area_description": "Central America",
+          "excluded": [],
+          "agreement": "central-america-gb-aa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "AL",
+          "geographical_area_description": "Albania",
+          "excluded": [],
+          "agreement": "al-gb-ptca",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-05-03",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "AU",
+          "geographical_area_description": "Australia",
+          "excluded": [],
+          "agreement": "au-gb-fta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2023 No. 195",
+              "title": "The Customs Tariff (Preferential Trade Arrangements and Tariff Quotas) (Australia) (Amendment) Regulations 2023",
+              "url": "https://www.legislation.gov.uk/uksi/2023/195/contents/made"
+            }
+          ],
+          "valid_from": "2023-05-31",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "CA",
+          "geographical_area_description": "Canada",
+          "excluded": [],
+          "agreement": "ca-gb-tca",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "CH",
+          "geographical_area_description": "Switzerland",
+          "excluded": [],
+          "agreement": "ch-gb-li-ta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "CI",
+          "geographical_area_description": "Ivory Coast",
+          "excluded": [],
+          "agreement": "ci-gb-epa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "CL",
+          "geographical_area_description": "Chile",
+          "excluded": [],
+          "agreement": "cl-gb-aa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "CM",
+          "geographical_area_description": "Cameroon",
+          "excluded": [],
+          "agreement": "cm-gb-epa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "CO",
+          "geographical_area_description": "Colombia",
+          "excluded": [],
+          "agreement": "andean-gb-ta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "EC",
+          "geographical_area_description": "Ecuador",
+          "excluded": [],
+          "agreement": "andean-gb-ta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "EG",
+          "geographical_area_description": "Egypt",
+          "excluded": [],
+          "agreement": "eg-gb-aa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "FJ",
+          "geographical_area_description": "Fiji",
+          "excluded": [],
+          "agreement": "gb-pacific-epa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "GE",
+          "geographical_area_description": "Georgia",
+          "excluded": [],
+          "agreement": "gb-ge-spca",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "GH",
+          "geographical_area_description": "Ghana",
+          "excluded": [],
+          "agreement": "gb-gh-itpa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2021/241",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) (Amendment) Regulations 2021",
+              "url": "https://www.legislation.gov.uk/uksi/2021/241"
+            }
+          ],
+          "valid_from": "2021-03-05",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "IL",
+          "geographical_area_description": "Israel",
+          "excluded": [],
+          "agreement": "gb-il-tpa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [
+            "Y864"
+          ],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2025-09-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "IN",
+          "geographical_area_description": "India",
+          "excluded": [],
+          "agreement": "gb-in-ceta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2026 No.36",
+              "title": "The Customs (Tariff and Miscellaneous Amendments) Regulations 2026",
+              "url": "https://www.legislation.gov.uk/uksi/2026/36/contents/made"
+            }
+          ],
+          "valid_from": "2026-07-15",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "IS",
+          "geographical_area_description": "Iceland",
+          "excluded": [],
+          "agreement": "gb-is-no-tig",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2022-05-31",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "JO",
+          "geographical_area_description": "Jordan",
+          "excluded": [],
+          "agreement": "gb-jo-aa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2021/241",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) (Amendment) Regulations 2021",
+              "url": "https://www.legislation.gov.uk/uksi/2021/241"
+            }
+          ],
+          "valid_from": "2021-05-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "JP",
+          "geographical_area_description": "Japan",
+          "excluded": [],
+          "agreement": "gb-jp-cepa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "KE",
+          "geographical_area_description": "Kenya",
+          "excluded": [],
+          "agreement": "gb-ke-epa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "KR",
+          "geographical_area_description": "South Korea",
+          "excluded": [],
+          "agreement": "gb-kr-ta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "LB",
+          "geographical_area_description": "Lebanon",
+          "excluded": [],
+          "agreement": "gb-lb-aa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "LI",
+          "geographical_area_description": "Liechtenstein",
+          "excluded": [],
+          "agreement": "ch-gb-li-ta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "MA",
+          "geographical_area_description": "Morocco",
+          "excluded": [],
+          "agreement": "gb-ma-aa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "MD",
+          "geographical_area_description": "Moldova",
+          "excluded": [],
+          "agreement": "gb-md-sptca",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2023 No. 774",
+              "title": "The Customs (Tariff and Miscellaneous Amendments) Regulations 2023",
+              "url": "https://www.legislation.gov.uk/uksi/2023/774/made"
+            }
+          ],
+          "valid_from": "2023-07-31",
+          "valid_to": "2029-07-31"
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "MK",
+          "geographical_area_description": "North Macedonia",
+          "excluded": [],
+          "agreement": "gb-mk-ptca",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "MX",
+          "geographical_area_description": "Mexico",
+          "excluded": [],
+          "agreement": "gb-mx-tca",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "NO",
+          "geographical_area_description": "Norway",
+          "excluded": [],
+          "agreement": "gb-is-no-tig",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2021 No. 1192",
+              "title": "The Customs Tariff (Preferential Trade Arrangements and Tariff Quotas) (EU Exit) (Amendment) (No. 4) Regulations 2021",
+              "url": "https://www.legislation.gov.uk/uksi/2021/1192/contents/made"
+            }
+          ],
+          "valid_from": "2021-12-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "NZ",
+          "geographical_area_description": "New Zealand",
+          "excluded": [],
+          "agreement": "gb-nz-fta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2023 No. 194",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (New Zealand) (Amendment) Regulations 2023",
+              "url": "https://www.legislation.gov.uk/uksi/2023/194/contents/made"
+            }
+          ],
+          "valid_from": "2023-05-31",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "PE",
+          "geographical_area_description": "Peru",
+          "excluded": [],
+          "agreement": "andean-gb-ta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "PG",
+          "geographical_area_description": "Papua New Guinea",
+          "excluded": [],
+          "agreement": "gb-pacific-epa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "PS",
+          "geographical_area_description": "Palestine",
+          "excluded": [],
+          "agreement": "gb-ps-ptpa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "SB",
+          "geographical_area_description": "Solomon Islands",
+          "excluded": [],
+          "agreement": "gb-pacific-epa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "SG",
+          "geographical_area_description": "Singapore",
+          "excluded": [],
+          "agreement": "gb-sg-fta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "CS Singapore No.1/2020",
+              "title": "UK/Singapore: Free Trade Agreement",
+              "url": "https://www.gov.uk/government/publications/uksingapore-free-trade-agreement-cs-singapore-no12020"
+            }
+          ],
+          "valid_from": "2024-11-21",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "SM",
+          "geographical_area_description": "San Marino",
+          "excluded": [],
+          "agreement": "eu-gb-tca",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "TR",
+          "geographical_area_description": "Turkey",
+          "excluded": [],
+          "agreement": "gb-tr-ta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-20",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "UA",
+          "geographical_area_description": "Ukraine",
+          "excluded": [],
+          "agreement": "gb-ua-pftspa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "Ukraine FTA amendment 2022",
+              "title": "The Customs Tariff (Preferential Trade Arrangements and Tariff Quotas) (Ukraine) (Amendment) Regulations 2022",
+              "url": "https://www.legislation.gov.uk/uksi/2022/525/made"
+            }
+          ],
+          "valid_from": "2022-05-10",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "VN",
+          "geographical_area_description": "Vietnam",
+          "excluded": [],
+          "agreement": "gb-vn-fta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2022-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "WS",
+          "geographical_area_description": "Samoa",
+          "excluded": [],
+          "agreement": "gb-pacific-epa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "XC",
+          "geographical_area_description": "Ceuta",
+          "excluded": [],
+          "agreement": "eu-gb-tca",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "XK",
+          "geographical_area_description": "Kosovo",
+          "excluded": [],
+          "agreement": "gb-xk-ptca",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "XL",
+          "geographical_area_description": "Melilla",
+          "excluded": [],
+          "agreement": "eu-gb-tca",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "XS",
+          "geographical_area_description": "Serbia",
+          "excluded": [],
+          "agreement": "gb-rs-ptca",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2021/241",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) (Amendment) Regulations 2021",
+              "url": "https://www.legislation.gov.uk/uksi/2021/241"
+            }
+          ],
+          "valid_from": "2021-05-20",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "ZA",
+          "geographical_area_description": "South Africa",
+          "excluded": [],
+          "agreement": "gb-sacum-epa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        }
+      ],
+      "best_preferential": null,
+      "suspensions": [],
+      "quotas": [],
+      "extra_duties": [
+        {
+          "measure_type": "695",
+          "measure_type_description": "Additional duties",
+          "geographical_area": "BY",
+          "geographical_area_description": "Belarus",
+          "excluded": [],
+          "agreement": null,
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "ad_valorem",
+            "rate": 0.35
+          },
+          "duty_text": "35.00 %",
+          "duty_described": "35%",
+          "conditions": [
+            {
+              "code": "B",
+              "requirement": "National Document: Goods of Belarusian or Russian origin exported from any country before 1st June 2022.",
+              "document": "9014",
+              "action": "Measure not applicable"
+            },
+            {
+              "code": "B",
+              "action": "Apply the mentioned duty"
+            }
+          ],
+          "documents": [],
+          "extra_type": "other",
+          "legal_acts": [
+            {
+              "code": "2022 No. 598",
+              "title": "The Customs (Additional Duty) (Russia and Belarus) Amendment Regulations 2022",
+              "url": "https://www.legislation.gov.uk/uksi/2022/598/made"
+            }
+          ],
+          "valid_from": "2022-06-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "695",
+          "measure_type_description": "Additional duties",
+          "geographical_area": "RU",
+          "geographical_area_description": "Russia",
+          "excluded": [],
+          "agreement": null,
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "ad_valorem",
+            "rate": 0.35
+          },
+          "duty_text": "35.00 %",
+          "duty_described": "35%",
+          "conditions": [
+            {
+              "code": "B",
+              "requirement": "National Document: Goods of Belarusian or Russian origin exported from any country before 1st June 2022.",
+              "document": "9014",
+              "action": "Measure not applicable"
+            },
+            {
+              "code": "B",
+              "action": "Apply the mentioned duty"
+            }
+          ],
+          "documents": [],
+          "extra_type": "other",
+          "legal_acts": [
+            {
+              "code": "2022 No. 598",
+              "title": "The Customs (Additional Duty) (Russia and Belarus) Amendment Regulations 2022",
+              "url": "https://www.legislation.gov.uk/uksi/2022/598/made"
+            }
+          ],
+          "valid_from": "2022-06-01",
+          "valid_to": null
+        }
+      ],
+      "surcharges": [],
+      "import_vat": [
+        {
+          "measure_type": "305",
+          "measure_type_description": "Value added tax",
+          "geographical_area": "1400",
+          "geographical_area_description": "Areas subject to VAT or Excise",
+          "excluded": [],
+          "agreement": null,
+          "additional_code": {
+            "code": "VATZ",
+            "description": "VAT zero rate"
+          },
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [],
+          "valid_from": "2024-09-25",
+          "valid_to": null
+        }
+      ],
+      "excise": [],
+      "other_charges": [],
+      "valid_from": "1972-01-01",
+      "valid_to": null,
+      "source": "https://www.trade-tariff.service.gov.uk/uk/api/commodities/0901120000?as_of=2026-11-22",
+      "page": "https://www.trade-tariff.service.gov.uk/commodities/0901120000"
+    },
+    {
+      "code": "0901210000",
+      "description": "Not decaffeinated",
+      "path": [
+        "Coffee, whether or not roasted or decaffeinated; coffee husks and skins; coffee substitutes containing coffee in any proportion",
+        "Coffee, roasted"
+      ],
+      "supplementary_unit": null,
+      "mfn": {
+        "duty": {
+          "kind": "ad_valorem",
+          "rate": 0.06
+        },
+        "duty_text": "6.00 %",
+        "duty_described": "6%"
+      },
+      "third_country": [
+        {
+          "measure_type": "103",
+          "measure_type_description": "Third country duty",
+          "geographical_area": "1011",
+          "geographical_area_description": "ERGA OMNES",
+          "excluded": [],
+          "agreement": null,
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "ad_valorem",
+            "rate": 0.06
+          },
+          "duty_text": "6.00 %",
+          "duty_described": "6%",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1430",
+              "title": "The Customs Tariff (Establishment) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1430"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "103",
+          "measure_type_description": "Third country duty",
+          "geographical_area": "1080",
+          "geographical_area_description": "Channel Islands",
+          "excluded": [],
+          "agreement": null,
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1430",
+              "title": "The Customs Tariff (Establishment) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1430"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        }
+      ],
+      "preferential": [
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "1013",
+          "geographical_area_description": "European Union",
+          "excluded": [],
+          "agreement": "eu-gb-tca",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "1033",
+          "geographical_area_description": "CARIFORUM",
+          "excluded": [],
+          "agreement": "cariforum-gb-epa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "1034",
+          "geographical_area_description": "Eastern and Southern Africa States",
+          "excluded": [
+            "KM"
+          ],
+          "agreement": "esa-gb-epa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2024-08-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "1035",
+          "geographical_area_description": "SADC EPA",
+          "excluded": [],
+          "agreement": "gb-sacum-epa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "1060",
+          "geographical_area_description": "Developing Countries Trading Scheme (DCTS) - Standard Preferences",
+          "excluded": [],
+          "agreement": "gb-dcts-standard",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "ad_valorem",
+            "rate": 0.025
+          },
+          "duty_text": "2.50 %",
+          "duty_described": "2.5%",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2023 No. 561",
+              "title": "The Trade Preference Scheme (Developing Countries Trading Scheme) Regulations 2023",
+              "url": "https://www.legislation.gov.uk/uksi/2023/561/contents/made"
+            }
+          ],
+          "valid_from": "2023-06-19",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "1061",
+          "geographical_area_description": "Developing Countries Trading Scheme (DCTS) - Enhanced Preferences",
+          "excluded": [],
+          "agreement": "gb-dcts-enhanced",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2023 No. 561",
+              "title": "The Trade Preference Scheme (Developing Countries Trading Scheme) Regulations 2023",
+              "url": "https://www.legislation.gov.uk/uksi/2023/561/contents/made"
+            }
+          ],
+          "valid_from": "2023-06-19",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "1062",
+          "geographical_area_description": "Developing Countries Trading Scheme (DCTS) - Comprehensive Preferences",
+          "excluded": [],
+          "agreement": "gb-dcts-comprehensive",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2023 No. 561",
+              "title": "The Trade Preference Scheme (Developing Countries Trading Scheme) Regulations 2023",
+              "url": "https://www.legislation.gov.uk/uksi/2023/561/contents/made"
+            }
+          ],
+          "valid_from": "2023-06-19",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "2051",
+          "geographical_area_description": "CPTPP All Members",
+          "excluded": [],
+          "agreement": "cptpp",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [
+            "9081"
+          ],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2024 c. 6",
+              "title": "Trade (Comprehensive and Progressive Agreement for Trans-Pacific Partnership) Act 2024",
+              "url": "https://www.legislation.gov.uk/ukpga/2024/6/contents"
+            }
+          ],
+          "valid_from": "2026-06-22",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "2080",
+          "geographical_area_description": "OCTs (Overseas Countries and Territories)",
+          "excluded": [],
+          "agreement": "gb-oct",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "2200",
+          "geographical_area_description": "Central America",
+          "excluded": [],
+          "agreement": "central-america-gb-aa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "AL",
+          "geographical_area_description": "Albania",
+          "excluded": [],
+          "agreement": "al-gb-ptca",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-05-03",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "AU",
+          "geographical_area_description": "Australia",
+          "excluded": [],
+          "agreement": "au-gb-fta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2023 No. 195",
+              "title": "The Customs Tariff (Preferential Trade Arrangements and Tariff Quotas) (Australia) (Amendment) Regulations 2023",
+              "url": "https://www.legislation.gov.uk/uksi/2023/195/contents/made"
+            }
+          ],
+          "valid_from": "2023-05-31",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "CA",
+          "geographical_area_description": "Canada",
+          "excluded": [],
+          "agreement": "ca-gb-tca",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "CH",
+          "geographical_area_description": "Switzerland",
+          "excluded": [],
+          "agreement": "ch-gb-li-ta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "CI",
+          "geographical_area_description": "Ivory Coast",
+          "excluded": [],
+          "agreement": "ci-gb-epa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "CL",
+          "geographical_area_description": "Chile",
+          "excluded": [],
+          "agreement": "cl-gb-aa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "CM",
+          "geographical_area_description": "Cameroon",
+          "excluded": [],
+          "agreement": "cm-gb-epa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "CO",
+          "geographical_area_description": "Colombia",
+          "excluded": [],
+          "agreement": "andean-gb-ta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "EC",
+          "geographical_area_description": "Ecuador",
+          "excluded": [],
+          "agreement": "andean-gb-ta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "EG",
+          "geographical_area_description": "Egypt",
+          "excluded": [],
+          "agreement": "eg-gb-aa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "FJ",
+          "geographical_area_description": "Fiji",
+          "excluded": [],
+          "agreement": "gb-pacific-epa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "GE",
+          "geographical_area_description": "Georgia",
+          "excluded": [],
+          "agreement": "gb-ge-spca",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "GH",
+          "geographical_area_description": "Ghana",
+          "excluded": [],
+          "agreement": "gb-gh-itpa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2021/241",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) (Amendment) Regulations 2021",
+              "url": "https://www.legislation.gov.uk/uksi/2021/241"
+            }
+          ],
+          "valid_from": "2021-03-05",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "IL",
+          "geographical_area_description": "Israel",
+          "excluded": [],
+          "agreement": "gb-il-tpa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [
+            "Y864"
+          ],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2025-09-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "IN",
+          "geographical_area_description": "India",
+          "excluded": [],
+          "agreement": "gb-in-ceta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2026 No.36",
+              "title": "The Customs (Tariff and Miscellaneous Amendments) Regulations 2026",
+              "url": "https://www.legislation.gov.uk/uksi/2026/36/contents/made"
+            }
+          ],
+          "valid_from": "2026-07-15",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "IS",
+          "geographical_area_description": "Iceland",
+          "excluded": [],
+          "agreement": "gb-is-no-tig",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2022-05-31",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "JO",
+          "geographical_area_description": "Jordan",
+          "excluded": [],
+          "agreement": "gb-jo-aa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2021/241",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) (Amendment) Regulations 2021",
+              "url": "https://www.legislation.gov.uk/uksi/2021/241"
+            }
+          ],
+          "valid_from": "2021-05-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "JP",
+          "geographical_area_description": "Japan",
+          "excluded": [],
+          "agreement": "gb-jp-cepa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "KE",
+          "geographical_area_description": "Kenya",
+          "excluded": [],
+          "agreement": "gb-ke-epa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "KR",
+          "geographical_area_description": "South Korea",
+          "excluded": [],
+          "agreement": "gb-kr-ta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "LB",
+          "geographical_area_description": "Lebanon",
+          "excluded": [],
+          "agreement": "gb-lb-aa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "LI",
+          "geographical_area_description": "Liechtenstein",
+          "excluded": [],
+          "agreement": "ch-gb-li-ta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "MA",
+          "geographical_area_description": "Morocco",
+          "excluded": [],
+          "agreement": "gb-ma-aa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "MD",
+          "geographical_area_description": "Moldova",
+          "excluded": [],
+          "agreement": "gb-md-sptca",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2023 No. 774",
+              "title": "The Customs (Tariff and Miscellaneous Amendments) Regulations 2023",
+              "url": "https://www.legislation.gov.uk/uksi/2023/774/made"
+            }
+          ],
+          "valid_from": "2023-07-31",
+          "valid_to": "2029-07-31"
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "MK",
+          "geographical_area_description": "North Macedonia",
+          "excluded": [],
+          "agreement": "gb-mk-ptca",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "MX",
+          "geographical_area_description": "Mexico",
+          "excluded": [],
+          "agreement": "gb-mx-tca",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "NO",
+          "geographical_area_description": "Norway",
+          "excluded": [],
+          "agreement": "gb-is-no-tig",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2021 No. 1192",
+              "title": "The Customs Tariff (Preferential Trade Arrangements and Tariff Quotas) (EU Exit) (Amendment) (No. 4) Regulations 2021",
+              "url": "https://www.legislation.gov.uk/uksi/2021/1192/contents/made"
+            }
+          ],
+          "valid_from": "2021-12-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "NZ",
+          "geographical_area_description": "New Zealand",
+          "excluded": [],
+          "agreement": "gb-nz-fta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "2023 No. 194",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (New Zealand) (Amendment) Regulations 2023",
+              "url": "https://www.legislation.gov.uk/uksi/2023/194/contents/made"
+            }
+          ],
+          "valid_from": "2023-05-31",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "PE",
+          "geographical_area_description": "Peru",
+          "excluded": [],
+          "agreement": "andean-gb-ta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "PG",
+          "geographical_area_description": "Papua New Guinea",
+          "excluded": [],
+          "agreement": "gb-pacific-epa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "PS",
+          "geographical_area_description": "Palestine",
+          "excluded": [],
+          "agreement": "gb-ps-ptpa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "SB",
+          "geographical_area_description": "Solomon Islands",
+          "excluded": [],
+          "agreement": "gb-pacific-epa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "SG",
+          "geographical_area_description": "Singapore",
+          "excluded": [],
+          "agreement": "gb-sg-fta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "CS Singapore No.1/2020",
+              "title": "UK/Singapore: Free Trade Agreement",
+              "url": "https://www.gov.uk/government/publications/uksingapore-free-trade-agreement-cs-singapore-no12020"
+            }
+          ],
+          "valid_from": "2024-11-21",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "SM",
+          "geographical_area_description": "San Marino",
+          "excluded": [],
+          "agreement": "eu-gb-tca",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "TR",
+          "geographical_area_description": "Turkey",
+          "excluded": [],
+          "agreement": "gb-tr-ta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-20",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "UA",
+          "geographical_area_description": "Ukraine",
+          "excluded": [],
+          "agreement": "gb-ua-pftspa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "Ukraine FTA amendment 2022",
+              "title": "The Customs Tariff (Preferential Trade Arrangements and Tariff Quotas) (Ukraine) (Amendment) Regulations 2022",
+              "url": "https://www.legislation.gov.uk/uksi/2022/525/made"
+            }
+          ],
+          "valid_from": "2022-05-10",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "VN",
+          "geographical_area_description": "Vietnam",
+          "excluded": [],
+          "agreement": "gb-vn-fta",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2022-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "WS",
+          "geographical_area_description": "Samoa",
+          "excluded": [],
+          "agreement": "gb-pacific-epa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "XC",
+          "geographical_area_description": "Ceuta",
+          "excluded": [],
+          "agreement": "eu-gb-tca",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "XK",
+          "geographical_area_description": "Kosovo",
+          "excluded": [],
+          "agreement": "gb-xk-ptca",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "XL",
+          "geographical_area_description": "Melilla",
+          "excluded": [],
+          "agreement": "eu-gb-tca",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "XS",
+          "geographical_area_description": "Serbia",
+          "excluded": [],
+          "agreement": "gb-rs-ptca",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2021/241",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) (Amendment) Regulations 2021",
+              "url": "https://www.legislation.gov.uk/uksi/2021/241"
+            }
+          ],
+          "valid_from": "2021-05-20",
+          "valid_to": null
+        },
+        {
+          "measure_type": "142",
+          "measure_type_description": "Tariff preference",
+          "geographical_area": "ZA",
+          "geographical_area_description": "South Africa",
+          "excluded": [],
+          "agreement": "gb-sacum-epa",
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [
+            {
+              "code": "S.I. 2020/1457",
+              "title": "The Customs Tariff (Preferential Trade Arrangements) (EU Exit) Regulations 2020",
+              "url": "https://www.legislation.gov.uk/uksi/2020/1457"
+            }
+          ],
+          "valid_from": "2021-01-01",
+          "valid_to": null
+        }
+      ],
+      "best_preferential": null,
+      "suspensions": [],
+      "quotas": [],
+      "extra_duties": [
+        {
+          "measure_type": "695",
+          "measure_type_description": "Additional duties",
+          "geographical_area": "BY",
+          "geographical_area_description": "Belarus",
+          "excluded": [],
+          "agreement": null,
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "ad_valorem",
+            "rate": 0.35
+          },
+          "duty_text": "35.00 %",
+          "duty_described": "35%",
+          "conditions": [
+            {
+              "code": "B",
+              "requirement": "National Document: Goods of Belarusian or Russian origin exported from any country before 1st June 2022.",
+              "document": "9014",
+              "action": "Measure not applicable"
+            },
+            {
+              "code": "B",
+              "action": "Apply the mentioned duty"
+            }
+          ],
+          "documents": [],
+          "extra_type": "other",
+          "legal_acts": [
+            {
+              "code": "2022 No. 598",
+              "title": "The Customs (Additional Duty) (Russia and Belarus) Amendment Regulations 2022",
+              "url": "https://www.legislation.gov.uk/uksi/2022/598/made"
+            }
+          ],
+          "valid_from": "2022-06-01",
+          "valid_to": null
+        },
+        {
+          "measure_type": "695",
+          "measure_type_description": "Additional duties",
+          "geographical_area": "RU",
+          "geographical_area_description": "Russia",
+          "excluded": [],
+          "agreement": null,
+          "additional_code": null,
+          "quota": null,
+          "duty": {
+            "kind": "ad_valorem",
+            "rate": 0.35
+          },
+          "duty_text": "35.00 %",
+          "duty_described": "35%",
+          "conditions": [
+            {
+              "code": "B",
+              "requirement": "National Document: Goods of Belarusian or Russian origin exported from any country before 1st June 2022.",
+              "document": "9014",
+              "action": "Measure not applicable"
+            },
+            {
+              "code": "B",
+              "action": "Apply the mentioned duty"
+            }
+          ],
+          "documents": [],
+          "extra_type": "other",
+          "legal_acts": [
+            {
+              "code": "2022 No. 598",
+              "title": "The Customs (Additional Duty) (Russia and Belarus) Amendment Regulations 2022",
+              "url": "https://www.legislation.gov.uk/uksi/2022/598/made"
+            }
+          ],
+          "valid_from": "2022-06-01",
+          "valid_to": null
+        }
+      ],
+      "surcharges": [],
+      "import_vat": [
+        {
+          "measure_type": "305",
+          "measure_type_description": "Value added tax",
+          "geographical_area": "1400",
+          "geographical_area_description": "Areas subject to VAT or Excise",
+          "excluded": [],
+          "agreement": null,
+          "additional_code": {
+            "code": "VATZ",
+            "description": "VAT zero rate"
+          },
+          "quota": null,
+          "duty": {
+            "kind": "free"
+          },
+          "duty_text": "0.00 %",
+          "duty_described": "Free",
+          "conditions": null,
+          "documents": [],
+          "extra_type": null,
+          "legal_acts": [],
+          "valid_from": "2024-09-25",
+          "valid_to": null
+        }
+      ],
+      "excise": [],
+      "other_charges": [],
+      "valid_from": "1972-01-01",
+      "valid_to": null,
+      "source": "https://www.trade-tariff.service.gov.uk/uk/api/commodities/0901210000?as_of=2026-11-22",
+      "page": "https://www.trade-tariff.service.gov.uk/commodities/0901210000"
+    }
+  ],
+  "attribution": {
+    "source": "CalcBloc",
+    "url": "https://calcbloc.com/trade/uk-import-duty-calculator",
+    "required": true,
+    "text": "Data by CalcBloc (calcbloc.com)"
+  }
+}

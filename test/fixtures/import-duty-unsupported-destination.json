@@ -1,0 +1,13 @@
+{
+  "error": {
+    "code": "unsupported_country",
+    "message": "Destination \"jp\" has no tariff loaded yet. Destinations: gb (the UK; uk and \"United Kingdom\" also work), us (the United States: the HTSUS), in (India), eu (the European Union) or an EU member state (de, fr, it, es, nl, ie… or its name), which uses the EU tariff with that member state's import VAT.",
+    "docs": "https://calcbloc.com/developers"
+  },
+  "attribution": {
+    "source": "CalcBloc",
+    "url": "https://calcbloc.com/developers",
+    "required": true,
+    "text": "Data by CalcBloc (calcbloc.com)"
+  }
+}

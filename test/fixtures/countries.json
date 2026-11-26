@@ -1,10 +1,11 @@
 {
+  "as_of": "2026-11-26",
   "coverage": {
-    "tax_tables": 41,
+    "tax_tables": 133,
     "net_salary": 12,
     "employer_cost": 11,
     "compare": 12,
-    "tables_only": 29,
+    "tables_only": 121,
     "net_salary_countries": [
       "sg",
       "fr",
@@ -69,6 +70,19 @@
       "ie",
       "in"
     ],
+    "cross_border": 10,
+    "cross_border_countries": [
+      "sg",
+      "nl",
+      "es",
+      "de",
+      "us",
+      "uk",
+      "au",
+      "ca",
+      "ie",
+      "in"
+    ],
     "region_required": {
       "net-salary": [
         "us",
@@ -93,8 +107,8 @@
         "in"
       ]
     },
-    "not_supported": "Cross-border (multi-country) withholding is not supported by the API yet. Equity compensation tax (/equity-tax) covers United States, United Kingdom, Australia, Canada, India; supplemental withholding (/supplemental-withholding: bonus, commission, RSU vest, option exercise, lump sum) covers Singapore, France, Netherlands, Spain, Germany, United States, United Kingdom, Australia, New Zealand, Canada, Ireland, India.",
-    "summary": "41 countries with official tax tables; 12 with take-home pay calculations; 11 with employer cost; 12 in the cross-country comparison (France: take-home pay and compare only, no employer cost yet); 12 with supplemental (bonus) withholding; 5 with equity compensation tax (RSUs and stock options)."
+    "not_supported": "Cross-border is supported for equity income only: /cross-border-equity splits an RSU vest or option exercise between countries by workdays (OECD) or the country's own rule and estimates the tax on each share for Singapore, Netherlands, Spain, Germany, United States, United Kingdom, Australia, Canada, Ireland, India; it does not compute treaty rates or the double-tax relief, and cross-border salary withholding (multi-country payroll) is not supported yet. Equity compensation tax (/equity-tax) covers United States, United Kingdom, Australia, Canada, India; supplemental withholding (/supplemental-withholding: bonus, commission, RSU vest, option exercise, lump sum) covers Singapore, France, Netherlands, Spain, Germany, United States, United Kingdom, Australia, New Zealand, Canada, Ireland, India.",
+    "summary": "133 countries with official tax tables; 12 with take-home pay calculations; 11 with employer cost; 12 in the cross-country comparison (France: take-home pay and compare only, no employer cost yet); 12 with supplemental (bonus) withholding; 5 with equity compensation tax (RSUs and stock options); 10 with cross-border equity estimates for mobile employees."
   },
   "countries": [
     {
@@ -117,6 +131,25 @@
       "equity": false,
       "equity_tax": null,
       "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=ua"
+      },
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/ukraine/2026",
@@ -157,6 +190,31 @@
       "equity": false,
       "equity_tax": null,
       "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 2,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "day",
+          "title": "Monthly non-taxable amount of salary rises from RSD 34,221 to RSD 37,369 for full-time work (salary tax stays 10%); next indexation from 2028",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=rs"
+      },
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/serbia/2026",
@@ -197,6 +255,25 @@
       "equity": false,
       "equity_tax": null,
       "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=is"
+      },
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/iceland/2026",
@@ -237,6 +314,25 @@
       "equity": false,
       "equity_tax": null,
       "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=li"
+      },
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/liechtenstein/2026",
@@ -277,6 +373,25 @@
       "equity": false,
       "equity_tax": null,
       "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=tr"
+      },
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/turkey/2026",
@@ -317,6 +432,31 @@
       "equity": false,
       "equity_tax": null,
       "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 1,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "day",
+          "title": "Tax year and who qualifies for each scale",
+          "status": "announced",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=mt"
+      },
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/malta/2026",
@@ -357,6 +497,25 @@
       "equity": false,
       "equity_tax": null,
       "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=lt"
+      },
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/lithuania/2026",
@@ -397,6 +556,31 @@
       "equity": false,
       "equity_tax": null,
       "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 1,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "day",
+          "title": "Minimum monthly wage EUR 660 (EUR 3.98 an hour) from 1 January 2027 in the government's draft decree (2026: EUR 620.20); it also sets the minimum insurable income",
+          "status": "announced",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=bg"
+      },
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/bulgaria/2026",
@@ -437,6 +621,25 @@
       "equity": false,
       "equity_tax": null,
       "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=cy"
+      },
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/cyprus/2026",
@@ -477,6 +680,31 @@
       "equity": false,
       "equity_tax": null,
       "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 1,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "day",
+          "title": "Minimum wage 2026",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=hr"
+      },
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/croatia/2026",
@@ -602,6 +830,31 @@
       "equity": false,
       "equity_tax": null,
       "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 2,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "year",
+          "title": "Monthly non-taxable minimum rises to EUR 570 from 2027 (EUR 550 in 2026): the transitional amounts end and the permanent amount in art. 12 applies",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=lv"
+      },
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/latvia/2026",
@@ -642,6 +895,31 @@
       "equity": false,
       "equity_tax": null,
       "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 2,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "day",
+          "title": "EFKA insurable-earnings ceiling and contribution-class amounts to be indexed by the annual wage-change index from 2027 instead of consumer prices (2026: +2.5%)",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=gr"
+      },
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/greece/2026",
@@ -682,6 +960,25 @@
       "equity": false,
       "equity_tax": null,
       "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=ee"
+      },
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/estonia/2026",
@@ -722,6 +1019,31 @@
       "equity": false,
       "equity_tax": null,
       "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 4,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "year",
+          "title": "Income tax for 2027 uses the subsistence minimum of EUR 295.22 (2026: EUR 284.13), so the allowances and the 25%, 30% and 35% band limits rise with it",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=sk"
+      },
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/slovakia/2026",
@@ -762,6 +1084,31 @@
       "equity": false,
       "equity_tax": null,
       "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 2,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "day",
+          "title": "Minimum turnover tax (IMCA, 0.5% in 2026 for companies with turnover above EUR 50 million) no longer applies from 2027; the oil and gas supplementary tax also ends",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=ro"
+      },
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/romania/2026",
@@ -802,6 +1149,25 @@
       "equity": false,
       "equity_tax": null,
       "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=no"
+      },
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/norway/2026",
@@ -842,6 +1208,31 @@
       "equity": false,
       "equity_tax": null,
       "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 7,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "year",
+          "title": "Average wage for 2027 set by Government Regulation 177/2026: general assessment base 2025 CZK 48,900 × coefficient 1.0565 (drives the 23% band and insurance limits)",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=cz"
+      },
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/czechia/2026",
@@ -882,6 +1273,31 @@
       "equity": false,
       "equity_tax": null,
       "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 1,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "year",
+          "title": "Corporate income tax (IRC) rate to fall by one percentage point from tax year 2027",
+          "status": "announced",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=lu"
+      },
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/luxembourg/2026",
@@ -922,6 +1338,31 @@
       "equity": false,
       "equity_tax": null,
       "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 8,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "day",
+          "title": "Broadcasting licence fee and municipal fees",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=pl"
+      },
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/poland/2026",
@@ -962,6 +1403,31 @@
       "equity": false,
       "equity_tax": null,
       "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 2,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "day",
+          "title": "Income tax exemption for mothers of two children extends to mothers who turn 50 after 31 December 2026 (under-40s since 2026; under-60s from 2028; all from 2029)",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=hu"
+      },
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/hungary/2026",
@@ -1002,6 +1468,31 @@
       "equity": false,
       "equity_tax": null,
       "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 2,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "year",
+          "title": "Municipal income tax rates for 2027 confirmed: 40 of 308 municipalities change their rate (range 4.70% to 19.70%; Helsinki and Espoo unchanged at 5.30%)",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=fi"
+      },
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/finland/2026",
@@ -1119,6 +1610,31 @@
       "equity": false,
       "equity_tax": null,
       "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 1,
+        "next_change": {
+          "effective_from": "2026-12-16",
+          "date_precision": "day",
+          "title": "CO2 levy on fuels returns to EUR 30.85 per unit of load for all fuels after the reduced amounts for petrol, diesel and heating oil end on 15 December 2026",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=si"
+      },
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/slovenia/2026",
@@ -1159,6 +1675,25 @@
       "equity": false,
       "equity_tax": null,
       "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=at"
+      },
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/austria/2026",
@@ -1199,6 +1734,31 @@
       "equity": false,
       "equity_tax": null,
       "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 5,
+        "next_change": {
+          "effective_from": "2026-12-01",
+          "date_precision": "day",
+          "title": "Carbon dioxide tax (koldioxidskatt)",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=se"
+      },
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/sweden/2026",
@@ -1324,6 +1884,25 @@
       "equity": false,
       "equity_tax": null,
       "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=ch"
+      },
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/switzerland/2026",
@@ -1469,6 +2048,31 @@
       "equity": false,
       "equity_tax": null,
       "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 2,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "year",
+          "title": "Employment deduction 2027: 12.75% up to DKK 65,200; single parents' extra deduction up to DKK 52,000; job deduction up to DKK 3,200 above DKK 242,100",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=dk"
+      },
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/denmark/2026",
@@ -1530,6 +2134,31 @@
       "equity": false,
       "equity_tax": null,
       "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 2,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "day",
+          "title": "Corporate income tax (IRC) standard rate falls from 19% to 18% for tax periods starting in 2027 (SME rate on the first €50,000 stays 15%)",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=pt"
+      },
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/portugal/2026",
@@ -1579,6 +2208,25 @@
       "equity": false,
       "equity_tax": null,
       "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=ae"
+      },
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/uae/2026",
@@ -1619,6 +2267,31 @@
       "equity": false,
       "equity_tax": null,
       "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 1,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "day",
+          "title": "New consolidated act on registration tax and other indirect taxes (D.Lgs. 123/2025) applies from 1 January 2027, replacing DPR 131/1986 and related acts",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=it"
+      },
       "endpoints": {
         "tax-tables": {
           "path": "/api/v1/tax-tables/italy/2026",
@@ -1747,6 +2420,31 @@
       "equity": false,
       "equity_tax": null,
       "supplemental": true,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 3,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "day",
+          "title": "CPF contribution rates rise for employees aged above 55 to 65: above 55 to 60 total 35.5% (employer 16.5%, employee 19%); above 60 to 65 total 26% (13% each)",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=sg"
+      },
       "endpoints": {
         "net-salary": {
           "path": "/api/v1/net-salary?country=singapore",
@@ -2004,6 +2702,31 @@
       "equity": false,
       "equity_tax": null,
       "supplemental": true,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 1,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "day",
+          "title": "Income tax scale indexed by 2.1% (finance bill for 2027): band limits €11,844, €30,200, €86,353 and €185,737; withholding default grids adjusted for income from 1 January 2027",
+          "status": "announced",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=fr"
+      },
       "endpoints": {
         "net-salary": {
           "path": "/api/v1/net-salary?country=france",
@@ -2221,6 +2944,31 @@
       "equity": false,
       "equity_tax": null,
       "supplemental": true,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 2,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "day",
+          "title": "Expat ruling (30% ruling)",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=nl"
+      },
       "endpoints": {
         "net-salary": {
           "path": "/api/v1/net-salary?country=netherlands",
@@ -2495,6 +3243,25 @@
       "equity": false,
       "equity_tax": null,
       "supplemental": true,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=es"
+      },
       "endpoints": {
         "net-salary": {
           "path": "/api/v1/net-salary?country=spain",
@@ -3170,6 +3937,31 @@
       "equity": false,
       "equity_tax": null,
       "supplemental": true,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 3,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "day",
+          "title": "Corporate income tax (Körperschaftsteuer), trade tax and minimum tax",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=de"
+      },
       "endpoints": {
         "net-salary": {
           "path": "/api/v1/net-salary?country=germany",
@@ -4011,6 +4803,31 @@
         ]
       },
       "supplemental": true,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 6,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "day",
+          "title": "Federal income tax brackets, standard deduction and other inflation-adjusted amounts for tax year 2027 (Rev. Proc. 2026-35)",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=us"
+      },
       "endpoints": {
         "net-salary": {
           "path": "/api/v1/net-salary?country=us",
@@ -5254,6 +6071,31 @@
         ]
       },
       "supplemental": true,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026-27",
+          "start": "2026-04-06",
+          "end": "2027-04-05",
+          "type": "fiscal"
+        },
+        "days_remaining": 130,
+        "next_tax_year": {
+          "label": "2027-28",
+          "start": "2027-04-06"
+        },
+        "upcoming_changes": 13,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "day",
+          "title": "Bank Corporation Tax Surcharge rises from 3% to 6% for 15 months (1 January 2027 to 31 March 2028)",
+          "status": "announced",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=uk"
+      },
       "endpoints": {
         "net-salary": {
           "path": "/api/v1/net-salary?country=uk",
@@ -5860,6 +6702,31 @@
         ]
       },
       "supplemental": true,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026-27",
+          "start": "2026-07-01",
+          "end": "2027-06-30",
+          "type": "fiscal"
+        },
+        "days_remaining": 216,
+        "next_tax_year": {
+          "label": "2027-28",
+          "start": "2027-07-01"
+        },
+        "upcoming_changes": 4,
+        "next_change": {
+          "effective_from": "2027-07-01",
+          "date_precision": "day",
+          "title": "Capital gains: the 50% discount for individuals ends for CGT events from 1 July 2027 (cost base indexation applies instead; new residential dwellings keep 50%)",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=au"
+      },
       "endpoints": {
         "net-salary": {
           "path": "/api/v1/net-salary?country=australia",
@@ -6223,6 +7090,25 @@
       "equity": false,
       "equity_tax": null,
       "supplemental": true,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026-27",
+          "start": "2026-04-01",
+          "end": "2027-03-31",
+          "type": "fiscal"
+        },
+        "days_remaining": 125,
+        "next_tax_year": {
+          "label": "2027-28",
+          "start": "2027-04-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=nz"
+      },
       "endpoints": {
         "net-salary": {
           "path": "/api/v1/net-salary?country=new-zealand",
@@ -6709,6 +7595,31 @@
         ]
       },
       "supplemental": true,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 3,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "day",
+          "title": "Ban on non-Canadians buying residential property: proposed two-year extension to 1 January 2029 for existing homes, with new homes exempted (the Act now ends the ban on 1 January 2027)",
+          "status": "announced",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=ca"
+      },
       "endpoints": {
         "net-salary": {
           "path": "/api/v1/net-salary?country=canada",
@@ -7170,6 +8081,31 @@
       "equity": false,
       "equity_tax": null,
       "supplemental": true,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 1,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "year",
+          "title": "Budget 2027 tax proposals for 2027 (income tax, USC, PRSI and other taxes), to be implemented by the Finance Bill",
+          "status": "announced",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=ie"
+      },
       "endpoints": {
         "net-salary": {
           "path": "/api/v1/net-salary?country=ireland",
@@ -7628,6 +8564,25 @@
         ]
       },
       "supplemental": true,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026-27",
+          "start": "2026-04-01",
+          "end": "2027-03-31",
+          "type": "fiscal"
+        },
+        "days_remaining": 125,
+        "next_tax_year": {
+          "label": "2027-28",
+          "start": "2027-04-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=in"
+      },
       "endpoints": {
         "net-salary": {
           "path": "/api/v1/net-salary?country=india",
@@ -8094,6 +9049,5620 @@
               "default": 12,
               "description": "Month of the tax year the bonus is paid (1 = April … 12 = March), for the TDS spread."
             }
+          ]
+        }
+      }
+    },
+    {
+      "code": "japan",
+      "short_code": "jp",
+      "iso_code": "JP",
+      "name": "Japan",
+      "currency": "JPY",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 12,
+        "next_change": {
+          "effective_from": "2026-12-01",
+          "date_precision": "day",
+          "title": "Minimum wage",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=jp"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/japan/2026",
+          "pageUrl": "https://calcbloc.com/japan/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/japan/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "south-korea",
+      "short_code": "kr",
+      "iso_code": "KR",
+      "name": "South Korea",
+      "currency": "KRW",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 5,
+        "next_change": {
+          "effective_from": "2026-12-01",
+          "date_precision": "day",
+          "title": "Excise duties",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=kr"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/south-korea/2026",
+          "pageUrl": "https://calcbloc.com/south-korea/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/south-korea/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "mexico",
+      "short_code": "mx",
+      "iso_code": "MX",
+      "name": "Mexico",
+      "currency": "MXN",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 1,
+        "next_change": {
+          "effective_from": "2028-01-01",
+          "date_precision": "day",
+          "title": "Employer payroll taxes and levies",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=mx"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/mexico/2026",
+          "pageUrl": "https://calcbloc.com/mexico/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/mexico/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "brazil",
+      "short_code": "br",
+      "iso_code": "BR",
+      "name": "Brazil",
+      "currency": "BRL",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 3,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "day",
+          "title": "Excise duties",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=br"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/brazil/2026",
+          "pageUrl": "https://calcbloc.com/brazil/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/brazil/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "chile",
+      "short_code": "cl",
+      "iso_code": "CL",
+      "name": "Chile",
+      "currency": "CLP",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 6,
+        "next_change": {
+          "effective_from": "2026-12-01",
+          "date_precision": "day",
+          "title": "Impuesto Único de Segunda Categoría (salaries), monthly table, December 2026",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=cl"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/chile/2026",
+          "pageUrl": "https://calcbloc.com/chile/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/chile/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "colombia",
+      "short_code": "co",
+      "iso_code": "CO",
+      "name": "Colombia",
+      "currency": "COP",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 1,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "day",
+          "title": "Wealth tax for individuals from 2027 (in UVT)",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=co"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/colombia/2026",
+          "pageUrl": "https://calcbloc.com/colombia/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/colombia/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "argentina",
+      "short_code": "ar",
+      "iso_code": "AR",
+      "name": "Argentina",
+      "currency": "ARS",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 1,
+        "next_change": {
+          "effective_from": "2026-12-01",
+          "date_precision": "day",
+          "title": "Minimum wage",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=ar"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/argentina/2026",
+          "pageUrl": "https://calcbloc.com/argentina/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/argentina/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "costa-rica",
+      "short_code": "cr",
+      "iso_code": "CR",
+      "name": "Costa Rica",
+      "currency": "CRC",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 1,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "day",
+          "title": "Minimum wage",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=cr"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/costa-rica/2026",
+          "pageUrl": "https://calcbloc.com/costa-rica/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/costa-rica/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "saudi-arabia",
+      "short_code": "sa",
+      "iso_code": "SA",
+      "name": "Saudi Arabia",
+      "currency": "SAR",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 2,
+        "next_change": {
+          "effective_from": "2027-07-01",
+          "date_precision": "day",
+          "title": "Social insurance contributions",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=sa"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/saudi-arabia/2026",
+          "pageUrl": "https://calcbloc.com/saudi-arabia/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/saudi-arabia/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "qatar",
+      "short_code": "qa",
+      "iso_code": "QA",
+      "name": "Qatar",
+      "currency": "QAR",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=qa"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/qatar/2026",
+          "pageUrl": "https://calcbloc.com/qatar/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/qatar/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "kuwait",
+      "short_code": "kw",
+      "iso_code": "KW",
+      "name": "Kuwait",
+      "currency": "KWD",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=kw"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/kuwait/2026",
+          "pageUrl": "https://calcbloc.com/kuwait/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/kuwait/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "bahrain",
+      "short_code": "bh",
+      "iso_code": "BH",
+      "name": "Bahrain",
+      "currency": "BHD",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 1,
+        "next_change": {
+          "effective_from": "2028-01-01",
+          "date_precision": "day",
+          "title": "Social insurance contributions",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=bh"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/bahrain/2026",
+          "pageUrl": "https://calcbloc.com/bahrain/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/bahrain/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "oman",
+      "short_code": "om",
+      "iso_code": "OM",
+      "name": "Oman",
+      "currency": "OMR",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 3,
+        "next_change": {
+          "effective_from": "2028-01-01",
+          "date_precision": "day",
+          "title": "Freelancers, contractors and the self-employed",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=om"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/oman/2026",
+          "pageUrl": "https://calcbloc.com/oman/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/oman/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "israel",
+      "short_code": "il",
+      "iso_code": "IL",
+      "name": "Israel",
+      "currency": "ILS",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=il"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/israel/2026",
+          "pageUrl": "https://calcbloc.com/israel/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/israel/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "south-africa",
+      "short_code": "za",
+      "iso_code": "ZA",
+      "name": "South Africa",
+      "currency": "ZAR",
+      "years": [
+        "2026-27"
+      ],
+      "current_year": "2026-27",
+      "years_available": [
+        "2026-27"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026-27",
+          "start": "2026-03-01",
+          "end": "2027-02-28",
+          "type": "fiscal"
+        },
+        "days_remaining": 94,
+        "next_tax_year": {
+          "label": "2027-28",
+          "start": "2027-03-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=za"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/south-africa/2026-27",
+          "pageUrl": "https://calcbloc.com/south-africa/tax-tables/2026-27",
+          "years": [
+            "2026-27"
+          ],
+          "current_year": "2026-27",
+          "years_available": [
+            "2026-27"
+          ],
+          "latestPath": "/api/v1/tax-tables/south-africa/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "indonesia",
+      "short_code": "id",
+      "iso_code": "ID",
+      "name": "Indonesia",
+      "currency": "IDR",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 1,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "day",
+          "title": "Minimum wage",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=id"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/indonesia/2026",
+          "pageUrl": "https://calcbloc.com/indonesia/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/indonesia/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "china",
+      "short_code": "cn",
+      "iso_code": "CN",
+      "name": "China",
+      "currency": "CNY",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 1,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "day",
+          "title": "Vehicle taxes",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=cn"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/china/2026",
+          "pageUrl": "https://calcbloc.com/china/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/china/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "malaysia",
+      "short_code": "my",
+      "iso_code": "MY",
+      "name": "Malaysia",
+      "currency": "MYR",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=my"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/malaysia/2026",
+          "pageUrl": "https://calcbloc.com/malaysia/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/malaysia/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "thailand",
+      "short_code": "th",
+      "iso_code": "TH",
+      "name": "Thailand",
+      "currency": "THB",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=th"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/thailand/2026",
+          "pageUrl": "https://calcbloc.com/thailand/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/thailand/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "vietnam",
+      "short_code": "vn",
+      "iso_code": "VN",
+      "name": "Vietnam",
+      "currency": "VND",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 1,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "day",
+          "title": "Minimum wage",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=vn"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/vietnam/2026",
+          "pageUrl": "https://calcbloc.com/vietnam/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/vietnam/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "philippines",
+      "short_code": "ph",
+      "iso_code": "PH",
+      "name": "Philippines",
+      "currency": "PHP",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=ph"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/philippines/2026",
+          "pageUrl": "https://calcbloc.com/philippines/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/philippines/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "pakistan",
+      "short_code": "pk",
+      "iso_code": "PK",
+      "name": "Pakistan",
+      "currency": "PKR",
+      "years": [
+        "2026-27"
+      ],
+      "current_year": "2026-27",
+      "years_available": [
+        "2026-27"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026-27",
+          "start": "2026-07-01",
+          "end": "2027-06-30",
+          "type": "fiscal"
+        },
+        "days_remaining": 216,
+        "next_tax_year": {
+          "label": "2027-28",
+          "start": "2027-07-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=pk"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/pakistan/2026-27",
+          "pageUrl": "https://calcbloc.com/pakistan/tax-tables/2026-27",
+          "years": [
+            "2026-27"
+          ],
+          "current_year": "2026-27",
+          "years_available": [
+            "2026-27"
+          ],
+          "latestPath": "/api/v1/tax-tables/pakistan/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "bangladesh",
+      "short_code": "bd",
+      "iso_code": "BD",
+      "name": "Bangladesh",
+      "currency": "BDT",
+      "years": [
+        "2026-27"
+      ],
+      "current_year": "2026-27",
+      "years_available": [
+        "2026-27"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026-27",
+          "start": "2026-07-01",
+          "end": "2027-06-30",
+          "type": "fiscal"
+        },
+        "days_remaining": 216,
+        "next_tax_year": {
+          "label": "2027-28",
+          "start": "2027-07-01"
+        },
+        "upcoming_changes": 2,
+        "next_change": {
+          "effective_from": "2028-07-01",
+          "date_precision": "day",
+          "title": "Income tax on individuals, tax years 2028-29 and 2029-30 (enacted)",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=bd"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/bangladesh/2026-27",
+          "pageUrl": "https://calcbloc.com/bangladesh/tax-tables/2026-27",
+          "years": [
+            "2026-27"
+          ],
+          "current_year": "2026-27",
+          "years_available": [
+            "2026-27"
+          ],
+          "latestPath": "/api/v1/tax-tables/bangladesh/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "sri-lanka",
+      "short_code": "lk",
+      "iso_code": "LK",
+      "name": "Sri Lanka",
+      "currency": "LKR",
+      "years": [
+        "2026-27"
+      ],
+      "current_year": "2026-27",
+      "years_available": [
+        "2026-27"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026-27",
+          "start": "2026-04-01",
+          "end": "2027-03-31",
+          "type": "fiscal"
+        },
+        "days_remaining": 125,
+        "next_tax_year": {
+          "label": "2027-28",
+          "start": "2027-04-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=lk"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/sri-lanka/2026-27",
+          "pageUrl": "https://calcbloc.com/sri-lanka/tax-tables/2026-27",
+          "years": [
+            "2026-27"
+          ],
+          "current_year": "2026-27",
+          "years_available": [
+            "2026-27"
+          ],
+          "latestPath": "/api/v1/tax-tables/sri-lanka/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "nepal",
+      "short_code": "np",
+      "iso_code": "NP",
+      "name": "Nepal",
+      "currency": "NPR",
+      "years": [
+        "2083-84"
+      ],
+      "current_year": "2083-84",
+      "years_available": [
+        "2083-84"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2083-84",
+          "start": "2026-07-17",
+          "end": "2027-07-16",
+          "type": "fiscal"
+        },
+        "days_remaining": 232,
+        "next_tax_year": {
+          "label": "2084-85",
+          "start": "2027-07-17"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=np"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/nepal/2083-84",
+          "pageUrl": "https://calcbloc.com/nepal/tax-tables/2083-84",
+          "years": [
+            "2083-84"
+          ],
+          "current_year": "2083-84",
+          "years_available": [
+            "2083-84"
+          ],
+          "latestPath": "/api/v1/tax-tables/nepal/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "jordan",
+      "short_code": "jo",
+      "iso_code": "JO",
+      "name": "Jordan",
+      "currency": "JOD",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=jo"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/jordan/2026",
+          "pageUrl": "https://calcbloc.com/jordan/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/jordan/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "tunisia",
+      "short_code": "tn",
+      "iso_code": "TN",
+      "name": "Tunisia",
+      "currency": "TND",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 2,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "day",
+          "title": "Rental and pension income",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=tn"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/tunisia/2026",
+          "pageUrl": "https://calcbloc.com/tunisia/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/tunisia/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "algeria",
+      "short_code": "dz",
+      "iso_code": "DZ",
+      "name": "Algeria",
+      "currency": "DZD",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=dz"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/algeria/2026",
+          "pageUrl": "https://calcbloc.com/algeria/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/algeria/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "paraguay",
+      "short_code": "py",
+      "iso_code": "PY",
+      "name": "Paraguay",
+      "currency": "PYG",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=py"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/paraguay/2026",
+          "pageUrl": "https://calcbloc.com/paraguay/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/paraguay/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "bolivia",
+      "short_code": "bo",
+      "iso_code": "BO",
+      "name": "Bolivia",
+      "currency": "BOB",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=bo"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/bolivia/2026",
+          "pageUrl": "https://calcbloc.com/bolivia/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/bolivia/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "el-salvador",
+      "short_code": "sv",
+      "iso_code": "SV",
+      "name": "El Salvador",
+      "currency": "USD",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=sv"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/el-salvador/2026",
+          "pageUrl": "https://calcbloc.com/el-salvador/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/el-salvador/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "honduras",
+      "short_code": "hn",
+      "iso_code": "HN",
+      "name": "Honduras",
+      "currency": "HNL",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=hn"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/honduras/2026",
+          "pageUrl": "https://calcbloc.com/honduras/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/honduras/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "jamaica",
+      "short_code": "jm",
+      "iso_code": "JM",
+      "name": "Jamaica",
+      "currency": "JMD",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 2,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "day",
+          "title": "Personal income tax",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=jm"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/jamaica/2026",
+          "pageUrl": "https://calcbloc.com/jamaica/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/jamaica/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "trinidad-and-tobago",
+      "short_code": "tt",
+      "iso_code": "TT",
+      "name": "Trinidad and Tobago",
+      "currency": "TTD",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=tt"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/trinidad-and-tobago/2026",
+          "pageUrl": "https://calcbloc.com/trinidad-and-tobago/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/trinidad-and-tobago/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "egypt",
+      "short_code": "eg",
+      "iso_code": "EG",
+      "name": "Egypt",
+      "currency": "EGP",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=eg"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/egypt/2026",
+          "pageUrl": "https://calcbloc.com/egypt/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/egypt/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "nigeria",
+      "short_code": "ng",
+      "iso_code": "NG",
+      "name": "Nigeria",
+      "currency": "NGN",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=ng"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/nigeria/2026",
+          "pageUrl": "https://calcbloc.com/nigeria/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/nigeria/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "kenya",
+      "short_code": "ke",
+      "iso_code": "KE",
+      "name": "Kenya",
+      "currency": "KES",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=ke"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/kenya/2026",
+          "pageUrl": "https://calcbloc.com/kenya/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/kenya/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "morocco",
+      "short_code": "ma",
+      "iso_code": "MA",
+      "name": "Morocco",
+      "currency": "MAD",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=ma"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/morocco/2026",
+          "pageUrl": "https://calcbloc.com/morocco/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/morocco/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "ghana",
+      "short_code": "gh",
+      "iso_code": "GH",
+      "name": "Ghana",
+      "currency": "GHS",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=gh"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/ghana/2026",
+          "pageUrl": "https://calcbloc.com/ghana/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/ghana/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "peru",
+      "short_code": "pe",
+      "iso_code": "PE",
+      "name": "Peru",
+      "currency": "PEN",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 5,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "day",
+          "title": "VAT / consumption tax",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=pe"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/peru/2026",
+          "pageUrl": "https://calcbloc.com/peru/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/peru/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "uruguay",
+      "short_code": "uy",
+      "iso_code": "UY",
+      "name": "Uruguay",
+      "currency": "UYU",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=uy"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/uruguay/2026",
+          "pageUrl": "https://calcbloc.com/uruguay/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/uruguay/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "ecuador",
+      "short_code": "ec",
+      "iso_code": "EC",
+      "name": "Ecuador",
+      "currency": "USD",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=ec"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/ecuador/2026",
+          "pageUrl": "https://calcbloc.com/ecuador/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/ecuador/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "panama",
+      "short_code": "pa",
+      "iso_code": "PA",
+      "name": "Panama",
+      "currency": "USD",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 1,
+        "next_change": {
+          "effective_from": "2027-03-01",
+          "date_precision": "day",
+          "title": "Social insurance contributions",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=pa"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/panama/2026",
+          "pageUrl": "https://calcbloc.com/panama/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/panama/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "dominican-republic",
+      "short_code": "do",
+      "iso_code": "DO",
+      "name": "Dominican Republic",
+      "currency": "DOP",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 4,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "day",
+          "title": "Personal income tax",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=do"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/dominican-republic/2026",
+          "pageUrl": "https://calcbloc.com/dominican-republic/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/dominican-republic/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "guatemala",
+      "short_code": "gt",
+      "iso_code": "GT",
+      "name": "Guatemala",
+      "currency": "GTQ",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 1,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "day",
+          "title": "Personal income tax",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=gt"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/guatemala/2026",
+          "pageUrl": "https://calcbloc.com/guatemala/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/guatemala/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "kazakhstan",
+      "short_code": "kz",
+      "iso_code": "KZ",
+      "name": "Kazakhstan",
+      "currency": "KZT",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 5,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "day",
+          "title": "Corporate income tax",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=kz"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/kazakhstan/2026",
+          "pageUrl": "https://calcbloc.com/kazakhstan/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/kazakhstan/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "georgia",
+      "short_code": "ge",
+      "iso_code": "GE",
+      "name": "Georgia",
+      "currency": "GEL",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=ge"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/georgia/2026",
+          "pageUrl": "https://calcbloc.com/georgia/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/georgia/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "armenia",
+      "short_code": "am",
+      "iso_code": "AM",
+      "name": "Armenia",
+      "currency": "AMD",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=am"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/armenia/2026",
+          "pageUrl": "https://calcbloc.com/armenia/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/armenia/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "azerbaijan",
+      "short_code": "az",
+      "iso_code": "AZ",
+      "name": "Azerbaijan",
+      "currency": "AZN",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 2,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "day",
+          "title": "Income tax on monthly employment income: non-oil private sector, 2027",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=az"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/azerbaijan/2026",
+          "pageUrl": "https://calcbloc.com/azerbaijan/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/azerbaijan/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "uzbekistan",
+      "short_code": "uz",
+      "iso_code": "UZ",
+      "name": "Uzbekistan",
+      "currency": "UZS",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=uz"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/uzbekistan/2026",
+          "pageUrl": "https://calcbloc.com/uzbekistan/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/uzbekistan/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "russia",
+      "short_code": "ru",
+      "iso_code": "RU",
+      "name": "Russia",
+      "currency": "RUB",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 1,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "day",
+          "title": "Tourist and accommodation taxes",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=ru"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/russia/2026",
+          "pageUrl": "https://calcbloc.com/russia/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/russia/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "tanzania",
+      "short_code": "tz",
+      "iso_code": "TZ",
+      "name": "Tanzania",
+      "currency": "TZS",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=tz"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/tanzania/2026",
+          "pageUrl": "https://calcbloc.com/tanzania/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/tanzania/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "uganda",
+      "short_code": "ug",
+      "iso_code": "UG",
+      "name": "Uganda",
+      "currency": "UGX",
+      "years": [
+        "2026-27"
+      ],
+      "current_year": "2026-27",
+      "years_available": [
+        "2026-27"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026-27",
+          "start": "2026-07-01",
+          "end": "2027-06-30",
+          "type": "fiscal"
+        },
+        "days_remaining": 216,
+        "next_tax_year": {
+          "label": "2027-28",
+          "start": "2027-07-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=ug"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/uganda/2026-27",
+          "pageUrl": "https://calcbloc.com/uganda/tax-tables/2026-27",
+          "years": [
+            "2026-27"
+          ],
+          "current_year": "2026-27",
+          "years_available": [
+            "2026-27"
+          ],
+          "latestPath": "/api/v1/tax-tables/uganda/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "rwanda",
+      "short_code": "rw",
+      "iso_code": "RW",
+      "name": "Rwanda",
+      "currency": "RWF",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 1,
+        "next_change": {
+          "effective_from": "2027-05-29",
+          "date_precision": "day",
+          "title": "Telecom, energy and other special consumption taxes",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=rw"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/rwanda/2026",
+          "pageUrl": "https://calcbloc.com/rwanda/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/rwanda/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "ethiopia",
+      "short_code": "et",
+      "iso_code": "ET",
+      "name": "Ethiopia",
+      "currency": "ETB",
+      "years": [
+        "2026-27"
+      ],
+      "current_year": "2026-27",
+      "years_available": [
+        "2026-27"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026-27",
+          "start": "2026-07-08",
+          "end": "2027-07-07",
+          "type": "fiscal"
+        },
+        "days_remaining": 223,
+        "next_tax_year": {
+          "label": "2027-28",
+          "start": "2027-07-08"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=et"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/ethiopia/2026-27",
+          "pageUrl": "https://calcbloc.com/ethiopia/tax-tables/2026-27",
+          "years": [
+            "2026-27"
+          ],
+          "current_year": "2026-27",
+          "years_available": [
+            "2026-27"
+          ],
+          "latestPath": "/api/v1/tax-tables/ethiopia/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "mauritius",
+      "short_code": "mu",
+      "iso_code": "MU",
+      "name": "Mauritius",
+      "currency": "MUR",
+      "years": [
+        "2026-27"
+      ],
+      "current_year": "2026-27",
+      "years_available": [
+        "2026-27"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026-27",
+          "start": "2026-07-01",
+          "end": "2027-06-30",
+          "type": "fiscal"
+        },
+        "days_remaining": 216,
+        "next_tax_year": {
+          "label": "2027-28",
+          "start": "2027-07-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=mu"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/mauritius/2026-27",
+          "pageUrl": "https://calcbloc.com/mauritius/tax-tables/2026-27",
+          "years": [
+            "2026-27"
+          ],
+          "current_year": "2026-27",
+          "years_available": [
+            "2026-27"
+          ],
+          "latestPath": "/api/v1/tax-tables/mauritius/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "botswana",
+      "short_code": "bw",
+      "iso_code": "BW",
+      "name": "Botswana",
+      "currency": "BWP",
+      "years": [
+        "2026-27"
+      ],
+      "current_year": "2026-27",
+      "years_available": [
+        "2026-27"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026-27",
+          "start": "2026-07-01",
+          "end": "2027-06-30",
+          "type": "fiscal"
+        },
+        "days_remaining": 216,
+        "next_tax_year": {
+          "label": "2027-28",
+          "start": "2027-07-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=bw"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/botswana/2026-27",
+          "pageUrl": "https://calcbloc.com/botswana/tax-tables/2026-27",
+          "years": [
+            "2026-27"
+          ],
+          "current_year": "2026-27",
+          "years_available": [
+            "2026-27"
+          ],
+          "latestPath": "/api/v1/tax-tables/botswana/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "montenegro",
+      "short_code": "me",
+      "iso_code": "ME",
+      "name": "Montenegro",
+      "currency": "EUR",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 1,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "day",
+          "title": "Excise duties",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=me"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/montenegro/2026",
+          "pageUrl": "https://calcbloc.com/montenegro/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/montenegro/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "north-macedonia",
+      "short_code": "mk",
+      "iso_code": "MK",
+      "name": "North Macedonia",
+      "currency": "MKD",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=mk"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/north-macedonia/2026",
+          "pageUrl": "https://calcbloc.com/north-macedonia/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/north-macedonia/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "albania",
+      "short_code": "al",
+      "iso_code": "AL",
+      "name": "Albania",
+      "currency": "ALL",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=al"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/albania/2026",
+          "pageUrl": "https://calcbloc.com/albania/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/albania/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "bosnia-and-herzegovina",
+      "short_code": "ba",
+      "iso_code": "BA",
+      "name": "Bosnia and Herzegovina",
+      "currency": "BAM",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=ba"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/bosnia-and-herzegovina/2026",
+          "pageUrl": "https://calcbloc.com/bosnia-and-herzegovina/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/bosnia-and-herzegovina/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "moldova",
+      "short_code": "md",
+      "iso_code": "MD",
+      "name": "Moldova",
+      "currency": "MDL",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=md"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/moldova/2026",
+          "pageUrl": "https://calcbloc.com/moldova/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/moldova/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "kosovo",
+      "short_code": "xk",
+      "iso_code": "XK",
+      "name": "Kosovo",
+      "currency": "EUR",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=xk"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/kosovo/2026",
+          "pageUrl": "https://calcbloc.com/kosovo/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/kosovo/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "andorra",
+      "short_code": "ad",
+      "iso_code": "AD",
+      "name": "Andorra",
+      "currency": "EUR",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=ad"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/andorra/2026",
+          "pageUrl": "https://calcbloc.com/andorra/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/andorra/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "monaco",
+      "short_code": "mc",
+      "iso_code": "MC",
+      "name": "Monaco",
+      "currency": "EUR",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=mc"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/monaco/2026",
+          "pageUrl": "https://calcbloc.com/monaco/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/monaco/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "san-marino",
+      "short_code": "sm",
+      "iso_code": "SM",
+      "name": "San Marino",
+      "currency": "EUR",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 1,
+        "next_change": {
+          "effective_from": "2028-01-01",
+          "date_precision": "day",
+          "title": "Personal income tax",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=sm"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/san-marino/2026",
+          "pageUrl": "https://calcbloc.com/san-marino/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/san-marino/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "hong-kong",
+      "short_code": "hk",
+      "iso_code": "HK",
+      "name": "Hong Kong",
+      "currency": "HKD",
+      "years": [
+        "2026-27"
+      ],
+      "current_year": "2026-27",
+      "years_available": [
+        "2026-27"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026-27",
+          "start": "2026-04-01",
+          "end": "2027-03-31",
+          "type": "fiscal"
+        },
+        "days_remaining": 125,
+        "next_tax_year": {
+          "label": "2027-28",
+          "start": "2027-04-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=hk"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/hong-kong/2026-27",
+          "pageUrl": "https://calcbloc.com/hong-kong/tax-tables/2026-27",
+          "years": [
+            "2026-27"
+          ],
+          "current_year": "2026-27",
+          "years_available": [
+            "2026-27"
+          ],
+          "latestPath": "/api/v1/tax-tables/hong-kong/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "taiwan",
+      "short_code": "tw",
+      "iso_code": "TW",
+      "name": "Taiwan",
+      "currency": "TWD",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 2,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "day",
+          "title": "Minimum wage",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=tw"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/taiwan/2026",
+          "pageUrl": "https://calcbloc.com/taiwan/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/taiwan/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "macao",
+      "short_code": "mo",
+      "iso_code": "MO",
+      "name": "Macao",
+      "currency": "MOP",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=mo"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/macao/2026",
+          "pageUrl": "https://calcbloc.com/macao/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/macao/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "cambodia",
+      "short_code": "kh",
+      "iso_code": "KH",
+      "name": "Cambodia",
+      "currency": "KHR",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=kh"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/cambodia/2026",
+          "pageUrl": "https://calcbloc.com/cambodia/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/cambodia/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "brunei",
+      "short_code": "bn",
+      "iso_code": "BN",
+      "name": "Brunei",
+      "currency": "BND",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=bn"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/brunei/2026",
+          "pageUrl": "https://calcbloc.com/brunei/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/brunei/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "cote-divoire",
+      "short_code": "ci",
+      "iso_code": "CI",
+      "name": "Côte d’Ivoire",
+      "currency": "XOF",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=ci"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/cote-divoire/2026",
+          "pageUrl": "https://calcbloc.com/cote-divoire/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/cote-divoire/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "senegal",
+      "short_code": "sn",
+      "iso_code": "SN",
+      "name": "Senegal",
+      "currency": "XOF",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=sn"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/senegal/2026",
+          "pageUrl": "https://calcbloc.com/senegal/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/senegal/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "cameroon",
+      "short_code": "cm",
+      "iso_code": "CM",
+      "name": "Cameroon",
+      "currency": "XAF",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=cm"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/cameroon/2026",
+          "pageUrl": "https://calcbloc.com/cameroon/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/cameroon/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "zambia",
+      "short_code": "zm",
+      "iso_code": "ZM",
+      "name": "Zambia",
+      "currency": "ZMW",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=zm"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/zambia/2026",
+          "pageUrl": "https://calcbloc.com/zambia/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/zambia/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "zimbabwe",
+      "short_code": "zw",
+      "iso_code": "ZW",
+      "name": "Zimbabwe",
+      "currency": "ZWG",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=zw"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/zimbabwe/2026",
+          "pageUrl": "https://calcbloc.com/zimbabwe/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/zimbabwe/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "namibia",
+      "short_code": "na",
+      "iso_code": "NA",
+      "name": "Namibia",
+      "currency": "NAD",
+      "years": [
+        "2026-27"
+      ],
+      "current_year": "2026-27",
+      "years_available": [
+        "2026-27"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026-27",
+          "start": "2026-03-01",
+          "end": "2027-02-28",
+          "type": "fiscal"
+        },
+        "days_remaining": 94,
+        "next_tax_year": {
+          "label": "2027-28",
+          "start": "2027-03-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=na"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/namibia/2026-27",
+          "pageUrl": "https://calcbloc.com/namibia/tax-tables/2026-27",
+          "years": [
+            "2026-27"
+          ],
+          "current_year": "2026-27",
+          "years_available": [
+            "2026-27"
+          ],
+          "latestPath": "/api/v1/tax-tables/namibia/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "bahamas",
+      "short_code": "bs",
+      "iso_code": "BS",
+      "name": "Bahamas",
+      "currency": "BSD",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=bs"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/bahamas/2026",
+          "pageUrl": "https://calcbloc.com/bahamas/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/bahamas/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "barbados",
+      "short_code": "bb",
+      "iso_code": "BB",
+      "name": "Barbados",
+      "currency": "BBD",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 2,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "day",
+          "title": "Social insurance contributions",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=bb"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/barbados/2026",
+          "pageUrl": "https://calcbloc.com/barbados/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/barbados/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "belize",
+      "short_code": "bz",
+      "iso_code": "BZ",
+      "name": "Belize",
+      "currency": "BZD",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=bz"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/belize/2026",
+          "pageUrl": "https://calcbloc.com/belize/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/belize/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "guyana",
+      "short_code": "gy",
+      "iso_code": "GY",
+      "name": "Guyana",
+      "currency": "GYD",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=gy"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/guyana/2026",
+          "pageUrl": "https://calcbloc.com/guyana/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/guyana/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "suriname",
+      "short_code": "sr",
+      "iso_code": "SR",
+      "name": "Suriname",
+      "currency": "SRD",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=sr"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/suriname/2026",
+          "pageUrl": "https://calcbloc.com/suriname/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/suriname/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "haiti",
+      "short_code": "ht",
+      "iso_code": "HT",
+      "name": "Haiti",
+      "currency": "HTG",
+      "years": [
+        "2026-27"
+      ],
+      "current_year": "2026-27",
+      "years_available": [
+        "2026-27"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026-27",
+          "start": "2026-10-01",
+          "end": "2027-09-30",
+          "type": "fiscal"
+        },
+        "days_remaining": 308,
+        "next_tax_year": {
+          "label": "2027-28",
+          "start": "2027-10-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=ht"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/haiti/2026-27",
+          "pageUrl": "https://calcbloc.com/haiti/tax-tables/2026-27",
+          "years": [
+            "2026-27"
+          ],
+          "current_year": "2026-27",
+          "years_available": [
+            "2026-27"
+          ],
+          "latestPath": "/api/v1/tax-tables/haiti/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "kyrgyzstan",
+      "short_code": "kg",
+      "iso_code": "KG",
+      "name": "Kyrgyzstan",
+      "currency": "KGS",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 2,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "day",
+          "title": "Excise duties",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=kg"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/kyrgyzstan/2026",
+          "pageUrl": "https://calcbloc.com/kyrgyzstan/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/kyrgyzstan/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "tajikistan",
+      "short_code": "tj",
+      "iso_code": "TJ",
+      "name": "Tajikistan",
+      "currency": "TJS",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 1,
+        "next_change": {
+          "effective_from": "2027-01-01",
+          "date_precision": "day",
+          "title": "VAT / consumption tax",
+          "status": "enacted",
+          "region": null
+        },
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=tj"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/tajikistan/2026",
+          "pageUrl": "https://calcbloc.com/tajikistan/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/tajikistan/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "maldives",
+      "short_code": "mv",
+      "iso_code": "MV",
+      "name": "Maldives",
+      "currency": "MVR",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=mv"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/maldives/2026",
+          "pageUrl": "https://calcbloc.com/maldives/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/maldives/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "bhutan",
+      "short_code": "bt",
+      "iso_code": "BT",
+      "name": "Bhutan",
+      "currency": "BTN",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=bt"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/bhutan/2026",
+          "pageUrl": "https://calcbloc.com/bhutan/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/bhutan/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "myanmar",
+      "short_code": "mm",
+      "iso_code": "MM",
+      "name": "Myanmar",
+      "currency": "MMK",
+      "years": [
+        "2026-27"
+      ],
+      "current_year": "2026-27",
+      "years_available": [
+        "2026-27"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026-27",
+          "start": "2026-04-01",
+          "end": "2027-03-31",
+          "type": "fiscal"
+        },
+        "days_remaining": 125,
+        "next_tax_year": {
+          "label": "2027-28",
+          "start": "2027-04-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=mm"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/myanmar/2026-27",
+          "pageUrl": "https://calcbloc.com/myanmar/tax-tables/2026-27",
+          "years": [
+            "2026-27"
+          ],
+          "current_year": "2026-27",
+          "years_available": [
+            "2026-27"
+          ],
+          "latestPath": "/api/v1/tax-tables/myanmar/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "madagascar",
+      "short_code": "mg",
+      "iso_code": "MG",
+      "name": "Madagascar",
+      "currency": "MGA",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=mg"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/madagascar/2026",
+          "pageUrl": "https://calcbloc.com/madagascar/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/madagascar/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "dr-congo",
+      "short_code": "cd",
+      "iso_code": "CD",
+      "name": "DR Congo",
+      "currency": "CDF",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=cd"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/dr-congo/2026",
+          "pageUrl": "https://calcbloc.com/dr-congo/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/dr-congo/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "congo",
+      "short_code": "cg",
+      "iso_code": "CG",
+      "name": "Republic of the Congo",
+      "currency": "XAF",
+      "years": [
+        "2026"
+      ],
+      "current_year": "2026",
+      "years_available": [
+        "2026"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026",
+          "start": "2026-01-01",
+          "end": "2026-12-31",
+          "type": "calendar"
+        },
+        "days_remaining": 35,
+        "next_tax_year": {
+          "label": "2027",
+          "start": "2027-01-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=cg"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/congo/2026",
+          "pageUrl": "https://calcbloc.com/congo/tax-tables/2026",
+          "years": [
+            "2026"
+          ],
+          "current_year": "2026",
+          "years_available": [
+            "2026"
+          ],
+          "latestPath": "/api/v1/tax-tables/congo/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
+          ]
+        }
+      }
+    },
+    {
+      "code": "malawi",
+      "short_code": "mw",
+      "iso_code": "MW",
+      "name": "Malawi",
+      "currency": "MWK",
+      "years": [
+        "2026-27"
+      ],
+      "current_year": "2026-27",
+      "years_available": [
+        "2026-27"
+      ],
+      "available_endpoints": [
+        "tax-tables"
+      ],
+      "tables_only": true,
+      "equity": false,
+      "equity_tax": null,
+      "supplemental": false,
+      "tax_calendar": {
+        "tax_year": {
+          "label": "2026-27",
+          "start": "2026-04-01",
+          "end": "2027-03-31",
+          "type": "fiscal"
+        },
+        "days_remaining": 125,
+        "next_tax_year": {
+          "label": "2027-28",
+          "start": "2027-04-01"
+        },
+        "upcoming_changes": 0,
+        "next_change": null,
+        "next_budget": {
+          "status": "not_announced"
+        },
+        "path": "/api/v1/tax-calendar?country=mw"
+      },
+      "endpoints": {
+        "tax-tables": {
+          "path": "/api/v1/tax-tables/malawi/2026-27",
+          "pageUrl": "https://calcbloc.com/malawi/tax-tables/2026-27",
+          "years": [
+            "2026-27"
+          ],
+          "current_year": "2026-27",
+          "years_available": [
+            "2026-27"
+          ],
+          "latestPath": "/api/v1/tax-tables/malawi/latest",
+          "regions": [],
+          "formats": [
+            "json",
+            "csv"
           ]
         }
       }

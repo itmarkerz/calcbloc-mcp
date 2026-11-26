@@ -1,0 +1,242 @@
+{
+  "tariff": {
+    "destination": "us",
+    "nomenclature": "htsus",
+    "version": "2026-11-10",
+    "as_of": "2026-11-10",
+    "retrieved_at": "2026-11-26",
+    "publisher": "U.S. International Trade Commission (USITC)",
+    "source": "https://hts.usitc.gov/",
+    "api": "https://hts.usitc.gov/reststop/exportList",
+    "licence": "Works of the U.S. Government are not subject to copyright in the United States (17 U.S.C. 105); the HTSUS is published by the USITC for public use. U.S. Customs and Border Protection makes the final determination of classification and duty."
+  },
+  "origin": {
+    "iso": "CN",
+    "geo": "CN",
+    "name": "China"
+  },
+  "line": {
+    "code": "9403200050",
+    "description": "Other",
+    "path": [
+      "Other furniture and parts thereof",
+      "Other metal furniture",
+      "Household",
+      "Other"
+    ],
+    "supplementary_unit": "No.",
+    "mfn": "Free",
+    "source": "https://hts.usitc.gov/reststop/exportList?from=9400&to=9499&format=JSON&styles=false",
+    "page": "https://hts.usitc.gov/search?query=9403.20.00.50"
+  },
+  "inputs": {
+    "customs_value": 5000,
+    "currency": "USD",
+    "quantity": null,
+    "unit": null,
+    "proof_of_origin": false,
+    "additional_code": null,
+    "excise_code": null,
+    "vat_code": null,
+    "documents": null,
+    "transport": "vessel",
+    "date": "2026-11-10"
+  },
+  "mfn": {
+    "duty": {
+      "kind": "free"
+    },
+    "duty_text": "Free",
+    "duty_described": "Free",
+    "amount": 0,
+    "applied": {
+      "measure_type": "GEN",
+      "measure_type_description": "General rate of duty (column 1, normal trade relations): all countries except the column 2 countries of General Note 3(b)",
+      "geographical_area": "1011",
+      "geographical_area_description": "All countries",
+      "excluded": [
+        "BY",
+        "CU",
+        "KP",
+        "RU"
+      ],
+      "agreement": null,
+      "additional_code": null,
+      "quota": null,
+      "duty": {
+        "kind": "free"
+      },
+      "duty_text": "Free",
+      "duty_described": "Free",
+      "conditions": null,
+      "documents": [],
+      "extra_type": null,
+      "legal_acts": [
+        {
+          "code": "Harmonized Tariff Schedule of the United States, 2026 HTS Revision 23",
+          "title": "HTSUS Revision 23 (2026), U.S. International Trade Commission (in effect from 2026-11-10)",
+          "url": "https://hts.usitc.gov/"
+        }
+      ],
+      "valid_from": "2026-11-10",
+      "valid_to": null
+    }
+  },
+  "preferential": null,
+  "preferential_all": [],
+  "preferential_quotas": [],
+  "extra_duties_possible": [],
+  "other_charges": [],
+  "lines": [
+    {
+      "kind": "customs_duty",
+      "label": "Third-country duty (MFN)",
+      "measure": {
+        "measure_type": "GEN",
+        "measure_type_description": "General rate of duty (column 1, normal trade relations): all countries except the column 2 countries of General Note 3(b)",
+        "geographical_area": "1011",
+        "geographical_area_description": "All countries",
+        "excluded": [
+          "BY",
+          "CU",
+          "KP",
+          "RU"
+        ],
+        "agreement": null,
+        "additional_code": null,
+        "quota": null,
+        "duty": {
+          "kind": "free"
+        },
+        "duty_text": "Free",
+        "duty_described": "Free",
+        "conditions": null,
+        "documents": [],
+        "extra_type": null,
+        "legal_acts": [
+          {
+            "code": "Harmonized Tariff Schedule of the United States, 2026 HTS Revision 23",
+            "title": "HTSUS Revision 23 (2026), U.S. International Trade Commission (in effect from 2026-11-10)",
+            "url": "https://hts.usitc.gov/"
+          }
+        ],
+        "valid_from": "2026-11-10",
+        "valid_to": null
+      },
+      "base": 5000,
+      "base_description": "Customs value (CIF: cost, insurance and freight to the US border)",
+      "amount": 0,
+      "not_computed": null,
+      "source": "https://hts.usitc.gov/reststop/exportList?from=9400&to=9499&format=JSON&styles=false"
+    },
+    {
+      "kind": "extra_duty",
+      "label": "Section 301 additional duty on products of China (chapter 99, subchapter III, U.S. notes 20 and 31)",
+      "measure": {
+        "measure_type": "301",
+        "measure_type_description": "Section 301 additional duty on products of China (chapter 99, subchapter III, U.S. notes 20 and 31)",
+        "geographical_area": "CN",
+        "geographical_area_description": "China",
+        "excluded": [],
+        "agreement": null,
+        "additional_code": null,
+        "quota": null,
+        "duty": {
+          "kind": "ad_valorem",
+          "rate": 0.25
+        },
+        "duty_text": "The duty provided in the applicable subheading + 25%",
+        "duty_described": "25%",
+        "conditions": [
+          {
+            "code": "X",
+            "requirement": "The product is covered by an exclusion granted by the U.S. Trade Representative (headings 9903.88.69 and 9903.88.70; U.S. note 20(vvv) and (www) to subchapter III of chapter 99)",
+            "action": "Measure not applicable"
+          }
+        ],
+        "documents": [],
+        "extra_type": "s301",
+        "legal_acts": [
+          {
+            "code": "HTSUS chapter 99, subchapter III, U.S. note 20",
+            "title": "Section 301 actions on products of China (Lists 1, 2, 3 and 4A)",
+            "url": "https://hts.usitc.gov/reststop/file?release=currentRelease&filename=Chapter%2099"
+          },
+          {
+            "code": "HTSUS heading 9903.88.03",
+            "title": "Except as provided in headings 9903.88.13, 9903.88.18, 9903.88.33, 9903.88.34, 9903.88.35, 9903.88.36, 9903.88.37, 9903.88.38, 9903.88.40, 9903.88.41, 9903.88.43, 9903.88.45, 9903.88.46, 9903.88.48, 9903.88.56, 9903.88.64, 9903.88.66, 9903.88.67, 9903.88.68, or 9903.88.69, articles the product of China, as provided for in U.S. note 20(e) to this subchapter and as provided for in the subheadings en",
+            "url": "https://hts.usitc.gov/search?query=9903.88.03"
+          }
+        ],
+        "valid_from": "2026-11-10",
+        "valid_to": null
+      },
+      "base": 5000,
+      "base_description": "Customs value",
+      "amount": 1250,
+      "not_computed": null,
+      "source": "https://hts.usitc.gov/reststop/exportList?from=9400&to=9499&format=JSON&styles=false"
+    },
+    {
+      "kind": "fee",
+      "label": "Merchandise processing fee (formal entry): 0.3464%, minimum $34.58, maximum $670.86",
+      "measure": null,
+      "base": 5000,
+      "base_description": "Value of the goods on the entry (one entry holding only this line). Formal entry: value over $2500, or over $250 with a chapter 99 subchapter III duty (19 CFR 143.21(a)). Fees in force 2026-10-01 to 2027-09-30.",
+      "amount": 34.58,
+      "not_computed": null,
+      "source": "https://www.federalregister.gov/documents/2026/07/31/2026-15530/customs-user-fees-to-be-adjusted-for-inflation-in-fiscal-year-2027"
+    },
+    {
+      "kind": "fee",
+      "label": "Harbor maintenance fee: 0.125%",
+      "measure": null,
+      "base": 5000,
+      "base_description": "Value of commercial cargo loaded on or unloaded from a commercial vessel at a port listed in 19 CFR 24.24 (19 CFR 24.24(a))",
+      "amount": 6.25,
+      "not_computed": null,
+      "source": "https://www.ecfr.gov/current/title-19/chapter-I/part-24/section-24.24"
+    }
+  ],
+  "totals": {
+    "customs_duty": 0,
+    "extra_duties": 1250,
+    "excise": 0,
+    "import_vat": 0,
+    "duties_and_taxes": 1290.83,
+    "landed_cost": 6290.83,
+    "currency": "USD",
+    "complete": false,
+    "incomplete_reasons": [
+      "Section 232 duties other than those of U.S. note 16 (autos and parts, medium- and heavy-duty vehicles, timber and lumber, semiconductors, pharmaceuticals and others) and other chapter 99 duties whose U.S. notes define the goods by description, content or origin are not linked to commodity codes in this data set, so they may apply on top of these totals: check chapter 99 of the HTSUS (subchapter III) and CBP guidance"
+    ],
+    "fees": 40.83
+  },
+  "notes": [
+    "The United States charges no import VAT; state sales or use tax may apply to the later sale or use of the goods.",
+    "Additional duties imposed under the International Emergency Economic Powers Act (HTSUS headings 9903.01 and 9903.02) are not applied: Executive Order 14389 of February 20, 2026 (91 FR 9437) says they \"shall no longer be in effect and, as soon as practicable, shall no longer be collected\". The Section 122 surcharge of headings 9903.03.01–9903.03.11 expired at the close of July 23, 2026 (HTS compiler's note).",
+    "De minimis: ",
+    "The Section 301 additional duty on products of China (chapter 99, subchapter III, U.S. notes 20 and 31) does not apply when its condition document is presented (see the measure's conditions)."
+  ],
+  "basis": {
+    "customs_value": {
+      "rule": "Transaction value: the price actually paid or payable for the merchandise when sold for exportation to the United States, plus packing, selling commissions, assists, royalties and license fees, and resale proceeds to the seller (19 CFR 152.103(b)); international freight and insurance are not part of it. Pass it in USD.",
+      "source": "https://www.ecfr.gov/current/title-19/section-152.103"
+    },
+    "vat_value": {
+      "rule": "No import VAT: the United States levies no federal VAT or GST on imports.",
+      "source": "https://www.federalregister.gov/documents/2026/06/24/2026-12670/indefinite-suspension-of-the-de-minimis-exemption-for-merchandise-arriving-through-all-modes-other"
+    },
+    "fees": {
+      "rule": "Merchandise processing fee 0.3464% of the value of a formal entry (minimum $34.58, maximum $670.86), or $2.77 per automated informal entry (19 CFR 24.23; CBP Dec. 26-14); harbor maintenance fee 0.125% of the value of vessel cargo at listed ports (19 CFR 24.24).",
+      "source": "https://www.federalregister.gov/documents/2026/07/31/2026-15530/customs-user-fees-to-be-adjusted-for-inflation-in-fiscal-year-2027"
+    }
+  },
+  "disclaimer": "An estimate from the Harmonized Tariff Schedule of the United States (USITC) as of the release date, not a ruling: U.S. Customs and Border Protection makes the final determination of classification, origin and duty. Section 232 duties are not included in the totals (the U.S. note 16 metal duties are listed with their conditions; the others are not linked), nor other chapter 99 duties defined by description, content or origin; check chapter 99, antidumping and countervailing duty orders and CBP guidance before you import.",
+  "attribution": {
+    "source": "CalcBloc",
+    "url": "https://calcbloc.com/developers",
+    "required": true,
+    "text": "Data by CalcBloc (calcbloc.com)"
+  }
+}

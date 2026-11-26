@@ -1,0 +1,535 @@
+{
+  "filters": {
+    "tax_type": "consumption.",
+    "jurisdiction": "us-ca"
+  },
+  "total": 11,
+  "count": 11,
+  "limit": 25,
+  "next_cursor": null,
+  "facts": [
+    {
+      "id": "us-ca.consumption.sales.state.rate.2026",
+      "country": "us",
+      "country_code": "us",
+      "jurisdiction": "us-ca",
+      "level": "state",
+      "tax_type": "consumption.sales.state",
+      "tax_group": "B",
+      "measure": "rate",
+      "value": 0.0725,
+      "bands": null,
+      "unit": "rate",
+      "currency": "USD",
+      "label": "State sales tax rate",
+      "basis": "Statewide sales and use tax rate",
+      "note": "The statewide rate includes the uniform local tax that applies everywhere in the state; district taxes come on top.",
+      "section_id": "state-sales-tax",
+      "section": "California sales and use tax",
+      "tax_year": "2026",
+      "valid_from": "2026-01-01",
+      "valid_to": null,
+      "status": "verified",
+      "table": {
+        "country": "us",
+        "year": "2026",
+        "region": "ca"
+      },
+      "source": {
+        "id": "src-6478f03e9cc1",
+        "url": "https://www.cdtfa.ca.gov/taxes-and-fees/sales-use-tax-rates.htm",
+        "title": "California City & County Sales & Use Tax Rates",
+        "retrieved_at": "2026-11-21",
+        "checked_at": "2026-11-21"
+      },
+      "derived_from": "v2",
+      "sources": [
+        {
+          "id": "src-6478f03e9cc1",
+          "url": "https://www.cdtfa.ca.gov/taxes-and-fees/sales-use-tax-rates.htm",
+          "title": "California City & County Sales & Use Tax Rates",
+          "retrieved_at": "2026-11-21",
+          "checked_at": "2026-11-21"
+        }
+      ]
+    },
+    {
+      "id": "us-ca.consumption.sales.special.floor.2026",
+      "country": "us",
+      "country_code": "us",
+      "jurisdiction": "us-ca",
+      "level": "special_district",
+      "tax_type": "consumption.sales.special",
+      "tax_group": "B",
+      "measure": "floor",
+      "value": 0.001,
+      "bands": null,
+      "unit": "rate",
+      "currency": "USD",
+      "label": "Special-district sales tax: lowest rate",
+      "basis": "Lowest district tax rate (each district tax)",
+      "note": "",
+      "section_id": "state-sales-tax",
+      "section": "California sales and use tax",
+      "tax_year": "2026",
+      "valid_from": "2026-01-01",
+      "valid_to": null,
+      "status": "verified",
+      "table": {
+        "country": "us",
+        "year": "2026",
+        "region": "ca"
+      },
+      "source": {
+        "id": "src-6478f03e9cc1",
+        "url": "https://www.cdtfa.ca.gov/taxes-and-fees/sales-use-tax-rates.htm",
+        "title": "California City & County Sales & Use Tax Rates",
+        "retrieved_at": "2026-11-21",
+        "checked_at": "2026-11-21"
+      },
+      "derived_from": "v2",
+      "sources": [
+        {
+          "id": "src-6478f03e9cc1",
+          "url": "https://www.cdtfa.ca.gov/taxes-and-fees/sales-use-tax-rates.htm",
+          "title": "California City & County Sales & Use Tax Rates",
+          "retrieved_at": "2026-11-21",
+          "checked_at": "2026-11-21"
+        }
+      ]
+    },
+    {
+      "id": "us-ca.consumption.sales.special.cap.2026",
+      "country": "us",
+      "country_code": "us",
+      "jurisdiction": "us-ca",
+      "level": "special_district",
+      "tax_type": "consumption.sales.special",
+      "tax_group": "B",
+      "measure": "cap",
+      "value": 0.02,
+      "bands": null,
+      "unit": "rate",
+      "currency": "USD",
+      "label": "Special-district sales tax: highest rate",
+      "basis": "Highest district tax rate (each district tax); some areas have more than one district tax",
+      "note": "",
+      "section_id": "state-sales-tax",
+      "section": "California sales and use tax",
+      "tax_year": "2026",
+      "valid_from": "2026-01-01",
+      "valid_to": null,
+      "status": "verified",
+      "table": {
+        "country": "us",
+        "year": "2026",
+        "region": "ca"
+      },
+      "source": {
+        "id": "src-6478f03e9cc1",
+        "url": "https://www.cdtfa.ca.gov/taxes-and-fees/sales-use-tax-rates.htm",
+        "title": "California City & County Sales & Use Tax Rates",
+        "retrieved_at": "2026-11-21",
+        "checked_at": "2026-11-21"
+      },
+      "derived_from": "v2",
+      "sources": [
+        {
+          "id": "src-6478f03e9cc1",
+          "url": "https://www.cdtfa.ca.gov/taxes-and-fees/sales-use-tax-rates.htm",
+          "title": "California City & County Sales & Use Tax Rates",
+          "retrieved_at": "2026-11-21",
+          "checked_at": "2026-11-21"
+        }
+      ]
+    },
+    {
+      "id": "us-ca.consumption.sales.state.food.2026",
+      "country": "us",
+      "country_code": "us",
+      "jurisdiction": "us-ca",
+      "level": "state",
+      "tax_type": "consumption.sales.state",
+      "tax_group": "B",
+      "measure": "rate",
+      "value": 0,
+      "bands": null,
+      "unit": "rate",
+      "currency": "USD",
+      "label": "Groceries (food for home consumption)",
+      "basis": "",
+      "note": "Exempt: food products for human consumption (hot prepared food and meals are taxable under the section's exceptions).",
+      "section_id": "state-sales-tax",
+      "section": "California sales and use tax",
+      "tax_year": "2026",
+      "valid_from": "2026-01-01",
+      "valid_to": null,
+      "status": "verified",
+      "table": {
+        "country": "us",
+        "year": "2026",
+        "region": "ca"
+      },
+      "source": {
+        "id": "src-e41a472def2a",
+        "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=RTC&sectionNum=6359",
+        "title": "Revenue and Taxation Code section 6359 (food products)",
+        "retrieved_at": "2026-11-21",
+        "checked_at": "2026-11-21"
+      },
+      "derived_from": "v2",
+      "goods": {
+        "system": "us-sales-category",
+        "code": "food",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "id": "src-e41a472def2a",
+          "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=RTC&sectionNum=6359",
+          "title": "Revenue and Taxation Code section 6359 (food products)",
+          "retrieved_at": "2026-11-21",
+          "checked_at": "2026-11-21"
+        }
+      ]
+    },
+    {
+      "id": "us-ca.consumption.sales.state.rxdrugs.2026",
+      "country": "us",
+      "country_code": "us",
+      "jurisdiction": "us-ca",
+      "level": "state",
+      "tax_type": "consumption.sales.state",
+      "tax_group": "B",
+      "measure": "rate",
+      "value": 0,
+      "bands": null,
+      "unit": "rate",
+      "currency": "USD",
+      "label": "Prescription drugs",
+      "basis": "",
+      "note": "Exempt: medicines prescribed for a human being by an authorised prescriber and dispensed by a registered pharmacist.",
+      "section_id": "state-sales-tax",
+      "section": "California sales and use tax",
+      "tax_year": "2026",
+      "valid_from": "2026-01-01",
+      "valid_to": null,
+      "status": "verified",
+      "table": {
+        "country": "us",
+        "year": "2026",
+        "region": "ca"
+      },
+      "source": {
+        "id": "src-127b6bdd555d",
+        "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=RTC&sectionNum=6369",
+        "title": "Revenue and Taxation Code section 6369 (prescription medicines)",
+        "retrieved_at": "2026-11-21",
+        "checked_at": "2026-11-21"
+      },
+      "derived_from": "v2",
+      "goods": {
+        "system": "us-sales-category",
+        "code": "rxdrugs",
+        "match": "exact"
+      },
+      "sources": [
+        {
+          "id": "src-127b6bdd555d",
+          "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=RTC&sectionNum=6369",
+          "title": "Revenue and Taxation Code section 6369 (prescription medicines)",
+          "retrieved_at": "2026-11-21",
+          "checked_at": "2026-11-21"
+        }
+      ]
+    },
+    {
+      "id": "us-ca.consumption.sales.use.rate.2026",
+      "country": "us",
+      "country_code": "us",
+      "jurisdiction": "us-ca",
+      "level": "state",
+      "tax_type": "consumption.sales.use",
+      "tax_group": "B",
+      "measure": "rate",
+      "value": 0.0725,
+      "bands": null,
+      "unit": "rate",
+      "currency": "USD",
+      "label": "Use tax rate",
+      "basis": "Taxable purchases on which no sales tax was paid (storage, use or consumption in the state)",
+      "note": "The statewide 7.25% is the sales and use tax rate; district use taxes apply on top in districts that levy them.",
+      "section_id": "state-sales-tax",
+      "section": "California sales and use tax",
+      "tax_year": "2026",
+      "valid_from": "2026-01-01",
+      "valid_to": null,
+      "status": "verified",
+      "table": {
+        "country": "us",
+        "year": "2026",
+        "region": "ca"
+      },
+      "source": {
+        "id": "src-6478f03e9cc1",
+        "url": "https://www.cdtfa.ca.gov/taxes-and-fees/sales-use-tax-rates.htm",
+        "title": "California City & County Sales & Use Tax Rates",
+        "retrieved_at": "2026-11-21",
+        "checked_at": "2026-11-21"
+      },
+      "derived_from": "v2",
+      "sources": [
+        {
+          "id": "src-6478f03e9cc1",
+          "url": "https://www.cdtfa.ca.gov/taxes-and-fees/sales-use-tax-rates.htm",
+          "title": "California City & County Sales & Use Tax Rates",
+          "retrieved_at": "2026-11-21",
+          "checked_at": "2026-11-21"
+        },
+        {
+          "id": "src-4593438a4345",
+          "url": "https://www.cdtfa.ca.gov/industry/wayfair.htm",
+          "title": "Tax Guide for Out-of-State Retailers (Wayfair and AB 147)",
+          "retrieved_at": "2026-11-21",
+          "checked_at": "2026-11-21"
+        }
+      ]
+    },
+    {
+      "id": "us-ca.consumption.excise.tobacco.cigarettes.2026",
+      "country": "us",
+      "country_code": "us",
+      "jurisdiction": "us-ca",
+      "level": "state",
+      "tax_type": "consumption.excise.tobacco",
+      "tax_group": "B",
+      "measure": "amount",
+      "value": 2.87,
+      "bands": null,
+      "unit": "money",
+      "currency": "USD",
+      "label": "Cigarette tax (per pack of 20 cigarettes)",
+      "basis": "State cigarette tax ($0.1435 per cigarette)",
+      "note": "",
+      "section_id": "excise",
+      "section": "California excise taxes on cigarettes and motor fuel",
+      "tax_year": "2026",
+      "valid_from": "2025-07-01",
+      "valid_to": null,
+      "status": "verified",
+      "table": {
+        "country": "us",
+        "year": "2026",
+        "region": "ca"
+      },
+      "source": {
+        "id": "src-420888b35171",
+        "url": "https://www.cdtfa.ca.gov/taxes-and-fees/tax-rates-stfd.htm",
+        "title": "Tax Rates - Special Taxes and Fees",
+        "retrieved_at": "2026-11-21",
+        "checked_at": "2026-11-21"
+      },
+      "derived_from": "v2",
+      "count_unit": "per pack of 20 cigarettes",
+      "sources": [
+        {
+          "id": "src-420888b35171",
+          "url": "https://www.cdtfa.ca.gov/taxes-and-fees/tax-rates-stfd.htm",
+          "title": "Tax Rates - Special Taxes and Fees",
+          "retrieved_at": "2026-11-21",
+          "checked_at": "2026-11-21"
+        }
+      ]
+    },
+    {
+      "id": "us-ca.consumption.excise.fuel.gasoline.2025-26",
+      "country": "us",
+      "country_code": "us",
+      "jurisdiction": "us-ca",
+      "level": "state",
+      "tax_type": "consumption.excise.fuel",
+      "tax_group": "B",
+      "measure": "amount",
+      "value": 0.612,
+      "bands": null,
+      "unit": "money",
+      "currency": "USD",
+      "label": "Motor fuel tax (per gallon of gasoline)",
+      "basis": "Motor vehicle fuel excise tax, July 2025 to June 2026",
+      "note": "",
+      "section_id": "excise",
+      "section": "California excise taxes on cigarettes and motor fuel",
+      "tax_year": "2026",
+      "valid_from": "2025-07-01",
+      "valid_to": "2026-06-30",
+      "status": "verified",
+      "table": {
+        "country": "us",
+        "year": "2026",
+        "region": "ca"
+      },
+      "source": {
+        "id": "src-d0b4bac29fb6",
+        "url": "https://www.cdtfa.ca.gov/taxes-and-fees/sales-tax-rates-for-fuels.htm",
+        "title": "Tax Rates for Fuels",
+        "retrieved_at": "2026-11-21",
+        "checked_at": "2026-11-21"
+      },
+      "derived_from": "v2",
+      "count_unit": "per gallon of gasoline",
+      "sources": [
+        {
+          "id": "src-d0b4bac29fb6",
+          "url": "https://www.cdtfa.ca.gov/taxes-and-fees/sales-tax-rates-for-fuels.htm",
+          "title": "Tax Rates for Fuels",
+          "retrieved_at": "2026-11-21",
+          "checked_at": "2026-11-21"
+        }
+      ]
+    },
+    {
+      "id": "us-ca.consumption.excise.fuel.gasoline.2026-27",
+      "country": "us",
+      "country_code": "us",
+      "jurisdiction": "us-ca",
+      "level": "state",
+      "tax_type": "consumption.excise.fuel",
+      "tax_group": "B",
+      "measure": "amount",
+      "value": 0.634,
+      "bands": null,
+      "unit": "money",
+      "currency": "USD",
+      "label": "Motor fuel tax (per gallon of gasoline)",
+      "basis": "Motor vehicle fuel excise tax, July 2026 to June 2027",
+      "note": "Sales tax and a prepayment also apply to motor fuel in California.",
+      "section_id": "excise",
+      "section": "California excise taxes on cigarettes and motor fuel",
+      "tax_year": "2026",
+      "valid_from": "2026-07-01",
+      "valid_to": "2027-06-30",
+      "status": "verified",
+      "table": {
+        "country": "us",
+        "year": "2026",
+        "region": "ca"
+      },
+      "source": {
+        "id": "src-d0b4bac29fb6",
+        "url": "https://www.cdtfa.ca.gov/taxes-and-fees/sales-tax-rates-for-fuels.htm",
+        "title": "Tax Rates for Fuels",
+        "retrieved_at": "2026-11-21",
+        "checked_at": "2026-11-21"
+      },
+      "derived_from": "v2",
+      "count_unit": "per gallon of gasoline",
+      "sources": [
+        {
+          "id": "src-d0b4bac29fb6",
+          "url": "https://www.cdtfa.ca.gov/taxes-and-fees/sales-tax-rates-for-fuels.htm",
+          "title": "Tax Rates for Fuels",
+          "retrieved_at": "2026-11-21",
+          "checked_at": "2026-11-21"
+        }
+      ]
+    },
+    {
+      "id": "us-ca.consumption.excise.fuel.diesel.2025-26",
+      "country": "us",
+      "country_code": "us",
+      "jurisdiction": "us-ca",
+      "level": "state",
+      "tax_type": "consumption.excise.fuel",
+      "tax_group": "B",
+      "measure": "amount",
+      "value": 0.466,
+      "bands": null,
+      "unit": "money",
+      "currency": "USD",
+      "label": "Motor fuel tax (per gallon of diesel fuel)",
+      "basis": "Diesel fuel excise tax, July 2025 to June 2026",
+      "note": "",
+      "section_id": "excise",
+      "section": "California excise taxes on cigarettes and motor fuel",
+      "tax_year": "2026",
+      "valid_from": "2025-07-01",
+      "valid_to": "2026-06-30",
+      "status": "verified",
+      "table": {
+        "country": "us",
+        "year": "2026",
+        "region": "ca"
+      },
+      "source": {
+        "id": "src-d0b4bac29fb6",
+        "url": "https://www.cdtfa.ca.gov/taxes-and-fees/sales-tax-rates-for-fuels.htm",
+        "title": "Tax Rates for Fuels",
+        "retrieved_at": "2026-11-21",
+        "checked_at": "2026-11-21"
+      },
+      "derived_from": "v2",
+      "count_unit": "per gallon of diesel fuel",
+      "sources": [
+        {
+          "id": "src-d0b4bac29fb6",
+          "url": "https://www.cdtfa.ca.gov/taxes-and-fees/sales-tax-rates-for-fuels.htm",
+          "title": "Tax Rates for Fuels",
+          "retrieved_at": "2026-11-21",
+          "checked_at": "2026-11-21"
+        }
+      ]
+    },
+    {
+      "id": "us-ca.consumption.excise.fuel.diesel.2026-27",
+      "country": "us",
+      "country_code": "us",
+      "jurisdiction": "us-ca",
+      "level": "state",
+      "tax_type": "consumption.excise.fuel",
+      "tax_group": "B",
+      "measure": "amount",
+      "value": 0.482,
+      "bands": null,
+      "unit": "money",
+      "currency": "USD",
+      "label": "Motor fuel tax (per gallon of diesel fuel)",
+      "basis": "Diesel fuel excise tax, July 2026 to June 2027",
+      "note": "",
+      "section_id": "excise",
+      "section": "California excise taxes on cigarettes and motor fuel",
+      "tax_year": "2026",
+      "valid_from": "2026-07-01",
+      "valid_to": "2027-06-30",
+      "status": "verified",
+      "table": {
+        "country": "us",
+        "year": "2026",
+        "region": "ca"
+      },
+      "source": {
+        "id": "src-d0b4bac29fb6",
+        "url": "https://www.cdtfa.ca.gov/taxes-and-fees/sales-tax-rates-for-fuels.htm",
+        "title": "Tax Rates for Fuels",
+        "retrieved_at": "2026-11-21",
+        "checked_at": "2026-11-21"
+      },
+      "derived_from": "v2",
+      "count_unit": "per gallon of diesel fuel",
+      "sources": [
+        {
+          "id": "src-d0b4bac29fb6",
+          "url": "https://www.cdtfa.ca.gov/taxes-and-fees/sales-tax-rates-for-fuels.htm",
+          "title": "Tax Rates for Fuels",
+          "retrieved_at": "2026-11-21",
+          "checked_at": "2026-11-21"
+        }
+      ]
+    }
+  ],
+  "attribution": {
+    "source": "CalcBloc",
+    "url": "https://calcbloc.com/developers",
+    "required": true,
+    "text": "Data by CalcBloc (calcbloc.com)"
+  }
+}

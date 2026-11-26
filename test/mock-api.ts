@@ -49,6 +49,48 @@ export function route(url: URL): MockReply {
     if (c === "uk" && i === "emi") return { status: 200, body: fixture("equity-uk-emi.json") };
     if (c === "germany") return { status: 400, body: fixture("equity-unsupported-country.json") };
   }
+  // API 1.9 (captured from the site's local main with handleApiRequest and the calcbloc-data tariff shards, before the
+  // 1.9.0 release; the tax calendar is as of 2026-11-26).
+  const dest = q.get("destination") ?? q.get("importer");
+  if (path === "/tariffs") {
+    const code = q.get("code");
+    if (code === "0000") return { status: 404, body: fixture("tariffs-gb-0000.json") };
+    if (dest === "gb" && code === "0901" && q.get("origin") === "in") return { status: 200, body: fixture("tariffs-gb-0901-in.json") };
+    if (dest === "gb" && code === "0901" && !q.get("origin")) return { status: 200, body: fixture("tariffs-gb-0901.json") };
+    if (dest === "us" && code === "940320" && q.get("origin") === "cn") return { status: 200, body: fixture("tariffs-us-940320-cn.json") };
+  }
+  if (path === "/trade-agreements") {
+    if (q.get("country") === "us" && !q.get("partner")) return { status: 200, body: fixture("trade-agreements-us.json") };
+    if (q.get("country") === "gb" && q.get("partner") === "in") return { status: 200, body: fixture("trade-agreements-gb-in.json") };
+  }
+  if (path === "/import-duty") {
+    const key = `${dest}/${q.get("origin")}/${q.get("code")}`;
+    if (dest === "jp") return { status: 400, body: fixture("import-duty-unsupported-destination.json") };
+    if (dest === "in") return { status: 503, body: fixture("import-duty-in-unavailable.json"), headers: { "Retry-After": "3600" } };
+    if (q.get("code") === "0901") return { status: 400, body: fixture("import-duty-gb-ambiguous.json") };
+    const file = ({
+      "gb/in/0901210000": "import-duty-gb-coffee-in.json",
+      "gb/de/2203000100": "import-duty-gb-beer.json",
+      "de/cn/7318154210": "import-duty-de-screws-cn.json",
+      "eu/us/8471300000": "import-duty-eu-laptop-us.json",
+      "us/cn/9403200050": "import-duty-us-furniture-cn.json",
+    } as Record<string, string>)[key];
+    if (file) return { status: 200, body: fixture(file) };
+  }
+  if (path === "/tax-calendar") {
+    if (q.get("country") === "uk" && !q.get("region")) return { status: 200, body: fixture("tax-calendar-uk.json") };
+    if (q.get("country") === "us" && q.get("region") === "ca") return { status: 200, body: fixture("tax-calendar-us-ca.json") };
+    return { status: 400, body: fixture("tax-calendar-unknown-country.json") };
+  }
+  if (path === "/facts") {
+    if (q.get("tax_type") === "nonsense") return { status: 400, body: fixture("facts-unknown-tax-type.json") };
+    if (q.get("country") === "uk" && q.get("tax_type") === "income.pit") return { status: 200, body: fixture("facts-uk-income-pit.json") };
+    if (q.get("jurisdiction") === "us-ca") return { status: 200, body: fixture("facts-us-ca-consumption.json") };
+  }
+  if (path === "/cross-border-equity") {
+    if (q.get("instrument") === "rsu") return { status: 200, body: fixture("cross-border-us-uk-rsu.json") };
+    if (q.get("instrument") === "stock_option") return { status: 200, body: fixture("cross-border-ca-us-option.json") };
+  }
   const t = path.match(/^\/tax-tables\/([a-z-]+)\/([0-9a-z-]+)$/);
   if (t) {
     const [, country, yearRaw] = t;
