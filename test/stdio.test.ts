@@ -54,7 +54,7 @@ afterAll(async () => {
 });
 
 describe("stdio server", () => {
-  it("identifies itself and lists thirteen read-only tools with input and output schemas", async () => {
+  it("identifies itself and lists fourteen read-only tools with input and output schemas", async () => {
     expect(client.getServerVersion()?.name).toBe("calcbloc-mcp");
     expect(client.getInstructions()).toContain("Data by CalcBloc");
     const { tools } = await client.listTools();
@@ -72,6 +72,7 @@ describe("stdio server", () => {
       "get_tax_tables",
       "search_tax_facts",
       "get_tax_calendar",
+      "get_tax_treaties",
       "list_countries",
     ]);
     for (const t of tools) {
@@ -161,6 +162,18 @@ describe("stdio server", () => {
     });
     expect(xb.isError, textOf(xb)).toBeFalsy();
     expect(xb.structuredContent).toMatchObject({ estimate: true, totalIncome: 50000 });
+  });
+
+  it("API 1.10: get_tax_treaties and the verification marker (outputs validated by the SDK)", async () => {
+    const treaties = await call("get_tax_treaties", { country: "India", partner: "uk" });
+    expect(treaties.isError, textOf(treaties)).toBeFalsy();
+    expect(treaties.structuredContent).toMatchObject({ country: "in", partner: "gb", count: 1, attribution: "Data by CalcBloc" });
+    const ee = await call("calculate_take_home_pay", { country: "ee", gross_salary: 36000, options: { funded_pension: "2" } });
+    expect(ee.isError, textOf(ee)).toBeFalsy();
+    expect(ee.structuredContent).toMatchObject({ verification: { status: "official-example" } });
+    const pl = await call("calculate_employer_cost", { country: "pl", gross_salary: 120000 });
+    expect(pl.isError, textOf(pl)).toBeFalsy();
+    expect(pl.structuredContent).toMatchObject({ totalCost: 144576, verification: { status: "official-example" } });
   });
 
   it("get_tax_tables", async () => {

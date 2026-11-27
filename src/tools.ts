@@ -19,8 +19,10 @@ import {
   type TaxCalendar,
   type TaxFact,
   type TaxTable,
+  type TaxTreatiesResponse,
   type TradeAgreement,
   type TradeMeasure,
+  type Treaty,
 } from "./api.js";
 import { API_KEY_URL_APP, ATTRIBUTION, DATA_LICENCE, DATA_URL, DEVELOPERS_URL, DISCLAIMER, NOT_SUPPORTED, NOT_YET_SUPPORTED } from "./constants.js";
 import { COVERAGE } from "./coverage.generated.js";
@@ -28,7 +30,10 @@ import { money, pct, renderSection, round2, sectionSources, sourceLines, tableSo
 import {
   type CalcKind,
   checkSalary,
+  countryByIso,
+  isoCodeOf,
   normalizeYear,
+  resolvePartner,
   describeOptions,
   endpointParams,
   enumLabel,
@@ -78,6 +83,17 @@ const OptionsInput = z
     `Country-specific options. Examples: US {"filing_status":"mfj","children":2} (filing_status: ${COVERAGE.examples.usFilingStatus.join(" | ")}; "married" and "head_of_household" are accepted too), UK {"pension_pct":5,"student_loan":"plan2"} (student_loan: ${COVERAGE.examples.ukStudentLoan.join(" | ")}), Germany {"tax_class":3,"church":true}. Call list_countries with the country to see every option, its allowed values and its default.`,
   );
 
+const VerificationSchema = z
+  .object({
+    status: z.string().describe("official-example or law-text."),
+    label: z.string().describe("The status in words, to show with the figures."),
+    urls: z.array(z.string()).describe("The official worked example(s), or the law texts the check was worked from."),
+  })
+  .nullable()
+  .describe(
+    "API 1.10+: how the calculation is verified, for countries on CalcBloc's shared take-home engine: official-example (the tests reproduce a worked example published by the tax authority or social security institution) or law-text (no official example is published; the tests are worked by hand from the law). Null for countries with their own engine.",
+  );
+
 const TakeHomeOutput = z.object({
   country: z.string(),
   countryName: z.string(),
@@ -89,6 +105,7 @@ const TakeHomeOutput = z.object({
   netAnnual: z.number().nullable(),
   totalDeductions: z.number().nullable(),
   effectiveRate: z.number().nullable().describe("Share of gross pay deducted, 0 to 1."),
+  verification: VerificationSchema,
   results: z.record(z.string(), z.number()),
   breakdown: BreakdownSchema,
   notes: z.array(z.string()),
@@ -108,6 +125,7 @@ const EmployerCostOutput = z.object({
   totalCost: z.number().nullable(),
   monthlyCost: z.number().nullable(),
   multiplier: z.number().nullable(),
+  verification: VerificationSchema,
   results: z.record(z.string(), z.number()),
   breakdown: BreakdownSchema,
   notes: z.array(z.string()),
@@ -272,8 +290,8 @@ const ListCountriesOutput = z.object({
     .object({
       code: z.string(),
       taxTableRegions: z.array(z.object({ code: z.string(), name: z.string() })),
-      takeHomePay: z.object({ calculatorUrl: z.string(), salary: z.string(), regions: z.array(z.string()), options: z.array(z.record(z.string(), z.unknown())) }).nullable(),
-      employerCost: z.object({ calculatorUrl: z.string(), salary: z.string(), regions: z.array(z.string()), options: z.array(z.record(z.string(), z.unknown())) }).nullable(),
+      takeHomePay: z.object({ calculatorUrl: z.string(), salary: z.string(), regions: z.array(z.string()), options: z.array(z.record(z.string(), z.unknown())), verification: z.string().nullable().describe("API 1.10+: official-example, law-text, or null (the country's own engine).") }).nullable(),
+      employerCost: z.object({ calculatorUrl: z.string(), salary: z.string(), regions: z.array(z.string()), options: z.array(z.record(z.string(), z.unknown())), verification: z.string().nullable() }).nullable(),
       supplementalWithholding: ExtraDetailsSchema,
       equityTax: ExtraDetailsSchema,
     })
@@ -558,6 +576,46 @@ const FactsOutput = z.object({
   ...CREDIT,
 });
 
+/* ------------------------------------------------- API 1.10 schemas: double taxation treaties ------------------------------------------------- */
+
+const TreatyRateSchema = z.object({
+  kind: z.string().describe("dividend, dividend_substantial (qualifying shareholding), interest, royalty or fts (fees for technical services)."),
+  income: z.string().describe("The kind in words."),
+  rate: z.number().describe("Maximum tax the source country may charge, as a decimal (0.15 = 15%)."),
+  condition: z.string().nullable(),
+  article: z.string().nullable().describe("Article and paragraph of the treaty."),
+  quote: z.string().nullable().describe("The article's wording, verbatim."),
+});
+
+const TreatySchema = z.object({
+  countries: z.array(z.string()).describe("The two countries (ISO 3166-1 alpha-2)."),
+  partner: z.string(),
+  partnerName: z.string(),
+  title: z.string(),
+  signed: z.string().nullable(),
+  inForce: z.string().nullable().describe("Entry into force; null where the source does not state it."),
+  mli: z.boolean().nullable().describe("True when the MLI modifies the treaty; null where the source does not say."),
+  reliefMethod: z.record(z.string(), z.string()).describe("Each country's method of relief from double taxation: credit, exemption or exemption_with_progression."),
+  withholding: z.array(TreatyRateSchema),
+  source: z.object({
+    url: z.string().optional().describe("Official copy of the treaty (tax authority or treasury)."),
+    title: z.string().optional(),
+    publisher: z.string().optional(),
+    instrument: z.string().optional(),
+    retrievedAt: z.string().optional(),
+  }),
+});
+
+const TaxTreatiesOutput = z.object({
+  country: z.string().describe("ISO 3166-1 alpha-2 code of the country asked about."),
+  countryName: z.string(),
+  partner: z.string().nullable(),
+  partnerName: z.string().nullable(),
+  count: z.number(),
+  treaties: z.array(TreatySchema),
+  ...CREDIT,
+});
+
 /* ------------------------------------------------------------------ helpers ------------------------------------------------------------------ */
 
 type ToolResult = {
@@ -671,6 +729,29 @@ function breakdownLines(r: CalcResponse): string[] {
   return lines;
 }
 
+/** API 1.10: the verification statuses in words, as the calculation tools show them. */
+const VERIFICATION_LABEL: Record<string, string> = {
+  "official-example": "checked against an official worked example",
+  "law-text": "computed from the law text; no official example is published",
+};
+
+/**
+ * The verification marker of a calculation on the shared take-home engine (API 1.10), with the URLs the API gives in
+ * the first note (the official worked examples, or the law texts the check was worked from). Null for other engines.
+ */
+export function verificationOf(r: Pick<CalcResponse, "verification" | "notes">): { status: string; label: string; urls: string[] } | null {
+  const status = r.verification;
+  if (!status) return null;
+  const found = (r.notes[0] ?? "").match(/https?:\/\/[^\s<>"']+/g) ?? [];
+  const urls = [...new Set(found.map((u) => u.replace(/[).,;:]+$/, "")))];
+  return { status, label: VERIFICATION_LABEL[status] ?? `verification: ${status}`, urls };
+}
+
+function verificationLine(v: ReturnType<typeof verificationOf>): string[] {
+  if (!v) return [];
+  return [`Verification: ${v.label}${v.urls.length ? `; see ${v.urls.join(" ")}` : ""}`];
+}
+
 function regionName(country: CountryInfo, region: string | undefined): string {
   if (!region) return "";
   const n = country.endpoints["tax-tables"].regions.find((r) => r.code === region)?.name;
@@ -728,6 +809,8 @@ export async function takeHomePay(client: CalcBlocClient, args: CalcArgs): Promi
     ];
     if (s.totalDeductions !== null && s.totalDeductions !== undefined) lines.push(`Total deductions: ${money(s.totalDeductions, r.currency)}`);
     if (s.effectiveRate !== null && s.effectiveRate !== undefined) lines.push(`Effective deduction rate: ${pct(s.effectiveRate)}`);
+    const verification = verificationOf(r);
+    lines.push(...verificationLine(verification));
     lines.push(...breakdownLines(r));
     if (r.notes.length) lines.push("", "Notes:", ...r.notes.map((n) => `- ${n}`));
     lines.push("", `Inputs used: ${inputsLine(r.inputs)}`);
@@ -744,6 +827,7 @@ export async function takeHomePay(client: CalcBlocClient, args: CalcArgs): Promi
       netAnnual: s.netAnnual ?? null,
       totalDeductions: s.totalDeductions ?? null,
       effectiveRate: s.effectiveRate ?? null,
+      verification,
       results: r.results,
       breakdown: r.breakdown,
       notes: r.notes,
@@ -768,6 +852,8 @@ export async function employerCost(client: CalcBlocClient, args: CalcArgs): Prom
     ];
     if (s.monthlyCost !== null && s.monthlyCost !== undefined) lines.push(`Monthly cost: ${money(s.monthlyCost, r.currency)}`);
     if (s.multiplier !== null && s.multiplier !== undefined) lines.push(`Cost multiplier: ${s.multiplier} × salary`);
+    const verification = verificationOf(r);
+    lines.push(...verificationLine(verification));
     lines.push(...breakdownLines(r));
     if (r.notes.length) lines.push("", "Notes:", ...r.notes.map((n) => `- ${n}`));
     lines.push("", `Inputs used: ${inputsLine(r.inputs)}`);
@@ -784,6 +870,7 @@ export async function employerCost(client: CalcBlocClient, args: CalcArgs): Prom
       totalCost: s.totalCost ?? null,
       monthlyCost: s.monthlyCost ?? null,
       multiplier: s.multiplier ?? null,
+      verification,
       results: r.results,
       breakdown: r.breakdown,
       notes: r.notes,
@@ -1269,7 +1356,7 @@ export async function listCountries(client: CalcBlocClient, args: { country?: st
       if (!ep) return null;
       const salary = ep.parameters.find((p) => p.name === "salary")?.description ?? "";
       const regions = ep.parameters.find((p) => p.name === "region")?.values ?? [];
-      return { calculatorUrl: ep.calculatorUrl, salary, regions, options: optionParams(c, kind) as unknown as Record<string, unknown>[] };
+      return { calculatorUrl: ep.calculatorUrl, salary, regions, options: optionParams(c, kind) as unknown as Record<string, unknown>[], verification: ep.verification ?? null };
     };
     const extra = (kind: ExtraKind) => {
       const params = endpointParams(c, kind);
@@ -1294,6 +1381,7 @@ export async function listCountries(client: CalcBlocClient, args: { country?: st
         continue;
       }
       lines.push("", `${label} (${d.calculatorUrl}):`, `- gross_salary: ${d.salary}`);
+      if (d.verification) lines.push(`- verification: ${VERIFICATION_LABEL[d.verification] ?? d.verification}`);
       const rp = c.endpoints[kind]?.parameters.find((p) => p.name === "region");
       if (d.regions.length) lines.push(`- region${rp?.required ? " (REQUIRED)" : ""}: ${d.regions.map((r) => (rp?.labels?.[r] ? `${r} (${rp.labels[r]})` : r)).join(", ")}`);
       lines.push(`- options: ${describeOptions(c, kind)}`);
@@ -2100,6 +2188,119 @@ export async function searchFacts(client: CalcBlocClient, args: FactsArgs): Prom
   });
 }
 
+/* ----------------------------------------------------------- API 1.10: double taxation treaties ----------------------------------------------------------- */
+
+export interface TreatiesArgs {
+  country: string;
+  partner?: string;
+}
+
+const TREATY_INCOME: Record<string, string> = {
+  dividend: "Dividends",
+  dividend_substantial: "Dividends (qualifying shareholding)",
+  interest: "Interest",
+  royalty: "Royalties",
+  fts: "Fees for technical services",
+};
+
+const RELIEF_METHOD: Record<string, string> = { credit: "credit", exemption: "exemption", exemption_with_progression: "exemption with progression" };
+
+export const TREATY_CAVEAT =
+  "The rates are the most the country where the income arises (the source country) may tax it under the treaty; nothing is computed. A lower domestic rate applies where it is lower, and beneficial ownership, the MLI principal purpose test, a tax residency certificate and other anti-abuse and documentation rules still apply.";
+
+export async function taxTreaties(client: CalcBlocClient, args: TreatiesArgs): Promise<ToolResult> {
+  return guarded(async () => {
+    const countries = await onlineCountries(client);
+    const country = resolveCountry(countries, args.country);
+    const partner = args.partner?.trim() ? resolvePartner(countries, args.partner) : undefined;
+    if (partner && partner.code === country.code) throw new ToolInputError("partner must be a different country from country: a treaty is between two countries.");
+    const nameOf = (iso: string) => countryByIso(countries, iso)?.name ?? iso.toUpperCase();
+    let r: TaxTreatiesResponse;
+    try {
+      r = await client.taxTreaties({ country: isoCodeOf(country), ...(partner ? { partner: isoCodeOf(partner) } : {}) });
+    } catch (e) {
+      if (e instanceof CalcBlocApiError && e.status === 404 && e.code === "not_found")
+        throw new ToolInputError("Tax treaties are not offered by the CalcBloc API in use (they need API 1.10 or later).");
+      if (e instanceof CalcBlocApiError && e.code === "unsupported_country") {
+        // The API names the countries with stored treaties ("… Countries: in."); shown with their names.
+        const listed = /Countries:\s*([a-z]{2}(?:\s*,\s*[a-z]{2})*)/i.exec(e.message)?.[1]?.split(/\s*,\s*/) ?? [];
+        const which = listed.length ? ` Treaties are stored for: ${listed.map((iso) => `${iso.toLowerCase()} (${nameOf(iso)})`).join(", ")}.` : ` ${e.message}`;
+        throw new ToolInputError(`No double taxation treaties are stored for ${country.name} yet.${which} Its domestic withholding tax rates, where CalcBloc has them, are in its tax tables (get_tax_tables).`);
+      }
+      throw e;
+    }
+    const warnings: string[] = [];
+    const pageUrl = r.attribution?.url ?? DEVELOPERS_URL;
+    const treaties = r.treaties.map((t: Treaty) => ({
+      countries: t.countries,
+      partner: t.partner,
+      partnerName: t.partner_name ?? nameOf(t.partner),
+      title: t.title,
+      signed: t.signed ?? null,
+      inForce: t.in_force ?? null,
+      mli: t.mli ?? null,
+      reliefMethod: t.relief_method,
+      withholding: t.withholding.map((w) => ({
+        kind: w.kind,
+        income: TREATY_INCOME[w.kind] ?? w.kind,
+        rate: w.rate,
+        condition: w.condition ?? null,
+        article: w.article ?? null,
+        quote: w.quote ?? null,
+      })),
+      source: {
+        ...(t.source.url ? { url: t.source.url } : {}),
+        ...(t.source.title ? { title: t.source.title } : {}),
+        ...(t.source.publisher ? { publisher: t.source.publisher } : {}),
+        ...(t.source.instrument ? { instrument: t.source.instrument } : {}),
+        ...(t.source.retrieved_at ? { retrievedAt: t.source.retrieved_at } : {}),
+      },
+    }));
+    const sources = capSources(
+      uniqueSources(treaties.flatMap((t) => (t.source.url ? [{ url: t.source.url, title: t.source.publisher ? `${t.source.publisher}: ${t.title}` : t.title, ...(t.source.retrievedAt ? { retrievedAt: t.source.retrievedAt } : {}) }] : []))),
+      pageUrl,
+      warnings,
+    );
+    const partnerName = partner ? (treaties[0]?.partnerName ?? partner.name) : null;
+    // The article wording is shown for one treaty; for a list it stays in the structured result.
+    const detailed = !!partner || treaties.length === 1;
+    const lines = [partner ? `Double taxation treaty: ${country.name} and ${partnerName}` : `Double taxation treaties of ${country.name}: ${r.count} stored`];
+    if (!treaties.length)
+      lines.push("", `No treaty between ${country.name} and ${partnerName} is stored in CalcBloc. Call get_tax_treaties with country "${shortCodeOf(country)}" alone for the treaties that are.`);
+    for (const t of treaties) {
+      const mli = t.mli === true ? "modifies this treaty" : t.mli === false ? "does not modify this treaty" : "not stated in the source";
+      lines.push(
+        "",
+        `### ${country.name} and ${t.partnerName}`,
+        t.title,
+        `Signed: ${t.signed ?? "not stated in the source"}; in force: ${t.inForce ?? "not stated in the source"}; MLI: ${mli}`,
+        `Relief from double taxation: ${Object.entries(t.reliefMethod)
+          .sort(([a], [b]) => Number(b === r.country) - Number(a === r.country))
+          .map(([iso, m]) => `${nameOf(iso)} ${RELIEF_METHOD[m] ?? m}`)
+          .join("; ")}`,
+        "Maximum withholding tax in the source country:",
+      );
+      for (const w of t.withholding) {
+        lines.push(`- ${w.income}: ${pct(w.rate)}${w.article ? ` (${w.article})` : ""}${w.condition ? `: ${w.condition}` : ""}`);
+        if (detailed && w.quote) lines.push(`  Wording: "${w.quote}"`);
+      }
+      lines.push(`Official copy: ${t.source.publisher ? `${t.source.publisher}, ` : ""}${t.source.url ?? "see the CalcBloc page"}${t.source.retrievedAt ? ` (retrieved ${t.source.retrievedAt})` : ""}`);
+    }
+    if (treaties.length) lines.push("", TREATY_CAVEAT);
+    if (!detailed && treaties.length) lines.push("Call get_tax_treaties with partner for one treaty with the wording of each article.");
+    lines.push("", `Page: ${pageUrl}`, ...creditFooter(sources, pageUrl, warnings));
+    return ok(lines.join("\n"), {
+      country: r.country,
+      countryName: country.name,
+      partner: r.partner ?? null,
+      partnerName,
+      count: r.count,
+      treaties,
+      ...creditFields(sources, pageUrl, warnings),
+    });
+  });
+}
+
 /* ------------------------------------------------------------------ registration ------------------------------------------------------------- */
 
 const READ_ONLY = { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: true } as const;
@@ -2442,6 +2643,22 @@ export function registerTools(server: McpServer, client: CalcBlocClient): void {
       annotations: { ...READ_ONLY },
     },
     async (args) => taxCalendar(client, args),
+  );
+
+  server.registerTool(
+    "get_tax_treaties",
+    {
+      title: "Get double taxation treaty rates",
+      description:
+        "A country's double taxation treaties (DTAs, DTAAs) as CalcBloc stores them, each read from an official copy (the partner country's tax authority or treasury): the maximum withholding tax the source country may charge on dividends (and the lower rate for a qualifying shareholding), interest, royalties and fees for technical services, each with its condition, article and the article's wording; each country's method of relief from double taxation (credit or exemption); signature and entry-into-force dates; whether the MLI modifies the treaty; and the source. Stored for India (its treaties with the United States, Singapore, the United Kingdom, Japan, Australia and Austria); another country returns the list of countries with treaties. With partner, one treaty. Nothing is computed: a lower domestic rate, beneficial ownership, the MLI principal purpose test and anti-abuse rules still apply. Returns the official source URLs and the calcbloc.com page; not tax advice.",
+      inputSchema: z.object({
+        country: z.string().min(2).max(60).describe('Country whose treaties to list: short code or English name, e.g. "in" or "India".'),
+        partner: z.string().min(2).max(60).optional().describe('Only the treaty with this country: ISO code or English name, e.g. "us", "uk" (or "gb"), "Singapore".'),
+      }),
+      outputSchema: TaxTreatiesOutput,
+      annotations: { ...READ_ONLY },
+    },
+    async (args) => taxTreaties(client, args),
   );
 
   server.registerTool(

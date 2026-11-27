@@ -1,0 +1,12 @@
+{
+  "country": "in",
+  "partner": "fr",
+  "count": 0,
+  "treaties": [],
+  "attribution": {
+    "source": "CalcBloc",
+    "url": "https://calcbloc.com/developers",
+    "required": true,
+    "text": "Data by CalcBloc (calcbloc.com)"
+  }
+}

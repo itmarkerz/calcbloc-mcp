@@ -1,0 +1,843 @@
+{
+  "country": "estonia",
+  "countryName": "Estonia",
+  "year": "2026",
+  "yearLabel": "2026",
+  "isCurrent": true,
+  "region": null,
+  "currency": "EUR",
+  "effectiveFrom": "2026-01-01",
+  "effectiveTo": "2026-12-31",
+  "status": "verified",
+  "underReview": [],
+  "dataVerified": true,
+  "sections": [
+    {
+      "id": "income-tax",
+      "title": "Personal income tax (tulumaks)",
+      "group": "income-tax",
+      "kind": "bands",
+      "rows": [
+        {
+          "from": 0,
+          "to": null,
+          "rate": 0.22
+        }
+      ],
+      "source": {
+        "title": "Maksu- ja Tolliamet: Maksumäärad ja maksuvaba tulu suurus, 2026 (last updated 26.03.2026); Maksumuudatused 2026. aastal (27.11.2025)",
+        "url": "https://emta.ee/ariklient/maksud-ja-tasumine/tulumaks-ja-sotsiaalmaks/maksumaarad",
+        "retrievedAt": "2026-11-21",
+        "effectiveFrom": "2026-01-01",
+        "effectiveTo": null
+      },
+      "verified": true,
+      "basis": "Taxable income of a resident individual, per year",
+      "note": "One flat rate on the income of resident individuals. The basic exemption (€700 a month, €8,400 a year) is deducted first; from 2026 it no longer falls as income rises. Employers withhold 22% from pay. The planned 2% security tax was not introduced."
+    },
+    {
+      "id": "basic-exemption",
+      "title": "Basic exemption (maksuvaba tulu) and deductions",
+      "group": "income-tax",
+      "kind": "values",
+      "rows": [
+        {
+          "label": "Basic exemption, per month",
+          "value": 700,
+          "unit": "money"
+        },
+        {
+          "label": "Basic exemption, per year",
+          "value": 8400,
+          "unit": "money"
+        },
+        {
+          "label": "Income-based phase-out (the 'tax hump', maksuküür)",
+          "value": "Abolished from 1 January 2026: the full amount applies at any income (2025: up to €654 a month or €7,848 a year, falling as income rose)",
+          "unit": "text"
+        },
+        {
+          "label": "Basic exemption at old-age pension age, per month",
+          "value": 776,
+          "unit": "money"
+        },
+        {
+          "label": "Basic exemption at old-age pension age, per year",
+          "value": 9312,
+          "unit": "money"
+        },
+        {
+          "label": "How it is applied",
+          "value": "On a written application to one employer or payer only (Income Tax Act § 42(2)); the Social Insurance Board applies it to pensions automatically",
+          "unit": "text"
+        },
+        {
+          "label": "Third pillar pension contributions: deductible share of taxable income",
+          "value": 0.15,
+          "unit": "rate",
+          "source": {
+            "title": "Maksu- ja Tolliamet: Maksumuudatused 2026. aastal (news, 27.11.2025)",
+            "url": "https://emta.ee/uudised/maksumuudatused-2026",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Third pillar pension contributions: deductible maximum per year",
+          "value": 6000,
+          "unit": "money",
+          "source": {
+            "title": "Maksu- ja Tolliamet: Maksumuudatused 2026. aastal (news, 27.11.2025)",
+            "url": "https://emta.ee/uudised/maksumuudatused-2026",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Training costs, gifts and donations together: deductible maximum per year",
+          "value": 1200,
+          "unit": "money",
+          "source": {
+            "title": "Maksu- ja Tolliamet: Maksumuudatused 2026. aastal (news, 27.11.2025)",
+            "url": "https://emta.ee/uudised/maksumuudatused-2026",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": null
+          }
+        }
+      ],
+      "source": {
+        "title": "Maksu- ja Tolliamet: Maksuvaba tulu arvestamine (last updated 25.05.2026); Maksumäärad ja maksuvaba tulu suurus, 2026 (last updated 26.03.2026)",
+        "url": "https://emta.ee/eraklient/maksud-ja-tasumine/maksusoodustused/maksuvaba-tulu-arvestamine",
+        "retrievedAt": "2026-11-21",
+        "effectiveFrom": "2026-01-01",
+        "effectiveTo": null
+      },
+      "verified": true,
+      "note": "The deductions are claimed on the annual return (the 2026 return is filed from 15 February 2027)."
+    },
+    {
+      "id": "security-tax",
+      "title": "Security tax (julgeolekumaks)",
+      "group": "income-tax",
+      "kind": "values",
+      "rows": [
+        {
+          "label": "Security tax on wages and pensions",
+          "value": "Not introduced: the planned 2% tax does not apply",
+          "unit": "text",
+          "source": {
+            "title": "Maksu- ja Tolliamet: Maksumuudatused 2026. aastal (news, 27.11.2025)",
+            "url": "https://emta.ee/uudised/maksumuudatused-2026",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": null
+          },
+          "status": "not_applicable"
+        },
+        {
+          "label": "Security tax on company profits",
+          "value": "Not introduced: the planned 2% tax does not apply",
+          "unit": "text",
+          "source": {
+            "title": "Maksu- ja Tolliamet: Maksumuudatused 2026. aastal (news, 27.11.2025)",
+            "url": "https://emta.ee/uudised/maksumuudatused-2026",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": null
+          },
+          "status": "not_applicable"
+        }
+      ],
+      "source": {
+        "title": "Maksu- ja Tolliamet: Maksumuudatused 2026. aastal (news, 27.11.2025)",
+        "url": "https://emta.ee/uudised/maksumuudatused-2026",
+        "retrievedAt": "2026-11-21",
+        "effectiveFrom": "2026-01-01",
+        "effectiveTo": null
+      },
+      "verified": true
+    },
+    {
+      "id": "social-employee",
+      "title": "Employee contributions: unemployment insurance and funded pension",
+      "group": "employee",
+      "kind": "values",
+      "rows": [
+        {
+          "label": "Unemployment insurance (töötuskindlustusmakse), employee",
+          "value": 0.016,
+          "unit": "rate",
+          "note": "withheld from gross pay; stops from the month the employee reaches old-age pension age"
+        },
+        {
+          "label": "Funded pension (second pillar, kohustuslik kogumispensioni makse): default rate",
+          "value": 0.02,
+          "unit": "rate",
+          "source": {
+            "title": "Maksu- ja Tolliamet: Maksumäärad ja maksuvaba tulu suurus, 2026 (last updated 26.03.2026)",
+            "url": "https://emta.ee/ariklient/maksud-ja-tasumine/tulumaks-ja-sotsiaalmaks/maksumaarad",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        },
+        {
+          "label": "Funded pension: optional higher rate",
+          "value": 0.04,
+          "unit": "rate",
+          "source": {
+            "title": "Maksu- ja Tolliamet: Maksumäärad ja maksuvaba tulu suurus, 2026 (last updated 26.03.2026)",
+            "url": "https://emta.ee/ariklient/maksud-ja-tasumine/tulumaks-ja-sotsiaalmaks/maksumaarad",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        },
+        {
+          "label": "Funded pension: optional highest rate",
+          "value": 0.06,
+          "unit": "rate",
+          "source": {
+            "title": "Maksu- ja Tolliamet: Maksumäärad ja maksuvaba tulu suurus, 2026 (last updated 26.03.2026)",
+            "url": "https://emta.ee/ariklient/maksud-ja-tasumine/tulumaks-ja-sotsiaalmaks/maksumaarad",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        },
+        {
+          "label": "Total employee contributions at the 2% funded-pension rate",
+          "value": 0.036,
+          "unit": "rate",
+          "source": {
+            "title": "Maksu- ja Tolliamet: Maksumäärad ja maksuvaba tulu suurus, 2026 (last updated 26.03.2026)",
+            "url": "https://emta.ee/ariklient/maksud-ja-tasumine/tulumaks-ja-sotsiaalmaks/maksumaarad",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        },
+        {
+          "label": "Who pays the funded pension",
+          "value": "Second pillar members; joining is compulsory for people born in 1983 or later, who may later apply to stop contributions",
+          "unit": "text",
+          "source": {
+            "title": "Riigi Teataja: Kogumispensionide seadus (Funded Pensions Act), § 9, § 17^2 lg 8, § 27^2 lg 1, § 27^3 and § 66 lg 1 (version in force 01.11.2026–30.11.2026)",
+            "url": "https://www.riigiteataja.ee/akt/116102026006",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Changing the funded-pension rate",
+          "value": "Application to Pensionikeskus by 30 November; the new rate applies from 1 January and can be changed once a year",
+          "unit": "text",
+          "source": {
+            "title": "Riigi Teataja: Kogumispensionide seadus (Funded Pensions Act), § 9, § 17^2 lg 8, § 27^2 lg 1, § 27^3 and § 66 lg 1 (version in force 01.11.2026–30.11.2026)",
+            "url": "https://www.riigiteataja.ee/akt/116102026006",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Stopping and rejoining",
+          "value": "Contributions can be stopped or the savings withdrawn; from 2026 a member can rejoin after a 5-year break (previously 10 years)",
+          "unit": "text",
+          "source": {
+            "title": "Riigi Teataja: Kogumispensionide seadus (Funded Pensions Act), § 9, § 17^2 lg 8, § 27^2 lg 1, § 27^3 and § 66 lg 1 (version in force 01.11.2026–30.11.2026)",
+            "url": "https://www.riigiteataja.ee/akt/116102026006",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": null
+          }
+        }
+      ],
+      "source": {
+        "title": "Maksu- ja Tolliamet: Maksumäärad ja maksuvaba tulu suurus, 2026 (last updated 26.03.2026)",
+        "url": "https://emta.ee/ariklient/maksud-ja-tasumine/tulumaks-ja-sotsiaalmaks/maksumaarad",
+        "retrievedAt": "2026-11-21",
+        "effectiveFrom": "2026-01-01",
+        "effectiveTo": "2026-12-31"
+      },
+      "verified": true,
+      "basis": "Gross pay, per month",
+      "note": "Employees pay no social tax: the 33% social tax is the employer's. Income tax (22%) is withheld from pay after the basic exemption."
+    },
+    {
+      "id": "social-employer",
+      "title": "Employer contributions: social tax and unemployment insurance",
+      "group": "employer",
+      "kind": "values",
+      "rows": [
+        {
+          "label": "Social tax (sotsiaalmaks)",
+          "value": 0.33,
+          "unit": "rate"
+        },
+        {
+          "label": "Social tax: share for state pension insurance",
+          "value": 0.2,
+          "unit": "rate"
+        },
+        {
+          "label": "Social tax: share for health insurance (Tervisekassa)",
+          "value": 0.13,
+          "unit": "rate"
+        },
+        {
+          "label": "Social tax for second pillar members: share for state pension insurance",
+          "value": 0.16,
+          "unit": "rate",
+          "note": "plus 4% transferred to the member's funded pension and 13% for health insurance"
+        },
+        {
+          "label": "Social tax for second pillar members: share transferred to the funded pension",
+          "value": 0.04,
+          "unit": "rate"
+        },
+        {
+          "label": "Unemployment insurance (töötuskindlustusmakse), employer",
+          "value": 0.008,
+          "unit": "rate",
+          "note": "also paid for employees of pension age",
+          "source": {
+            "title": "Maksu- ja Tolliamet: Maksumäärad ja maksuvaba tulu suurus, 2026 (last updated 26.03.2026)",
+            "url": "https://emta.ee/ariklient/maksud-ja-tasumine/tulumaks-ja-sotsiaalmaks/maksumaarad",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        },
+        {
+          "label": "Total employer contributions",
+          "value": 0.338,
+          "unit": "rate",
+          "source": {
+            "title": "Maksu- ja Tolliamet: Maksumäärad ja maksuvaba tulu suurus, 2026 (last updated 26.03.2026)",
+            "url": "https://emta.ee/ariklient/maksud-ja-tasumine/tulumaks-ja-sotsiaalmaks/maksumaarad",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        },
+        {
+          "label": "Monthly minimum social tax base (sotsiaalmaksu kuumäär)",
+          "value": 886,
+          "unit": "money",
+          "note": "set by the 2026 State Budget Act from the minimum wage in force on 1 July 2025",
+          "source": {
+            "title": "Maksu- ja Tolliamet: Sotsiaalmaks (last updated 20.07.2026); Riigi Teataja: 2026. aasta riigieelarve seadus § 2 lg 6 (RT I, 18.12.2025, 22)",
+            "url": "https://emta.ee/ariklient/maksud-ja-tasumine/tulumaks-ja-sotsiaalmaks/sotsiaalmaks",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        },
+        {
+          "label": "Minimum social tax per employee, per month",
+          "value": 292.38,
+          "unit": "money",
+          "note": "paid by the employer that applies the employee's basic exemption; the Social Tax Act lists exceptions",
+          "source": {
+            "title": "Maksu- ja Tolliamet: Sotsiaalmaks (last updated 20.07.2026); Riigi Teataja: 2026. aasta riigieelarve seadus § 2 lg 6 (RT I, 18.12.2025, 22)",
+            "url": "https://emta.ee/ariklient/maksud-ja-tasumine/tulumaks-ja-sotsiaalmaks/sotsiaalmaks",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        }
+      ],
+      "source": {
+        "title": "Riigi Teataja: Sotsiaalmaksuseadus, version in force 26.10.2026–31.12.2026 (RT I, 16.10.2026, 14), § 7 and § 10; Maksu- ja Tolliamet: Maksumäärad, 2026 (last updated 26.03.2026)",
+        "url": "https://www.riigiteataja.ee/akt/116102026014",
+        "retrievedAt": "2026-11-11",
+        "effectiveFrom": "2026-01-01",
+        "effectiveTo": null
+      },
+      "verified": true,
+      "basis": "Gross pay, per month",
+      "note": "Social Tax Act § 7 and § 10. The employer pays social tax on top of gross pay; it finances the state pension (and 4 points of the second pillar for members) and health insurance."
+    },
+    {
+      "id": "minimum-wage",
+      "title": "Minimum wage (töötasu alammäär)",
+      "group": "employer",
+      "kind": "values",
+      "rows": [
+        {
+          "label": "Minimum monthly wage, full-time, from 1 April 2026",
+          "value": 946,
+          "unit": "money"
+        },
+        {
+          "label": "Minimum hourly wage, from 1 April 2026",
+          "value": 5.67,
+          "unit": "money"
+        },
+        {
+          "label": "Minimum monthly wage, 1 January to 31 March 2026",
+          "value": 886,
+          "unit": "money",
+          "source": {
+            "title": "Riigi Teataja: Vabariigi Valitsuse 19.12.2024 määrus nr 87 'Töötasu alammäära kehtestamine' (RT I, 21.12.2024, 26; repealed from 1 April 2026)",
+            "url": "https://www.riigiteataja.ee/akt/121122024026",
+            "retrievedAt": "2026-11-11",
+            "effectiveFrom": "2025-01-01",
+            "effectiveTo": "2026-03-31"
+          }
+        },
+        {
+          "label": "Minimum hourly wage, 1 January to 31 March 2026",
+          "value": 5.31,
+          "unit": "money",
+          "source": {
+            "title": "Riigi Teataja: Vabariigi Valitsuse 19.12.2024 määrus nr 87 'Töötasu alammäära kehtestamine' (RT I, 21.12.2024, 26; repealed from 1 April 2026)",
+            "url": "https://www.riigiteataja.ee/akt/121122024026",
+            "retrievedAt": "2026-11-11",
+            "effectiveFrom": "2025-01-01",
+            "effectiveTo": "2026-03-31"
+          }
+        }
+      ],
+      "source": {
+        "title": "Riigi Teataja: Vabariigi Valitsuse 23.03.2026 määrus nr 36 'Töötasu alammäära kehtestamine' (RT I, 24.03.2026, 5)",
+        "url": "https://www.riigiteataja.ee/akt/124032026005",
+        "retrievedAt": "2026-11-11",
+        "effectiveFrom": "2026-04-01",
+        "effectiveTo": null
+      },
+      "verified": true,
+      "note": "Set by Government regulation under the Employment Contracts Act § 29(5). The social tax monthly minimum for 2026 stays at €886 (the minimum wage on 1 July 2025)."
+    },
+    {
+      "id": "non-resident",
+      "title": "Non-residents: employment income",
+      "group": "income-tax",
+      "kind": "values",
+      "rows": [
+        {
+          "label": "Income tax withheld from a non-resident's wages for work in Estonia",
+          "value": 0.22,
+          "unit": "rate",
+          "note": "employment contract, contract for services or public service, where the employer is Estonian"
+        },
+        {
+          "label": "Non-resident working in Estonia for a foreign employer: taxed in Estonia after days in Estonia of at least",
+          "value": 183,
+          "unit": "number",
+          "note": "within 12 consecutive calendar months (Income Tax Act § 29(1))",
+          "source": {
+            "title": "Riigi Teataja: Tulumaksuseadus (Income Tax Act), § 4, § 29 lg 1, § 41 and § 43 (version in force 01.10.2026–30.11.2026)",
+            "url": "https://www.riigiteataja.ee/akt/109072026066",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2025-01-01",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Basic exemption for non-residents",
+          "value": "Only for residents of another European Economic Area state who apply to the payer and whose certificate of residency is entered in the Tax and Customs Board's database; otherwise none",
+          "unit": "text"
+        },
+        {
+          "label": "Fees of non-resident artists and sportspersons for performances in Estonia: withholding rate",
+          "value": 0.1,
+          "unit": "rate"
+        },
+        {
+          "label": "Fees of non-resident members of a management or supervisory board of an Estonian company",
+          "value": 0.22,
+          "unit": "rate",
+          "note": "Income Tax Act § 29(2), withheld under § 43(1) point 1",
+          "source": {
+            "title": "Riigi Teataja: Tulumaksuseadus (Income Tax Act), § 4, § 29 lg 1, § 41 and § 43 (version in force 01.10.2026–30.11.2026)",
+            "url": "https://www.riigiteataja.ee/akt/109072026066",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2025-01-01",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Fringe benefits to non-resident employees working in Estonia",
+          "value": "Taxed at the employer: income tax 22/78 of the benefit plus 33% social tax",
+          "unit": "text"
+        },
+        {
+          "label": "Treaty relief",
+          "value": "A lower treaty rate or exemption applies when the recipient's certificate of residency is on file with the Tax and Customs Board",
+          "unit": "text"
+        }
+      ],
+      "source": {
+        "title": "Estonian Tax and Customs Board: For non-residents, Income from employment (last updated 14.11.2025)",
+        "url": "https://www.emta.ee/en/private-client/foreigner-non-resident/non-residents/income-employment",
+        "retrievedAt": "2026-11-21",
+        "effectiveTo": null
+      },
+      "verified": true,
+      "note": "Tax residency: a permanent home in Estonia or at least 183 days in 12 consecutive months (see the freelancer section). Social tax and unemployment insurance follow the EU coordination rules or social-security agreements (an A1 certificate keeps the home country's insurance)."
+    },
+    {
+      "id": "contractor-rules",
+      "title": "Contractors: employment test and withholding on contract fees",
+      "group": "income-tax",
+      "kind": "values",
+      "rows": [
+        {
+          "label": "Employment or contract: the legal test (Employment Contracts Act § 1)",
+          "value": "Work under another person's management and control for pay is employment; paid work is presumed to be employment unless the worker is substantially free to choose how, when and where to work",
+          "unit": "text",
+          "source": {
+            "title": "Riigi Teataja: Töölepingu seadus (Employment Contracts Act), § 1 (version in force from 2026)",
+            "url": "https://www.riigiteataja.ee/akt/103072026035",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Income tax withheld from fees paid to an individual under a contract for services or authorisation agreement",
+          "value": 0.22,
+          "unit": "rate",
+          "note": "withheld by the payer and declared on form TSD"
+        },
+        {
+          "label": "Social tax on contract fees paid to an individual (payer)",
+          "value": 0.33,
+          "unit": "rate",
+          "note": "Social Tax Act § 2(1) point 6, in the cases set out in § 9(1) point 2",
+          "source": {
+            "title": "Riigi Teataja: Sotsiaalmaksuseadus (Social Tax Act), § 2 lg 1 (version in force 26.10.2026–31.12.2026)",
+            "url": "https://www.riigiteataja.ee/akt/116102026014",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Fees paid to a sole proprietor (FIE) for business services",
+          "value": "No withholding: the FIE declares business income and pays income tax and social tax itself",
+          "unit": "text"
+        },
+        {
+          "label": "Services provided in Estonia by a non-resident person: withholding rate",
+          "value": 0.1,
+          "unit": "rate",
+          "note": "a treaty may remove it with a certificate of residency",
+          "source": {
+            "title": "Estonian Tax and Customs Board: Taxation of non-resident's Estonian income (last updated 29.04.2026)",
+            "url": "https://emta.ee/en/business-client/registration-business/non-residents-e-residents/taxation-non-residents-estonian",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Services to an Estonian resident by a company in a non-cooperative jurisdiction: withholding rate",
+          "value": 0.22,
+          "unit": "rate",
+          "source": {
+            "title": "Estonian Tax and Customs Board: Taxation of non-resident's Estonian income (last updated 29.04.2026)",
+            "url": "https://emta.ee/en/business-client/registration-business/non-residents-e-residents/taxation-non-residents-estonian",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Ongoing work for a foreign employer from Estonia under a services contract",
+          "value": "Register as a sole proprietor (FIE) or a company in the Commercial Register and declare business income",
+          "unit": "text"
+        }
+      ],
+      "source": {
+        "title": "Maksu- ja Tolliamet: Tulumaks ja maksuvaba tulu (last updated 09.01.2026)",
+        "url": "https://www.emta.ee/ariklient/maksud-ja-tasumine/tulumaks-ja-sotsiaalmaks/tulumaks-ja-maksuvaba-tulu",
+        "retrievedAt": "2026-11-21",
+        "effectiveFrom": "2026-01-01",
+        "effectiveTo": null
+      },
+      "verified": true
+    },
+    {
+      "id": "corporate-tax",
+      "title": "Corporate income tax (juriidilise isiku tulumaks) 2026",
+      "group": "income-tax",
+      "kind": "values",
+      "rows": [
+        {
+          "label": "Corporate income tax on distributed profit (22/78 of the net distribution)",
+          "value": 0.22,
+          "unit": "rate"
+        },
+        {
+          "label": "Reduced rate for regularly paid dividends (14/86)",
+          "value": "Abolished from 1 January 2025: only the 22/78 rate applies",
+          "unit": "text",
+          "status": "not_applicable"
+        },
+        {
+          "label": "Retained profit",
+          "value": "Not taxed until distributed",
+          "unit": "text",
+          "source": {
+            "title": "Riigi Teataja: Tulumaksuseadus (Income Tax Act), § 50 lg 1 and § 53 lg 1 and 4 (version in force 01.10.2026–30.11.2026)",
+            "url": "https://www.riigiteataja.ee/akt/109072026066",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Security tax on company profits (2%)",
+          "value": "Not introduced",
+          "unit": "text",
+          "source": {
+            "title": "Maksu- ja Tolliamet: Maksumuudatused 2026. aastal (news, 27.11.2025)",
+            "url": "https://emta.ee/uudised/maksumuudatused-2026",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": null
+          },
+          "status": "not_applicable"
+        },
+        {
+          "label": "Global minimum tax (Pillar Two): groups in scope",
+          "value": 750000000,
+          "unit": "money",
+          "note": "Estonian entities of groups with an Estonian ultimate parent and consolidated revenue of at least EUR 750 million in two of the four preceding years (Income Tax Act § 54^10)",
+          "source": {
+            "title": "Riigi Teataja: Tulumaksuseadus (Income Tax Act), § 54^10 'Ülemaailmse miinimummaksuga seotud kohustused' (version in force 01.10.2026–30.11.2026)",
+            "url": "https://www.riigiteataja.ee/akt/109072026066",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        }
+      ],
+      "source": {
+        "title": "Maksu- ja Tolliamet: Maksumäärad ja maksuvaba tulu suurus, tab 2026",
+        "url": "https://emta.ee/ariklient/maksud-ja-tasumine/tulumaks-ja-sotsiaalmaks/maksumaarad",
+        "retrievedAt": "2026-11-21",
+        "effectiveFrom": "2026-01-01",
+        "effectiveTo": "2026-12-31"
+      },
+      "verified": true,
+      "note": "Estonia taxes company profit when it is distributed as dividends or other profit distributions; retained and reinvested profit is not taxed. The planned 2% security tax on company profits was not introduced."
+    },
+    {
+      "id": "distributed-profits",
+      "title": "Branch profits and distributed profits",
+      "group": "income-tax",
+      "kind": "values",
+      "rows": [
+        {
+          "label": "Resident company: income tax when profit is distributed as dividends or other profit distributions",
+          "value": 0.22,
+          "unit": "rate",
+          "note": "computed on the distribution divided by 0.78 (Income Tax Act § 4(1^1))"
+        },
+        {
+          "label": "Branch (permanent establishment) of a non-resident company: tax on profit taken out of Estonia",
+          "value": 0.22,
+          "unit": "rate",
+          "note": "Income Tax Act § 53(4): profit attributed to the branch and withdrawn in cash or in kind"
+        },
+        {
+          "label": "Dividends to non-resident companies: withholding",
+          "value": 0,
+          "unit": "rate",
+          "note": "from 2025 dividends are taxed only at company level at 22/78",
+          "source": {
+            "title": "Estonian Tax and Customs Board: Taxation of non-resident's Estonian income (last updated 29.04.2026)",
+            "url": "https://emta.ee/en/business-client/registration-business/non-residents-e-residents/taxation-non-residents-estonian",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Dividends paid on profit taxed at 14/86 until 2024 to individuals: withholding",
+          "value": 0.07,
+          "unit": "rate",
+          "note": "Income Tax Act § 61(68)",
+          "source": {
+            "title": "Maksu- ja Tolliamet: Maksumäärad ja maksuvaba tulu suurus, tab 2026",
+            "url": "https://emta.ee/ariklient/maksud-ja-tasumine/tulumaks-ja-sotsiaalmaks/maksumaarad",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        }
+      ],
+      "source": {
+        "title": "Riigi Teataja: Tulumaksuseadus (Income Tax Act), § 50 lg 1 and § 53 lg 1 and 4 (version in force 01.10.2026–30.11.2026)",
+        "url": "https://www.riigiteataja.ee/akt/109072026066",
+        "retrievedAt": "2026-11-21",
+        "effectiveTo": null
+      },
+      "verified": true
+    },
+    {
+      "id": "capital-income",
+      "title": "Investment, rental and pension income",
+      "group": "income-tax",
+      "kind": "values",
+      "rows": [
+        {
+          "label": "Capital gains on shares, securities, property and crypto-assets: income tax rate",
+          "value": 0.22,
+          "unit": "rate",
+          "note": "gain = sale price less acquisition cost, declared on the annual return"
+        },
+        {
+          "label": "Investment account",
+          "value": "Income tax on reinvested securities income and interest is postponed until money is withdrawn from the account",
+          "unit": "text",
+          "source": {
+            "title": "Estonian Tax and Customs Board: Securities and investment account (last updated 06.11.2026)",
+            "url": "https://www.emta.ee/en/private-client/taxes-and-payment/taxable-income/securities-and-investment-account",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Crypto-assets",
+          "value": "Treated as property: gains on each sale or exchange are taxable (Income Tax Act § 15(1) and § 37(1))",
+          "unit": "text",
+          "source": {
+            "title": "Estonian Tax and Customs Board: Crypto-assets (last updated 15.02.2026)",
+            "url": "https://www.emta.ee/en/private-client/taxes-and-payment/taxable-income/crypto-assets",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Interest paid to resident individuals: income tax withheld",
+          "value": 0.22,
+          "unit": "rate",
+          "source": {
+            "title": "Maksu- ja Tolliamet: Tulumaks ja maksuvaba tulu (last updated 09.01.2026)",
+            "url": "https://www.emta.ee/ariklient/maksud-ja-tasumine/tulumaks-ja-sotsiaalmaks/tulumaks-ja-maksuvaba-tulu",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Dividends from Estonian companies to individuals",
+          "value": "No further income tax: the company has paid 22/78 on the distribution (7% is withheld only from dividends paid out of profit taxed at 14/86 until 2024)",
+          "unit": "text",
+          "source": {
+            "title": "Maksu- ja Tolliamet: Maksumäärad ja maksuvaba tulu suurus, tab 2026",
+            "url": "https://emta.ee/ariklient/maksud-ja-tasumine/tulumaks-ja-sotsiaalmaks/maksumaarad",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        },
+        {
+          "label": "Rental income: flat deduction for letting a home under a residential lease",
+          "value": 0.2,
+          "unit": "rate",
+          "note": "no receipts needed; the rest is taxed at 22%",
+          "source": {
+            "title": "Estonian Tax and Customs Board: Income from lease and rent, licence fees (last updated 21.11.2025)",
+            "url": "https://www.emta.ee/en/private-client/taxes-and-payment/taxable-income/income-lease-and-rent-licence-fees",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Royalties paid to non-residents: withholding rate",
+          "value": 0.1,
+          "unit": "rate",
+          "source": {
+            "title": "Estonian Tax and Customs Board: Taxation of non-resident's Estonian income (last updated 29.04.2026)",
+            "url": "https://emta.ee/en/business-client/registration-business/non-residents-e-residents/taxation-non-residents-estonian",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Rental income of non-residents from Estonian property: withholding rate",
+          "value": 0.22,
+          "unit": "rate",
+          "source": {
+            "title": "Estonian Tax and Customs Board: Taxation of non-resident's Estonian income (last updated 29.04.2026)",
+            "url": "https://emta.ee/en/business-client/registration-business/non-residents-e-residents/taxation-non-residents-estonian",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Interest paid to non-residents",
+          "value": "Not taxed, except interest from a fund holding mainly Estonian real estate with at least a 10% holding (22%)",
+          "unit": "text",
+          "source": {
+            "title": "Estonian Tax and Customs Board: Taxation of non-resident's Estonian income (last updated 29.04.2026)",
+            "url": "https://emta.ee/en/business-client/registration-business/non-residents-e-residents/taxation-non-residents-estonian",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "State pensions: income tax rate",
+          "value": 0.22,
+          "unit": "rate",
+          "note": "after the pensionable-age basic exemption of EUR 776 a month",
+          "source": {
+            "title": "Estonian Tax and Customs Board: Pension and insurance indemnities (last updated 26.08.2026)",
+            "url": "https://www.emta.ee/en/private-client/taxes-and-payment/taxable-income/pension-and-insurance-indemnities",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Funded pension lump sum at pensionable age (or up to 5 years before)",
+          "value": 0.1,
+          "unit": "rate",
+          "source": {
+            "title": "Estonian Tax and Customs Board: Pension and insurance indemnities (last updated 26.08.2026)",
+            "url": "https://www.emta.ee/en/private-client/taxes-and-payment/taxable-income/pension-and-insurance-indemnities",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        }
+      ],
+      "source": {
+        "title": "Riigi Teataja: Tulumaksuseadus (Income Tax Act), § 4, § 29 lg 1, § 41 and § 43 (version in force 01.10.2026–30.11.2026)",
+        "url": "https://www.riigiteataja.ee/akt/109072026066",
+        "retrievedAt": "2026-11-21",
+        "effectiveFrom": "2025-01-01",
+        "effectiveTo": null
+      },
+      "verified": true,
+      "note": "All of it is taxed at the 22% income tax rate as part of the person's annual income (resident individuals) unless stated."
+    }
+  ],
+  "requested_year": "2026",
+  "current_year": "2026",
+  "years_available": [
+    "2026"
+  ],
+  "table_version": 2,
+  "version_date": "2026-11-21",
+  "versions_available": [
+    {
+      "version": 1,
+      "date": "2026-11-16"
+    },
+    {
+      "version": 2,
+      "date": "2026-11-21"
+    }
+  ],
+  "dataset_version": "2026.11.27",
+  "is_current_version": true,
+  "pageUrl": "https://calcbloc.com/estonia/tax-tables/2026",
+  "attribution": {
+    "source": "CalcBloc",
+    "url": "https://calcbloc.com/estonia/tax-tables/2026",
+    "required": true,
+    "text": "Data by CalcBloc (calcbloc.com)"
+  }
+}

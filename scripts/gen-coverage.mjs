@@ -89,8 +89,10 @@ const listOr = (codes) => (codes.length ? codes.join(", ") : "none yet");
 const crossBorderCountries = cov?.cross_border_countries ?? [];
 const taxCalendar = countries.filter((c) => !!c.tax_calendar);
 // The scope note the calculation tools quote (src/constants.ts NOT_SUPPORTED), generated so the country lists stay current.
+// API 1.10 serves treaty withholding limits (/tax-treaties, get_tax_treaties); /countries has no treaty coverage, so the
+// note names the tool rather than the countries.
 const notYetSupported = crossBorderCountries.length
-  ? "Not yet supported: cross-border salary withholding (multi-country payroll), and treaty rates or the double-tax relief amount."
+  ? "Not yet supported: cross-border salary withholding (multi-country payroll), and the double-tax relief amount (get_tax_treaties lists the treaty withholding limits CalcBloc stores)."
   : "Not yet supported: cross-border (multi-country) withholding.";
 const notSupported =
   `Bonus and other supplemental pay (withholding vs final tax): calculate_supplemental_withholding (${listOr(supplemental.map(short))}). ` +
@@ -158,6 +160,7 @@ const readmeBlock = [
   `- **Tax tables** (\`get_tax_tables\`) and **tax facts** (\`search_tax_facts\`): all ${data.taxTables} countries; the others say so and link their tax tables when a calculation is asked for.`,
   `- **Tax calendar** (\`get_tax_calendar\`: tax year, next tax year, enacted and announced changes, next budget): ${data.taxCalendar ? `${data.taxCalendar === data.taxTables ? "all " : ""}${data.taxCalendar} countries` : "none yet"}.`,
   "- **Import duty, tariffs and trade agreements** (`calculate_import_duty`, `get_tariff`, `list_trade_agreements`): imports into the UK, the EU (any member state), the United States and India, as the API's tariff data allows.",
+  "- **Tax treaties** (`get_tax_treaties`: withholding limits on dividends, interest, royalties and technical fees, relief method, dates and MLI status): the double taxation treaties the API stores (India's with the United States, Singapore, the United Kingdom, Japan, Australia and Austria in API 1.10).",
   `- **\`region\` is required** for take-home pay in ${codes(data.regionRequired["net-salary"])}; for employer cost in ${codes(data.regionRequired["employer-cost"])}${regionExtra("supplemental-withholding", "supplemental withholding")}${regionExtra("equity-tax", "equity tax")}. A missing or unknown region returns the valid codes and names.`,
   `- ${notYetSupported}`,
   "",

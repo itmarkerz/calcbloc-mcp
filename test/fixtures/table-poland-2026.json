@@ -1,0 +1,998 @@
+{
+  "country": "poland",
+  "countryName": "Poland",
+  "year": "2026",
+  "yearLabel": "2026",
+  "isCurrent": true,
+  "region": null,
+  "currency": "PLN",
+  "effectiveFrom": "2026-01-01",
+  "effectiveTo": "2026-12-31",
+  "status": "verified",
+  "underReview": [],
+  "dataVerified": true,
+  "sections": [
+    {
+      "id": "income-tax",
+      "title": "PIT scale (skala podatkowa, art. 27)",
+      "group": "income-tax",
+      "kind": "bands",
+      "rows": [
+        {
+          "from": 0,
+          "to": 120000,
+          "rate": 0.12
+        },
+        {
+          "from": 120000,
+          "to": null,
+          "rate": 0.32
+        }
+      ],
+      "source": {
+        "title": "Dziennik Ustaw 2026 poz. 592 (published 30 April 2026): consolidated text of the Personal Income Tax Act (ustawa o podatku dochodowym od osób fizycznych), art. 27 ust. 1",
+        "url": "https://dziennikustaw.gov.pl/D2026000059201.pdf",
+        "retrievedAt": "2026-11-21",
+        "effectiveTo": null
+      },
+      "verified": true,
+      "basis": "Taxable income (podstawa obliczenia podatku), per year",
+      "note": "Up to PLN 120,000: 12% minus the tax-reducing amount of PLN 3,600, so the first PLN 30,000 is effectively tax-free; above it, PLN 10,800 plus 32% of the excess. The same scale applies to employment income, contracts of mandate and business income taxed on the scale."
+    },
+    {
+      "id": "allowances",
+      "title": "Tax-reducing amount and costs of earning income",
+      "group": "income-tax",
+      "kind": "values",
+      "rows": [
+        {
+          "label": "Tax-reducing amount (kwota zmniejszająca podatek), per year",
+          "value": 3600,
+          "unit": "money"
+        },
+        {
+          "label": "Effective tax-free amount (tax-reducing amount ÷ 12%)",
+          "value": 30000,
+          "unit": "money"
+        },
+        {
+          "label": "Tax due at PLN 120,000 of taxable income",
+          "value": 10800,
+          "unit": "money"
+        },
+        {
+          "label": "Employee costs of earning income (koszty uzyskania przychodu), per month",
+          "value": 250,
+          "unit": "money",
+          "source": {
+            "title": "Dziennik Ustaw 2026 poz. 592 (published 30 April 2026): Personal Income Tax Act, art. 22 ust. 2",
+            "url": "https://dziennikustaw.gov.pl/D2026000059201.pdf",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Employee costs, per year: one employment",
+          "value": 3000,
+          "unit": "money",
+          "source": {
+            "title": "Dziennik Ustaw 2026 poz. 592 (published 30 April 2026): Personal Income Tax Act, art. 22 ust. 2",
+            "url": "https://dziennikustaw.gov.pl/D2026000059201.pdf",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Employee costs, per year: several employments",
+          "value": 4500,
+          "unit": "money",
+          "source": {
+            "title": "Dziennik Ustaw 2026 poz. 592 (published 30 April 2026): Personal Income Tax Act, art. 22 ust. 2",
+            "url": "https://dziennikustaw.gov.pl/D2026000059201.pdf",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Employee costs, commuting from another town, per month",
+          "value": 300,
+          "unit": "money",
+          "source": {
+            "title": "Dziennik Ustaw 2026 poz. 592 (published 30 April 2026): Personal Income Tax Act, art. 22 ust. 2",
+            "url": "https://dziennikustaw.gov.pl/D2026000059201.pdf",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Employee costs, commuting, per year: one employment",
+          "value": 3600,
+          "unit": "money",
+          "source": {
+            "title": "Dziennik Ustaw 2026 poz. 592 (published 30 April 2026): Personal Income Tax Act, art. 22 ust. 2",
+            "url": "https://dziennikustaw.gov.pl/D2026000059201.pdf",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Employee costs, commuting, per year: several employments",
+          "value": 5400,
+          "unit": "money",
+          "source": {
+            "title": "Dziennik Ustaw 2026 poz. 592 (published 30 April 2026): Personal Income Tax Act, art. 22 ust. 2",
+            "url": "https://dziennikustaw.gov.pl/D2026000059201.pdf",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Author's costs (koszty autorskie) on copyright and related-rights income",
+          "value": 0.5,
+          "unit": "rate",
+          "note": "of income less the employee's social contributions",
+          "source": {
+            "title": "Dziennik Ustaw 2026 poz. 592 (published 30 April 2026): Personal Income Tax Act, art. 22 ust. 9 pkt 1-3 and ust. 9a",
+            "url": "https://dziennikustaw.gov.pl/D2026000059201.pdf",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Author's costs: annual cap (top of the first scale band)",
+          "value": 120000,
+          "unit": "money",
+          "note": "shared with income exempt under the PIT-0 reliefs from employment",
+          "source": {
+            "title": "Dziennik Ustaw 2026 poz. 592 (published 30 April 2026): Personal Income Tax Act, art. 22 ust. 9 pkt 1-3 and ust. 9a",
+            "url": "https://dziennikustaw.gov.pl/D2026000059201.pdf",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Flat costs on contracts of mandate and specific-task contracts",
+          "value": 0.2,
+          "unit": "rate",
+          "source": {
+            "title": "Dziennik Ustaw 2026 poz. 592 (published 30 April 2026): Personal Income Tax Act, art. 22 ust. 9 pkt 4 and 6",
+            "url": "https://dziennikustaw.gov.pl/D2026000059201.pdf",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        }
+      ],
+      "source": {
+        "title": "Dziennik Ustaw 2026 poz. 592 (published 30 April 2026): consolidated text of the Personal Income Tax Act (ustawa o podatku dochodowym od osób fizycznych), art. 27 ust. 1",
+        "url": "https://dziennikustaw.gov.pl/D2026000059201.pdf",
+        "retrievedAt": "2026-11-21",
+        "effectiveTo": null
+      },
+      "verified": true,
+      "note": "Costs of earning income reduce taxable income before the scale is applied; the tax-reducing amount reduces the tax."
+    },
+    {
+      "id": "pit-exemptions",
+      "title": "PIT-0 exemptions: under-26s, relocation, large families and working seniors",
+      "group": "income-tax",
+      "kind": "values",
+      "rows": [
+        {
+          "label": "Exempt income per year, each relief (art. 21 ust. 1 pkt 148, 152, 153, 154)",
+          "value": 85528,
+          "unit": "money"
+        },
+        {
+          "label": "Ulga dla młodych: income received up to age",
+          "value": 26,
+          "unit": "number",
+          "note": "employment, contracts of mandate, graduate internships, student traineeships, maternity allowance"
+        },
+        {
+          "label": "Ulga na powrót (relocation relief): consecutive tax years",
+          "value": 4,
+          "unit": "number",
+          "note": "employment, contracts of mandate and business income (scale, flat tax, ryczałt)"
+        },
+        {
+          "label": "Ulga na powrót: calendar years without Polish residence before the move",
+          "value": 3,
+          "unit": "number"
+        },
+        {
+          "label": "Relief for families: minimum number of children",
+          "value": 4,
+          "unit": "number"
+        },
+        {
+          "label": "Relief for working seniors: age, women",
+          "value": 60,
+          "unit": "number",
+          "note": "subject to social insurance and not drawing a pension"
+        },
+        {
+          "label": "Relief for working seniors: age, men",
+          "value": 65,
+          "unit": "number"
+        }
+      ],
+      "source": {
+        "title": "Dziennik Ustaw 2026 poz. 592 (published 30 April 2026): Personal Income Tax Act, art. 21 ust. 1 pkt 148, 152-154 and ust. 43",
+        "url": "https://dziennikustaw.gov.pl/D2026000059201.pdf",
+        "retrievedAt": "2026-11-21",
+        "effectiveTo": null
+      },
+      "verified": true,
+      "note": "Each relief exempts income up to the cap; income above it is taxed on the scale (or the flat tax or ryczałt for business income)."
+    },
+    {
+      "id": "flat-tax",
+      "title": "Flat 19% tax on business income (podatek liniowy, art. 30c)",
+      "group": "income-tax",
+      "kind": "values",
+      "rows": [
+        {
+          "label": "Flat tax rate on business income",
+          "value": 0.19,
+          "unit": "rate"
+        },
+        {
+          "label": "Health contributions deductible from income or as a cost, 2026 limit",
+          "value": 14100,
+          "unit": "money",
+          "source": {
+            "title": "Monitor Polski 2025 poz. 1274 (published 17 December 2025): Obwieszczenie Ministra Finansów i Gospodarki z dnia 12 grudnia 2025 r. on the health contribution deductible in 2026",
+            "url": "https://monitorpolski.gov.pl/M2025000127401.pdf",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        },
+        {
+          "label": "Statutory base amount of that limit (indexed yearly in Monitor Polski)",
+          "value": 8700,
+          "unit": "money"
+        }
+      ],
+      "source": {
+        "title": "Dziennik Ustaw 2026 poz. 592 (published 30 April 2026): Personal Income Tax Act, art. 30c ust. 1 and 2",
+        "url": "https://dziennikustaw.gov.pl/D2026000059201.pdf",
+        "retrievedAt": "2026-11-21",
+        "effectiveTo": null
+      },
+      "verified": true,
+      "note": "Business income only, by written choice filed with the tax office (art. 9a ust. 2); otherwise business income is taxed on the scale unless the ryczałt is chosen (art. 9a ust. 1)."
+    },
+    {
+      "id": "ryczalt",
+      "title": "Ryczałt: lump-sum tax on recorded revenue (art. 12)",
+      "group": "income-tax",
+      "kind": "values",
+      "rows": [
+        {
+          "label": "Who can use it",
+          "value": "Previous year's business revenue up to EUR 2,000,000, or in the first year of business (art. 6 ust. 4)",
+          "unit": "text"
+        },
+        {
+          "label": "Liberal professions (wolne zawody)",
+          "value": 0.17,
+          "unit": "rate"
+        },
+        {
+          "label": "Listed services, e.g. management consultancy, advertising and market research, wholesale agency, photography, real estate services on commission, sport and cultural services",
+          "value": 0.15,
+          "unit": "rate"
+        },
+        {
+          "label": "Health care, architecture and engineering, technical testing, specialised design",
+          "value": 0.14,
+          "unit": "rate"
+        },
+        {
+          "label": "IT services: software publishing, programming, IT and software consultancy, network and systems management",
+          "value": 0.12,
+          "unit": "rate"
+        },
+        {
+          "label": "Buying and selling real estate on own account",
+          "value": 0.1,
+          "unit": "rate"
+        },
+        {
+          "label": "Private rental income, accommodation, R&D and other listed services: revenue up to PLN 100,000",
+          "value": 0.085,
+          "unit": "rate"
+        },
+        {
+          "label": "Private rental income, accommodation, R&D and other listed services: revenue above PLN 100,000",
+          "value": 0.125,
+          "unit": "rate"
+        },
+        {
+          "label": "Other services, education, sale of alcoholic drinks in catering",
+          "value": 0.085,
+          "unit": "rate"
+        },
+        {
+          "label": "Manufacturing, construction, freight transport (vehicles over 2 tonnes)",
+          "value": 0.055,
+          "unit": "rate"
+        },
+        {
+          "label": "Trade, catering (except alcoholic drinks over 1.5%)",
+          "value": 0.03,
+          "unit": "rate"
+        },
+        {
+          "label": "Sale of own farm products processed by non-industrial methods",
+          "value": 0.02,
+          "unit": "rate"
+        }
+      ],
+      "source": {
+        "title": "Dziennik Ustaw 2025 poz. 843 (published 27 June 2025): consolidated text of the Lump-sum Income Tax Act (ustawa o zryczałtowanym podatku dochodowym), art. 6 ust. 4 and art. 12 ust. 1",
+        "url": "https://dziennikustaw.gov.pl/D2025000084301.pdf",
+        "retrievedAt": "2026-11-21",
+        "effectiveTo": null
+      },
+      "verified": true,
+      "basis": "Revenue, no deduction of costs",
+      "note": "Rates by activity under the PKWiU classification; the listed activities are examples of each group in art. 12 ust. 1."
+    },
+    {
+      "id": "zus-employee",
+      "title": "ZUS social insurance: employee contributions",
+      "group": "employee",
+      "kind": "values",
+      "rows": [
+        {
+          "label": "Pension insurance (emerytalne), employee share",
+          "value": 0.0976,
+          "unit": "rate"
+        },
+        {
+          "label": "Disability insurance (rentowe), employee share",
+          "value": 0.015,
+          "unit": "rate"
+        },
+        {
+          "label": "Sickness insurance (chorobowe), paid by the employee",
+          "value": 0.0245,
+          "unit": "rate"
+        },
+        {
+          "label": "Annual ceiling on the pension and disability base (30 × the forecast average wage)",
+          "value": 282600,
+          "unit": "money",
+          "source": {
+            "title": "ZUS: Wysokość składek na ubezpieczenia – Informacja o wysokości składek na ubezpieczenia społeczne w 2026 r. (published 2 February 2026)",
+            "url": "https://www.zus.pl/baza-wiedzy/skladki-wskazniki-odsetki/skladki/wysokosc-skladek-na-ubezpieczenia-spoleczne",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        },
+        {
+          "label": "Forecast average monthly wage 2026 (budget act)",
+          "value": 9420,
+          "unit": "money",
+          "source": {
+            "title": "Dziennik Ustaw 2026 poz. 62 (published 20 January 2026): Ustawa budżetowa na rok 2026 z dnia 9 stycznia 2026 r., art. 24-27",
+            "url": "https://dziennikustaw.gov.pl/D2026000006201.pdf",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        }
+      ],
+      "source": {
+        "title": "Dziennik Ustaw 2026 poz. 199 (published 23 February 2026): consolidated text of the Social Insurance System Act (ustawa o systemie ubezpieczeń społecznych), art. 16, 19 and 22",
+        "url": "https://dziennikustaw.gov.pl/D2026000019901.pdf",
+        "retrievedAt": "2026-11-21",
+        "effectiveTo": null
+      },
+      "verified": true,
+      "basis": "Gross pay (podstawa wymiaru składek)",
+      "note": "Pension and disability contributions stop for the rest of the year once the year's base passes the ceiling (art. 19); the ceiling does not apply to sickness insurance."
+    },
+    {
+      "id": "zus-employer",
+      "title": "ZUS and the labour funds: employer contributions",
+      "group": "employer",
+      "kind": "values",
+      "rows": [
+        {
+          "label": "Pension insurance (emerytalne), employer share",
+          "value": 0.0976,
+          "unit": "rate"
+        },
+        {
+          "label": "Disability insurance (rentowe), employer share",
+          "value": 0.065,
+          "unit": "rate"
+        },
+        {
+          "label": "Accident insurance (wypadkowe)",
+          "value": "0.4% to 8.12% by the employer's risk category; paid by the employer",
+          "unit": "text"
+        },
+        {
+          "label": "Accident insurance rate used in ZUS examples (where no other rate applies to the payer)",
+          "value": 0.0167,
+          "unit": "rate",
+          "source": {
+            "title": "ZUS: Wysokość składek za osoby prowadzące działalność gospodarczą – Informacja o wysokości składek na ubezpieczenia społeczne w 2026 r. (published 2 February 2026)",
+            "url": "https://www.zus.pl/baza-wiedzy/skladki-wskazniki-odsetki/skladki/wysokosc-skladek-na-ubezpieczenia-spoleczne",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        },
+        {
+          "label": "Labour Fund (Fundusz Pracy)",
+          "value": 0.01,
+          "unit": "rate",
+          "source": {
+            "title": "Dziennik Ustaw 2026 poz. 62 (published 20 January 2026): Ustawa budżetowa na rok 2026 z dnia 9 stycznia 2026 r., art. 24-27",
+            "url": "https://dziennikustaw.gov.pl/D2026000006201.pdf",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        },
+        {
+          "label": "Solidarity Fund (Fundusz Solidarnościowy)",
+          "value": 0.0145,
+          "unit": "rate",
+          "source": {
+            "title": "Dziennik Ustaw 2026 poz. 62 (published 20 January 2026): Ustawa budżetowa na rok 2026 z dnia 9 stycznia 2026 r., art. 24-27",
+            "url": "https://dziennikustaw.gov.pl/D2026000006201.pdf",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        },
+        {
+          "label": "Guaranteed Employee Benefits Fund (FGŚP)",
+          "value": 0.001,
+          "unit": "rate",
+          "source": {
+            "title": "Dziennik Ustaw 2026 poz. 62 (published 20 January 2026): Ustawa budżetowa na rok 2026 z dnia 9 stycznia 2026 r., art. 24-27",
+            "url": "https://dziennikustaw.gov.pl/D2026000006201.pdf",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        },
+        {
+          "label": "Labour Fund and Solidarity Fund base",
+          "value": "Pay of at least the minimum wage a month, without the annual ceiling",
+          "unit": "text",
+          "source": {
+            "title": "Dziennik Ustaw 2025 poz. 620 (published 12 May 2025): Ustawa z dnia 20 marca 2025 r. o rynku pracy i służbach zatrudnienia, art. 259 ust. 1",
+            "url": "https://dziennikustaw.gov.pl/D2025000062001.pdf",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        }
+      ],
+      "source": {
+        "title": "Dziennik Ustaw 2026 poz. 199 (published 23 February 2026): consolidated text of the Social Insurance System Act (ustawa o systemie ubezpieczeń społecznych), art. 16, 19 and 22",
+        "url": "https://dziennikustaw.gov.pl/D2026000019901.pdf",
+        "retrievedAt": "2026-11-21",
+        "effectiveTo": null
+      },
+      "verified": true,
+      "basis": "Gross pay",
+      "note": "Labour Fund + Solidarity Fund = 2.45%. The FGŚP is also charged without the annual ceiling. Pension and disability: the annual ceiling of PLN 282,600 applies to the employer share too."
+    },
+    {
+      "id": "ppk",
+      "title": "PPK employee capital plans (pracownicze plany kapitałowe)",
+      "group": "employee",
+      "kind": "values",
+      "rows": [
+        {
+          "label": "Employee basic payment",
+          "value": 0.02,
+          "unit": "rate"
+        },
+        {
+          "label": "Employee basic payment, reduced minimum (pay up to 1.2 × the minimum wage)",
+          "value": 0.005,
+          "unit": "rate"
+        },
+        {
+          "label": "Employee additional payment, up to",
+          "value": 0.02,
+          "unit": "rate"
+        },
+        {
+          "label": "Employer basic payment",
+          "value": 0.015,
+          "unit": "rate"
+        },
+        {
+          "label": "Employer additional payment, up to",
+          "value": 0.025,
+          "unit": "rate"
+        }
+      ],
+      "source": {
+        "title": "Dziennik Ustaw 2026 poz. 192 (published 18 February 2026): consolidated text of the Employee Capital Plans Act (ustawa o pracowniczych planach kapitałowych), art. 26-27",
+        "url": "https://dziennikustaw.gov.pl/D2026000019201.pdf",
+        "retrievedAt": "2026-11-21",
+        "effectiveTo": null
+      },
+      "verified": true,
+      "basis": "Gross pay",
+      "note": "Employee payments are deducted from pay after tax; the employer's payments are not part of the pension and disability contribution base (art. 26 ust. 5, art. 27 ust. 9)."
+    },
+    {
+      "id": "health",
+      "title": "Health insurance contribution (składka zdrowotna) by form of taxation",
+      "group": "employee",
+      "kind": "values",
+      "rows": [
+        {
+          "label": "Employees and contractors: rate",
+          "value": 0.09,
+          "unit": "rate",
+          "note": "on gross pay less the employee's social contributions; withheld by the payer"
+        },
+        {
+          "label": "Self-employed on the PIT scale: rate on business income",
+          "value": 0.09,
+          "unit": "rate"
+        },
+        {
+          "label": "Self-employed on the flat 19% tax: rate on business income",
+          "value": 0.049,
+          "unit": "rate"
+        },
+        {
+          "label": "Self-employed (scale or flat tax): minimum monthly contribution, February 2026 to January 2027",
+          "value": 432.54,
+          "unit": "money",
+          "note": "9% of the minimum wage of PLN 4,806",
+          "source": {
+            "title": "ZUS: Informacja w sprawie podstawy wymiaru składki oraz kwoty składki na ubezpieczenie zdrowotne w 2026 r. (2026 contributions page, published 2 February 2026)",
+            "url": "https://www.zus.pl/baza-wiedzy/skladki-wskazniki-odsetki/skladki/wysokosc-skladek-na-ubezpieczenia-spoleczne",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-02-01",
+            "effectiveTo": "2027-01-31"
+          }
+        },
+        {
+          "label": "Self-employed (scale or flat tax): minimum monthly contribution for January 2026",
+          "value": 314.96,
+          "unit": "money",
+          "note": "9% of PLN 3,499.50",
+          "source": {
+            "title": "ZUS: Informacja w sprawie podstawy wymiaru składki oraz kwoty składki na ubezpieczenie zdrowotne w 2026 r. (2026 contributions page, published 2 February 2026)",
+            "url": "https://www.zus.pl/baza-wiedzy/skladki-wskazniki-odsetki/skladki/wysokosc-skladek-na-ubezpieczenia-spoleczne",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-02-01",
+            "effectiveTo": "2027-01-31"
+          }
+        },
+        {
+          "label": "Ryczałt, revenue since 1 January up to PLN 60,000: monthly contribution",
+          "value": 498.35,
+          "unit": "money",
+          "note": "9% of PLN 5,537.18 (60% of the Q4 2025 average wage)",
+          "source": {
+            "title": "ZUS: Informacja w sprawie podstawy wymiaru składki oraz kwoty składki na ubezpieczenie zdrowotne w 2026 r. (2026 contributions page, published 2 February 2026)",
+            "url": "https://www.zus.pl/baza-wiedzy/skladki-wskazniki-odsetki/skladki/wysokosc-skladek-na-ubezpieczenia-spoleczne",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        },
+        {
+          "label": "Ryczałt, revenue over PLN 60,000 up to PLN 300,000: monthly contribution",
+          "value": 830.58,
+          "unit": "money",
+          "note": "9% of PLN 9,228.64 (100%)",
+          "source": {
+            "title": "ZUS: Informacja w sprawie podstawy wymiaru składki oraz kwoty składki na ubezpieczenie zdrowotne w 2026 r. (2026 contributions page, published 2 February 2026)",
+            "url": "https://www.zus.pl/baza-wiedzy/skladki-wskazniki-odsetki/skladki/wysokosc-skladek-na-ubezpieczenia-spoleczne",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        },
+        {
+          "label": "Ryczałt, revenue over PLN 300,000: monthly contribution",
+          "value": 1495.04,
+          "unit": "money",
+          "note": "9% of PLN 16,611.55 (180%)",
+          "source": {
+            "title": "ZUS: Informacja w sprawie podstawy wymiaru składki oraz kwoty składki na ubezpieczenie zdrowotne w 2026 r. (2026 contributions page, published 2 February 2026)",
+            "url": "https://www.zus.pl/baza-wiedzy/skladki-wskazniki-odsetki/skladki/wysokosc-skladek-na-ubezpieczenia-spoleczne",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        },
+        {
+          "label": "Average monthly wage in the enterprise sector, Q4 2025 (ryczałt reference)",
+          "value": 9228.64,
+          "unit": "money",
+          "source": {
+            "title": "ZUS: Informacja w sprawie podstawy wymiaru składki oraz kwoty składki na ubezpieczenie zdrowotne w 2026 r. (2026 contributions page, published 2 February 2026)",
+            "url": "https://www.zus.pl/baza-wiedzy/skladki-wskazniki-odsetki/skladki/wysokosc-skladek-na-ubezpieczenia-spoleczne",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        }
+      ],
+      "source": {
+        "title": "Dziennik Ustaw 2025 poz. 1461 (published 24 October 2025): consolidated text of the Act on publicly funded health care services (ustawa o świadczeniach opieki zdrowotnej finansowanych ze środków publicznych), art. 79, 79a and 81 ust. 6",
+        "url": "https://dziennikustaw.gov.pl/D2025000146101.pdf",
+        "retrievedAt": "2026-11-21",
+        "effectiveTo": null
+      },
+      "verified": true,
+      "note": "Flat-tax payers may deduct health contributions up to PLN 14,100 in 2026 (see the flat-tax table)."
+    },
+    {
+      "id": "minimum-wage",
+      "title": "Minimum wage (minimalne wynagrodzenie za pracę)",
+      "group": "employer",
+      "kind": "values",
+      "rows": [
+        {
+          "label": "Minimum monthly wage, full-time employees",
+          "value": 4806,
+          "unit": "money"
+        },
+        {
+          "label": "Minimum hourly rate (contracts of mandate and for services)",
+          "value": 31.4,
+          "unit": "money"
+        },
+        {
+          "label": "From 1 January 2027",
+          "value": "PLN 32.30 an hour (minimum monthly wage PLN 4,950)",
+          "unit": "text",
+          "source": {
+            "title": "Dziennik Ustaw 2026 poz. 1213: Rozporządzenie Rady Ministrów z dnia 14 września 2026 r. (minimum wage and minimum hourly rate in 2027)",
+            "url": "https://dziennikustaw.gov.pl/D2026000121301.pdf",
+            "retrievedAt": "2026-11-10",
+            "effectiveFrom": "2027-01-01",
+            "effectiveTo": null
+          }
+        }
+      ],
+      "source": {
+        "title": "Dziennik Ustaw 2025 poz. 1242 (published 15 September 2025): Rozporządzenie Rady Ministrów z dnia 11 września 2025 r. w sprawie wysokości minimalnego wynagrodzenia za pracę oraz wysokości minimalnej stawki godzinowej w 2026 r.",
+        "url": "https://dziennikustaw.gov.pl/D2025000124201.pdf",
+        "retrievedAt": "2026-11-10",
+        "effectiveFrom": "2026-01-01",
+        "effectiveTo": "2026-12-31"
+      },
+      "verified": true,
+      "note": "The monthly minimum applies to full-time employees (Minimum Wage Act art. 6); the hourly rate to each hour worked under a contract of mandate or for services (art. 8a)."
+    },
+    {
+      "id": "non-resident",
+      "title": "Non-residents: employment income",
+      "group": "income-tax",
+      "kind": "values",
+      "rows": [
+        {
+          "label": "Residence test",
+          "value": "Centre of personal or economic interests in Poland, or a stay of more than 183 days in the tax year (art. 3 ust. 1a PIT)",
+          "unit": "text",
+          "source": {
+            "title": "Dziennik Ustaw 2026 poz. 592: Personal Income Tax Act, art. 3 ust. 1, 1a, 2a and 2b",
+            "url": "https://dziennikustaw.gov.pl/D2026000059201.pdf",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Limited tax liability",
+          "value": "Non-residents pay tax only on income earned in Poland, including pay for work done in Poland wherever it is paid (art. 3 ust. 2a and 2b)",
+          "unit": "text",
+          "source": {
+            "title": "Dziennik Ustaw 2026 poz. 592: Personal Income Tax Act, art. 3 ust. 1, 1a, 2a and 2b",
+            "url": "https://dziennikustaw.gov.pl/D2026000059201.pdf",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Employment income: how it is taxed",
+          "value": "The employer withholds monthly advances under art. 32 PIT for every employee, resident or not; the PIT scale (12% / 32%) applies",
+          "unit": "text",
+          "source": {
+            "title": "Dziennik Ustaw 2026 poz. 592: Personal Income Tax Act, art. 32 ust. 1 and art. 41 ust. 1",
+            "url": "https://dziennikustaw.gov.pl/D2026000059201.pdf",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Non-residents: contracts of mandate, board fees and other personal services (art. 13 pkt 2 and 6-9): flat tax on the gross amount",
+          "value": 0.2,
+          "unit": "rate",
+          "source": {
+            "title": "Dziennik Ustaw 2026 poz. 592: Personal Income Tax Act, art. 29 ust. 1",
+            "url": "https://dziennikustaw.gov.pl/D2026000059201.pdf",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Non-resident artists and athletes performing in Poland: flat tax",
+          "value": 0.2,
+          "unit": "rate",
+          "source": {
+            "title": "Dziennik Ustaw 2026 poz. 592: Personal Income Tax Act, art. 29 ust. 1",
+            "url": "https://dziennikustaw.gov.pl/D2026000059201.pdf",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Relocation relief for people moving to Poland: exempt income per year (four years)",
+          "value": 85528,
+          "unit": "money",
+          "source": {
+            "title": "Dziennik Ustaw 2026 poz. 592: Personal Income Tax Act, art. 21 ust. 1 pkt 152 and ust. 43 (ulga na powrót)",
+            "url": "https://dziennikustaw.gov.pl/D2026000059201.pdf",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        }
+      ],
+      "source": {
+        "title": "Dziennik Ustaw 2026 poz. 592: Personal Income Tax Act, art. 3 ust. 1, 1a, 2a and 2b",
+        "url": "https://dziennikustaw.gov.pl/D2026000059201.pdf",
+        "retrievedAt": "2026-11-21",
+        "effectiveTo": null
+      },
+      "verified": true,
+      "note": "Tax treaties decide which country may tax the pay; a certificate of residence is needed to apply treaty rates."
+    },
+    {
+      "id": "capital-income",
+      "title": "Capital income, rental and pension income",
+      "group": "income-tax",
+      "kind": "values",
+      "rows": [
+        {
+          "label": "Interest and dividends (residents): flat tax withheld by the payer",
+          "value": 0.19,
+          "unit": "rate",
+          "source": {
+            "title": "Dziennik Ustaw 2026 poz. 592: Personal Income Tax Act, art. 10 ust. 1, art. 30a ust. 1 and art. 30b ust. 1-1a",
+            "url": "https://dziennikustaw.gov.pl/D2026000059201.pdf",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Capital gains on securities, shares and derivatives",
+          "value": 0.19,
+          "unit": "rate",
+          "source": {
+            "title": "Dziennik Ustaw 2026 poz. 592: Personal Income Tax Act, art. 10 ust. 1, art. 30a ust. 1 and art. 30b ust. 1-1a",
+            "url": "https://dziennikustaw.gov.pl/D2026000059201.pdf",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Capital gains on virtual currencies (crypto-assets)",
+          "value": 0.19,
+          "unit": "rate",
+          "source": {
+            "title": "Dziennik Ustaw 2026 poz. 592: Personal Income Tax Act, art. 10 ust. 1, art. 30a ust. 1 and art. 30b ust. 1-1a",
+            "url": "https://dziennikustaw.gov.pl/D2026000059201.pdf",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Non-residents: interest (other than art. 30a) and royalties",
+          "value": 0.2,
+          "unit": "rate",
+          "source": {
+            "title": "Dziennik Ustaw 2026 poz. 592: Personal Income Tax Act, art. 29 ust. 1",
+            "url": "https://dziennikustaw.gov.pl/D2026000059201.pdf",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Private rental income: lump-sum rate on revenue up to PLN 100,000",
+          "value": 0.085,
+          "unit": "rate",
+          "source": {
+            "title": "Dziennik Ustaw 2025 poz. 843: consolidated text of the Lump-sum Income Tax Act (ustawa o zryczałtowanym podatku dochodowym), art. 12 ust. 1 pkt 4",
+            "url": "https://dziennikustaw.gov.pl/D2025000084301.pdf",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Private rental income: lump-sum rate on revenue above PLN 100,000",
+          "value": 0.125,
+          "unit": "rate",
+          "source": {
+            "title": "Dziennik Ustaw 2025 poz. 843: consolidated text of the Lump-sum Income Tax Act (ustawa o zryczałtowanym podatku dochodowym), art. 12 ust. 1 pkt 4",
+            "url": "https://dziennikustaw.gov.pl/D2025000084301.pdf",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Pensions (emerytura, renta)",
+          "value": "A source of income like employment (art. 10 ust. 1 pkt 1 PIT): taxed on the PIT scale",
+          "unit": "text",
+          "source": {
+            "title": "Dziennik Ustaw 2026 poz. 592: Personal Income Tax Act, art. 10 ust. 1, art. 30a ust. 1 and art. 30b ust. 1-1a",
+            "url": "https://dziennikustaw.gov.pl/D2026000059201.pdf",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        }
+      ],
+      "source": {
+        "title": "Dziennik Ustaw 2026 poz. 592: Personal Income Tax Act, art. 10 ust. 1, art. 30a ust. 1 and art. 30b ust. 1-1a",
+        "url": "https://dziennikustaw.gov.pl/D2026000059201.pdf",
+        "retrievedAt": "2026-11-21",
+        "effectiveTo": null
+      },
+      "verified": true
+    },
+    {
+      "id": "solidarity-levy",
+      "title": "Solidarity levy (danina solidarnościowa)",
+      "group": "income-tax",
+      "kind": "values",
+      "rows": [
+        {
+          "label": "Rate on the excess over the threshold",
+          "value": 0.04,
+          "unit": "rate",
+          "source": {
+            "title": "Dziennik Ustaw 2026 poz. 592: Personal Income Tax Act, art. 30h ust. 1-2 (danina solidarnościowa)",
+            "url": "https://dziennikustaw.gov.pl/D2026000059201.pdf",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "Threshold: total income from the scale, flat tax, capital gains and foreign income, per year",
+          "value": 1000000,
+          "unit": "money",
+          "source": {
+            "title": "Dziennik Ustaw 2026 poz. 592: Personal Income Tax Act, art. 30h ust. 1-2 (danina solidarnościowa)",
+            "url": "https://dziennikustaw.gov.pl/D2026000059201.pdf",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        }
+      ],
+      "source": {
+        "title": "Dziennik Ustaw 2026 poz. 592: Personal Income Tax Act, art. 30h ust. 1-2 (danina solidarnościowa)",
+        "url": "https://dziennikustaw.gov.pl/D2026000059201.pdf",
+        "retrievedAt": "2026-11-21",
+        "effectiveTo": null
+      },
+      "verified": true
+    },
+    {
+      "id": "employer-levies",
+      "title": "Employer levies: labour funds and the PFRON disability levy",
+      "group": "employer",
+      "kind": "values",
+      "rows": [
+        {
+          "label": "Labour Fund (Fundusz Pracy)",
+          "value": 0.01,
+          "unit": "rate",
+          "source": {
+            "title": "Dziennik Ustaw 2026 poz. 62: Ustawa budżetowa na rok 2026, art. 25-27",
+            "url": "https://dziennikustaw.gov.pl/D2026000006201.pdf",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        },
+        {
+          "label": "Solidarity Fund (Fundusz Solidarnościowy)",
+          "value": 0.0145,
+          "unit": "rate",
+          "source": {
+            "title": "Dziennik Ustaw 2026 poz. 62: Ustawa budżetowa na rok 2026, art. 25-27",
+            "url": "https://dziennikustaw.gov.pl/D2026000006201.pdf",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        },
+        {
+          "label": "Guaranteed Employee Benefits Fund (FGŚP)",
+          "value": 0.001,
+          "unit": "rate",
+          "source": {
+            "title": "Dziennik Ustaw 2026 poz. 62: Ustawa budżetowa na rok 2026, art. 25-27",
+            "url": "https://dziennikustaw.gov.pl/D2026000006201.pdf",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        },
+        {
+          "label": "PFRON levy: per missing disabled employee, share of the average wage, per month",
+          "value": 0.4065,
+          "unit": "rate",
+          "note": "employers with at least 25 full-time employees whose disabled employment ratio is below 6%",
+          "source": {
+            "title": "Dziennik Ustaw 2026 poz. 884: consolidated text of the Act on the vocational and social rehabilitation and employment of disabled persons, art. 21 ust. 1-2",
+            "url": "https://dziennikustaw.gov.pl/D2026000088401.pdf",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        },
+        {
+          "label": "PFRON levy: target disabled employment ratio",
+          "value": 0.06,
+          "unit": "rate",
+          "source": {
+            "title": "Dziennik Ustaw 2026 poz. 884: consolidated text of the Act on the vocational and social rehabilitation and employment of disabled persons, art. 21 ust. 1-2",
+            "url": "https://dziennikustaw.gov.pl/D2026000088401.pdf",
+            "retrievedAt": "2026-11-21",
+            "effectiveTo": null
+          }
+        }
+      ],
+      "source": {
+        "title": "Dziennik Ustaw 2026 poz. 62: Ustawa budżetowa na rok 2026, art. 25-27",
+        "url": "https://dziennikustaw.gov.pl/D2026000006201.pdf",
+        "retrievedAt": "2026-11-21",
+        "effectiveFrom": "2026-01-01",
+        "effectiveTo": "2026-12-31"
+      },
+      "verified": true,
+      "basis": "Pension and disability contribution base"
+    }
+  ],
+  "requested_year": "2026",
+  "current_year": "2026",
+  "years_available": [
+    "2026"
+  ],
+  "table_version": 3,
+  "version_date": "2026-11-22",
+  "versions_available": [
+    {
+      "version": 1,
+      "date": "2026-11-16"
+    },
+    {
+      "version": 2,
+      "date": "2026-11-21"
+    },
+    {
+      "version": 3,
+      "date": "2026-11-22"
+    }
+  ],
+  "dataset_version": "2026.11.27",
+  "is_current_version": true,
+  "pageUrl": "https://calcbloc.com/poland/tax-tables/2026",
+  "attribution": {
+    "source": "CalcBloc",
+    "url": "https://calcbloc.com/poland/tax-tables/2026",
+    "required": true,
+    "text": "Data by CalcBloc (calcbloc.com)"
+  }
+}

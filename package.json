@@ -1,7 +1,7 @@
 {
   "name": "calcbloc-mcp",
-  "version": "0.4.0",
-  "description": "MCP server for take-home pay, employer cost, salary comparison, bonus withholding, RSU and stock option tax (also split across countries), import duty and tariffs, tax calendars and official tax tables in 133 countries, with the tax year and official sources in every answer.",
+  "version": "0.5.0",
+  "description": "MCP server for take-home pay, employer cost, salary comparison, bonus withholding, RSU and stock option tax (also split across countries), import duty and tariffs, double taxation treaty rates, tax calendars and official tax tables in 217 countries, with the tax year and official sources in every answer.",
   "mcpName": "io.github.itmarkerz/calcbloc-mcp",
   "type": "module",
   "bin": {
@@ -31,8 +31,8 @@
     "prepublishOnly": "npm test",
     "coverage": "node scripts/gen-coverage.mjs",
     "coverage:check": "node scripts/gen-coverage.mjs --check test/fixtures/countries.json",
-    "test:schema": "vitest run test/phase1.test.ts test/phase2.test.ts test/phase3.test.ts -t schema",
-    "test:golden": "vitest run test/phase1.test.ts test/phase2.test.ts test/phase3.test.ts -t golden"
+    "test:schema": "vitest run test/phase1.test.ts test/phase2.test.ts test/phase3.test.ts test/phase4.test.ts -t schema",
+    "test:golden": "vitest run test/phase1.test.ts test/phase2.test.ts test/phase3.test.ts test/phase4.test.ts -t golden"
   },
   "keywords": [
     "mcp",
@@ -55,6 +55,8 @@
     "customs",
     "landed-cost",
     "tax-calendar",
+    "tax-treaties",
+    "double-taxation",
     "payroll",
     "tax-tables",
     "calcbloc"

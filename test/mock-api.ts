@@ -21,6 +21,20 @@ export function route(url: URL): MockReply {
   const path = url.pathname.replace(/^.*\/api\/v1/, "");
   const q = url.searchParams;
   if (path === "/countries") return { status: 200, body: fixture("countries.json") };
+  // API 1.10 (captured from the site's local main 94129042 with handleApiRequest and an in-memory key, before the
+  // 1.10.0 release): the shared take-home engine with its verification field, and /tax-treaties.
+  if (path === "/net-salary" && q.get("country") === "estonia") return { status: 200, body: fixture("net-salary-estonia.json") };
+  if (path === "/net-salary" && q.get("country") === "denmark") return { status: 200, body: fixture("net-salary-denmark.json") };
+  if (path === "/employer-cost" && q.get("country") === "poland") return { status: 200, body: fixture("employer-cost-poland.json") };
+  if (path === "/employer-cost" && q.get("country") === "denmark") return { status: 200, body: fixture("employer-cost-denmark.json") };
+  if (path === "/tax-treaties") {
+    const c = q.get("country");
+    const p = q.get("partner");
+    if (c === "in" && !p) return { status: 200, body: fixture("tax-treaties-in.json") };
+    if (c === "in" && p === "gb") return { status: 200, body: fixture("tax-treaties-in-gb.json") };
+    if (c === "in" && p === "fr") return { status: 200, body: fixture("tax-treaties-in-fr.json") };
+    if (c === "de") return { status: 400, body: fixture("tax-treaties-de.json") };
+  }
   if (path === "/net-salary") {
     if (q.get("country") === "uk") return { status: 200, body: fixture("net-salary-uk.json") };
     if (q.get("country") === "austria") return { status: 400, body: fixture("net-salary-austria.json") };

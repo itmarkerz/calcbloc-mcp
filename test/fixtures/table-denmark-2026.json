@@ -1,0 +1,729 @@
+{
+  "country": "denmark",
+  "countryName": "Denmark",
+  "year": "2026",
+  "yearLabel": "2026",
+  "isCurrent": true,
+  "region": null,
+  "currency": "DKK",
+  "effectiveFrom": "2026-01-01",
+  "effectiveTo": "2026-12-31",
+  "status": "verified",
+  "underReview": [],
+  "dataVerified": true,
+  "sections": [
+    {
+      "id": "state-tax",
+      "title": "State income tax on personal income after AM-bidrag: combined marginal rates (2026 reform)",
+      "group": "income-tax",
+      "kind": "bands",
+      "rows": [
+        {
+          "label": "Bundskat (on income above the personal allowance)",
+          "from": 0,
+          "to": 641200,
+          "rate": 0.1201
+        },
+        {
+          "label": "Bundskat + mellemskat",
+          "from": 641200,
+          "to": 777900,
+          "rate": 0.1951
+        },
+        {
+          "label": "Bundskat + mellemskat + topskat",
+          "from": 777900,
+          "to": 2592700,
+          "rate": 0.2701
+        },
+        {
+          "label": "Bundskat + mellemskat + topskat + toptopskat",
+          "from": 2592700,
+          "to": null,
+          "rate": 0.3201
+        }
+      ],
+      "source": {
+        "title": "Skatte- og Vækstministeriet (formerly Skatteministeriet, skm.dk): Satser og beløbsgrænser i personskatteloven, 2026 and 2027 (page dated 23-10-2026)",
+        "url": "https://svmn.dk/tal-og-metode/satser/satser-og-beloebsgraenser-i-lovgivningen/personskatteloven",
+        "retrievedAt": "2026-11-21",
+        "effectiveFrom": "2026-01-01",
+        "effectiveTo": "2026-12-31"
+      },
+      "verified": true,
+      "basis": "Personal income after AM-bidrag, per year",
+      "note": "Sums of the statutory rates (each tax is charged on the income above its own threshold). Kommuneskat (national average 25.049%) and, for members of the Church of Denmark, kirkeskat come on top; the tax ceiling of 44.57% reduces the mellemskat rate in municipalities with a high kommuneskat (see each region's page)."
+    },
+    {
+      "id": "income-tax-rules",
+      "title": "State income taxes, personal allowance and tax ceiling 2026 (personskatteloven)",
+      "group": "income-tax",
+      "kind": "values",
+      "rows": [
+        {
+          "label": "Bundskat (bottom-bracket tax) (§ 6)",
+          "value": 0.1201,
+          "unit": "rate"
+        },
+        {
+          "label": "Bundskat on Christiansø (§ 6)",
+          "value": 0.0401,
+          "unit": "rate"
+        },
+        {
+          "label": "Personal allowance (personfradrag) (§ 10)",
+          "value": 54100,
+          "unit": "money"
+        },
+        {
+          "label": "Mellemskat (middle-bracket tax; called topskat until 2025) (§ 7)",
+          "value": 0.075,
+          "unit": "rate"
+        },
+        {
+          "label": "Mellemskat threshold: personal income after AM-bidrag above",
+          "value": 641200,
+          "unit": "money"
+        },
+        {
+          "label": "Positive net capital income in the mellemskat base: allowance (unmarried)",
+          "value": 55000,
+          "unit": "money"
+        },
+        {
+          "label": "Positive net capital income in the mellemskat base: allowance (married couples)",
+          "value": 110000,
+          "unit": "money"
+        },
+        {
+          "label": "Topskat (new from 2026) (§ 7 a)",
+          "value": 0.075,
+          "unit": "rate"
+        },
+        {
+          "label": "Topskat threshold: personal income after AM-bidrag above",
+          "value": 777900,
+          "unit": "money"
+        },
+        {
+          "label": "Toptopskat (new from 2026) (§ 8)",
+          "value": 0.05,
+          "unit": "rate"
+        },
+        {
+          "label": "Toptopskat threshold: personal income after AM-bidrag above",
+          "value": 2592700,
+          "unit": "money"
+        },
+        {
+          "label": "Tax ceiling (skatteloft) for personal income (§ 19)",
+          "value": 0.4457,
+          "unit": "rate"
+        },
+        {
+          "label": "Tax ceiling for positive net capital income (§ 19)",
+          "value": 0.42,
+          "unit": "rate"
+        },
+        {
+          "label": "Rate in place of kommuneskat for people with limited tax liability (§ 8 c)",
+          "value": 0.25,
+          "unit": "rate"
+        }
+      ],
+      "source": {
+        "title": "Skatte- og Vækstministeriet (formerly Skatteministeriet, skm.dk): Satser og beløbsgrænser i personskatteloven, 2026 and 2027 (page dated 23-10-2026)",
+        "url": "https://svmn.dk/tal-og-metode/satser/satser-og-beloebsgraenser-i-lovgivningen/personskatteloven",
+        "retrievedAt": "2026-11-21",
+        "effectiveFrom": "2026-01-01",
+        "effectiveTo": "2026-12-31"
+      },
+      "verified": true,
+      "note": "The 2026 reform renamed the former topskat mellemskat and added topskat and toptopskat. Thresholds apply to personal income after AM-bidrag."
+    },
+    {
+      "id": "municipal-tax",
+      "title": "Kommuneskat and kirkeskat 2026 (municipal and church tax)",
+      "group": "income-tax",
+      "kind": "values",
+      "rows": [
+        {
+          "label": "National average kommuneskat",
+          "value": 0.25049,
+          "unit": "rate"
+        },
+        {
+          "label": "National average kirkeskat, members of the Church of Denmark",
+          "value": 0.00867,
+          "unit": "rate"
+        },
+        {
+          "label": "National average kirkeskat, all taxpayers",
+          "value": 0.00639,
+          "unit": "rate"
+        },
+        {
+          "label": "Municipalities",
+          "value": 98,
+          "unit": "number",
+          "source": {
+            "title": "Skatte- og Vækstministeriet: Kommuneskattesatser 2026 (regneark, from 'Kommuneskatteprocenter siden 1977', page dated 31-10-2025)",
+            "url": "https://svmn.dk/media/0oia30i5/kommuneskattesatser_2026.xlsx",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        },
+        {
+          "label": "Lowest kommuneskat (København)",
+          "value": 0.2339,
+          "unit": "rate",
+          "source": {
+            "title": "Skatte- og Vækstministeriet: Kommuneskattesatser 2026 (regneark, from 'Kommuneskatteprocenter siden 1977', page dated 31-10-2025)",
+            "url": "https://svmn.dk/media/0oia30i5/kommuneskattesatser_2026.xlsx",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        },
+        {
+          "label": "Highest kommuneskat (Brønderslev, Haderslev, Langeland, Lolland, Læsø, Nyborg, Odsherred, Sorø, Svendborg, Vesthimmerland, Vordingborg)",
+          "value": 0.263,
+          "unit": "rate",
+          "source": {
+            "title": "Skatte- og Vækstministeriet: Kommuneskattesatser 2026 (regneark, from 'Kommuneskatteprocenter siden 1977', page dated 31-10-2025)",
+            "url": "https://svmn.dk/media/0oia30i5/kommuneskattesatser_2026.xlsx",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        },
+        {
+          "label": "Lowest kirkeskat (Gentofte)",
+          "value": 0.0038,
+          "unit": "rate",
+          "source": {
+            "title": "Skatte- og Vækstministeriet: Kommuneskattesatser 2026 (regneark, from 'Kommuneskatteprocenter siden 1977', page dated 31-10-2025)",
+            "url": "https://svmn.dk/media/0oia30i5/kommuneskattesatser_2026.xlsx",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        },
+        {
+          "label": "Highest kirkeskat (Læsø)",
+          "value": 0.013,
+          "unit": "rate",
+          "source": {
+            "title": "Skatte- og Vækstministeriet: Kommuneskattesatser 2026 (regneark, from 'Kommuneskatteprocenter siden 1977', page dated 31-10-2025)",
+            "url": "https://svmn.dk/media/0oia30i5/kommuneskattesatser_2026.xlsx",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        },
+        {
+          "label": "Region Hovedstaden",
+          "value": "29 municipalities; kommuneskat 23.39% to 26.2%",
+          "unit": "text",
+          "source": {
+            "title": "Skatte- og Vækstministeriet: Kommuneskattesatser 2026 (regneark, from 'Kommuneskatteprocenter siden 1977', page dated 31-10-2025)",
+            "url": "https://svmn.dk/media/0oia30i5/kommuneskattesatser_2026.xlsx",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        },
+        {
+          "label": "Region Sjælland",
+          "value": "17 municipalities; kommuneskat 24.2% to 26.3%",
+          "unit": "text",
+          "source": {
+            "title": "Skatte- og Vækstministeriet: Kommuneskattesatser 2026 (regneark, from 'Kommuneskatteprocenter siden 1977', page dated 31-10-2025)",
+            "url": "https://svmn.dk/media/0oia30i5/kommuneskattesatser_2026.xlsx",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        },
+        {
+          "label": "Region Syddanmark",
+          "value": "22 municipalities; kommuneskat 23.4% to 26.3%",
+          "unit": "text",
+          "source": {
+            "title": "Skatte- og Vækstministeriet: Kommuneskattesatser 2026 (regneark, from 'Kommuneskatteprocenter siden 1977', page dated 31-10-2025)",
+            "url": "https://svmn.dk/media/0oia30i5/kommuneskattesatser_2026.xlsx",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        },
+        {
+          "label": "Region Midtjylland",
+          "value": "19 municipalities; kommuneskat 24.52% to 26%",
+          "unit": "text",
+          "source": {
+            "title": "Skatte- og Vækstministeriet: Kommuneskattesatser 2026 (regneark, from 'Kommuneskatteprocenter siden 1977', page dated 31-10-2025)",
+            "url": "https://svmn.dk/media/0oia30i5/kommuneskattesatser_2026.xlsx",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        },
+        {
+          "label": "Region Nordjylland",
+          "value": "11 municipalities; kommuneskat 25.5% to 26.3%",
+          "unit": "text",
+          "source": {
+            "title": "Skatte- og Vækstministeriet: Kommuneskattesatser 2026 (regneark, from 'Kommuneskatteprocenter siden 1977', page dated 31-10-2025)",
+            "url": "https://svmn.dk/media/0oia30i5/kommuneskattesatser_2026.xlsx",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        }
+      ],
+      "source": {
+        "title": "Skatte- og Vækstministeriet: Kommuneskatter - gennemsnitsprocenten i 2026 (dated 27-10-2025)",
+        "url": "https://svmn.dk/tal-og-metode/satser/statistik-i-kommunerne/kommuneskatter-gennemsnitsprocenten-i-2026",
+        "retrievedAt": "2026-11-21",
+        "effectiveFrom": "2026-01-01",
+        "effectiveTo": "2026-12-31"
+      },
+      "verified": true,
+      "note": "Kommuneskat and kirkeskat are charged on taxable income (after the employment deduction and other deductions). Lowest and highest are read from the ministry's list of all 98 municipalities; each region's page lists every municipality."
+    },
+    {
+      "id": "am-bidrag",
+      "title": "Labour-market contribution (AM-bidrag)",
+      "group": "employee",
+      "kind": "values",
+      "rows": [
+        {
+          "label": "AM-bidrag on salary and other earned income",
+          "value": 0.08,
+          "unit": "rate"
+        },
+        {
+          "label": "Paid from the year the person turns (age, from 2026)",
+          "value": 18,
+          "unit": "number"
+        },
+        {
+          "label": "Order of deduction",
+          "value": "Withheld by the employer after ATP and the employee's own pension contribution, before income tax",
+          "unit": "text"
+        }
+      ],
+      "source": {
+        "title": "Skatte- og Vækstministeriet: Satser og beløbsgrænser i arbejdsmarkedsbidragsloven, 2026 and 2027 (page dated 27-08-2026); Skattestyrelsen (skat.dk): Am-bidrag (arbejdsmarkedsbidrag)",
+        "url": "https://svmn.dk/tal-og-metode/satser/satser-og-beloebsgraenser-i-lovgivningen/arbejdsmarkedsbidragsloven",
+        "retrievedAt": "2026-11-21",
+        "effectiveFrom": "2026-01-01",
+        "effectiveTo": "2026-12-31"
+      },
+      "verified": true
+    },
+    {
+      "id": "deductions",
+      "title": "Employment and job deductions 2026 (ligningsloven)",
+      "group": "income-tax",
+      "kind": "values",
+      "rows": [
+        {
+          "label": "Employment deduction (beskæftigelsesfradrag): share of earned income",
+          "value": 0.1275,
+          "unit": "rate"
+        },
+        {
+          "label": "Employment deduction: maximum",
+          "value": 63300,
+          "unit": "money"
+        },
+        {
+          "label": "Extra employment deduction for single parents",
+          "value": 0.115,
+          "unit": "rate"
+        },
+        {
+          "label": "Extra employment deduction for single parents: maximum",
+          "value": 50600,
+          "unit": "money"
+        },
+        {
+          "label": "Job deduction (jobfradrag): share of earned income above the threshold",
+          "value": 0.045,
+          "unit": "rate"
+        },
+        {
+          "label": "Job deduction: income threshold",
+          "value": 235200,
+          "unit": "money"
+        },
+        {
+          "label": "Job deduction: maximum",
+          "value": 3100,
+          "unit": "money"
+        }
+      ],
+      "source": {
+        "title": "Skatte- og Vækstministeriet: Satser og beløbsgrænser i ligningsloven, 2026 and 2027 (page dated 02-09-2026)",
+        "url": "https://svmn.dk/tal-og-metode/satser/satser-og-beloebsgraenser-i-lovgivningen/ligningsloven",
+        "retrievedAt": "2026-11-21",
+        "effectiveFrom": "2026-01-01",
+        "effectiveTo": "2026-12-31"
+      },
+      "verified": true,
+      "note": "The deductions reduce the taxable income on which kommuneskat and kirkeskat are charged, not the state taxes on personal income."
+    },
+    {
+      "id": "atp",
+      "title": "ATP (labour-market supplementary pension): monthly contributions, private sector (A rate)",
+      "group": "employer",
+      "kind": "values",
+      "rows": [
+        {
+          "label": "117 hours or more a month: employee share",
+          "value": 99,
+          "unit": "money"
+        },
+        {
+          "label": "117 hours or more a month: employer share",
+          "value": 198,
+          "unit": "money"
+        },
+        {
+          "label": "117 hours or more a month: total",
+          "value": 297,
+          "unit": "money"
+        },
+        {
+          "label": "78 to 116 hours a month: employee share",
+          "value": 66,
+          "unit": "money"
+        },
+        {
+          "label": "78 to 116 hours a month: employer share",
+          "value": 132,
+          "unit": "money"
+        },
+        {
+          "label": "78 to 116 hours a month: total",
+          "value": 198,
+          "unit": "money"
+        },
+        {
+          "label": "39 to 77 hours a month: employee share",
+          "value": 33,
+          "unit": "money"
+        },
+        {
+          "label": "39 to 77 hours a month: employer share",
+          "value": 66,
+          "unit": "money"
+        },
+        {
+          "label": "39 to 77 hours a month: total",
+          "value": 99,
+          "unit": "money"
+        },
+        {
+          "label": "Under 39 hours a month: employee share",
+          "value": 0,
+          "unit": "money"
+        },
+        {
+          "label": "Under 39 hours a month: employer share",
+          "value": 0,
+          "unit": "money"
+        },
+        {
+          "label": "Under 39 hours a month: total",
+          "value": 0,
+          "unit": "money"
+        },
+        {
+          "label": "Hourly rate for converting a fixed salary into hours, 2026: men",
+          "value": 258.69,
+          "unit": "money"
+        },
+        {
+          "label": "Hourly rate for converting a fixed salary into hours, 2026: women",
+          "value": 233.62,
+          "unit": "money"
+        }
+      ],
+      "source": {
+        "title": "ATP Livslang Pension on Virk: Gældende satser for ATP-bidrag (opdateret 12.10.2026)",
+        "url": "https://virk.dk/vejledning/atp/atp-arbejdsgiver/atp-satser/",
+        "retrievedAt": "2026-11-21",
+        "effectiveFrom": "2024-01-01",
+        "effectiveTo": null
+      },
+      "verified": true,
+      "note": "Fixed amounts by hours worked, not a percentage of salary. Employers report both shares as one contribution."
+    },
+    {
+      "id": "minimum-wage",
+      "title": "Minimum wage",
+      "group": "employer",
+      "kind": "values",
+      "rows": [
+        {
+          "label": "Statutory minimum wage",
+          "value": "None: pay is set by collective agreements or individual agreement",
+          "unit": "text",
+          "status": "not_applicable"
+        }
+      ],
+      "source": {
+        "title": "Life in Denmark (written by the Ministry of Employment and Gender Equality): Pay (last updated 29 June 2026)",
+        "url": "https://lifeindenmark.borger.dk/working/work-rights/working-conditions/pay",
+        "retrievedAt": "2026-11-09"
+      },
+      "verified": true,
+      "note": "Sector agreements can set minimum wages for their sector."
+    },
+    {
+      "id": "non-resident",
+      "title": "Non-residents: employment income (begrænset skattepligt)",
+      "group": "income-tax",
+      "kind": "values",
+      "rows": [
+        {
+          "label": "Who has limited tax liability",
+          "value": "Someone who lives abroad and works in Denmark; Danish pay is taxed in Denmark. A daily commuter from a home abroad (e.g. Sweden or Germany) never becomes fully tax liable, however long the work lasts",
+          "unit": "text"
+        },
+        {
+          "label": "Residence test: fully tax liable when",
+          "value": "A year-round home is available in Denmark, or the person stays in Denmark for more than 6 months without going home",
+          "unit": "text"
+        },
+        {
+          "label": "Rate in place of kommuneskat for people with limited tax liability (PSL § 8 c)",
+          "value": 0.25,
+          "unit": "rate",
+          "source": {
+            "title": "Skatte- og Vækstministeriet: Satser og beløbsgrænser i lov om indkomstskat for personer m.v. (personskatteloven), 2026 and 2027 (page dated 23-10-2026)",
+            "url": "https://svmn.dk/tal-og-metode/satser/satser-og-beloebsgraenser-i-lovgivningen/personskatteloven",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        },
+        {
+          "label": "Deductions",
+          "value": "Only expenses relating to the Danish pay, e.g. the commuting deduction, travel costs and trade union or unemployment fund dues",
+          "unit": "text"
+        },
+        {
+          "label": "Cross-border worker rules (grænsegænger, KSL § 5 A): share of total income taxed in Denmark of at least",
+          "value": 0.75,
+          "unit": "rate",
+          "note": "wider deductions, e.g. interest paid abroad or a spouse's unused personal allowance",
+          "source": {
+            "title": "Skatte- og Vækstministeriet: Satser og beløbsgrænser i kildeskatteloven, 2026 and 2027 (page dated 14-09-2026)",
+            "url": "https://svmn.dk/tal-og-metode/satser/satser-og-beloebsgraenser-i-lovgivningen/kildeskatteloven",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        },
+        {
+          "label": "Hired-out workers (arbejdsudleje): gross income tax, no deductions (KSL § 48 B)",
+          "value": 0.3,
+          "unit": "rate",
+          "note": "plus 8% AM-bidrag; no tax card needed; the worker may choose the ordinary rules instead",
+          "source": {
+            "title": "Skatte- og Vækstministeriet: Satser og beløbsgrænser i kildeskatteloven, 2026 and 2027 (page dated 14-09-2026)",
+            "url": "https://svmn.dk/tal-og-metode/satser/satser-og-beloebsgraenser-i-lovgivningen/kildeskatteloven",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        },
+        {
+          "label": "Tax card",
+          "value": "Registration with Skattestyrelsen and a digital tax card (form 04.063); the employer must be given the home country's tax identification number (TIN)",
+          "unit": "text"
+        },
+        {
+          "label": "Withholding rate where no tax card is held (KSL § 48, stk. 8)",
+          "value": 0.55,
+          "unit": "rate",
+          "source": {
+            "title": "Skatte- og Vækstministeriet: Satser og beløbsgrænser i kildeskatteloven, 2026 and 2027 (page dated 14-09-2026)",
+            "url": "https://svmn.dk/tal-og-metode/satser/satser-og-beloebsgraenser-i-lovgivningen/kildeskatteloven",
+            "retrievedAt": "2026-11-21",
+            "effectiveFrom": "2026-01-01",
+            "effectiveTo": "2026-12-31"
+          }
+        }
+      ],
+      "source": {
+        "title": "Skattestyrelsen (skat.dk): Du bor i udlandet og arbejder i Danmark",
+        "url": "https://skat.dk/borger/aarsopgoerelse-forskudsopgoerelse-og-indkomst/udlandsforhold/du-bor-i-udlandet-og-arbejder-i-danmark",
+        "retrievedAt": "2026-11-21",
+        "effectiveTo": null
+      },
+      "verified": true,
+      "note": "A tax treaty decides where pay for work in Denmark is taxed when a person is resident in two countries. Incoming researchers and high earners: see the researcher scheme in the freelancers section."
+    },
+    {
+      "id": "capital-gains",
+      "title": "Share income and capital gains on shares (aktieindkomst)",
+      "group": "income-tax",
+      "kind": "bands",
+      "rows": [
+        {
+          "label": "Lower rate",
+          "from": 0,
+          "to": 79400,
+          "rate": 0.27
+        },
+        {
+          "label": "Higher rate",
+          "from": 79400,
+          "to": null,
+          "rate": 0.42
+        }
+      ],
+      "source": {
+        "title": "Skatte- og Vækstministeriet: Satser og beløbsgrænser i lov om indkomstskat for personer m.v. (personskatteloven), 2026 and 2027 (page dated 23-10-2026)",
+        "url": "https://svmn.dk/tal-og-metode/satser/satser-og-beloebsgraenser-i-lovgivningen/personskatteloven",
+        "retrievedAt": "2026-11-21",
+        "effectiveFrom": "2026-01-01",
+        "effectiveTo": "2026-12-31"
+      },
+      "verified": true,
+      "basis": "Share income (dividends and gains on shares) per person, per year",
+      "note": "Personskatteloven § 8 a. Married couples can share the band."
+    },
+    {
+      "id": "rental-income",
+      "title": "Rental income: tax-free allowances 2026 (ligningsloven)",
+      "group": "income-tax",
+      "kind": "values",
+      "rows": [
+        {
+          "label": "Renting out a holiday home: allowance, rent self-reported (§ 15 O)",
+          "value": 13800,
+          "unit": "money"
+        },
+        {
+          "label": "Renting out a holiday home: allowance, rent reported by a third party (§ 15 O)",
+          "value": 50200,
+          "unit": "money"
+        },
+        {
+          "label": "Holiday homes: standard deduction from rent after the allowance (§ 15 O)",
+          "value": 0.4,
+          "unit": "rate"
+        },
+        {
+          "label": "Renting out the year-round home part of the year or part of it: allowance, self-reported (§ 15 Q)",
+          "value": 13800,
+          "unit": "money"
+        },
+        {
+          "label": "The same: allowance, rent reported by a third party (§ 15 Q)",
+          "value": 35100,
+          "unit": "money"
+        },
+        {
+          "label": "Letting rooms in one's own home: tax-free rent at least (§ 15 P)",
+          "value": 24000,
+          "unit": "money",
+          "note": "or two-thirds of one's own rent, or 1⅓% of the property value for owners"
+        }
+      ],
+      "source": {
+        "title": "Skatte- og Vækstministeriet: Satser og beløbsgrænser i ligningsloven, 2026 and 2027 (page dated 18-11-2026)",
+        "url": "https://svmn.dk/tal-og-metode/satser/satser-og-beloebsgraenser-i-lovgivningen/ligningsloven",
+        "retrievedAt": "2026-11-21",
+        "effectiveFrom": "2026-01-01",
+        "effectiveTo": "2026-12-31"
+      },
+      "verified": true,
+      "note": "Rent above the allowance is taxable income. For holiday homes, a standard deduction of 40% of the rent after the allowance may be used instead of actual expenses (§ 15 O)."
+    },
+    {
+      "id": "employer-levies",
+      "title": "Payroll tax (lønsumsafgift) for VAT-exempt activities",
+      "group": "employer",
+      "kind": "values",
+      "rows": [
+        {
+          "label": "Financial businesses: share of payroll",
+          "value": 0.153,
+          "unit": "rate"
+        },
+        {
+          "label": "Lotteries, tourist offices, organisations and associations: share of payroll",
+          "value": 0.0637,
+          "unit": "rate"
+        },
+        {
+          "label": "Public businesses not covered by § 4, stk. 1: share of payroll",
+          "value": 0.0637,
+          "unit": "rate"
+        },
+        {
+          "label": "Other liable businesses: share of payroll plus profit (or minus loss)",
+          "value": 0.0412,
+          "unit": "rate"
+        },
+        {
+          "label": "Newspaper publishers and importers: share of the value of newspaper sales",
+          "value": 0.0354,
+          "unit": "rate"
+        }
+      ],
+      "source": {
+        "title": "Skatte- og Vækstministeriet: Afgiftssatser i lov om afgift af lønsum m.v. (lønsumsafgiftsloven), 2026 and 2027 (page dated 22-05-2026)",
+        "url": "https://svmn.dk/tal-og-metode/satser/satser-og-beloebsgraenser-i-lovgivningen/loensumsafgiftsloven",
+        "retrievedAt": "2026-11-21",
+        "effectiveFrom": "2026-01-01",
+        "effectiveTo": "2026-12-31"
+      },
+      "verified": true,
+      "basis": "The business's payroll (and, for other businesses, payroll plus profit)",
+      "note": "Lønsumsafgift is paid by businesses whose supplies are exempt from VAT; other businesses pay no payroll tax."
+    }
+  ],
+  "requested_year": "2026",
+  "current_year": "2026",
+  "years_available": [
+    "2026"
+  ],
+  "table_version": 4,
+  "version_date": "2026-11-22",
+  "versions_available": [
+    {
+      "version": 1,
+      "date": "2026-11-16"
+    },
+    {
+      "version": 2,
+      "date": "2026-11-21"
+    },
+    {
+      "version": 3,
+      "date": "2026-11-21"
+    },
+    {
+      "version": 4,
+      "date": "2026-11-22"
+    }
+  ],
+  "dataset_version": "2026.11.27",
+  "is_current_version": true,
+  "pageUrl": "https://calcbloc.com/denmark/tax-tables/2026",
+  "attribution": {
+    "source": "CalcBloc",
+    "url": "https://calcbloc.com/denmark/tax-tables/2026",
+    "required": true,
+    "text": "Data by CalcBloc (calcbloc.com)"
+  }
+}

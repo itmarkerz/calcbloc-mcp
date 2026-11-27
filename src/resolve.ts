@@ -129,6 +129,33 @@ export function resolveCountry(countries: CountryInfo[], input: string): Country
   throw new ToolInputError(`CalcBloc does not cover "${input}". Countries available: ${countryList(countries)}.`);
 }
 
+/** ISO 3166-1 alpha-2 in lower case (the UK is gb), as /tax-treaties takes and returns countries. */
+export function isoCodeOf(c: CountryInfo): string {
+  const iso = c.iso_code?.trim().toLowerCase();
+  if (iso && /^[a-z]{2}$/.test(iso)) return iso;
+  const short = shortCodeOf(c).toLowerCase();
+  return short === "uk" ? "gb" : short;
+}
+
+/** The country with this ISO 3166-1 alpha-2 code (gb finds the UK), if listed. */
+export function countryByIso(countries: CountryInfo[], iso: string): CountryInfo | undefined {
+  const k = iso.trim().toLowerCase();
+  return countries.find((c) => isoCodeOf(c) === k);
+}
+
+/**
+ * The partner of a treaty lookup. Resolved like a country argument, but an unknown name gets a short message rather
+ * than the whole country list: a treaty partner need not be a country CalcBloc has tax tables for.
+ */
+export function resolvePartner(countries: CountryInfo[], input: string): CountryInfo {
+  try {
+    return resolveCountry(countries, input);
+  } catch (e) {
+    if (!(e instanceof ToolInputError)) throw e;
+    throw new ToolInputError(`Unknown partner country "${input.slice(0, 60)}". Use an ISO 3166-1 alpha-2 code (us, gb, sg) or the English name ("United States").`);
+  }
+}
+
 /** Tax years are written like 2026 or 2026-27; accept 2026/27 too. */
 export function normalizeYear(year: string | undefined): string {
   const y = (year ?? "").trim().toLowerCase().replace("/", "-");

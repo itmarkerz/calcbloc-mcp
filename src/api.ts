@@ -20,9 +20,18 @@ export interface CountryParam {
   description: string;
 }
 
+/**
+ * API 1.10+: how a calculation on the shared take-home engine is verified. official-example: the golden tests reproduce
+ * a worked example published by the tax authority or social security institution; law-text: no official example is
+ * published, so the tests are worked by hand from the law. null (or absent before 1.10) for countries with their own engine.
+ */
+export type Verification = "official-example" | "law-text";
+
 export interface CalcEndpointInfo {
   path: string;
   calculatorUrl: string;
+  /** API 1.10+: see Verification. */
+  verification?: Verification | null;
   parameters: CountryParam[];
 }
 
@@ -148,6 +157,8 @@ export interface CalcResponse {
   results: Record<string, number>;
   breakdown: { title: string; columns: string[]; rows: { label: string; values: number[] }[] } | null;
   notes: string[];
+  /** API 1.10+: see Verification; the first note gives the official URLs. */
+  verification?: Verification | null;
   calculatorUrl: string;
   warnings: string[];
   attribution?: { url?: string; text?: string };
@@ -577,6 +588,44 @@ export interface CrossBorderResponse {
   attribution?: { url?: string; text?: string };
 }
 
+/* -------------------------------------------------- API 1.10: double taxation treaties -------------------------------------------------- */
+
+/** API 1.10+: one withholding limit of a treaty (the maximum tax the source State may charge). */
+export interface TreatyRate {
+  kind: "dividend" | "dividend_substantial" | "interest" | "royalty" | "fts";
+  /** Decimal: 0.15 = 15%. */
+  rate: number;
+  condition: string | null;
+  article: string | null;
+  /** The article's wording, verbatim. */
+  quote: string | null;
+}
+
+/** API 1.10+: one treaty of GET /tax-treaties. */
+export interface Treaty {
+  countries: string[];
+  partner: string;
+  partner_name: string | null;
+  title: string;
+  signed: string | null;
+  in_force: string | null;
+  mli: boolean | null;
+  /** Relief method of each country (ISO code → credit, exemption or exemption_with_progression). */
+  relief_method: Record<string, string>;
+  withholding: TreatyRate[];
+  source: { id: string; url?: string; title?: string; publisher?: string; instrument?: string | null; retrieved_at?: string; quote?: string | null };
+  data_file?: string;
+}
+
+/** API 1.10+: response of GET /tax-treaties. */
+export interface TaxTreatiesResponse {
+  country: string;
+  partner: string | null;
+  count: number;
+  treaties: Treaty[];
+  attribution?: { url?: string; text?: string };
+}
+
 export type QueryValue = string | number | boolean;
 
 /** An error from the CalcBloc API (or from reaching it), with a message written for the person using the assistant. */
@@ -769,6 +818,11 @@ export class CalcBlocClient {
   /** API 1.9+: tax year, next tax year and upcoming changes for a country. */
   taxCalendar(params: Record<string, QueryValue>): Promise<TaxCalendarResponse> {
     return this.get<TaxCalendarResponse>("/tax-calendar", params);
+  }
+
+  /** API 1.10+: the double taxation treaties stored for a country (cached: the treaty records change rarely). */
+  taxTreaties(params: Record<string, QueryValue>): Promise<TaxTreatiesResponse> {
+    return this.cached(`treaties:${queryKey(params)}`, () => this.get<TaxTreatiesResponse>("/tax-treaties", params));
   }
 
   /** API 1.8+: tax-table figures as facts, filtered and paginated (cached). */

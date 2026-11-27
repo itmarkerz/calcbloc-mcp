@@ -1,0 +1,433 @@
+{
+  "country": "in",
+  "partner": null,
+  "count": 6,
+  "treaties": [
+    {
+      "countries": [
+        "in",
+        "us"
+      ],
+      "partner": "us",
+      "partner_name": "United States",
+      "title": "Convention between the Government of the United States of America and the Government of the Republic of India for the Avoidance of Double Taxation and the Prevention of Fiscal Evasion with respect to Taxes on Income",
+      "signed": "1989-09-12",
+      "in_force": "1990-12-18",
+      "mli": null,
+      "relief_method": {
+        "in": "credit",
+        "us": "credit"
+      },
+      "withholding": [
+        {
+          "kind": "dividend_substantial",
+          "rate": 0.15,
+          "condition": "The beneficial owner is a company which owns at least 10 per cent of the voting stock of the company paying the dividends (not for dividends paid by a U.S. Real Estate Investment Trust; a U.S. Regulated Investment Company pays at the rate of subparagraph b))",
+          "article": "Article 10(2)(a)",
+          "quote": "a) 15 per cent of the gross amount of the dividends if the beneficial owner is a company which owns at least 10 per cent of the voting stock of the company paying the dividends;"
+        },
+        {
+          "kind": "dividend",
+          "rate": 0.25,
+          "condition": "All other cases (the beneficial owner is a resident of the other Contracting State)",
+          "article": "Article 10(2)(b)",
+          "quote": "b) 25 per cent of the gross amount of the dividends in all other cases."
+        },
+        {
+          "kind": "interest",
+          "rate": 0.1,
+          "condition": "Interest paid on a loan granted by a bank carrying on a bona fide banking business or by a similar financial institution (including an insurance company)",
+          "article": "Article 11(2)(a)",
+          "quote": "a) 10 percent of the gross amount of the interest if such interest is paid on a loan granted by a bank carrying on a bona fide banking business or by a similar financial institution (including an insurance company); and"
+        },
+        {
+          "kind": "interest",
+          "rate": 0.15,
+          "condition": "All other cases (interest beneficially owned by the Government, the Reserve Bank of India, the Federal Reserve Banks and other institutions named in Article 11(3) is exempt in the source State)",
+          "article": "Article 11(2)(b)",
+          "quote": "b) 15 percent of the gross amount of the interest in all other cases."
+        },
+        {
+          "kind": "royalty",
+          "rate": 0.15,
+          "condition": "Royalties of paragraph 3(a) (copyrights, patents, trade marks, designs, secret formulas, information concerning industrial, commercial or scientific experience), for the years after the first five taxable years for which the Convention has effect",
+          "article": "Article 12(2)(a)(ii)",
+          "quote": "ii) during the subsequent years, 15 percent of the gross amount of royalties or fees for included services;"
+        },
+        {
+          "kind": "royalty",
+          "rate": 0.1,
+          "condition": "Royalties of paragraph 3(b) (the use of, or the right to use, industrial, commercial or scientific equipment)",
+          "article": "Article 12(2)(b)",
+          "quote": "b) in the case of royalties referred to in sub-paragraph (b) of paragraph 3 and fees for included services as defined in this Article that are ancillary and subsidiary to the enjoyment of the property for which payment is received under paragraph 3 (b) of this Article, 10 percent of the gross amount of the royalties or fees for included services."
+        },
+        {
+          "kind": "fts",
+          "rate": 0.15,
+          "condition": "Fees for included services as defined in Article 12(4), other than those ancillary and subsidiary to the enjoyment of property under paragraph 3(b), for the years after the first five taxable years",
+          "article": "Article 12(2)(a)(ii)",
+          "quote": "ii) during the subsequent years, 15 percent of the gross amount of royalties or fees for included services;"
+        },
+        {
+          "kind": "fts",
+          "rate": 0.1,
+          "condition": "Fees for included services that are ancillary and subsidiary to the enjoyment of the property for which royalties under paragraph 3(b) are received",
+          "article": "Article 12(2)(b)",
+          "quote": "b) in the case of royalties referred to in sub-paragraph (b) of paragraph 3 and fees for included services as defined in this Article that are ancillary and subsidiary to the enjoyment of the property for which payment is received under paragraph 3 (b) of this Article, 10 percent of the gross amount of the royalties or fees for included services."
+        }
+      ],
+      "source": {
+        "id": "src-ec6b143ff2aa",
+        "url": "https://www.irs.gov/pub/irs-trty/india.pdf",
+        "title": "Convention between the Government of the United States of America and the Government of the Republic of India for the Avoidance of Double Taxation and the Prevention of Fiscal Evasion with respect to Taxes on Income, signed at New Delhi September 12, 1989, with Protocol (Treaties and Other International Acts Series 90-1218)",
+        "publisher": "Internal Revenue Service (U.S. Department of the Treasury)",
+        "instrument": "India-United States income tax convention of 12 September 1989, Articles 10, 11, 12 and 25",
+        "retrieved_at": "2026-11-26",
+        "quote": "Signed at New Delhi September 12, 1989 … Entered into force December 18, 1990."
+      },
+      "data_file": "data/v2/in/2026-27/trade.json"
+    },
+    {
+      "countries": [
+        "in",
+        "sg"
+      ],
+      "partner": "sg",
+      "partner_name": "Singapore",
+      "title": "Agreement between the Government of the Republic of Singapore and the Government of the Republic of India for the Avoidance of Double Taxation and the Prevention of Fiscal Evasion with respect to Taxes on Income",
+      "signed": "1994-01-24",
+      "in_force": "1994-05-27",
+      "mli": true,
+      "relief_method": {
+        "in": "credit",
+        "sg": "credit"
+      },
+      "withholding": [
+        {
+          "kind": "dividend_substantial",
+          "rate": 0.1,
+          "condition": "The beneficial owner is a company which owns at least 25% of the shares of the company paying the dividends",
+          "article": "Article 10(2)(a)",
+          "quote": "(a) 10% of the gross amount of the dividends if the beneficial owner is a company which owns at least 25% of the shares of the company paying the dividends;"
+        },
+        {
+          "kind": "dividend",
+          "rate": 0.15,
+          "condition": "All other cases (the recipient is the beneficial owner)",
+          "article": "Article 10(2)(b)",
+          "quote": "(b) 15% of the gross amount of the dividends in all other cases."
+        },
+        {
+          "kind": "interest",
+          "rate": 0.1,
+          "condition": "Interest paid on a loan granted by a bank carrying on a bona fide banking business or by a similar financial institution (including an insurance company)",
+          "article": "Article 11(2)(a)",
+          "quote": "(a) 10% of the gross amount of the interest if such interest is paid on a loan granted by a bank carrying on a bona fide banking business or by a similar financial institution (including an insurance company);"
+        },
+        {
+          "kind": "interest",
+          "rate": 0.15,
+          "condition": "All other cases",
+          "article": "Article 11(2)(b)",
+          "quote": "(b) 15% of the gross amount of the interest in all other cases."
+        },
+        {
+          "kind": "royalty",
+          "rate": 0.15,
+          "condition": "Royalties of paragraph 3(a)",
+          "article": "Article 12(2)(a)",
+          "quote": "(a) in the case of royalties referred to in paragraph 3(a) and fees for technical services as defined in this Article (other than services described in subparagraph (b) of this paragraph), 15% of the gross amount of the royalties and fees;"
+        },
+        {
+          "kind": "royalty",
+          "rate": 0.1,
+          "condition": "Royalties of paragraph 3(b) (the use of, or the right to use, industrial, commercial or scientific equipment)",
+          "article": "Article 12(2)(b)",
+          "quote": "(b) in the case of royalties referred to in paragraph 3(b) and fees for technical services as defined in this Article that are ancillary and subsidiary to the enjoyment of property for which royalties under paragraph 3(b) are received, 10% of the gross amount of the royalties and fees."
+        },
+        {
+          "kind": "fts",
+          "rate": 0.15,
+          "condition": "Fees for technical services as defined in Article 12, other than those ancillary and subsidiary to the enjoyment of property under paragraph 3(b)",
+          "article": "Article 12(2)(a)",
+          "quote": "(a) in the case of royalties referred to in paragraph 3(a) and fees for technical services as defined in this Article (other than services described in subparagraph (b) of this paragraph), 15% of the gross amount of the royalties and fees;"
+        },
+        {
+          "kind": "fts",
+          "rate": 0.1,
+          "condition": "Fees for technical services that are ancillary and subsidiary to the enjoyment of property for which royalties under paragraph 3(b) are received",
+          "article": "Article 12(2)(b)",
+          "quote": "(b) in the case of royalties referred to in paragraph 3(b) and fees for technical services as defined in this Article that are ancillary and subsidiary to the enjoyment of property for which royalties under paragraph 3(b) are received, 10% of the gross amount of the royalties and fees."
+        }
+      ],
+      "source": {
+        "id": "src-4095f4fb1007",
+        "url": "https://www.iras.gov.sg/media/docs/default-source/dtas/protocol-amending-singapore-india-dta-(ratified)(mli)(1-oct-2019).pdf",
+        "title": "Agreement between the Government of the Republic of Singapore and the Government of the Republic of India for the Avoidance of Double Taxation and the Prevention of Fiscal Evasion with respect to Taxes on Income (24 January 1994), as amended by the protocols of 2005, 2011 and 2016 and with the MLI modifications (Annex A), as published by IRAS",
+        "publisher": "Inland Revenue Authority of Singapore",
+        "instrument": "India-Singapore DTA of 24 January 1994 as amended, Articles 10, 11, 12 and 25",
+        "retrieved_at": "2026-11-26",
+        "quote": "Date of Conclusion: 24 January 1994. Entry into Force: 27 May 1994. … The Income Tax (Singapore-India) (Avoidance of Double Taxation Agreement) Order 2019, which has entered into force on 1 October 2019, implements the applicable provisions of the MLI to the articles of this Agreement."
+      },
+      "data_file": "data/v2/in/2026-27/trade.json"
+    },
+    {
+      "countries": [
+        "gb",
+        "in"
+      ],
+      "partner": "gb",
+      "partner_name": "United Kingdom",
+      "title": "Convention between the Government of the United Kingdom of Great Britain and Northern Ireland and the Government of the Republic of India for the Avoidance of Double Taxation and the Prevention of Fiscal Evasion with respect to Taxes on Income and Capital Gains",
+      "signed": "1993-01-25",
+      "in_force": "1993-10-25",
+      "mli": null,
+      "relief_method": {
+        "gb": "credit",
+        "in": "credit"
+      },
+      "withholding": [
+        {
+          "kind": "dividend",
+          "rate": 0.15,
+          "condition": "Dividends paid out of income (including gains) derived directly or indirectly from immovable property by an investment vehicle which distributes most of this income annually and whose income from such immovable property is exempted from tax",
+          "article": "Article 11(2)(a)",
+          "quote": "a) 15 per cent of the gross amount of the dividends where those dividends are paid out of income (including gains) derived directly or indirectly from immovable property within the meaning of Article 6 by an investment vehicle which distributes most of this income annually and whose income from such immovable property is exempted from tax;"
+        },
+        {
+          "kind": "dividend",
+          "rate": 0.1,
+          "condition": "All other cases (the beneficial owner is a resident of the other Contracting State)",
+          "article": "Article 11(2)(b)",
+          "quote": "b) 10 per cent of the gross amount of the dividends, in all other cases."
+        },
+        {
+          "kind": "interest",
+          "rate": 0.15,
+          "condition": "General rate (the beneficial owner is a resident of the other Contracting State)",
+          "article": "Article 12(2)",
+          "quote": "provided that where the resident of the other Contracting State is the beneficial owner of the interest the tax so charged shall not exceed 15 per cent of the gross amount of the interest."
+        },
+        {
+          "kind": "interest",
+          "rate": 0.1,
+          "condition": "Interest paid to a bank carrying on a bona fide banking business which is a resident of the other Contracting State and is the beneficial owner (Article 12(3)(a); interest paid to the Government, a political subdivision, a local authority or the Reserve Bank of India is exempt in the source State, Article 12(3)(b))",
+          "article": "Article 12(2)",
+          "quote": "a) where the interest is paid to a bank carrying on a bona fide banking business which is a resident of the other Contracting State and is the beneficial owner of the interest, the tax charged in the Contracting State in which the interest arises shall not exceed 10 per cent of the gross amount of the interest;"
+        },
+        {
+          "kind": "royalty",
+          "rate": 0.15,
+          "condition": "Royalties within Article 13(3)(a) (copyrights, patents, trade marks, designs, secret formulas, information concerning industrial, commercial or scientific experience), during the years after the first five years for which the Convention has effect",
+          "article": "Article 13(2)(a)(ii)",
+          "quote": "(ii) during subsequent years, 15 per cent of the gross amount of such royalties or fees for technical services; and"
+        },
+        {
+          "kind": "royalty",
+          "rate": 0.1,
+          "condition": "Royalties within Article 13(3)(b) (the use of, or the right to use, industrial, commercial or scientific equipment)",
+          "article": "Article 13(2)(b)",
+          "quote": "b) in the case of royalties within paragraph (3)(b) of this Article and fees for technical services defined in paragraph (4)(b) of this Article, 10 per cent of the gross amount of such royalties and fees for technical services."
+        },
+        {
+          "kind": "fts",
+          "rate": 0.15,
+          "condition": "Fees for technical services within Article 13(4)(a) and (c), during the years after the first five years for which the Convention has effect",
+          "article": "Article 13(2)(a)(ii)",
+          "quote": "(ii) during subsequent years, 15 per cent of the gross amount of such royalties or fees for technical services; and"
+        },
+        {
+          "kind": "fts",
+          "rate": 0.1,
+          "condition": "Fees for technical services defined in Article 13(4)(b) (ancillary and subsidiary to the enjoyment of equipment royalties)",
+          "article": "Article 13(2)(b)",
+          "quote": "b) in the case of royalties within paragraph (3)(b) of this Article and fees for technical services defined in paragraph (4)(b) of this Article, 10 per cent of the gross amount of such royalties and fees for technical services."
+        }
+      ],
+      "source": {
+        "id": "src-7dc33e1cae85",
+        "url": "https://assets.publishing.service.gov.uk/media/5b853e67e5274a4a8fbf169d/1993_India_-_UK_Double_Taxation_Agreement__as_amended_in_2013_-_in_force.pdf",
+        "title": "UK/India Double Taxation Convention signed 25 January 1993, as amended by a Protocol signed on 30 October 2012 (HM Revenue & Customs consolidated text, GOV.UK)",
+        "publisher": "HM Revenue & Customs (GOV.UK)",
+        "instrument": "India-United Kingdom double taxation convention of 25 January 1993 as amended in 2012, Articles 11, 12, 13 and 24",
+        "retrieved_at": "2026-11-27",
+        "quote": "UK/ INDIA DOUBLE TAXATION CONVENTION SIGNED 25 JANUARY 1993 As amended by a Protocol signed on 30 October 2012 Entered into force on 25 October 1993"
+      },
+      "data_file": "data/v2/in/2026-27/trade.json"
+    },
+    {
+      "countries": [
+        "in",
+        "jp"
+      ],
+      "partner": "jp",
+      "partner_name": "Japan",
+      "title": "Convention between the Government of Japan and the Government of the Republic of India for the Avoidance of Double Taxation and the Prevention of Fiscal Evasion with respect to Taxes on Income",
+      "signed": "1989-03-07",
+      "in_force": null,
+      "mli": true,
+      "relief_method": {
+        "in": "credit",
+        "jp": "credit"
+      },
+      "withholding": [
+        {
+          "kind": "dividend",
+          "rate": 0.1,
+          "condition": "The recipient is the beneficial owner of the dividends",
+          "article": "Article 10(2)",
+          "quote": "but if the recipient is the beneficial owner of the dividends the tax so charged shall not exceed 10 per cent of the gross amount of the dividends."
+        },
+        {
+          "kind": "interest",
+          "rate": 0.1,
+          "condition": "The recipient is the beneficial owner of the interest (interest of the Governments, central banks and the institutions of Article 11(3) is taxable only in the residence State)",
+          "article": "Article 11(2)",
+          "quote": "but if the recipient is the beneficial owner of the interest the tax so charged shall not exceed 10 per cent of the gross amount of the interest."
+        },
+        {
+          "kind": "royalty",
+          "rate": 0.1,
+          "condition": "The recipient is the beneficial owner of the royalties",
+          "article": "Article 12(2)",
+          "quote": "but if the recipient is the beneficial owner of the royalties or fees for technical services, the tax so charged shall not exceed 10 per cent of the gross amount of the royalties or fees for technical services."
+        },
+        {
+          "kind": "fts",
+          "rate": 0.1,
+          "condition": "The recipient is the beneficial owner of the fees for technical services",
+          "article": "Article 12(2)",
+          "quote": "but if the recipient is the beneficial owner of the royalties or fees for technical services, the tax so charged shall not exceed 10 per cent of the gross amount of the royalties or fees for technical services."
+        }
+      ],
+      "source": {
+        "id": "src-2d9461c9626b",
+        "url": "https://www.mof.go.jp/english/tax_policy/tax_conventions/india.text.rev.en.pdf.pdf",
+        "title": "Synthesised text of the MLI and the Convention between the Government of Japan and the Government of the Republic of India for the Avoidance of Double Taxation and the Prevention of Fiscal Evasion with respect to Taxes on Income (signed on March 7, 1989, as amended by the Protocols of 2006 and 2015)",
+        "publisher": "Ministry of Finance, Japan",
+        "instrument": "India-Japan income tax convention of 7 March 1989 as amended, Articles 10, 11, 12 and 23",
+        "retrieved_at": "2026-11-27",
+        "quote": "signed on March 7, 1989, as amended by the Protocol signed on February 24, 2006 and the Protocol signed on December 11, 2015 … The sole purpose of this document is to facilitate the understanding of the application of the MLI to the Convention and the document does not constitute a source of law."
+      },
+      "data_file": "data/v2/in/2026-27/trade.json"
+    },
+    {
+      "countries": [
+        "au",
+        "in"
+      ],
+      "partner": "au",
+      "partner_name": "Australia",
+      "title": "Agreement between the Government of Australia and the Government of the Republic of India for the Avoidance of Double Taxation and the Prevention of Fiscal Evasion with respect to Taxes on Income",
+      "signed": "1991-07-25",
+      "in_force": null,
+      "mli": true,
+      "relief_method": {
+        "au": "credit",
+        "in": "credit"
+      },
+      "withholding": [
+        {
+          "kind": "dividend",
+          "rate": 0.15,
+          "condition": "Dividends to which a resident of the other Contracting State is beneficially entitled",
+          "article": "Article 10(2)",
+          "quote": "but the tax so charged shall not exceed 15 per cent of the gross amount of the dividends."
+        },
+        {
+          "kind": "interest",
+          "rate": 0.15,
+          "condition": "Interest to which a resident of the other Contracting State is beneficially entitled",
+          "article": "Article 11(2)",
+          "quote": "but the tax so charged shall not exceed 15 per cent of the gross amount of the interest."
+        },
+        {
+          "kind": "royalty",
+          "rate": 0.15,
+          "condition": "Other royalties (including payments for services of Article 12(3)(d) other than those ancillary to equipment), during all years of income after the first 5 for which the Agreement has effect; the Agreement has no separate category of fees for technical services",
+          "article": "Article 12(2)(b)(ii)",
+          "quote": "(ii) during all subsequent years of income: 15 percent of the gross amount of the royalties."
+        },
+        {
+          "kind": "royalty",
+          "rate": 0.1,
+          "condition": "Royalties for the use of industrial, commercial or scientific equipment (Article 12(3)(b)) and services ancillary and subsidiary to it",
+          "article": "Article 12(2)(a)",
+          "quote": "(a) in the case of: (i) royalties referred to in subparagraph (3)(b); (ii) payments or credits for services referred to in subparagraph (3)(d), subject to subparagraphs (3)(h) to (l), that are ancillary and subsidiary to the application or enjoyment of equipment for which payments or credits are made under subparagraph (3)(b); or (iii) royalties referred to in subparagraph (3)(f) that relate to equipment mentioned in subparagraph (3)(b): 10 percent of the gross amount of the royalties;"
+        }
+      ],
+      "source": {
+        "id": "src-c9d663590695",
+        "url": "https://www.ato.gov.au/law/view/pdf/mli/india.pdf",
+        "title": "Synthesised text of the MLI and the Agreement between the Government of Australia and the Government of the Republic of India for the Avoidance of Double Taxation and the Prevention of Fiscal Evasion with respect to Taxes on Income as amended by the Amending Protocol",
+        "publisher": "Australian Taxation Office",
+        "instrument": "Australia-India income tax agreement of 25 July 1991 as amended by the Protocol of 16 December 2011, Articles 10, 11, 12 and 24",
+        "retrieved_at": "2026-11-27",
+        "quote": "signed on 25 July 1991 as amended by the Amending Protocol signed on 16 December 2011 (the “Agreement”) as modified by the Multilateral Convention to Implement Tax Treaty Related Measures to Prevent Base Erosion and Profit Shifting (the “MLI”) signed by Australia and India on 7 June 2017."
+      },
+      "data_file": "data/v2/in/2026-27/trade.json"
+    },
+    {
+      "countries": [
+        "at",
+        "in"
+      ],
+      "partner": "at",
+      "partner_name": "Austria",
+      "title": "Convention between the Government of the Republic of Austria and the Government of the Republic of India for the avoidance of double taxation and the prevention of fiscal evasion with respect to taxes on income",
+      "signed": "1999-11-08",
+      "in_force": null,
+      "mli": true,
+      "relief_method": {
+        "at": "credit",
+        "in": "credit"
+      },
+      "withholding": [
+        {
+          "kind": "dividend",
+          "rate": 0.1,
+          "condition": "The beneficial owner of the dividends is a resident of the other Contracting State",
+          "article": "Article 10(2)",
+          "quote": "but if the beneficial owner of the dividends is a resident of the other Contracting State, the tax so charged shall not exceed 10 per cent of the gross amount of the dividends."
+        },
+        {
+          "kind": "interest",
+          "rate": 0.1,
+          "condition": "The beneficial owner of the interest is a resident of the other Contracting State (interest of the State, its subdivisions and the institutions of Article 11(3) is exempt in the source State)",
+          "article": "Article 11(2)",
+          "quote": "but if the beneficial owner of the interest is a resident of the other Contracting State, the tax so charged shall not exceed 10 per cent of the gross amount of the interest."
+        },
+        {
+          "kind": "royalty",
+          "rate": 0.1,
+          "condition": "The beneficial owner of the royalties is a resident of the other Contracting State",
+          "article": "Article 12(2)",
+          "quote": "but if the beneficial owner of the royalties and fees for technical services is a resident of the other Contracting State, the tax so charged shall not exceed 10 per cent of the gross amount of the royalties and fees for technical services."
+        },
+        {
+          "kind": "fts",
+          "rate": 0.1,
+          "condition": "The beneficial owner of the fees for technical services is a resident of the other Contracting State",
+          "article": "Article 12(2)",
+          "quote": "but if the beneficial owner of the royalties and fees for technical services is a resident of the other Contracting State, the tax so charged shall not exceed 10 per cent of the gross amount of the royalties and fees for technical services."
+        }
+      ],
+      "source": {
+        "id": "src-7583de938974",
+        "url": "https://www.bmf.gv.at/dam/jcr:16873131-ce66-4954-a9e6-f4acc1d0069c/DBA_Indien_synthesised_englisch.final.pdf",
+        "title": "Synthesised text of the MLI and the Convention between the Government of the Republic of Austria and the Government of the Republic of India for the avoidance of double taxation and the prevention of fiscal evasion with respect to taxes on income (signed on 8 November 1999)",
+        "publisher": "Federal Ministry of Finance, Austria",
+        "instrument": "Austria-India income tax convention of 8 November 1999, Articles 10, 11, 12 and 23",
+        "retrieved_at": "2026-11-27",
+        "quote": "signed on 8 November 1999 (the “Convention”), as modified by the Multilateral Convention to Implement Tax Treaty Related Measures to Prevent Base Erosion and Profit Shifting signed by the Republic of Austria and by the Republic of India on 7 June 2017 (the “MLI”)."
+      },
+      "data_file": "data/v2/in/2026-27/trade.json"
+    }
+  ],
+  "attribution": {
+    "source": "CalcBloc",
+    "url": "https://calcbloc.com/developers",
+    "required": true,
+    "text": "Data by CalcBloc (calcbloc.com)"
+  }
+}

@@ -82,7 +82,7 @@ const usUkRsu = {
 };
 
 describe("schema: the 0.4.0 tools (API 1.9)", () => {
-  it("registers thirteen read-only tools in order", () => {
+  it("registers fourteen read-only tools in order (get_tax_treaties added in 0.5.0)", () => {
     const all = tools();
     expect(all.map((t) => t.name)).toEqual([
       "calculate_take_home_pay",
@@ -97,6 +97,7 @@ describe("schema: the 0.4.0 tools (API 1.9)", () => {
       "get_tax_tables",
       FACTS,
       CALENDAR,
+      "get_tax_treaties",
       "list_countries",
     ]);
     for (const t of all) expect(t.annotations?.readOnlyHint).toBe(true);
@@ -108,7 +109,9 @@ describe("schema: the 0.4.0 tools (API 1.9)", () => {
     expect(COVERAGE.taxCalendar).toBe(fixture.countries.filter((c) => c.tax_calendar).length);
     expect(COVERAGE.taxTables).toBe(fixture.countries.length);
     expect(NOT_SUPPORTED).toContain(`calculate_cross_border_equity (tax estimates for ${COVERAGE.crossBorderCountries.join(", ")})`);
-    expect(NOT_YET_SUPPORTED).toBe("Not yet supported: cross-border salary withholding (multi-country payroll), and treaty rates or the double-tax relief amount.");
+    expect(NOT_YET_SUPPORTED).toBe(
+      "Not yet supported: cross-border salary withholding (multi-country payroll), and the double-tax relief amount (get_tax_treaties lists the treaty withholding limits CalcBloc stores).",
+    );
     const readme = readFileSync(new URL("../README.md", import.meta.url), "utf8");
     const block = readme.slice(readme.indexOf("<!-- coverage:start -->"), readme.indexOf("<!-- coverage:end -->"));
     for (const n of [XB, DUTY, TARIFF, AGREEMENTS, FACTS, CALENDAR]) expect(block).toContain(`\`${n}\``);
@@ -366,8 +369,9 @@ describe("behaviour and golden: get_tax_calendar", () => {
     conforms(CALENDAR, s);
     expect(calls.filter((c) => c.path === "/tax-calendar")).toHaveLength(0);
     expect(s.countries).toHaveLength(COVERAGE.taxCalendar);
-    expect(s.asOf).toBe("2026-11-26");
-    expect(s.countries.find((c: { shortCode: string }) => c.shortCode === "us")).toMatchObject({ taxYear: "2026", daysRemaining: 35, nextTaxYearStart: "2027-01-01" });
+    // The /countries capture is from API 1.10 on 2026-11-27 (0.5.0).
+    expect(s.asOf).toBe("2026-11-27");
+    expect(s.countries.find((c: { shortCode: string }) => c.shortCode === "us")).toMatchObject({ taxYear: "2026", daysRemaining: 34, nextTaxYearStart: "2027-01-01" });
     expect((await taxCalendar(api, { region: "ca" })).isError).toBe(true);
     const bad = await taxCalendar(api, { country: "Narnia" });
     expect(text(bad)).toContain('CalcBloc does not cover "Narnia"');

@@ -1,0 +1,13 @@
+{
+  "error": {
+    "code": "unsupported_country",
+    "message": "No treaties are stored for \"de\". Countries: in.",
+    "docs": "https://calcbloc.com/developers#parameters"
+  },
+  "attribution": {
+    "source": "CalcBloc",
+    "url": "https://calcbloc.com/developers",
+    "required": true,
+    "text": "Data by CalcBloc (calcbloc.com)"
+  }
+}
